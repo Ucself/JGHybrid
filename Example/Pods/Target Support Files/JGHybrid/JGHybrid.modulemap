@@ -1,0 +1,6 @@
+framework module JGHybrid {
+  umbrella header "JGHybrid-umbrella.h"
+
+  export *
+  module * { export * }
+}

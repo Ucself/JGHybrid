@@ -1,0 +1,29 @@
+PODS:
+  - JGHybrid (0.1.0):
+    - Kingfisher
+    - NJKWebViewProgress
+    - SSZipArchive
+  - Kingfisher (4.2.0)
+  - NJKWebViewProgress (0.2.3):
+    - NJKWebViewProgress/Core (= 0.2.3)
+    - NJKWebViewProgress/ProgressView (= 0.2.3)
+  - NJKWebViewProgress/Core (0.2.3)
+  - NJKWebViewProgress/ProgressView (0.2.3)
+  - SSZipArchive (2.1.1)
+
+DEPENDENCIES:
+  - JGHybrid (from `../`)
+
+EXTERNAL SOURCES:
+  JGHybrid:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  JGHybrid: 91ec20c2c0a02a91ed1f47b2f286f8fa6a8915cd
+  Kingfisher: 9ee7e788d8ba07c3f21ce0d43f33cec310a4f781
+  NJKWebViewProgress: f481fd424cb5ecc27eacae11b5397db92fba9a4d
+  SSZipArchive: 14401ade5f8e82aba1ff03e9f88e9de60937ae60
+
+PODFILE CHECKSUM: 4f491e54c6148dd76841d8cb74cad4b281687e91
+
+COCOAPODS: 1.2.1

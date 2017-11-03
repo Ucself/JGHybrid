@@ -1,0 +1,6 @@
+framework module Pods_JGHybrid_Example {
+  umbrella header "Pods-JGHybrid_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}
