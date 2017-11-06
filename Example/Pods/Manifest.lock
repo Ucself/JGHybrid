@@ -1,5 +1,5 @@
 PODS:
-  - JGHybrid (0.1.0):
+  - JGHybrid (1.0.0):
     - Kingfisher
     - NJKWebViewProgress
     - SSZipArchive
@@ -19,7 +19,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  JGHybrid: 91ec20c2c0a02a91ed1f47b2f286f8fa6a8915cd
+  JGHybrid: a0c4a758b1ad07c26c0f026e5767ab0d03cad235
   Kingfisher: 9ee7e788d8ba07c3f21ce0d43f33cec310a4f781
   NJKWebViewProgress: f481fd424cb5ecc27eacae11b5397db92fba9a4d
   SSZipArchive: 14401ade5f8e82aba1ff03e9f88e9de60937ae60

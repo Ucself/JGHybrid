@@ -8,7 +8,7 @@
 import UIKit
 import JavaScriptCore
 
-class Hybrid_SwiftJavaScriptModel: SwiftJavaScriptDelegate {
+class Hybrid_swiftJavaScriptModel:NSObject, SwiftJavaScriptDelegate {
     
     var jsContext:JSContext?
     var webView:UIWebView?

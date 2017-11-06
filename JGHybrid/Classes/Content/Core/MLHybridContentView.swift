@@ -15,7 +15,7 @@ open class MLHybridContentView: UIWebView {
     //待注入的字符串
     public var htmlString: String?
     //注入对象
-    let swiftJavaScriptModel:Hybrid_SwiftJavaScriptModel = Hybrid_SwiftJavaScriptModel.init()
+    let swiftJavaScriptModel:Hybrid_swiftJavaScriptModel = Hybrid_swiftJavaScriptModel.init()
 
     private override init(frame: CGRect) {
         super.init(frame: frame)
