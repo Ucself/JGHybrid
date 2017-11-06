@@ -1,8 +1,6 @@
 //
 //  MLOpenWebViewController.swift
-//  MLHybrid
-//
-//  Created by yang cai on 2017/10/18.
+//  Pods
 //
 
 import UIKit

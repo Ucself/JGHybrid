@@ -2,9 +2,6 @@
 //  MLHybridMethodType.swift
 //  Pods
 //
-//  Created by yang cai on 2017/8/14.
-//
-//
 
 import Foundation
 

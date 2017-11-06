@@ -1,9 +1,6 @@
 //
 //  MLHybridTools.swift
-//  Hybrid_Medlinker
-//
-//  Created by caiyang on 16/5/31.
-//  Copyright © 2016年 caiyang. All rights reserved.
+//  Pods
 //
 
 import UIKit

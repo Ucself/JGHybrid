@@ -1,9 +1,6 @@
 //
-//  Args.swift
+//  MLCommandArgs.swift
 //  Pods
-//
-//  Created by yang cai on 2017/8/17.
-//
 //
 
 import UIKit

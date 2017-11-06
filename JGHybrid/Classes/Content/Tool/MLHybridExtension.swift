@@ -1,9 +1,6 @@
 //
 //  String+MLHybrid.swift
-//  MedLinker
-//
-//  Created by cy on 15/11/3.
-//  Copyright © 2015年 MedLinker. All rights reserved.
+//  Pods
 //
 
 import Foundation

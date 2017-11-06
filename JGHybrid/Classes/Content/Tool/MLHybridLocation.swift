@@ -1,9 +1,6 @@
 //
 //  MLHybridLocation.swift
-//  Surgery
-//
-//  Created by caiyang on 16/9/5.
-//  Copyright © 2016年 Apple. All rights reserved.
+//  Pods
 //
 
 import UIKit

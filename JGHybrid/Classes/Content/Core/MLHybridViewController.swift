@@ -1,9 +1,6 @@
 //
 //  MLHybridViewController.swift
-//  MedLinker
-//
-//  Created by 蔡杨
-//  Copyright © 2015年 MedLinker. All rights reserved.
+//  Pods
 //
 
 import UIKit
