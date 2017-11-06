@@ -14,7 +14,7 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
-		916A9D2D1FB040D0003DCF99 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 916A9D2C1FB040CF003DCF99 /* index.html */; };
+		916A9D2F1FB04B0F003DCF99 /* MethodExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916A9D2E1FB04B0F003DCF99 /* MethodExtension.swift */; };
 		D881F79C64C7C6FD65FFC625 /* Pods_JGHybrid_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AA1597A5587CE99A6870EBF /* Pods_JGHybrid_Tests.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,7 +47,7 @@
 		6DE0838FB418A3BE4C156A84 /* Pods-JGHybrid_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JGHybrid_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JGHybrid_Tests/Pods-JGHybrid_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		7E73287A6217632257D96B86 /* JGHybrid.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = JGHybrid.podspec; path = ../JGHybrid.podspec; sourceTree = "<group>"; };
 		8AA1597A5587CE99A6870EBF /* Pods_JGHybrid_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JGHybrid_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		916A9D2C1FB040CF003DCF99 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
+		916A9D2E1FB04B0F003DCF99 /* MethodExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MethodExtension.swift; sourceTree = "<group>"; };
 		99A5034EC38F841271CD5120 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,7 +108,7 @@
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
-				916A9D2C1FB040CF003DCF99 /* index.html */,
+				916A9D2E1FB04B0F003DCF99 /* MethodExtension.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -254,7 +254,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
-				916A9D2D1FB040D0003DCF99 /* index.html in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
@@ -367,6 +366,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				916A9D2F1FB04B0F003DCF99 /* MethodExtension.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);

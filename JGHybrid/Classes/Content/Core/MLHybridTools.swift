@@ -37,6 +37,12 @@ class MLHybridTools: NSObject {
     
     /// 根据指令执行对应的方法
     private func execute() {
+        //打印指令
+        print("***************************")
+        print("name:\n\(self.command.name)")
+        print("args:\n\(self.command.args)")
+        print("***************************")
+        
         guard let funType = MLHybridMethodType(rawValue: command.name) else {
             MLHybrid.shared.delegate?.methodExtension(command: command)
             return
