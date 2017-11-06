@@ -12,7 +12,6 @@ let NaviImageHeader = "hybrid_navi_"
 
 class MLHybridTools: NSObject {
     
-    
     var command: MLHybirdCommand = MLHybirdCommand()
     
     //MARK: 资源路径相关
@@ -28,6 +27,12 @@ class MLHybridTools: NSObject {
         } else {
             return false
         }
+    }
+    //通过命令执行
+    func performCommand(command:MLHybirdCommand) -> Bool {
+        self.command = command
+        execute()
+        return true
     }
     
     /// 根据指令执行对应的方法
@@ -76,7 +81,7 @@ class MLHybridTools: NSObject {
             completion("")
         }
     }
-    
+    //MARK:Command Method
     func updateHeader() {
         if !command.viewController.needSetHeader { return }
         let header = command.args.header

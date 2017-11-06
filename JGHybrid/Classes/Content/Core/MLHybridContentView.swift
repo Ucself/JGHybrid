@@ -14,6 +14,8 @@ open class MLHybridContentView: UIWebView {
     let tool: MLHybridTools = MLHybridTools()
     //待注入的字符串
     public var htmlString: String?
+    //注入对象
+    let swiftJavaScriptModel:Hybrid_SwiftJavaScriptModel = Hybrid_SwiftJavaScriptModel.init()
 
     private override init(frame: CGRect) {
         super.init(frame: frame)
@@ -90,6 +92,10 @@ extension MLHybridContentView: UIWebViewDelegate {
             webView.stringByEvaluatingJavaScript(from: js)
             self.htmlString = nil
         }
+        //注入js方法
+        self.swiftJavaScriptModel.jsContext = webView.value(forKeyPath: "documentView.webView.mainFrame.javaScriptContext") as? JSContext
+        self.swiftJavaScriptModel.webView = webView
+        self.swiftJavaScriptModel.jsContext?.setObject(self.swiftJavaScriptModel, forKeyedSubscript: "hybird" as NSCopying & NSObjectProtocol)
     }
     
     public func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {

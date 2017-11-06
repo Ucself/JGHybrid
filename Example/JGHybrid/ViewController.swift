@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import JGHybrid
 
 class ViewController: UIViewController {
 
@@ -20,5 +21,10 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func buttonClick(_ sender: Any) {
+        let vc:UIViewController =  MLHybrid.load(urlString: "https://www.baidu.com")!
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }
 

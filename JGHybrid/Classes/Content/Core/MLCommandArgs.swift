@@ -25,8 +25,6 @@ open class MLCommandArgs: NSObject {
     var header: Hybrid_headerModel = Hybrid_headerModel() //导航栏设置数据模型
     
     
-    
-    
     class func convert(_ dic: [String: AnyObject]) -> MLCommandArgs {
         let args = MLCommandArgs()
         args.dic = dic
