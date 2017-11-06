@@ -11,7 +11,7 @@ import JavaScriptCore
 class Hybrid_swiftJavaScriptModel:NSObject, SwiftJavaScriptDelegate {
     
     var jsContext:JSContext?
-    var webView:UIWebView?
+    weak var webView:UIWebView?
     //实现协议
     func requestHybrid(_ tagname:String?, _ param:[String:AnyObject]?) {
         //Hybird命令对象

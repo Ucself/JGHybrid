@@ -12,7 +12,7 @@ import JGHybrid
 class MethodExtension: MLHybridMethodProtocol {
 
     func methodExtension(command: MLHybirdCommand) {
-        print("不属于默认方法 ===> \(command.name)")
+        print("自定义响应Hybrid命令 ===> \(command.name)")
 //        command.callback { (str) in
 //
 //        }

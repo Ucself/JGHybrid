@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                           platform: "i",
                           appName: "medlinker",
                           domain: "medlinker.com",
-                          backIndicator: "hybridBack",
+                          backIndicator: "return－no click",
                           delegate: MethodExtension())
         return true
     }

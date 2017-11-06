@@ -6,10 +6,11 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--首页-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="JGHybrid_Example" customModuleProvider="target" sceneMemberID="viewController">
@@ -21,18 +22,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qtt-6m-QoD">
-                                <rect key="frame" x="164" y="318" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qtt-6m-QoD">
+                                <rect key="frame" x="16" y="64" width="343" height="603"/>
+                                <state key="normal" title="进入Hybrid页面测试"/>
                                 <connections>
                                     <action selector="buttonClick:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="F24-Ap-nO8"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="qtt-6m-QoD" secondAttribute="bottom" id="Tf4-68-V1S"/>
+                            <constraint firstItem="qtt-6m-QoD" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="bDg-gP-Fb6"/>
+                            <constraint firstItem="qtt-6m-QoD" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="pI2-lN-o2l"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qtt-6m-QoD" secondAttribute="trailing" id="uY2-Tb-SnY"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Ezb-CG-Ndf"/>
+                    <navigationItem key="navigationItem" title="首页" id="Ezb-CG-Ndf"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
