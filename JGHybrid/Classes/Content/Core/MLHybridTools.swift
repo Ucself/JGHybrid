@@ -21,6 +21,7 @@ class MLHybridTools: NSObject {
     //MARK: Method
     func performCommand(request: URLRequest, webView: UIWebView) -> Bool {
         if let hybridCommand = MLHybirdCommand.analysis(request: request, webView: webView) {
+            print("👇URL:\n\((self.command.webView.request?.url?.absoluteString ?? "")!)")
             command = hybridCommand
             execute()
             return true
