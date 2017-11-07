@@ -122,11 +122,12 @@ open class MLHybridViewController: UIViewController {
 
 extension MLHybridViewController: NJKWebViewProgressDelegate {
     public func webViewProgress(_ webViewProgress: NJKWebViewProgress!, updateProgress progress: Float) {
-        if progress > 0.7 {
-            _webViewProgressView.setProgress(progress, animated: true)
-        } else {
-            _webViewProgressView.setProgress(0.7, animated: true)
-        }
+        _webViewProgressView.setProgress(progress, animated: true)
+//        if progress > 0.7 {
+//            _webViewProgressView.setProgress(progress, animated: true)
+//        } else {
+//            _webViewProgressView.setProgress(0.7, animated: true)
+//        }
     }
     
     open func setProgress(_ progress: Float) {

@@ -33,6 +33,7 @@ class MLHybridTools: NSObject {
     //通过命令执行
     func performCommand(command:MLHybirdCommand) -> Bool {
         print("---------------command start-----------------")
+        print("👇JS METHOD:\nhybrid.requestHybrid()")
         self.command = command
         execute()
         return true
