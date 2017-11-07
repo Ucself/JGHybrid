@@ -5,6 +5,7 @@
 
 import UIKit
 import Kingfisher
+import WebKit
 
 class HybridNaviTitleView: UIView {
 
@@ -14,7 +15,7 @@ class HybridNaviTitleView: UIView {
     let righticon = UIImageView()
     let callBackButton = UIButton()
     
-    func loadTitleView(_ title: String, subtitle: String, lefticonUrl: URL, righticonUrl: URL, callback: String, currentWebView: UIWebView) {
+    func loadTitleView(_ title: String, subtitle: String, lefticonUrl: URL, righticonUrl: URL, callback: String, currentWebView: WKWebView) {
         //标题
         self.titleLabel.text = title
         self.titleLabel.font = UIFont.systemFont(ofSize: 17)

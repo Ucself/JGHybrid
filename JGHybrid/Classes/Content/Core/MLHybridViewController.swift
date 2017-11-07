@@ -24,7 +24,8 @@ open class MLHybridViewController: UIViewController {
     deinit {
         locationModel.stopUpdateLocation()
         if contentView != nil {
-            contentView.loadRequest(URLRequest(url: URL(string: "about:blank")!))
+            //contentView.loadRequest(URLRequest(url: URL(string: "about:blank")!))
+            contentView.load(URLRequest(url: URL(string: "about:blank")!))
             contentView.stopLoading()
             contentView.removeFromSuperview()
             contentView = nil
@@ -86,7 +87,7 @@ open class MLHybridViewController: UIViewController {
     }
     
     func initProgressView() {
-        contentView.delegate = _webViewProgress
+        //contentView.delegate = _webViewProgress
         _webViewProgress.webViewProxyDelegate = contentView;
         _webViewProgress.progressDelegate = self;
         
@@ -115,7 +116,8 @@ open class MLHybridViewController: UIViewController {
             self.contentView.htmlString = htmlString
         }
         guard URLPath != nil else {return}
-        self.contentView.loadRequest(URLRequest(url: URLPath!))
+        //self.contentView.loadRequest(URLRequest(url: URLPath!))
+        self.contentView.load(URLRequest(url: URLPath!))
     }
     
 }

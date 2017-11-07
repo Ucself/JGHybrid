@@ -9,22 +9,54 @@ import CoreMotion
 import JavaScriptCore
 import WebKit
 
-open class MLHybridContentView: UIWebView {
+open class MLHybridContentView: WKWebView {
 
+    static var sharedKPreferences = WKPreferences()
+    static var sharedProcessPool = WKProcessPool()
+    
     let tool: MLHybridTools = MLHybridTools()
     //待注入的字符串
     public var htmlString: String?
     //注入对象
-    let swiftJavaScriptModel:Hybrid_swiftJavaScriptModel = Hybrid_swiftJavaScriptModel.init()
+    //let swiftJavaScriptModel:Hybrid_swiftJavaScriptModel = Hybrid_swiftJavaScriptModel.init()
 
-    private override init(frame: CGRect) {
-        super.init(frame: frame)
-        initUI()
-        configUserAgent()
+//    private override init(frame: CGRect) {
+//        super.init(frame: frame)
+//        initUI()
+//        configUserAgent()
+//        customerCookie()
+//        NotificationCenter.default.addObserver(forName: MLHybridNotification.updateCookie, object: nil, queue: nil) { [weak self] (notification) in
+//            self?.customerCookie()
+//        }
+//    }
+    
+    public convenience init(frame: CGRect) {
+        let configuration = WKWebViewConfiguration()
+        configuration.preferences = MLHybridContentView.sharedKPreferences
+        configuration.preferences.minimumFontSize = 10;
+        // 默认认为YES
+        configuration.preferences.javaScriptEnabled = true;
+        // 在iOS上默认为NO，表示不能自动通过窗口打开
+        configuration.preferences.javaScriptCanOpenWindowsAutomatically = false;
+        configuration.processPool = MLHybridContentView.sharedProcessPool
+        let  userContentController = WKUserContentController()
+        let cookieValue = "document.cookie ='platform=\(MLHybrid.shared.platform);path=/;domain=\(MLHybrid.shared.domain);expires=Sat, 02 May 2019 23:38:25 GMT；';document.cookie = 'sess=\(MLHybrid.shared.sess);path=/;domain=\(MLHybrid.shared.domain);expires=Sat, 02 May 2019 23:38:25 GMT；';"
+        let  cookieScript = WKUserScript(source: cookieValue, injectionTime: .atDocumentStart , forMainFrameOnly: false)
+        userContentController.addUserScript(cookieScript)
+        configuration.userContentController = userContentController
+        self.init(frame: frame, configuration: configuration)
+    }
+    
+    private override init(frame: CGRect, configuration: WKWebViewConfiguration) {
+        super.init(frame:frame,configuration:configuration)
+        self.initUI()
+        //configUserAgent()
         customerCookie()
         NotificationCenter.default.addObserver(forName: MLHybridNotification.updateCookie, object: nil, queue: nil) { [weak self] (notification) in
             self?.customerCookie()
         }
+        self.uiDelegate = self
+        self.navigationDelegate = self
     }
     
     required public init?(coder aDecoder: NSCoder) {
@@ -35,7 +67,9 @@ open class MLHybridContentView: UIWebView {
         self.backgroundColor = UIColor.white
         self.scrollView.bounces = false
         self.translatesAutoresizingMaskIntoConstraints = false
-        self.delegate = self
+        //self.delegate = self
+        self.uiDelegate = self
+        self.navigationDelegate = self
     }
 
     //设置userAgent
@@ -47,6 +81,7 @@ open class MLHybridContentView: UIWebView {
             userAgentStr.append(" \(MLHybrid.shared.userAgent)\(versionStr) ")
             UserDefaults.standard.register(defaults: ["UserAgent" : userAgentStr])
         }
+        
     }
 
     //注入cookie
@@ -70,7 +105,7 @@ open class MLHybridContentView: UIWebView {
 
 extension MLHybridContentView: UIWebViewDelegate {
     
-    func vcOfView(view: UIView) -> MLHybridViewController {
+    /*func vcOfView(view: UIView) -> MLHybridViewController {
         var nextResponder = view.next
         while !(nextResponder is MLHybridViewController) {
             nextResponder = nextResponder?.next ?? UIViewController()
@@ -103,6 +138,40 @@ extension MLHybridContentView: UIWebViewDelegate {
             return false
         }
         return true
+    }*/
+    
+}
+extension MLHybridContentView: WKUIDelegate,WKNavigationDelegate {
+    
+    func vcOfView(view: UIView) -> MLHybridViewController {
+        var nextResponder = view.next
+        while !(nextResponder is MLHybridViewController) {
+            nextResponder = nextResponder?.next ?? UIViewController()
+        }
+        return nextResponder as? MLHybridViewController ?? MLHybridViewController()
+    }
+    
+    
+    public func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!){
+        
+        self.vcOfView(view: webView).title = webView.title
+        
+        if let htmlString = self.htmlString {
+            webView.evaluateJavaScript("document.body.innerHTML = document.body.innerHTML + '\(htmlString)'", completionHandler: { (any, error) in })
+            self.htmlString = nil
+        }
+    }
+    
+    public func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+        if self.tool.performCommand(request: navigationAction.request, webView: webView) {
+            decisionHandler(.cancel)
+        } else {
+            decisionHandler(.allow)
+        }
+    }
+    
+    public func webViewWebContentProcessDidTerminate(_ webView: WKWebView){
+        webView.reload()
     }
     
 }

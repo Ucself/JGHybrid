@@ -7,11 +7,12 @@
 
 import UIKit
 import JavaScriptCore
+import WebKit
 
 class Hybrid_swiftJavaScriptModel:NSObject, SwiftJavaScriptDelegate {
     
     var jsContext:JSContext?
-    weak var webView:UIWebView?
+    weak var webView:WKWebView?
     //实现协议
     func requestHybrid(_ tagname:String?, _ param:[String:AnyObject]?) {
         //Hybird命令对象

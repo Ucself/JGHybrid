@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../JGHybrid/Classes/Content/Core/MLHybridTools.swift"
-            timestampString = "531716994.0513"
+            timestampString = "531745153.683187"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "261"
-            endingLineNumber = "261"
+            startingLineNumber = "273"
+            endingLineNumber = "273"
             landmarkName = "checkVersion()"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../JGHybrid/Classes/Content/Core/MLHybridTools.swift"
-            timestampString = "531717007.110589"
+            timestampString = "531745153.683271"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "267"
-            endingLineNumber = "267"
+            startingLineNumber = "279"
+            endingLineNumber = "279"
             landmarkName = "checkVersion()"
             landmarkType = "7">
          </BreakpointContent>

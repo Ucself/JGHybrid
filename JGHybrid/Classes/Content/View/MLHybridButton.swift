@@ -4,13 +4,14 @@
 //
 
 import Foundation
+import WebKit
 
 class MLHybridButton: UIButton {
     let margin: CGFloat = 0
     var model: Hybrid_naviButtonModel = Hybrid_naviButtonModel()
-    var webView: UIWebView = UIWebView()
+    var webView: WKWebView = WKWebView()
     
-    class func setUp(models: [Hybrid_naviButtonModel], webView: UIWebView) -> [UIBarButtonItem] {
+    class func setUp(models: [Hybrid_naviButtonModel], webView: WKWebView) -> [UIBarButtonItem] {
         let models = models.reversed()
 
         var items: [UIBarButtonItem] = []
