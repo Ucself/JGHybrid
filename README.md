@@ -17,6 +17,7 @@ JGHybrid is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 此类库在caiyang基础上新增js注入功能
+https://github.com/suncry/MLHybrid
 
 ```ruby
 pod 'JGHybrid'
