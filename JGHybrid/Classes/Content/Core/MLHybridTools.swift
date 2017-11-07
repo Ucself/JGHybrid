@@ -21,7 +21,8 @@ class MLHybridTools: NSObject {
     //MARK: Method
     func performCommand(request: URLRequest, webView: UIWebView) -> Bool {
         if let hybridCommand = MLHybirdCommand.analysis(request: request, webView: webView) {
-            print("👇URL:\n\((self.command.webView.request?.url?.absoluteString ?? "")!)")
+            print("---------------command start-----------------")
+            print("👇URL:\n\((request.url?.absoluteString ?? "")!)")
             command = hybridCommand
             execute()
             return true
@@ -31,6 +32,7 @@ class MLHybridTools: NSObject {
     }
     //通过命令执行
     func performCommand(command:MLHybirdCommand) -> Bool {
+        print("---------------command start-----------------")
         self.command = command
         execute()
         return true
@@ -39,7 +41,6 @@ class MLHybridTools: NSObject {
     /// 根据指令执行对应的方法
     private func execute() {
         //打印指令
-        print("---------------command start-----------------")
         print("👇NAME:\n\(self.command.name)")
         print("👇PARAMS:\n\(self.command.params)")
         print("---------------command end-------------------")
