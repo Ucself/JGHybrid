@@ -5,6 +5,7 @@
 
 import UIKit
 import NJKWebViewProgress
+import WebKit
 
 open class MLHybridViewController: UIViewController {
 
@@ -42,18 +43,20 @@ open class MLHybridViewController: UIViewController {
     
     override open func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        //js方法注入
+        self.contentView?.configuration.userContentController.add(self, name: "requestHybrid")
+        
         if let callback = self.onShowCallBack {
-            MLHybridTools().callBack(data: "", err_no: 0, msg: "onwebviewshow", callback: callback, webView: self.contentView, completion: {js in
-            })
+            MLHybridTools().callBack(data: "", err_no: 0, msg: "onwebviewshow", callback: callback, webView: self.contentView, completion: {js in })
         }
     }
 
     override open func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        //取消方法注入
+        self.contentView?.configuration.userContentController.removeScriptMessageHandler(forName: "requestHybrid")
         if let callback = self.onHideCallBack {
-            let _ =  MLHybridTools().callBack(data: "", err_no: 0, msg: "onwebviewshow", callback: callback, webView: self.contentView, completion: {js in
-                
-            })
+            let _ =  MLHybridTools().callBack(data: "", err_no: 0, msg: "onwebviewshow", callback: callback, webView: self.contentView, completion: {js in })
         }
     }
     
@@ -119,7 +122,6 @@ open class MLHybridViewController: UIViewController {
         //self.contentView.loadRequest(URLRequest(url: URLPath!))
         self.contentView.load(URLRequest(url: URLPath!))
     }
-    
 }
 
 extension MLHybridViewController: NJKWebViewProgressDelegate {
@@ -136,4 +138,13 @@ extension MLHybridViewController: NJKWebViewProgressDelegate {
         _webViewProgressView.setProgress(progress, animated: true)
     }
     
+}
+
+extension MLHybridViewController:WKScriptMessageHandler {
+    
+    public func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+        if message.name == "requestHybrid" {
+            
+        }
+    }
 }

@@ -39,6 +39,15 @@ open class MLHybrid {
         shared.platform = platform
         shared.domain = domain
         shared.userAgent = "med_hybrid_" + appName + "_"
+        
+        //设置userAgent
+        var userAgentStr: String = UIWebView().stringByEvaluatingJavaScript(from: "navigator.userAgent") ?? ""
+        if (userAgentStr.range(of: MLHybrid.shared.userAgent) == nil) {
+            guard let versionStr = Bundle.main.infoDictionary?["CFBundleShortVersionString"] else {return}
+            userAgentStr.append(" \(MLHybrid.shared.userAgent)\(versionStr) ")
+            UserDefaults.standard.register(defaults: ["UserAgent" : userAgentStr])
+        }
+        
         shared.scheme = "med" + appName + "hybrid"
         shared.backIndicator = backIndicator
         shared.delegate = delegate

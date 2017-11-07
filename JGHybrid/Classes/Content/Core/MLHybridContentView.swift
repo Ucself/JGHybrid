@@ -50,7 +50,7 @@ open class MLHybridContentView: WKWebView {
     private override init(frame: CGRect, configuration: WKWebViewConfiguration) {
         super.init(frame:frame,configuration:configuration)
         self.initUI()
-        //configUserAgent()
+        configUserAgent()
         customerCookie()
         NotificationCenter.default.addObserver(forName: MLHybridNotification.updateCookie, object: nil, queue: nil) { [weak self] (notification) in
             self?.customerCookie()
@@ -74,7 +74,8 @@ open class MLHybridContentView: WKWebView {
 
     //设置userAgent
     func configUserAgent () {
-        //设置userAgent
+        
+        //设置userAgent  webview
         var userAgentStr: String = UIWebView().stringByEvaluatingJavaScript(from: "navigator.userAgent") ?? ""
         if (userAgentStr.range(of: MLHybrid.shared.userAgent) == nil) {
             guard let versionStr = Bundle.main.infoDictionary?["CFBundleShortVersionString"] else {return}
@@ -150,7 +151,6 @@ extension MLHybridContentView: WKUIDelegate,WKNavigationDelegate {
         }
         return nextResponder as? MLHybridViewController ?? MLHybridViewController()
     }
-    
     
     public func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!){
         
