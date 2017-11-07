@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'JGHybrid'
-  s.version          = '1.1.0'
+  s.version          = '2.0.0'
   s.summary          = 'A short description of JGHybrid.'
 
 # This description is used to generate tags and improve search results.
@@ -43,5 +43,6 @@ TODO: Add long description of the pod here.
     s.dependency 'SSZipArchive'
     s.dependency 'NJKWebViewProgress'
     s.dependency 'Kingfisher'
+    s.dependency 'JGWebKitURLProtocol'
 
 end
