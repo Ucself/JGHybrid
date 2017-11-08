@@ -26,7 +26,7 @@ open class MLHybridViewController: UIViewController {
         locationModel.stopUpdateLocation()
         if contentView != nil {
             //contentView.loadRequest(URLRequest(url: URL(string: "about:blank")!))
-            contentView.load(URLRequest(url: URL(string: "about:blank")!))
+            //contentView.load(URLRequest(url: URL(string: "about:blank")!))
             contentView.stopLoading()
             contentView.removeFromSuperview()
             contentView = nil
@@ -141,10 +141,30 @@ extension MLHybridViewController: NJKWebViewProgressDelegate {
 }
 
 extension MLHybridViewController:WKScriptMessageHandler {
-    
+    //MessageHandler 回调
     public func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        if message.name == "requestHybrid" {
-            
+        //判断是否是requestHybrid 命令
+        guard message.name == "requestHybrid"  else {  return }
+        //判断是否符合参数
+        guard let commandDic:Dictionary<String,Any> = message.body as? Dictionary<String,Any> else { return }
+        
+        //Hybird命令对象
+        let command:MLHybirdCommand = MLHybirdCommand()
+        //Hybird执行工具对象
+        let tool: MLHybridTools = MLHybridTools()
+        
+        //判断是否有tagname
+        if let name = commandDic["name"] as? String {
+            command.name = name
         }
+        if let params = commandDic["param"] as? [String: AnyObject] {
+            command.params = params
+            //转换为内部使用参数
+            let args = MLCommandArgs.convert(params)
+            command.args = args
+        }
+        command.webView = self.contentView
+        tool.command = command
+        _ = tool.performCommand(command: command)
     }
 }
