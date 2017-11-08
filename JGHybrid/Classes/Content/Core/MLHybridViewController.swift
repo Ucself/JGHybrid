@@ -4,36 +4,35 @@
 //
 
 import UIKit
-import NJKWebViewProgress
 import WebKit
 
 open class MLHybridViewController: UIViewController {
 
-    var locationModel = MLHybridLocation()
+    //MARK: 公共参数
     public var needSetHeader = true
     public var naviBarHidden = false
     public var URLPath: URL?
     public var htmlString: String?
+    public var contentView: MLHybridContentView!
+    //MARK: 私有参数
+    var locationModel = MLHybridLocation()
+    let tool: MLHybridTools = MLHybridTools()
     var onShowCallBack: String?
     var onHideCallBack: String?
-    public var contentView: MLHybridContentView!
-
-    var _webViewProgressView = NJKWebViewProgressView()
-    let _webViewProgress = NJKWebViewProgress()
-
-    //MARK: - init
+    var progressView:UIProgressView!
+    
+    //MARK: 系统方法
     deinit {
         locationModel.stopUpdateLocation()
         if contentView != nil {
             //contentView.loadRequest(URLRequest(url: URL(string: "about:blank")!))
-            //contentView.load(URLRequest(url: URL(string: "about:blank")!))
+            contentView.load(URLRequest(url: URL(string: "about:blank")!))
             contentView.stopLoading()
             contentView.removeFromSuperview()
             contentView = nil
         }
     }
     
-    //MARK: - life cycle
     override open func viewDidLoad() {
         super.viewDidLoad()
         self.initUI()
@@ -45,7 +44,9 @@ open class MLHybridViewController: UIViewController {
         super.viewWillAppear(animated)
         //js方法注入
         self.contentView?.configuration.userContentController.add(self, name: "requestHybrid")
-        
+        //添加wkwebview监听
+        self.contentView.addObserver(self, forKeyPath: "estimatedProgress", options: NSKeyValueObservingOptions(rawValue: 0), context: nil)
+        //回调Hybrid
         if let callback = self.onShowCallBack {
             MLHybridTools().callBack(data: "", err_no: 0, msg: "onwebviewshow", callback: callback, webView: self.contentView, completion: {js in })
         }
@@ -55,6 +56,9 @@ open class MLHybridViewController: UIViewController {
         super.viewWillDisappear(animated)
         //取消方法注入
         self.contentView?.configuration.userContentController.removeScriptMessageHandler(forName: "requestHybrid")
+        //移除KVO
+        self.contentView.removeObserver(self, forKeyPath: "estimatedProgress")
+        //回调Hybrid
         if let callback = self.onHideCallBack {
             let _ =  MLHybridTools().callBack(data: "", err_no: 0, msg: "onwebviewshow", callback: callback, webView: self.contentView, completion: {js in })
         }
@@ -65,40 +69,39 @@ open class MLHybridViewController: UIViewController {
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
     }
     
-    //MARK: - Method
+    open override  func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if let observeObject:MLHybridContentView = object as? MLHybridContentView {
+            guard keyPath == "estimatedProgress" && observeObject == self.contentView else { return }
+//            //加载到导航栏下面
+//            var topY = 0.0
+//            if !UIApplication.shared.isStatusBarHidden {
+//                topY = topY + Double(UIApplication.shared.statusBarFrame.size.height)
+//            }
+//            if self.navigationController != nil, !(self.navigationController?.isNavigationBarHidden)! {
+//                topY = topY + Double(self.navigationController!.navigationBar.frame.size.height)
+//            }
+//            self.progressView.frame = CGRect.init(x: 0.0, y: topY, width: Double(self.view.frame.size.width), height: 3)
+            //设置显示
+            self.progressView.alpha = 1.0
+            self.progressView.setProgress(Float(self.contentView.estimatedProgress), animated: true)
+            //加载完成
+            if self.contentView.estimatedProgress >= 1 {
+                UIView.animate(withDuration: 0.3, delay: 0.3, options:.curveEaseInOut, animations: {
+                    self.progressView.alpha = 0
+                }, completion: { (finished) in
+                    self.progressView.setProgress(0, animated: true)
+                })
+            }
+        }
+    }
+    
+    //MARK: 自定义方法
     func initUI() {
         self.hidesBottomBarWhenPushed = true
         self.automaticallyAdjustsScrollViewInsets = false
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.isNavigationBarHidden = naviBarHidden
         self.setUpBackButton()
-    }
-    
-    func setUpBackButton() {
-        let button = UIButton()
-        button.frame = CGRect(x: 0, y: 0, width: 42, height: 44)
-        button.addTarget(self, action: #selector(MLHybridViewController.back), for: .touchUpInside)
-        let image = UIImage(named: MLHybrid.shared.backIndicator)
-        button.setImage(image, for: .normal)
-        button.contentHorizontalAlignment = .left
-        let item = UIBarButtonItem(customView: button)
-        self.navigationItem.setLeftBarButton(item, animated: true)
-    }
-    
-    @objc func back() {
-        self.navigationController?.popViewController(animated: true)
-    }
-    
-    func initProgressView() {
-        //contentView.delegate = _webViewProgress
-        _webViewProgress.webViewProxyDelegate = contentView;
-        _webViewProgress.progressDelegate = self;
-        
-        let navBounds = self.navigationController?.navigationBar.bounds
-        let barFrame = CGRect(x: 0, y: (navBounds?.size.height ?? 0) - 2, width: navBounds?.size.width ?? 0, height: 2)
-        _webViewProgressView = NJKWebViewProgressView(frame: barFrame)
-        _webViewProgressView.setProgress(0, animated: true)
-        self.navigationController?.navigationBar.addSubview(_webViewProgressView)
     }
 
     func initContentView() {
@@ -118,24 +121,62 @@ open class MLHybridViewController: UIViewController {
         if let htmlString = self.htmlString {
             self.contentView.htmlString = htmlString
         }
+        self.contentView.uiDelegate = self
+        self.contentView.navigationDelegate = self
+        
         guard URLPath != nil else {return}
         //self.contentView.loadRequest(URLRequest(url: URLPath!))
         self.contentView.load(URLRequest(url: URLPath!))
     }
-}
-
-extension MLHybridViewController: NJKWebViewProgressDelegate {
-    public func webViewProgress(_ webViewProgress: NJKWebViewProgress!, updateProgress progress: Float) {
-        _webViewProgressView.setProgress(progress, animated: true)
-//        if progress > 0.7 {
-//            _webViewProgressView.setProgress(progress, animated: true)
-//        } else {
-//            _webViewProgressView.setProgress(0.7, animated: true)
-//        }
+    
+    func initProgressView() {
+        self.progressView = UIProgressView.init(progressViewStyle: .default)
+        self.progressView.progressTintColor = UIColor.blue
+        self.progressView.trackTintColor = UIColor.clear
+        self.progressView.frame = CGRect.init(x: 0, y: 0, width: self.view.frame.size.width, height: 3)
+        self.view.addSubview(self.progressView)
+        
     }
     
-    open func setProgress(_ progress: Float) {
-        _webViewProgressView.setProgress(progress, animated: true)
+    func setUpBackButton() {
+        let button = UIButton()
+        button.frame = CGRect(x: 0, y: 0, width: 42, height: 44)
+        button.addTarget(self, action: #selector(MLHybridViewController.back), for: .touchUpInside)
+        let image = UIImage(named: MLHybrid.shared.backIndicator)
+        button.setImage(image, for: .normal)
+        button.contentHorizontalAlignment = .left
+        let item = UIBarButtonItem(customView: button)
+        self.navigationItem.setLeftBarButton(item, animated: true)
+    }
+    
+    @objc func back() {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    
+}
+
+
+extension MLHybridViewController: WKUIDelegate,WKNavigationDelegate {
+    
+    public func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!){
+        
+        if let htmlString = self.htmlString {
+            webView.evaluateJavaScript("document.body.innerHTML = document.body.innerHTML + '\(htmlString)'", completionHandler: { (any, error) in })
+            self.htmlString = nil
+        }
+    }
+    
+    public func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+        if self.tool.performCommand(request: navigationAction.request, webView: webView) {
+            decisionHandler(.cancel)
+        } else {
+            decisionHandler(.allow)
+        }
+    }
+    
+    public func webViewWebContentProcessDidTerminate(_ webView: WKWebView){
+        webView.reload()
     }
     
 }

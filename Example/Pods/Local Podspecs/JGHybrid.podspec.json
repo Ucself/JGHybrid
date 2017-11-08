@@ -19,11 +19,12 @@
     "ios": "8.0"
   },
   "source_files": "JGHybrid/Classes/**/*",
+  "frameworks": [
+    "UIKit",
+    "WebKit"
+  ],
   "dependencies": {
     "SSZipArchive": [
-
-    ],
-    "NJKWebViewProgress": [
 
     ],
     "Kingfisher": [

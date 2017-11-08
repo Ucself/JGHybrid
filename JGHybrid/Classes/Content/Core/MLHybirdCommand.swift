@@ -9,14 +9,16 @@ import WebKit
 open class MLHybirdCommand {
     
     //指令名
-    public var name = ""
+    public var name:String = ""
     //外部使用参数
-    var params: [String: AnyObject] = [:]
+    public var params: [String: AnyObject] = [:]
     //内部使用参数
-    var args: MLCommandArgs = MLCommandArgs()
+    public var args: MLCommandArgs = MLCommandArgs()
+    //回调Id
+    public var callbackId: String = ""
     //发出指令的控制器
     public weak var viewController: MLHybridViewController!
-    var callbackId: String = ""
+    //
     public weak var webView: WKWebView! = WKWebView() {
         didSet {
             viewController = self.commandFromVC()

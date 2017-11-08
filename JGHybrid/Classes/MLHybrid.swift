@@ -15,10 +15,12 @@ struct MLHybridNotification {
 }
 
 open class MLHybrid {
+    //单例对象
     open static let shared = MLHybrid()
     private init() {}
     
     var delegate: MLHybridMethodProtocol?
+    //私有变量
     static let unregistered = "unregistered"
     var sess: String = unregistered
     var platform: String = unregistered

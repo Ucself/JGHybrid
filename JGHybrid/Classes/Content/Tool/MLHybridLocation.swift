@@ -51,7 +51,5 @@ class MLHybridLocation: NSObject, CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         self.finishBlock?(false, 2, nil)
         self.finishBlock = nil
-
     }
-
 }

@@ -2,15 +2,9 @@ PODS:
   - JGHybrid (2.0.0):
     - JGWebKitURLProtocol
     - Kingfisher
-    - NJKWebViewProgress
     - SSZipArchive
   - JGWebKitURLProtocol (1.0.1)
   - Kingfisher (4.2.0)
-  - NJKWebViewProgress (0.2.3):
-    - NJKWebViewProgress/Core (= 0.2.3)
-    - NJKWebViewProgress/ProgressView (= 0.2.3)
-  - NJKWebViewProgress/Core (0.2.3)
-  - NJKWebViewProgress/ProgressView (0.2.3)
   - SSZipArchive (2.1.1)
 
 DEPENDENCIES:
@@ -21,10 +15,9 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  JGHybrid: 147c6663c053801dc8583a2e99b5492e0133fde2
+  JGHybrid: 29201195020afeb66c078af1be16cf454efaca14
   JGWebKitURLProtocol: 3086024bce4da9e8b9d639a12a9083048b3ca1cd
   Kingfisher: 9ee7e788d8ba07c3f21ce0d43f33cec310a4f781
-  NJKWebViewProgress: f481fd424cb5ecc27eacae11b5397db92fba9a4d
   SSZipArchive: 14401ade5f8e82aba1ff03e9f88e9de60937ae60
 
 PODFILE CHECKSUM: 4f491e54c6148dd76841d8cb74cad4b281687e91
