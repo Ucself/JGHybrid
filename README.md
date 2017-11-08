@@ -37,7 +37,7 @@ self.navigationController?.pushViewController(vc, animated: true)
 ```
 
 ``` js执行命令
-hybird.requestHybrid('updateheader',{"left":[{"tagname":"back","callback":"header_back_1510020527339"}],"right":[],"title":{"tagname":"title","title":"我更新了title"}})
+window.webkit.messageHandlers.requestHybrid.postMessage({'name':'updateheader','param':{"left":[{"tagname":"back","callback":""}],"right":[],"title":{"tagname":"title","title":"哈哈哈"}}})
 ```
 ## Author
 
