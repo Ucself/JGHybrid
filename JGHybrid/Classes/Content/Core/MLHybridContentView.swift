@@ -154,7 +154,7 @@ extension MLHybridContentView: WKUIDelegate,WKNavigationDelegate {
     
     public func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!){
         
-        self.vcOfView(view: webView).title = webView.title
+        //self.vcOfView(view: webView).title = webView.title
         
         if let htmlString = self.htmlString {
             webView.evaluateJavaScript("document.body.innerHTML = document.body.innerHTML + '\(htmlString)'", completionHandler: { (any, error) in })

@@ -22,7 +22,8 @@ class ViewController: UIViewController {
     }
 
     @IBAction func buttonClick(_ sender: Any) {
-        let vc:UIViewController =  MLHybrid.load(urlString: "https://yexiaochai.github.io/Hybrid/webapp/demo/index.html")!
+//        let vc:UIViewController =  MLHybrid.load(urlString: "https://yexiaochai.github.io/Hybrid/webapp/demo/index.html")!
+        let vc:UIViewController =  MLHybrid.load(urlString: "https://ucself.github.io/JGHybrid/gh/index.html")!
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
