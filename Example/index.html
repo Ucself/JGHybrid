@@ -1,0 +1,19 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script language="javascript">
+        window.webkit.messageHandlers.requestHybrid.postMessage({'name':'updateheader','param':{"left":[{"tagname":"back","callback":""}],"right":[],"title":{"tagname":"title","title":"页面加载开始就设置title"}}});
+    </script>
+</head>
+<body>
+    hello world!
+    <p>这是按钮调用</p>
+    <input type="button" value="点击swiftActionTwo" onclick="window.webkit.messageHandlers.requestHybrid.postMessage({'name':'updateheader','param':{"left":[{"tagname":"back","callback":""}],"right":[],"title":{"tagname":"title","title":"点击swiftActionTwo"}}});" />
+    <input type="button" value="刷新页面" onclick="location.reload()" />
+</body>
+</html>
