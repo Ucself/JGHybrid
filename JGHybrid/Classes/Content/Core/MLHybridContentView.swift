@@ -9,27 +9,18 @@ import WebKit
 
 open class MLHybridContentView: WKWebView {
 
-    //MARK: 变量
-    static var sharedKPreferences = WKPreferences()
-    static var sharedProcessPool = WKProcessPool()
     public var htmlString: String?
     
     //MARK:系统方法
     public convenience init(frame: CGRect) {
-        let configuration = WKWebViewConfiguration()
-        configuration.preferences = MLHybridContentView.sharedKPreferences
-        configuration.preferences.minimumFontSize = 10;
-        // 默认认为YES
-        configuration.preferences.javaScriptEnabled = true;
-        // 在iOS上默认为NO，表示不能自动通过窗口打开
-        configuration.preferences.javaScriptCanOpenWindowsAutomatically = false;
-        configuration.processPool = MLHybridContentView.sharedProcessPool
-        let  userContentController = WKUserContentController()
-        let cookieValue = "document.cookie ='platform=\(MLHybrid.shared.platform);path=/;domain=\(MLHybrid.shared.domain);expires=Sat, 02 May 2019 23:38:25 GMT；';document.cookie = 'sess=\(MLHybrid.shared.sess);path=/;domain=\(MLHybrid.shared.domain);expires=Sat, 02 May 2019 23:38:25 GMT；';"
-        let  cookieScript = WKUserScript(source: cookieValue, injectionTime: .atDocumentStart , forMainFrameOnly: false)
+        
+        let userContentController:WKUserContentController = WKUserContentController()
+        let cookieScript:WKUserScript = WKUserScript.init(source: "document.cookie ='platform=\(MLHybrid.shared.platform)';document.cookie = 'sess=\(MLHybrid.shared.sess)';", injectionTime: .atDocumentStart, forMainFrameOnly: false)
         userContentController.addUserScript(cookieScript)
-        configuration.userContentController = userContentController
-        self.init(frame: frame, configuration: configuration)
+        let webViewConfig:WKWebViewConfiguration = WKWebViewConfiguration()
+        webViewConfig.userContentController = userContentController
+        
+        self.init(frame: frame, configuration: webViewConfig)
     }
     
     private override init(frame: CGRect, configuration: WKWebViewConfiguration) {
@@ -40,8 +31,6 @@ open class MLHybridContentView: WKWebView {
         NotificationCenter.default.addObserver(forName: MLHybridNotification.updateCookie, object: nil, queue: nil) { [weak self] (notification) in
             self?.customerCookie()
         }
-//        self.uiDelegate = self
-//        self.navigationDelegate = self
     }
     
     required public init?(coder aDecoder: NSCoder) {
@@ -53,9 +42,6 @@ open class MLHybridContentView: WKWebView {
         self.backgroundColor = UIColor.white
         self.scrollView.bounces = false
         self.translatesAutoresizingMaskIntoConstraints = false
-        //self.delegate = self
-        //self.uiDelegate = self
-        //self.navigationDelegate = self
     }
 
     //设置userAgent
