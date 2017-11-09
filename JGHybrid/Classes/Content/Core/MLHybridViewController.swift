@@ -72,15 +72,6 @@ open class MLHybridViewController: UIViewController {
     open override  func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if let observeObject:MLHybridContentView = object as? MLHybridContentView {
             guard keyPath == "estimatedProgress" && observeObject == self.contentView else { return }
-//            //加载到导航栏下面
-//            var topY = 0.0
-//            if !UIApplication.shared.isStatusBarHidden {
-//                topY = topY + Double(UIApplication.shared.statusBarFrame.size.height)
-//            }
-//            if self.navigationController != nil, !(self.navigationController?.isNavigationBarHidden)! {
-//                topY = topY + Double(self.navigationController!.navigationBar.frame.size.height)
-//            }
-//            self.progressView.frame = CGRect.init(x: 0.0, y: topY, width: Double(self.view.frame.size.width), height: 3)
             //设置显示
             self.progressView.alpha = 1.0
             self.progressView.setProgress(Float(self.contentView.estimatedProgress), animated: true)
@@ -126,7 +117,14 @@ open class MLHybridViewController: UIViewController {
         
         guard URLPath != nil else {return}
         //self.contentView.loadRequest(URLRequest(url: URLPath!))
-        self.contentView.load(URLRequest(url: URLPath!))
+        
+        self.contentView.load(self.getRequest(URLPath!))
+    }
+    
+    func getRequest(_ url:URL) -> URLRequest {
+        var urlRequest:URLRequest = URLRequest.init(url: url)
+        urlRequest.setValue("platform=\(MLHybrid.shared.platform); sess=\(MLHybrid.shared.sess)", forHTTPHeaderField: "Cookie")
+        return urlRequest
     }
     
     func initProgressView() {
@@ -152,8 +150,6 @@ open class MLHybridViewController: UIViewController {
     @objc func back() {
         self.navigationController?.popViewController(animated: true)
     }
-    
-    
 }
 
 

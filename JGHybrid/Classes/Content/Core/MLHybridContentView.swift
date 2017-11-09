@@ -13,9 +13,9 @@ open class MLHybridContentView: WKWebView {
     
     //MARK:系统方法
     public convenience init(frame: CGRect) {
-        
+        //初始化和设置cookie
         let userContentController:WKUserContentController = WKUserContentController()
-        let cookieScript:WKUserScript = WKUserScript.init(source: "document.cookie ='platform=\(MLHybrid.shared.platform)';document.cookie = 'sess=\(MLHybrid.shared.sess)';", injectionTime: .atDocumentStart, forMainFrameOnly: false)
+        let cookieScript:WKUserScript = WKUserScript.init(source: "document.cookie ='platform=\(MLHybrid.shared.platform)';document.cookie = 'sess=\(MLHybrid.shared.sess)';", injectionTime: .atDocumentEnd, forMainFrameOnly: false)
         userContentController.addUserScript(cookieScript)
         let webViewConfig:WKWebViewConfiguration = WKWebViewConfiguration()
         webViewConfig.userContentController = userContentController
@@ -26,8 +26,10 @@ open class MLHybridContentView: WKWebView {
     private override init(frame: CGRect, configuration: WKWebViewConfiguration) {
         super.init(frame:frame,configuration:configuration)
         self.initUI()
-        configUserAgent()
-        customerCookie()
+        //UserAgent这里设置不成功
+        //configUserAgent()
+        //Cookie这里设置不成功
+        //customerCookie()
         NotificationCenter.default.addObserver(forName: MLHybridNotification.updateCookie, object: nil, queue: nil) { [weak self] (notification) in
             self?.customerCookie()
         }
@@ -46,6 +48,17 @@ open class MLHybridContentView: WKWebView {
 
     //设置userAgent
     func configUserAgent () {
+        //wkwebview
+        self.evaluateJavaScript("navigator.userAgent") { (result, error) in
+            var newUserAgentStr:String = ""
+            guard let userAgentStr:String = result as? String else { return }
+            guard userAgentStr.range(of: MLHybrid.shared.userAgent) == nil else { return }
+            guard let versionStr = Bundle.main.infoDictionary?["CFBundleShortVersionString"] else {return}
+            newUserAgentStr.append(userAgentStr)
+            newUserAgentStr.append(" \(MLHybrid.shared.userAgent)\(versionStr) ")
+            UserDefaults.standard.register(defaults: ["UserAgent" : newUserAgentStr])
+        }
+        
         //设置userAgent  webview
         var userAgentStr: String = UIWebView().stringByEvaluatingJavaScript(from: "navigator.userAgent") ?? ""
         if (userAgentStr.range(of: MLHybrid.shared.userAgent) == nil) {
@@ -53,7 +66,6 @@ open class MLHybridContentView: WKWebView {
             userAgentStr.append(" \(MLHybrid.shared.userAgent)\(versionStr) ")
             UserDefaults.standard.register(defaults: ["UserAgent" : userAgentStr])
         }
-        
     }
 
     //注入cookie
