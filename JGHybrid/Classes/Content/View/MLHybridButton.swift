@@ -30,11 +30,11 @@ class MLHybridButton: UIButton {
                 button.kf.setImage(with: URL(string: model.icon), for: .normal)
             }
             else if model.tagname.characters.count > 0 {
-                print("加载图片 \(NaviImageHeader + model.tagname)")
-                print(UIImage(named: NaviImageHeader + model.tagname) ?? "未找到对应图片资源")
-                button.setImage(UIImage(named: NaviImageHeader + model.tagname), for: .normal)
+                print("加载图片 \(Hybrid_constantModel.naviImageHeader + model.tagname)")
+                print(UIImage(named: Hybrid_constantModel.naviImageHeader + model.tagname) ?? "未找到对应图片资源")
+                button.setImage(UIImage(named: Hybrid_constantModel.naviImageHeader + model.tagname), for: .normal)
             }
-            if let _ = UIImage(named: NaviImageHeader + model.tagname) {
+            if let _ = UIImage(named: Hybrid_constantModel.naviImageHeader + model.tagname) {
             } else {
                 if model.value.characters.count > 0 {
                     button.setTitle(model.value, for: .normal)

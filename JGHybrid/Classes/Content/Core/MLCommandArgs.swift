@@ -7,18 +7,18 @@ import UIKit
 
 open class MLCommandArgs: NSObject {
     
-    var type: String = "h5" //页面类型
-    var isH5: Bool = true //页面类型是否为H5
-    var topage: String = "" //跳转页面地址
-    var display: Bool = true //显示/隐藏导航栏
-    var animate: Bool = true //显示/隐藏导航栏动画
-    var open: Bool = true //是否打开离线包
-    var payInfo: String = "" //支付信息
-    var status: Int = 0 //支付状态
-    var pid: String = "" //productID
-    var content: String = "" //复制的内容
-    var url: String = "" //第三方地址
-    var num: Int = 0 //回退页面数
+    var type: String = "h5"         //页面类型
+    var isH5: Bool = true           //页面类型是否为H5
+    var topage: String = ""         //跳转页面地址
+    var display: Bool = true        //显示/隐藏导航栏
+    var animate: Bool = true        //显示/隐藏导航栏动画
+    var open: Bool = true           //是否打开离线包
+    var payInfo: String = ""        //支付信息
+    var status: Int = 0             //支付状态
+    var pid: String = ""            //productID
+    var content: String = ""        //复制的内容
+    var url: String = ""            //第三方地址
+    var num: Int = 0                //回退页面数
     
     var dic: [String: AnyObject] = [:] //储存原始数据
     

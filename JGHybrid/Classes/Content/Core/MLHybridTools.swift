@@ -8,16 +8,11 @@ import CoreLocation
 import SSZipArchive
 import WebKit
 
-let HybridEvent = "Hybrid.callback"
-let NaviImageHeader = "hybrid_navi_"
+
 
 class MLHybridTools: NSObject {
     
     var command: MLHybirdCommand = MLHybirdCommand()
-    
-    //MARK: 资源路径相关
-    fileprivate let checkVersionQAURL = "http://h5.qa.medlinker.com/app/version/latestList?app=medlinker&sys_p=i&cli_v="
-    fileprivate let checkVersionURL = "http://h5.medlinker.com/app/version/latestList?app=medlinker&sys_p=i&cli_v="
     
     //MARK: Method
     func performCommand(request: URLRequest, webView: WKWebView) -> Bool {
@@ -90,7 +85,7 @@ class MLHybridTools: NSObject {
 //        } else {
 //            completion("")
 //        }
-        webView.evaluateJavaScript(HybridEvent + "(\(dataString));") { (result, error) in
+        webView.evaluateJavaScript(Hybrid_constantModel.hybridEvent + "(\(dataString));") { (result, error) in
             if let resultStr = result as? String {
                 completion(resultStr)
             }else  if  let error = error{
@@ -184,7 +179,7 @@ class MLHybridTools: NSObject {
     }
 
     func switchCache() {
-        UserDefaults.standard.set(!command.args.open, forKey: "HybridSwitchCacheClose")
+        UserDefaults.standard.set(!command.args.open, forKey: Hybrid_constantModel.switchCache)
     }
     
 }
@@ -258,7 +253,7 @@ extension MLHybridTools {
 
 extension MLHybridTools {
     open func showVersion() {
-        let hybridVersionArray = UserDefaults.standard.value(forKey: "HybridVersion") as? NSMutableArray ?? ["未获取到版本信息"]
+        let hybridVersionArray = UserDefaults.standard.value(forKey: Hybrid_constantModel.hybridVersion) as? NSMutableArray ?? ["未获取到版本信息"]
         let msg = hybridVersionArray.description
         let alert = UIAlertView(title: "离线包版本信息", message: msg, delegate: nil, cancelButtonTitle: "确定")
         alert.show()
@@ -268,7 +263,7 @@ extension MLHybridTools {
         let versionStr = Bundle.main.infoDictionary!["CFBundleShortVersionString"]
 //        let checkVersionURLString = MLConfiguration.mlHTTPType == .qa ? checkVersionQAURL : checkVersionURL
 
-        let checkVersionURLString = checkVersionURL
+        let checkVersionURLString = Hybrid_constantModel.checkVersionURL
         
         let url:URL! = URL(string: checkVersionURLString + "\(versionStr!)")
         let urlRequest:NSMutableURLRequest = NSMutableURLRequest(url: url)
@@ -280,7 +275,7 @@ extension MLHybridTools {
                     let jsonData = try JSONSerialization.jsonObject(with: responseData, options: JSONSerialization.ReadingOptions.allowFragments)
                     if let dic = jsonData as? NSDictionary, let dataArray = dic["data"] as? [AnyObject] {
                         
-                        UserDefaults.standard.setValue(dataArray, forKey: "HybridVersion")
+                        UserDefaults.standard.setValue(dataArray, forKey: Hybrid_constantModel.hybridVersion)
                         for dataDic in dataArray {
                             let channel = dataDic["channel"] as? String ?? ""
                             let version = dataDic["version"] as? String ?? ""

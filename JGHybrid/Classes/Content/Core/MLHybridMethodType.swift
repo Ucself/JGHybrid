@@ -6,7 +6,6 @@
 import Foundation
 
 //MARK: 事件类型
-
 enum MLHybridMethodType: String {
     case UpdateHeader = "updateheader"
     case Back = "back"
@@ -26,4 +25,6 @@ enum MLHybridMethodType: String {
     case Addtoclipboard = "addtoclipboard"
     
 }
+
+
 

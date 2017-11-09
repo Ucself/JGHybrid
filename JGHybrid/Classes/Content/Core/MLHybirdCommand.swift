@@ -46,7 +46,7 @@ open class MLHybirdCommand {
 //                completion("")
 //            }
 //        }
-        webView.evaluateJavaScript(HybridEvent + "(\(dataString));") { (result, error) in
+        webView.evaluateJavaScript(Hybrid_constantModel.hybridEvent + "(\(dataString));") { (result, error) in
             if let resultStr = result as? String {
                 completion(resultStr)
             }else  if  let error = error{

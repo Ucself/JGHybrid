@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         MLHybrid.register(sess: "cr2iPYCeaU6ElkldDKowOoJFpSqVaWXRZIFbk7vNbA9xQ3IvK8h2QtYwujGj1esT",
                           platform: "i",
                           appName: "medlinker",
-                          domain: "medlinker.com",
+                          domain: ".medlinker.com",
                           backIndicator: "return－no click",
                           delegate: MethodExtension())
         return true
@@ -42,6 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+         MLHybrid.checkVersion()
     }
 
     func applicationWillTerminate(_ application: UIApplication) {

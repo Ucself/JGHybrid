@@ -5,13 +5,14 @@
 
 import Foundation
 import WebKit
+import JGWebKitURLProtocol
 
 public protocol MLHybridMethodProtocol {
     func methodExtension(command: MLHybirdCommand)
 }
 
 struct MLHybridNotification {
-    static let updateCookie: Notification.Name = Notification.Name(rawValue: "MLHybridUpdateCookie")
+    static let updateCookie: Notification.Name = Notification.Name(rawValue: Hybrid_constantModel.updateCookie)
 }
 
 open class MLHybrid {
@@ -46,7 +47,11 @@ open class MLHybrid {
         shared.delegate = delegate
         //设置UserAgent
         MLHybrid.configUserAgent()
+        
+        //设置拦截
         URLProtocol.registerClass(MLHybridURLProtocol.self)
+        URLProtocol.wk_registerScheme("http")
+        URLProtocol.wk_registerScheme("https")
     }
 
     //加载页面
