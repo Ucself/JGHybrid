@@ -25,39 +25,6 @@ open class MLHybirdCommand {
         }
     }
     
-    /// 执行回调
-    ///
-    /// - Parameters:
-    ///   - data: 回调数据
-    ///   - err_no: 错误码
-    ///   - msg: 描述
-    ///   - callback: 回调方法
-    ///   - webView: 执行回调的容器
-    public func callback(data:Any = "", err_no: Int = 0, msg: String = "succuess", completion: @escaping ((String) ->Void)) {
-        let data = ["data": data,
-                    "errno": err_no,
-                    "msg": msg,
-                    "callback": self.callbackId] as [String : Any]
-        let dataString = data.hybridJSONString()
-//        if let callbackWeb = self.webView {
-//            if let resultStr = callbackWeb.stringByEvaluatingJavaScript(from: HybridEvent + "(\(dataString));") {
-//                completion(resultStr)
-//            } else {
-//                completion("")
-//            }
-//        }
-        webView.evaluateJavaScript(Hybrid_constantModel.hybridEvent + "(\(dataString));") { (result, error) in
-            if let resultStr = result as? String {
-                completion(resultStr)
-            }else  if  let error = error{
-                completion(error.localizedDescription)
-            }
-            else {
-                completion("")
-            }
-        }
-    
-    }
     
     /// 获取字符串参数
     public func stringFor(key: String) -> String {

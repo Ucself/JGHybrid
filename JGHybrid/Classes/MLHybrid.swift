@@ -49,9 +49,9 @@ open class MLHybrid {
         MLHybrid.configUserAgent()
         
         //设置拦截
-        URLProtocol.registerClass(MLHybridURLProtocol.self)
-        URLProtocol.wk_registerScheme("http")
-        URLProtocol.wk_registerScheme("https")
+//        URLProtocol.registerClass(MLHybridURLProtocol.self)
+//        URLProtocol.wk_registerScheme("http")
+//        URLProtocol.wk_registerScheme("https")
     }
 
     //加载页面
