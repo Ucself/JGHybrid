@@ -14,6 +14,7 @@ open class MLHybridViewController: UIViewController {
     public var URLPath: URL?
     public var htmlString: String?
     public var contentView: MLHybridContentView!
+    public var needBackButton = true
     //MARK: 私有参数
     var locationModel = MLHybridLocation()
     let tool: MLHybridTools = MLHybridTools()
@@ -137,6 +138,11 @@ open class MLHybridViewController: UIViewController {
     }
     
     func setUpBackButton() {
+        //如果初始化不需要返回按钮
+        if !self.needBackButton {
+            return
+        }
+        
         let button = UIButton()
         button.frame = CGRect(x: 0, y: 0, width: 42, height: 44)
         button.addTarget(self, action: #selector(MLHybridViewController.back), for: .touchUpInside)
@@ -194,11 +200,14 @@ extension MLHybridViewController:WKScriptMessageHandler {
         if let name = commandDic["name"] as? String {
             command.name = name
         }
-        if let params = commandDic["param"] as? [String: AnyObject] {
+        if let params = commandDic["params"] as? [String: AnyObject] {
             command.params = params
             //转换为内部使用参数
             let args = MLCommandArgs.convert(params)
             command.args = args
+        }
+        if let callback = commandDic["callback"] as? String {
+            command.callbackId = callback
         }
         command.webView = self.contentView
         tool.command = command

@@ -97,6 +97,7 @@ class MLHybridTools: NSObject {
         }
     }
     //MARK:Command Method
+    
     func updateHeader() {
         if !command.viewController.needSetHeader { return }
         let header = command.args.header

@@ -83,7 +83,7 @@ open class MLHybirdCommand {
     private func contentResolver(url: URL) -> (function: String, params:[String: AnyObject], args: MLCommandArgs, callbackId: String) {
         let functionName = url.host ?? ""
         let paramDic = url.hybridURLParamsDic()
-        let argsDic = (paramDic["param"] ?? "").hybridDecodeURLString().hybridDecodeJsonStr()
+        let argsDic = (paramDic["params"] ?? "").hybridDecodeURLString().hybridDecodeJsonStr()
         let args = MLCommandArgs.convert(argsDic)
         let callBackId = paramDic["callback"] ?? ""
         return (functionName, argsDic, args, callBackId)

@@ -41,8 +41,8 @@ open class MLHybrid {
         shared.sess = sess
         shared.platform = platform
         shared.domain = domain
-        shared.userAgent = "med_hybrid_" + appName + "_"
-        shared.scheme = "med" + appName + "hybrid"
+        shared.userAgent = "doc_hybrid_" + appName + "_"
+        shared.scheme = "doc" + appName + "hybrid"
         shared.backIndicator = backIndicator
         shared.delegate = delegate
         //设置UserAgent
@@ -89,6 +89,7 @@ open class MLHybrid {
         if (userAgentStr.range(of: MLHybrid.shared.userAgent) == nil) {
             guard let versionStr = Bundle.main.infoDictionary?["CFBundleShortVersionString"] else {return}
             userAgentStr.append(" \(MLHybrid.shared.userAgent)\(versionStr) ")
+            userAgentStr.append(" Hyrid/\(versionStr) ")
             UserDefaults.standard.register(defaults: ["UserAgent" : userAgentStr])
         }
     }
