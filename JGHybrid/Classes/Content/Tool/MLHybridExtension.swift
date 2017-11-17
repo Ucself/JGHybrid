@@ -48,7 +48,7 @@ extension String{
     }
 
     public func hybridDecodeJsonStr() -> [String: AnyObject] {
-        if let jsonData = self.data(using: String.Encoding.utf8) , self.characters.count > 0 {
+        if let jsonData = self.data(using: String.Encoding.utf8) , self.count > 0 {
             do {
                 return try JSONSerialization.jsonObject(with: jsonData, options: JSONSerialization.ReadingOptions.mutableContainers) as? [String: AnyObject] ?? ["":"" as AnyObject]
             } catch let error as NSError {

@@ -7,20 +7,21 @@ import UIKit
 import WebKit
 
 open class MLHybridViewController: UIViewController {
-
+    
     //MARK: 公共参数
     public var needSetHeader = true
     public var naviBarHidden = false
-    public var URLPath: URL?
-    public var htmlString: String?
-    public var contentView: MLHybridContentView!
     public var needBackButton = true
+    public var needHidesBottomBar = true
     //MARK: 私有参数
     var locationModel = MLHybridLocation()
     let tool: MLHybridTools = MLHybridTools()
     var onShowCallBack: String?
     var onHideCallBack: String?
+    var URLPath: URL?
+    var htmlString: String?
     var progressView:UIProgressView!
+    var contentView: MLHybridContentView!
     
     //MARK: 系统方法
     deinit {
@@ -52,7 +53,7 @@ open class MLHybridViewController: UIViewController {
             MLHybridTools().callBack(data: "", err_no: 0, msg: "onwebviewshow", callback: callback, webView: self.contentView, completion: {js in })
         }
     }
-
+    
     override open func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         //取消方法注入
@@ -89,13 +90,13 @@ open class MLHybridViewController: UIViewController {
     
     //MARK: 自定义方法
     func initUI() {
-        self.hidesBottomBarWhenPushed = true
+        self.hidesBottomBarWhenPushed = needHidesBottomBar
         self.automaticallyAdjustsScrollViewInsets = false
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.isNavigationBarHidden = naviBarHidden
         self.setUpBackButton()
     }
-
+    
     func initContentView() {
         self.contentView = MLHybridContentView()
         self.view.addSubview(self.contentView)
@@ -214,3 +215,4 @@ extension MLHybridViewController:WKScriptMessageHandler {
         _ = tool.performCommand(command: command)
     }
 }
+

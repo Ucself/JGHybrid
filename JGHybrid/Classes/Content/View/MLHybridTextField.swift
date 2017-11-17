@@ -32,7 +32,7 @@ extension MLHybridTextField: UITextFieldDelegate {
         let resultString = (textString as NSString).replacingCharacters(in: range, with: string)
         if self.maxLength == 0 {
             return true
-        } else if resultString.characters.count > self.maxLength {
+        } else if resultString.count > self.maxLength {
 //            MLToast.message("不能超过\(self.maxLength)个字哟!")
             return false
         }
@@ -44,7 +44,7 @@ extension MLHybridTextField: UITextFieldDelegate {
         if self.minLength == 0 {
             self.returnBlock(textString)
             return true
-        } else if textString.characters.count < minLength {
+        } else if textString.count < minLength {
 //            MLToast.message("至少输入\(self.minLength)个字哟!")
             return false
         } else {

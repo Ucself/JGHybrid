@@ -27,7 +27,7 @@ class HybridNaviTitleView: UIView {
         self.addSubview(self.titleLabel)
         
         //副标题
-        if subtitle.characters.count > 0 {
+        if subtitle.count > 0 {
             self.subtitleLabel.text = subtitle
             self.subtitleLabel.font = UIFont.systemFont(ofSize: 13)
 //            self.subtitleLabel.textColor = MLTheme.color.black
@@ -42,7 +42,7 @@ class HybridNaviTitleView: UIView {
 
         //右图标
         self.righticon.frame = CGRect(x: self.titleLabel.frame.origin.x + self.titleLabel.frame.size.width + 5, y: 0, width: 15, height: 15)
-        if righticonUrl.absoluteString.characters.count > 0 {
+        if righticonUrl.absoluteString.count > 0 {
             self.righticon.kf.setImage(with: righticonUrl)
         }
         self.righticon.center.y = self.center.y
@@ -50,7 +50,7 @@ class HybridNaviTitleView: UIView {
         
         //左图标
         self.lefticon.frame = CGRect(x: self.titleLabel.frame.origin.x - 20, y: 0, width: 15, height: 15)
-        if lefticonUrl.absoluteString.characters.count > 0 {
+        if lefticonUrl.absoluteString.count > 0 {
             self.lefticon.kf.setImage(with: lefticonUrl)
         }
         self.lefticon.center.y = self.center.y
