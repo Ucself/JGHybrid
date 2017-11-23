@@ -11,7 +11,7 @@ open class MLHybridViewController: UIViewController {
     //MARK: 公共参数
     public var needSetHeader = true
     public var naviBarHidden = false
-    public var needBackButton = true
+    public var needBackButton = false
     public var needHidesBottomBar = true
     //MARK: 私有参数
     var locationModel = MLHybridLocation()
@@ -152,7 +152,7 @@ open class MLHybridViewController: UIViewController {
         button.setImage(image, for: .normal)
         button.contentHorizontalAlignment = .left
         let item = UIBarButtonItem(customView: button)
-        self.navigationItem.setLeftBarButton(item, animated: true)
+        self.navigationItem.leftBarButtonItem = item
     }
     
     @objc func back() {
