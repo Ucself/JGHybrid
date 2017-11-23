@@ -44,6 +44,8 @@ open class MLHybridViewController: UIViewController {
     
     override open func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        //设置导航栏
+        self.navigationController?.setNavigationBarHidden(naviBarHidden, animated: true)
         //js方法注入
         self.contentView?.configuration.userContentController.add(self, name: "requestHybrid")
         //添加wkwebview监听
@@ -93,7 +95,6 @@ open class MLHybridViewController: UIViewController {
         self.hidesBottomBarWhenPushed = needHidesBottomBar
         self.automaticallyAdjustsScrollViewInsets = false
         self.navigationController?.navigationBar.isTranslucent = false
-        self.navigationController?.isNavigationBarHidden = naviBarHidden
         self.setUpBackButton()
     }
     
