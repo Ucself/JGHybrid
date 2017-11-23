@@ -8,7 +8,7 @@ import UIKit
 import WebKit
 
 open class MLHybridContentView: WKWebView {
-
+    
     public var htmlString: String?
     
     //MARK:系统方法
@@ -31,22 +31,22 @@ open class MLHybridContentView: WKWebView {
         //configUserAgent()
         //Cookie这里设置不成功
         //customerCookie()
-        NotificationCenter.default.addObserver(forName: MLHybridNotification.updateCookie, object: nil, queue: nil) { [weak self] (notification) in
-            self?.customerCookie()
-        }
+//        NotificationCenter.default.addObserver(forName: MLHybridNotification.updateCookie, object: nil, queue: nil) { [weak self] (notification) in
+//            self?.customerCookie()
+//        }
     }
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-
+    
     //MARK:自定义方法
     func initUI () {
-        self.backgroundColor = UIColor.white
-        self.scrollView.bounces = false
+        self.scrollView.backgroundColor = UIColor.init(red: 0.97, green: 0.97, blue: 0.97, alpha: 1.0)
+        self.scrollView.bounces = true
         self.translatesAutoresizingMaskIntoConstraints = false
     }
-
+    
     //设置userAgent
     func configUserAgent () {
         //wkwebview
@@ -68,13 +68,13 @@ open class MLHybridContentView: WKWebView {
             UserDefaults.standard.register(defaults: ["UserAgent" : userAgentStr])
         }
     }
-
+    
     //注入cookie
     func customerCookie() {
         setCookie(value: MLHybrid.shared.sess, key: "sess")
         setCookie(value: MLHybrid.shared.platform, key: "platform")
     }
-
+    
     func setCookie(value: String, key: String) {
         var properties = [HTTPCookiePropertyKey: Any]()
         properties.updateValue(HTTPCookiePropertyKey(rawValue: value), forKey: HTTPCookiePropertyKey(rawValue: HTTPCookiePropertyKey.value.rawValue))

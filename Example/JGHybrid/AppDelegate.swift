@@ -20,7 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         MLHybrid.register(sess: "cr2iPYCeaU6ElkldDKowOoJFpSqVaWXRZIFbk7vNbA9xQ3IvK8h2QtYwujGj1esT",
                           platform: "i",
                           appName: "medlinker",
-                          domain: ".medlinker.com",
                           backIndicator: "return－no click",
                           delegate: MethodExtension())
         return true
