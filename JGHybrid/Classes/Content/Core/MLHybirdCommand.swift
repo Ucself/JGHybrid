@@ -25,26 +25,6 @@ open class MLHybirdCommand {
         }
     }
     
-    
-    /// 获取字符串参数
-    public func stringFor(key: String) -> String {
-        return self.params[key] as? String ?? ""
-    }
-
-    /// 获取整型参数
-    public func intFor(key: String) -> Int {
-        return self.params[key] as? Int ?? 1
-    }
-    
-    /// 获取BOOL参数
-    public func boolFor(key: String) -> Bool {
-        return self.params[key] as? Bool ?? false
-    }
-
-    public func anyFor(key: String) -> AnyObject {
-        return self.params[key] ?? "" as AnyObject
-    }
-    
     //获取发出命令的控制器
     private func commandFromVC() -> MLHybridViewController {
         var nextResponder = self.webView.next

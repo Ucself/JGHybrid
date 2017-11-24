@@ -7,6 +7,11 @@ import UIKit
 
 open class MLCommandArgs: NSObject {
     
+    //New
+    var commandParams:BaseParams = BaseParams.init()
+    
+    //Old
+    var dic: [String: AnyObject] = [:] //储存原始数据
     var type: String = "h5"         //页面类型
     var isH5: Bool = true           //页面类型是否为H5
     var topage: String = ""         //跳转页面地址
@@ -19,11 +24,7 @@ open class MLCommandArgs: NSObject {
     var content: String = ""        //复制的内容
     var url: String = ""            //第三方地址
     var num: Int = 0                //回退页面数
-    
-    var dic: [String: AnyObject] = [:] //储存原始数据
-    
     var header: Hybrid_headerModel = Hybrid_headerModel() //导航栏设置数据模型
-    
     
     class func convert(_ dic: [String: AnyObject]) -> MLCommandArgs {
         let args = MLCommandArgs()
@@ -48,5 +49,4 @@ open class MLCommandArgs: NSObject {
         args.header = Hybrid_headerModel.convert(dic)
         return args
     }
-    
 }

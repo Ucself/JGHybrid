@@ -47,9 +47,14 @@ class MLHybridTools: NSObject {
             return
         }
         switch funType {
+        //新命令
+        case .hybridInit:
+            self.HybridInit()
+        
+        //旧命令
         case .UpdateHeader   : updateHeader()
-        case .Back           : back()
-        case .Forward        : forward()
+        //case .Back           : back()
+        //case .Forward        : forward()
         case .ShowHeader     : setNavigationBarHidden()
         case .CheckVersion   : checkVersion()
         case .OnWebViewShow  : onWebViewShow()
@@ -61,6 +66,8 @@ class MLHybridTools: NSObject {
         case .Pop            : pop()
         case .Openlink       : openlink()
         case .Addtoclipboard : copyContent()
+        default:
+            break
         }
     }
     
@@ -96,7 +103,7 @@ class MLHybridTools: NSObject {
             }
         }
     }
-    //MARK:Command Method
+    //MARK:Old Command Method
     
     func updateHeader() {
         if !command.viewController.needSetHeader { return }

@@ -205,7 +205,8 @@ extension MLHybridViewController:WKScriptMessageHandler {
         if let params = commandDic["params"] as? [String: AnyObject] {
             command.params = params
             //转换为内部使用参数
-            let args = MLCommandArgs.convert(params)
+            //let args = MLCommandArgs.convert(params)   //旧的解析方式
+            let args = MLCommandArgs.convert(params, nameType: MLHybridMethodType(rawValue:command.name))
             command.args = args
         }
         if let callback = commandDic["callback"] as? String {

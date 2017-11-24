@@ -84,16 +84,6 @@ open class MLHybridContentView: WKWebView {
         properties.updateValue("/" as Any, forKey: HTTPCookiePropertyKey(rawValue: HTTPCookiePropertyKey.path.rawValue))
         let cookie = HTTPCookie(properties: properties )
         HTTPCookieStorage.shared.setCookie(cookie!)
-    }
-    
-    //获取控制器
-    func vcOfView(view: UIView) -> MLHybridViewController {
-        var nextResponder = view.next
-        while !(nextResponder is MLHybridViewController) {
-            nextResponder = nextResponder?.next ?? UIViewController()
-        }
-        return nextResponder as? MLHybridViewController ?? MLHybridViewController()
-    }
-    
+    }    
 }
 

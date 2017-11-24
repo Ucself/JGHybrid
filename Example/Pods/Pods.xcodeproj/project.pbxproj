@@ -72,6 +72,8 @@
 		8B79E183FDB804D6BB53F8AE3D60E918 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E76EE337F36463337B85694366863D51 /* Kingfisher.framework */; };
 		916C875C1FB43D6500CA5099 /* TestURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916C875B1FB43D6500CA5099 /* TestURLProtocol.swift */; };
 		916C875F1FB487AA00CA5099 /* Hybrid_constantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916C875E1FB487AA00CA5099 /* Hybrid_constantModel.swift */; };
+		91ACA6F71FC815AF00C156B0 /* MLHybridToolsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91ACA6F61FC815AF00C156B0 /* MLHybridToolsExtension.swift */; };
+		91ACA6FB1FC822D600C156B0 /* MLCommandArgsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91ACA6FA1FC822D600C156B0 /* MLCommandArgsExtension.swift */; };
 		9405824F62ABB8E4E78D1CB75E193314 /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = E09CCCE88F04F851A35225451BB7C166 /* unzip.c */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		98BFDCCA489AD6A934293706A2D2CAF8 /* Hybrid_swiftJavaScriptModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106DD3F14CA3F0E259E739523CCFA40A /* Hybrid_swiftJavaScriptModel.swift */; };
 		A0AD615B38E8E0C5A51D4152AFD8E6FB /* hmac.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FAC4621F6AB9A4EA97BA5665357CFAF /* hmac.h */; settings = {ATTRIBUTES = (Project, ); }; };
@@ -241,6 +243,8 @@
 		8CB323FCE6735314E3A0CEEB08FD5832 /* KingfisherOptionsInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KingfisherOptionsInfo.swift; path = Sources/KingfisherOptionsInfo.swift; sourceTree = "<group>"; };
 		916C875B1FB43D6500CA5099 /* TestURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestURLProtocol.swift; sourceTree = "<group>"; };
 		916C875E1FB487AA00CA5099 /* Hybrid_constantModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hybrid_constantModel.swift; sourceTree = "<group>"; };
+		91ACA6F61FC815AF00C156B0 /* MLHybridToolsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLHybridToolsExtension.swift; sourceTree = "<group>"; };
+		91ACA6FA1FC822D600C156B0 /* MLCommandArgsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLCommandArgsExtension.swift; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		952F5CDCDD93A686E03A566B1FC29C34 /* fileenc.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = fileenc.c; path = SSZipArchive/minizip/aes/fileenc.c; sourceTree = "<group>"; };
 		967678D23CE9EFC8DA85A50BD77F7AB6 /* SSZipArchive.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SSZipArchive.modulemap; sourceTree = "<group>"; };
@@ -374,8 +378,10 @@
 				572A65E8C1E1D50D3D613013206B07FE /* MLHybridViewController.swift */,
 				DA5C474FD9E32BFD014BEF69D69C98A2 /* MLHybridContentView.swift */,
 				C5C51603C661495F53E3EEF77B8DD9D7 /* MLHybridTools.swift */,
+				91ACA6F61FC815AF00C156B0 /* MLHybridToolsExtension.swift */,
 				C50A4AE0F00EF9C64B4722B16902BBFB /* MLHybirdCommand.swift */,
 				2B5207A5E32A64F5654EA3548FE6F922 /* MLCommandArgs.swift */,
+				91ACA6FA1FC822D600C156B0 /* MLCommandArgsExtension.swift */,
 				166FD8A54379AF34CECA0B4E3DB90C69 /* MLHybridMethodType.swift */,
 			);
 			path = Core;
@@ -1007,6 +1013,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9DF073EA09867148D5C81E0E8473E48 /* Hybrid_headerModel.swift in Sources */,
+				91ACA6F71FC815AF00C156B0 /* MLHybridToolsExtension.swift in Sources */,
 				E7543034BA50F1C8F068DB24C853CCC6 /* Hybrid_naviButtonModel.swift in Sources */,
 				98BFDCCA489AD6A934293706A2D2CAF8 /* Hybrid_swiftJavaScriptModel.swift in Sources */,
 				42FA5B9543A1B8CE1782D85463F342E9 /* Hybrid_titleModel.swift in Sources */,
@@ -1016,6 +1023,7 @@
 				4B01B8BDA1FCA521522B1B59998B3BEC /* MLCommandArgs.swift in Sources */,
 				7CF68C78F66EDDD1AB0C3C0DDF2F6571 /* MLHybirdCommand.swift in Sources */,
 				7DCCB6F58B25F08C05D92DE069358598 /* MLHybirdURLProtocol.swift in Sources */,
+				91ACA6FB1FC822D600C156B0 /* MLCommandArgsExtension.swift in Sources */,
 				3B70D6CE6258CF388C72C12C1F2CDBBE /* MLHybrid.swift in Sources */,
 				AB08AAD063C1B349BD7A9B11A93FB1C5 /* MLHybridButton.swift in Sources */,
 				566AEA750DFDCD358FD57205A86F0164 /* MLHybridContentView.swift in Sources */,
