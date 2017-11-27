@@ -7,16 +7,16 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <script language="javascript">
-        var header = {
-            'name':'header',
-            'params':{
-                'title':'页面加载开始就设置title',
-                'show':true,
-                'background':'#FF3B30',
-                'left':[],
-                'right':[]
-            }
+    var header = {
+        'name':'header',
+        'params':{
+            'title':'页面加载开始就设置title',
+            'show':true,
+            'background':'#FF3B30',
+            'left':[],
+            'right':[]
         }
+    }
     window.webkit.messageHandlers.requestHybrid.postMessage(header);
     var forward = {
         'name':'forward',
@@ -49,7 +49,16 @@
             'background':'#FF4B30'
         }
     }
-    
+    var Hybrid = {
+        callback: {
+            testcallback: function(data) {
+                console.log(data)
+            },
+            uploadcallback: function(data) {
+                Hybrid.callback
+            }
+        }
+    }
     </script>
 </head>
 <body>
