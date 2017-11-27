@@ -61,11 +61,11 @@ class HybridForwardParams: BaseParams {
 }
 //back
 class HybridBackParams: BaseParams {
-    var step:UInt32 = 1
+    var step:Int = 1
     //解析数据对象
     class func convert(_ dic: [String: AnyObject]) -> HybridBackParams {
         let obj:HybridBackParams = HybridBackParams.init()
-        obj.step = dic["step"] as? UInt32 ?? 1
+        obj.step = dic["step"] as? Int ?? 1
         return obj
     }
 }

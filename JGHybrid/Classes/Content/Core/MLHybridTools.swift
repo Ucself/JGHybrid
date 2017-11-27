@@ -49,8 +49,13 @@ class MLHybridTools: NSObject {
         switch funType {
         //新命令
         case .hybridInit:
-            self.HybridInit()
-        
+            self.hybridInit()
+        case .hybridForward:
+            self.hybridForward()
+        case .hybridBack:
+            self.hybridBack()
+        case .hybridHeader:
+            self.hybridHeader()
         //旧命令
         case .UpdateHeader   : updateHeader()
         //case .Back           : back()
