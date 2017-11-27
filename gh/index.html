@@ -7,20 +7,64 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <script language="javascript">
-        window.webkit.messageHandlers.requestHybrid.postMessage({'name':'header',
-                                                                'param':{'title':'页面加载开始就设置title',
-                                                                         'show':true,
-                                                                         'background':'#FF3B30',
-                                                                         'left':[],
-                                                                         'right':[]
-                                                                        }
-                                                                });
+        var header = {
+            'name':'header',
+            'params':{
+                'title':'页面加载开始就设置title',
+                'show':true,
+                'background':'#FF3B30',
+                'left':[],
+                'right':[]
+            }
+        }
+    window.webkit.messageHandlers.requestHybrid.postMessage(header);
+    var forward = {
+        'name':'forward',
+        'params':{
+            'type':'h5',
+            'url':'https://ucself.github.io/JGHybrid/gh/',
+            'title':'forward /h5',
+            'animate':false
+        }
+    }
+    var modal = {
+        'name':'modal',
+        'params':{
+            'type':'h5',
+            'url':'https://ucself.github.io/JGHybrid/gh/',
+            'title':'forward /h5',
+            'animate':true
+        }
+    }
+    var back = {
+        'name':'back',
+        'params':{
+            'step': 1
+        }
+    }
+    var scroll = {
+        'name':'scroll',
+        'params':{
+            'enable': false,
+            'background':'#FF3B30'
+        }
+    }
+    
     </script>
 </head>
 <body>
     hello world!
     <p>这是按钮调用</p>
-    <input type="button" value="点击swiftActionTwo" onclick="window.webkit.messageHandlers.requestHybrid.postMessage({'name':'updateheader','param':{'left':[{'tagname':'back','callback':''}],'right':[],'title':{'tagname':'title','title':'点击swiftActionTwo'}}});" />
     <input type="button" value="刷新页面" onclick="location.reload()" />
+    <br>
+    <input type="button" value="header" onclick="window.webkit.messageHandlers.requestHybrid.postMessage(header);" />
+    <br>
+    <input type="button" value="forward" onclick="window.webkit.messageHandlers.requestHybrid.postMessage(forward);" />
+    <br>
+    <input type="button" value="modal" onclick="window.webkit.messageHandlers.requestHybrid.postMessage(modal);" />
+    <br>
+    <input type="button" value="back" onclick="window.webkit.messageHandlers.requestHybrid.postMessage(back);" />
+    <br>
+    <input type="button" value="scroll" onclick="window.webkit.messageHandlers.requestHybrid.postMessage(scroll);" />
 </body>
 </html>
