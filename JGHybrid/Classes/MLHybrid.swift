@@ -61,6 +61,10 @@ open class MLHybrid {
         webViewController.URLPath = url
         return webViewController        
     }
+    
+    open class func updateSession(sess:String){
+        shared.sess = sess
+    }
 
 //    //更新Cookie
 //    open class func updateCookie(_ cookie: String) {
