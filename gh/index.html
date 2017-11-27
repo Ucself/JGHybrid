@@ -42,11 +42,11 @@
             'step': 1
         }
     }
-    var scroll = {
+    var scrollCommand = {
         'name':'scroll',
         'params':{
             'enable': false,
-            'background':'#FF3B30'
+            'background':'#FF4B30'
         }
     }
     
@@ -65,6 +65,6 @@
     <br>
     <input type="button" value="back" onclick="window.webkit.messageHandlers.requestHybrid.postMessage(back);" />
     <br>
-    <input type="button" value="scroll" onclick="window.webkit.messageHandlers.requestHybrid.postMessage(scroll);" />
+    <input type="button" value="scroll" onclick="window.webkit.messageHandlers.requestHybrid.postMessage(scrollCommand);" />
 </body>
 </html>

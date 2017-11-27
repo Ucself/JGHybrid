@@ -52,6 +52,8 @@ class MLHybridTools: NSObject {
             self.hybridInit()
         case .hybridForward:
             self.hybridForward()
+        case .hybridModal:
+            self.hybridModal()
         case .hybridBack:
             self.hybridBack()
         case .hybridHeader:

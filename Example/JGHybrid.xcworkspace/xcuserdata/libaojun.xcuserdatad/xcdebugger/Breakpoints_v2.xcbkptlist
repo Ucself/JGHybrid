@@ -9,13 +9,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../JGHybrid/Classes/Content/Core/MLHybridViewController.swift"
-            timestampString = "533466834.261447"
+            filePath = "../JGHybrid/Classes/Content/Core/MLCommandArgsExtension.swift"
+            timestampString = "533469163.27102"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "192"
-            endingLineNumber = "192"
-            landmarkName = "userContentController(_:didReceive:)"
+            startingLineNumber = "166"
+            endingLineNumber = "166"
+            landmarkName = "convert(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../JGHybrid/Classes/Content/Core/MLHybridToolsExtension.swift"
+            timestampString = "533469163.27109"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
+            landmarkName = "hybridScroll()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

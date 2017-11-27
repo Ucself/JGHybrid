@@ -17,10 +17,31 @@ extension MLCommandArgs {
         guard let name = nameType else {
             return args
         }
+        
         //对不同参数进行解析
         switch name {
         case .hybridInit:
             args.commandParams = HybridInitParams.convert(dic)
+        case .hybridForward:
+            args.commandParams = HybridForwardParams.convert(dic)
+        case .hybridModal:
+            args.commandParams = HybridModalParams.convert(dic)
+        case .hybridBack:
+            args.commandParams = HybridBackParams.convert(dic)
+        case .hybridHeader:
+            args.commandParams = HybridHeaderParams.convert(dic)
+        case .hybridScroll:
+            args.commandParams = HybridScrollParams.convert(dic)
+        case .hybridPageshow:
+            args.commandParams = HybridPageshowParams.convert(dic)
+        case .hybridPagehide:
+            args.commandParams = HybridPagehideParams.convert(dic)
+        case .hybridDevice:
+            args.commandParams = HybridDeviceParams.convert(dic)
+        case .hybridLocation:
+            args.commandParams = HybridLocationParams.convert(dic)
+        case .hybridClipboard:
+            args.commandParams = HybridClipboardParams.convert(dic)
         default:
             break
         }
@@ -30,13 +51,16 @@ extension MLCommandArgs {
 
 //MARK: Class Params
 //抽象基类 参数
-class BaseParams: NSObject {}
+class BaseParams: NSObject {
+    //抽象方法
+    class func convert(_ dic: [String: AnyObject]) -> BaseParams { return BaseParams.init()}
+}
 //init
 class HybridInitParams: BaseParams {
     var cache:Bool = true                               //离线缓存，默认开启
     var callback_name:String = "Hybrid.callback"        //回调js方法名称
     //解析数据对象
-    class func convert(_ dic: [String: AnyObject]) -> HybridInitParams {
+    override class func convert(_ dic: [String: AnyObject]) -> HybridInitParams {
         let obj:HybridInitParams = HybridInitParams.init()
         obj.cache = dic["cache"] as? Bool ?? true
         obj.callback_name = dic["callback_name"] as? String ?? "Hybrid.callback"
@@ -50,7 +74,7 @@ class HybridForwardParams: BaseParams {
     var title:String = ""
     var animate:Bool = true
     //解析数据对象
-    class func convert(_ dic: [String: AnyObject]) -> HybridForwardParams {
+    override class func convert(_ dic: [String: AnyObject]) -> HybridForwardParams {
         let obj:HybridForwardParams = HybridForwardParams.init()
         obj.type = dic["type"] as? String ?? "h5"
         obj.url = dic["url"] as? String ?? ""
@@ -66,7 +90,7 @@ class HybridModalParams: BaseParams {
     var title:String = ""
     var animate:Bool = true
     //解析数据对象
-    class func convert(_ dic: [String: AnyObject]) -> HybridModalParams {
+    override class func convert(_ dic: [String: AnyObject]) -> HybridModalParams {
         let obj:HybridModalParams = HybridModalParams.init()
         obj.type = dic["type"] as? String ?? "h5"
         obj.url = dic["url"] as? String ?? ""
@@ -79,7 +103,7 @@ class HybridModalParams: BaseParams {
 class HybridBackParams: BaseParams {
     var step:Int = 1
     //解析数据对象
-    class func convert(_ dic: [String: AnyObject]) -> HybridBackParams {
+    override class func convert(_ dic: [String: AnyObject]) -> HybridBackParams {
         let obj:HybridBackParams = HybridBackParams.init()
         obj.step = dic["step"] as? Int ?? 1
         return obj
@@ -94,7 +118,7 @@ class HybridHeaderParams: BaseParams {
     var left:[HybridHeaderButtonParams] = []
     var right:[HybridHeaderButtonParams] = []
     //解析数据对象
-    class func convert(_ dic: [String: AnyObject]) -> HybridHeaderParams {
+    override class func convert(_ dic: [String: AnyObject]) -> HybridHeaderParams {
         let obj:HybridHeaderParams = HybridHeaderParams.init()
         obj.title = dic["title"] as? String ?? ""
         obj.show = dic["show"] as? Bool ?? true
@@ -121,7 +145,7 @@ class HybridHeaderParams: BaseParams {
         var icon:String = ""
         var color:String = ""
         //解析数据对象
-        class func convert(_ dic: [String: AnyObject]) -> HybridHeaderButtonParams {
+        override class func convert(_ dic: [String: AnyObject]) -> HybridHeaderButtonParams {
             let obj:HybridHeaderButtonParams = HybridHeaderButtonParams.init()
             obj.title = dic["title"] as? String ?? ""
             obj.callback = dic["callback"] as? String ?? ""
@@ -138,7 +162,7 @@ class HybridScrollParams: BaseParams {
     var enable:Bool = true
     var background:String = ""
     //解析数据对象
-    class func convert(_ dic: [String: AnyObject]) -> HybridScrollParams {
+    override class func convert(_ dic: [String: AnyObject]) -> HybridScrollParams {
         let obj:HybridScrollParams = HybridScrollParams.init()
         obj.enable = dic["enable"] as? Bool ?? true
         obj.background = dic["background"] as? String ?? ""
@@ -148,7 +172,7 @@ class HybridScrollParams: BaseParams {
 //pageshow
 class HybridPageshowParams: BaseParams {
     //解析数据对象
-    class func convert(_ dic: [String: AnyObject]) -> HybridPageshowParams {
+    override class func convert(_ dic: [String: AnyObject]) -> HybridPageshowParams {
         let obj:HybridPageshowParams = HybridPageshowParams.init()
         return obj
     }
@@ -156,7 +180,7 @@ class HybridPageshowParams: BaseParams {
 //pagehide
 class HybridPagehideParams: BaseParams {
     //解析数据对象
-    class func convert(_ dic: [String: AnyObject]) -> HybridPagehideParams {
+    override class func convert(_ dic: [String: AnyObject]) -> HybridPagehideParams {
         let obj:HybridPagehideParams = HybridPagehideParams.init()
         return obj
     }
@@ -164,7 +188,7 @@ class HybridPagehideParams: BaseParams {
 //device
 class HybridDeviceParams: BaseParams {
     //解析数据对象
-    class func convert(_ dic: [String: AnyObject]) -> HybridDeviceParams {
+    override class func convert(_ dic: [String: AnyObject]) -> HybridDeviceParams {
         let obj:HybridDeviceParams = HybridDeviceParams.init()
         return obj
     }
@@ -177,7 +201,7 @@ class HybridLocationParams: BaseParams {
     var precision:String = "normal"
     var timeout:Int32 = 5000
     //解析数据对象
-    class func convert(_ dic: [String: AnyObject]) -> HybridLocationParams {
+    override class func convert(_ dic: [String: AnyObject]) -> HybridLocationParams {
         let obj:HybridLocationParams = HybridLocationParams.init()
         obj.located = dic["located"] as? String ?? ""
         obj.failed = dic["failed"] as? String ?? ""
@@ -191,7 +215,7 @@ class HybridLocationParams: BaseParams {
 class HybridClipboardParams: BaseParams {
     var content:String = ""
     //解析数据对象
-    class func convert(_ dic: [String: AnyObject]) -> HybridClipboardParams {
+    override class func convert(_ dic: [String: AnyObject]) -> HybridClipboardParams {
         let obj:HybridClipboardParams = HybridClipboardParams.init()
         obj.content = dic["content"] as? String ?? ""
         return obj
