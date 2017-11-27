@@ -26,10 +26,26 @@ extension MLHybridTools {
         if params.type == "h5" {
             guard let webViewController = MLHybrid.load(urlString: params.url) else {return}
             guard let navi = self.command.viewController.navigationController else {return}
-            navi.pushViewController(webViewController, animated: true)
+            webViewController.title = params.title
+            navi.pushViewController(webViewController, animated: params.animate)
         } else {
             //native跳转交给外部处理
             command.name = "forwardNative"
+            MLHybrid.shared.delegate?.methodExtension(command: command)
+        }
+    }
+    ////modal - (modal 页面)
+    func hybridModal(){
+        guard let params:HybridModalParams = self.command.args.commandParams as? HybridModalParams  else {
+            return
+        }
+        if params.type == "h5" {
+            guard let webViewController = MLHybrid.load(urlString: params.url) else {return}
+            webViewController.title = params.title
+            self.command.viewController.present(webViewController, animated: params.animate, completion: nil)
+        } else {
+            //native跳转交给外部处理
+            command.name = "forwardModal"
             MLHybrid.shared.delegate?.methodExtension(command: command)
         }
     }
@@ -136,7 +152,75 @@ extension MLHybridTools {
         if sender.buttonModel.callback.count == 0 {
             self.command.viewController.navigationController?.popViewController(animated: true)
         }
-        let _ = MLHybridTools().callBack(callback: sender.buttonModel.callback, webView: self.command.webView) { (str) in }
+        let _ = self.callBack(callback: sender.buttonModel.callback, webView: self.command.webView) { (str) in }
     }
     
+    //scroll - ( 页面滚动 ,主要是回弹效果)
+    func hybridScroll(){
+        guard let params:HybridScrollParams = self.command.args.commandParams as? HybridScrollParams  else {
+            return
+        }
+        self.command.webView.scrollView.bounces = params.enable
+        let backgroundColor:UIColor = UIColor.colorWithHex(params.background)
+        if backgroundColor != .clear {
+            self.command.webView.scrollView.backgroundColor = backgroundColor
+        }
+    }
+    //pageshow - ( 页面显示 )
+    func hybridPageshow() {
+        guard let params:HybridPageshowParams = self.command.args.commandParams as? HybridPageshowParams  else {
+            return
+        }
+        _ = params
+        self.command.viewController.onShowCallBack = self.command.callbackId
+    }
+    //pagehide - ( 页面隐藏 )
+    func hybridPagehide() {
+        guard let params:HybridPagehideParams = self.command.args.commandParams as? HybridPagehideParams  else {
+            return
+        }
+        _ = params
+        self.command.viewController.onHideCallBack = self.command.callbackId
+    }
+    //device - ( 获取设备信息 )
+    func hybridDevice() {
+        guard let params:HybridDeviceParams = self.command.args.commandParams as? HybridDeviceParams  else {
+            return
+        }
+        _ = params
+        let deviceInfor:[String:String] = ["version":Hybrid_constantModel.nativeVersion,
+                                           "os":UIDevice.current.systemName,
+                                           "dist":"app store",
+                                           "uuid":UUID.init().uuidString]
+        self.callBack(data: deviceInfor, err_no: 0, msg: "", callback: self.command.callbackId, webView:self.command.webView) { (result) in }
+    }
+    //location - ( 定位 )
+    func hybridLocation(){
+        guard let params:HybridLocationParams = self.command.args.commandParams as? HybridLocationParams  else {
+            return
+        }
+        self.command.viewController.locationModel.getLocation { (success, errcode, resultData) in
+            
+            switch errcode {
+            case 0:
+                //定位成功
+                _ = self.callBack(data: resultData as AnyObject? ?? "" as AnyObject, err_no: errcode, callback: params.located, webView: self.command.webView, completion: {js in })
+            case 1:
+                //无权限
+                _ = self.callBack(data: resultData as AnyObject? ?? "" as AnyObject, err_no: 2, callback: params.failed, webView: self.command.webView, completion: {js in })
+            case 2:
+                //定位失败
+                _ = self.callBack(data: resultData as AnyObject? ?? "" as AnyObject, err_no: 1, callback: params.failed, webView: self.command.webView, completion: {js in })
+            default:
+                break
+            }
+        }
+    }
+    //clipboard - ( 剪贴板 )
+    func hybridClipboard(){
+        guard let params:HybridClipboardParams = self.command.args.commandParams as? HybridClipboardParams  else {
+            return
+        }
+        UIPasteboard.general.string = params.content
+    }
 }

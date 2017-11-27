@@ -56,6 +56,18 @@ class MLHybridTools: NSObject {
             self.hybridBack()
         case .hybridHeader:
             self.hybridHeader()
+        case .hybridScroll:
+            self.hybridScroll()
+        case .hybridPageshow:
+            self.hybridPageshow()
+        case .hybridPagehide:
+            self.hybridPagehide()
+        case .hybridDevice:
+            self.hybridDevice()
+        case .hybridLocation:
+            self.hybridLocation()
+        case .hybridClipboard:
+            self.hybridClipboard()
         //旧命令
         case .UpdateHeader   : updateHeader()
         //case .Back           : back()
