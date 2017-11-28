@@ -15,7 +15,7 @@ extension MLHybridTools {
         guard let params:HybridInitParams = self.command.args.commandParams as? HybridInitParams  else {
             return
         }
-        Hybrid_constantModel.hybridEvent = params.callback_name
+        self.command.viewController.hybridEvent = params.callback_name
         UserDefaults.standard.set(!params.cache, forKey: Hybrid_constantModel.switchCache)
     }
     //forward - (push 页面 )
@@ -102,18 +102,25 @@ extension MLHybridTools {
         //设置右边按钮
         if params.right.count != 0 {
             let rightButtonItems:[UIBarButtonItem] = self.hybridHeaderBarButtonItems(params.right)
-            self.command.viewController.navigationItem.setLeftBarButtonItems(rightButtonItems, animated: true)
+            self.command.viewController.navigationItem.setRightBarButtonItems(rightButtonItems, animated: true)
         }
     }
     //设置按钮
     func hybridHeaderBarButtonItems(_ buttonModels:[HybridHeaderParams.HybridHeaderButtonParams]) -> [UIBarButtonItem] {
         var barButtons:[UIBarButtonItem] = []
         for model:HybridHeaderParams.HybridHeaderButtonParams in buttonModels {
+            //需要添加的item
+            let barButtonItem:UIBarButtonItem = UIBarButtonItem.init()
+            //覆盖一层view
+            let coverView:UIView = UIView.init();coverView.backgroundColor = UIColor.clear
+            //Button按钮
             let button:hybridHeaderButton = hybridHeaderButton.init()
+            
+            
             let titleWidth = model.title.hybridStringWidthWith(15, height: 20)
-            let buttonWidth = titleWidth > 42 ? titleWidth : 42
+            let itemWidth = titleWidth > 44 ? titleWidth : 44
             //这是大小
-            button.frame = CGRect.init(x: 0, y: 0, width: buttonWidth, height: 44)
+            coverView.frame = CGRect.init(x: 0, y: 0, width: itemWidth, height: 44)
             //设置颜色
             let titleColor:UIColor = UIColor.colorWithHex(model.color)
             if titleColor != .clear {
@@ -122,6 +129,8 @@ extension MLHybridTools {
             //设置图片
             if model.icon != ""{
                 button.kf.setImage(with: URL(string: model.icon), for: .normal)
+                //button.contentMode = .scaleAspectFit
+                coverView.frame = CGRect.init(x: 0, y: 0, width: 44, height: 44)
             }
             if model.title == "back" {
                 let image = UIImage(named: MLHybrid.shared.backIndicator)
@@ -135,7 +144,14 @@ extension MLHybridTools {
             button.buttonModel = model
             button.addTarget(self, action: #selector(hybridHeaderButtonClick(sender:)), for: .touchUpInside)
             //添加到数组
-            barButtons.append(UIBarButtonItem.init(customView: button))
+            barButtonItem.customView = coverView
+            button.frame = coverView.frame
+            button.backgroundColor = UIColor.clear
+            button.contentHorizontalAlignment = .center
+            button.contentVerticalAlignment = .center
+            coverView.addSubview(button)
+            
+            barButtons.append(barButtonItem)
         }
         
         let spaceBar = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)

@@ -9,7 +9,6 @@ import UIKit
 
 class Hybrid_constantModel: NSObject {
     
-    static var hybridEvent = "Hybrid.callback"
     static var naviImageHeader = "hybrid_navi_"
     static var switchCache = "HybridSwitchCacheClose"
     static var hybridVersion = "HybridVersion"

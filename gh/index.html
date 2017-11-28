@@ -7,48 +7,65 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <script language="javascript">
-    var header = {
-        'name':'header',
-        'params':{
-            'title':'页面加载开始就设置title',
-            'show':true,
-            'background':'#FF3B30',
-            'left':[],
-            'right':[]
+        var init = {
+            'name':'init',
+            'params':{
+                'cache':true,
+                'callback_name':'hybrid_callback'
+            }
         }
-    }
-    window.webkit.messageHandlers.requestHybrid.postMessage(header);
-    var forward = {
-        'name':'forward',
-        'params':{
-            'type':'h5',
-            'url':'https://ucself.github.io/JGHybrid/gh/',
-            'title':'forward /h5',
-            'animate':false
+        var header = {
+            'name':'header',
+            'params':{
+                'title':'页面加载开始就设置title',
+                'show':true,
+                'background':'#FF3B30',
+                'left':[{
+                        'title':'返回',
+                        'callback':'callback_name_1',
+                        'icon':'',
+                        'color':'#2F2929'
+                }],
+                'right':[{
+                     'title':'没用',
+                     'callback':'callback_name_2',
+                     'icon':'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1511847583672&di=31b4d77b8a22d600df395a7950373c03&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F59%2F43%2F18758PICjfd_1024.png',
+                     'color':'#2F2929'
+                }]
+            }
         }
-    }
-    var modal = {
-        'name':'modal',
-        'params':{
-            'type':'h5',
-            'url':'https://ucself.github.io/JGHybrid/gh/',
-            'title':'forward /h5',
-            'animate':true
+        window.webkit.messageHandlers.requestHybrid.postMessage(header);
+        var forward = {
+            'name':'forward',
+            'params':{
+                'type':'h5',
+                'url':'https://ucself.github.io/JGHybrid/gh/',
+                'title':'forward /h5',
+                'animate':false
+            }
         }
-    }
-    var back = {
-        'name':'back',
-        'params':{
-            'step': 1
+        var modal = {
+            'name':'modal',
+            'params':{
+                'type':'h5',
+                'url':'https://ucself.github.io/JGHybrid/gh/',
+                'title':'forward /h5',
+                'animate':true
+            }
         }
-    }
-    var scrollCommand = {
-        'name':'scroll',
-        'params':{
-            'enable': false,
-            'background':'#FF4B30'
+        var back = {
+            'name':'back',
+            'params':{
+                'step': 1
+            }
         }
-    }
+        var scrollCommand = {
+            'name':'scroll',
+            'params':{
+                'enable': false,
+                'background':'#FF4B30'
+            }
+        }
     var Hybrid = {
         callback: {
             testcallback: function(data) {
@@ -59,21 +76,26 @@
             }
         }
     }
+    var hybrid_callback = {
+        
+    }
     </script>
 </head>
 <body>
     hello world!
     <p>这是按钮调用</p>
     <input type="button" value="刷新页面" onclick="location.reload()" />
-    <br>
+    <br><br>
+    <input type="button" value="init" onclick="window.webkit.messageHandlers.requestHybrid.postMessage(init);" />
+    <br><br>
     <input type="button" value="header" onclick="window.webkit.messageHandlers.requestHybrid.postMessage(header);" />
-    <br>
+    <br><br>
     <input type="button" value="forward" onclick="window.webkit.messageHandlers.requestHybrid.postMessage(forward);" />
-    <br>
+    <br><br>
     <input type="button" value="modal" onclick="window.webkit.messageHandlers.requestHybrid.postMessage(modal);" />
-    <br>
+    <br><br>
     <input type="button" value="back" onclick="window.webkit.messageHandlers.requestHybrid.postMessage(back);" />
-    <br>
+    <br><br>
     <input type="button" value="scroll" onclick="window.webkit.messageHandlers.requestHybrid.postMessage(scrollCommand);" />
 </body>
 </html>

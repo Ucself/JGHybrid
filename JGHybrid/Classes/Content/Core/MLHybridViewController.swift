@@ -22,6 +22,8 @@ open class MLHybridViewController: UIViewController {
     var htmlString: String?
     var progressView:UIProgressView!
     var contentView: MLHybridContentView!
+    //回调js函数
+    var hybridEvent = "Hybrid.callback"
     
     //MARK: 系统方法
     deinit {
