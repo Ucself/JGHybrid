@@ -1,191 +1,179 @@
 
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <meta http-equiv="X-UA-Compatible" content="ie=edge">
-                    <title>GJHybrid测试页面</title>
-                    <script language="javascript">
-                        var init = {
-                            'name':'init',
-                            'params':{
-                                'cache':true,
-                                'callback_name':'hybrid_callback'
-                            }
-                        }
-                    var header = {
-                        'name':'header',
-                        'params':{
-                            'title':'页面加载开始就设置title',
-                            'show':true,
-                            'background':'#FF3B30',
-                            'left':[{
-                                    'title':'返回',
-                                    'callback':'callback_name_left_back',
-                                    'icon':'',
-                                    'color':'#2F2929'
-                                    },{
-                                    'title':'关闭',
-                                    'callback':'callback_name_left_close',
-                                    'icon':'',
-                                    'color':'#2F2929'
-                                    }],
-                                    'right':[{
-                                             'title':'没用',
-                                             'callback':'callback_name_2',
-                                             'icon':'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1511847583672&di=31b4d77b8a22d600df395a7950373c03&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F59%2F43%2F18758PICjfd_1024.png',
-                                             'color':'#2F2929'
-                                             }]
-                        }
-                    }
-                    var forward = {
-                        'name':'forward',
-                        'params':{
-                            'type':'h5',
-                            'url':'https://ucself.github.io/JGHybrid/gh/',
-                            'title':'forward /h5',
-                            'animate':false
-                        }
-                    }
-                    var modal = {
-                        'name':'modal',
-                        'params':{
-                            'type':'h5',
-                            'url':'https://ucself.github.io/JGHybrid/gh/',
-                            'title':'forward /h5',
-                            'animate':true
-                        }
-                    }
-                    var back = {
-                        'name':'back',
-                        'params':{
-                            'step': 1
-                        }
-                    }
-                    var scroll = {
-                        'name':'scroll',
-                        'params':{
-                            'enable': true,
-                            'background':'#FF4B30'
-                        }
-                    }
-                    var pageshow = {
-                        'name':'pageshow',
-                        'callback':'callback_name_pageshow'
-                    }
-                    var pagehide = {
-                        'name':'pagehide',
-                        'callback':'callback_name_pagehide'
-                    }
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script language="javascript">
+        var init = {
+            'name':'init',
+            'params':{
+                'cache':true,
+                'callback_name':'hybrid_callback'
+                }
+            }
+        var header = {
+            'name':'header',
+            'params':{
+                'title':'页面加载开始就设置title',
+                'show':true,
+                'background':'#FF3B30',
+                'left':[{
+                    'title':'返回',
+                    'callback':'callback_name_left_back',
+                    'icon':'',
+                    'color':'#2F2929'},
+                    {
+                    'title':'关闭',
+                    'callback':'callback_name_left_close',
+                    'icon':'',
+                    'color':'#2F2929'
+                }],
+                'right':[{
+                    'title':'没用',
+                    'callback':'callback_name_2',
+                    'icon':'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1511847583672&di=31b4d77b8a22d600df395a7950373c03&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F59%2F43%2F18758PICjfd_1024.png',
+                    'color':'#2F2929'
+                    }]
+                }
+            }
+        var forward = {
+            'name':'forward',
+            'params':{
+                'type':'h5',
+                'url':'https://ucself.github.io/JGHybrid/gh/',
+                'title':'forward /h5',
+                'animate':false
+            }
+        }
+        var modal = {
+            'name':'modal',
+            'params':{
+                'type':'h5',
+                'url':'https://ucself.github.io/JGHybrid/gh/',
+                'title':'forward /h5',
+                'animate':true
+            }
+        }
+        var back = {
+            'name':'back',
+            'params':{
+                'step': 1
+            }
+        }
+        var scroll = {
+            'name':'scroll',
+            'params':{
+                'enable': true,
+                'background':'#FF4B30'
+            }
+        }
+        var pageshow = {
+            'name':'pageshow',
+            'callback':'callback_name_pageshow'
+        }
+        var pagehide = {
+            'name':'pagehide',
+            'callback':'callback_name_pagehide'
+        }
                     
-                    var device = {
-                        'name':'device',
-                        'callback':'callback_name_device'
-                    }
+        var device = {
+            'name':'device',
+            'callback':'callback_name_device'
+        }
+        var clipboard = {
+            'name':'clipboard',
+            'params':{
+                'content': '复制内容'
+            }
+        }
+        //MARK: 初始化的时候执行js
+        window.webkit.messageHandlers.requestHybrid.postMessage(pageshow);
+        window.webkit.messageHandlers.requestHybrid.postMessage(pagehide);
+        window.webkit.messageHandlers.requestHybrid.postMessage(header);
+        //MARK:-----------------回调
                     
-                    var location = {
-                        'name':'location',
-                        'params':{
-                            'located': 'callback_name_located',
-                            'failed': 'callback_name_failed',
-                            'updated': 'callback_name_updated'
-                        }
-                    }
+        var Hybrid = {
+            callback: function (data){
+                console.log("执行了Hybrid.callback")
+                commonCallback(data)
+            }
+        }
                     
-                    var clipboard = {
-                        'name':'clipboard',
-                        'params':{
-                            'content': '复制内容'
-                        }
-                    }
-                    //MARK: 初始化的时候执行js
-                    window.webkit.messageHandlers.requestHybrid.postMessage(pageshow);
-                    window.webkit.messageHandlers.requestHybrid.postMessage(pagehide);
-                    window.webkit.messageHandlers.requestHybrid.postMessage(header);
-                    
-                    //MARK:-----------------回调
-                    
-                    var Hybrid = {
-                        callback: function (data){
-                            console.log("执行了Hybrid.callback")
-                            commonCallback(data)
-                        }
-                    }
-                    
-                    var hybrid_callback = function (data){
-                        console.log("执行了hybrid_callback")
-                        commonCallback(data)
-                    }
-                    
-                    var commonCallback = function (data){
-                        if (data.callback != null) {
-                            //点击了返回按钮
-                            if (data.callback == "callback_name_left_back") {
-                                window.webkit.messageHandlers.requestHybrid.postMessage(back);
-                            }
-                            //点击了关闭按钮
-                            else if  (data.callback == "callback_name_left_close") {
-                                back.params.step = -1
-                                window.webkit.messageHandlers.requestHybrid.postMessage(back);
-                            }
-                            //callback_name_pageshow
-                            else if  (data.callback == "callback_name_pageshow") {
-                                console.log("Native页面显示")
-                            }
-                            //callback_name_pagehide
-                            else if  (data.callback == "callback_name_pagehide") {
-                                console.log("Native页面隐藏")
-                            }
-                            //callback_name_device
-                            else if  (data.callback == "callback_name_device") {
-                                console.log(data.data)
-                            }
-                            //callback_name_located
-                            else if  (data.callback == "callback_name_located") {
-                                console.log("定位获取成功")
-                                console.log(data.data)
-                            }
-                            //callback_name_failed
-                            else if  (data.callback == "callback_name_failed") {
-                                console.log("定位获取失败")
-                            }
-                            //callback_name_updated
-                            else if  (data.callback == "callback_name_updated") {
-                                console.log("定位更新")
-                                console.log(data.data)
-                            }
-                        }
-                    }
-                    
-                        </script>
-    </head>
-    <body>
-        hello world!
-        <p>这是按钮调用</p>
-        <input type="button" value="刷新页面" onclick="location.reload()" />
-        <br><br>
-        <input type="button" value="init" onclick="window.webkit.messageHandlers.requestHybrid.postMessage(init);" />
-        <br><br>
-        <input type="button" value="header" onclick="window.webkit.messageHandlers.requestHybrid.postMessage(header);" />
-        <br><br>
-        <input type="button" value="forward" onclick="window.webkit.messageHandlers.requestHybrid.postMessage(forward);" />
-        <br><br>
-        <input type="button" value="modal" onclick="window.webkit.messageHandlers.requestHybrid.postMessage(modal);" />
-        <br><br>
-        <input type="button" value="back" onclick="window.webkit.messageHandlers.requestHybrid.postMessage(back);" />
-        <br><br>
-        <input type="button" value="scroll" onclick="window.webkit.messageHandlers.requestHybrid.postMessage(scroll);" />
-        <br><br>
-        <input type="button" value="pageshow" onclick="window.webkit.messageHandlers.requestHybrid.postMessage(pageshow);" />
-        <br><br>
-        <input type="button" value="pagehide" onclick="window.webkit.messageHandlers.requestHybrid.postMessage(pagehide);" />
-        <br><br>
-        <input type="button" value="device" onclick="window.webkit.messageHandlers.requestHybrid.postMessage(device);" />
-        <br><br>
-        <input type="button" value="location" onclick="window.webkit.messageHandlers.requestHybrid.postMessage(location);" />
-        <br><br>
-        <input type="button" value="clipboard" onclick="window.webkit.messageHandlers.requestHybrid.postMessage(clipboard);" />
-    </body>
-</html>
+        var hybrid_callback = function (data){
+            console.log("执行了hybrid_callback")
+            commonCallback(data)
+        }
 
+        var commonCallback = function (data){
+            if (data.callback != null) {
+                //点击了返回按钮
+                if (data.callback == "callback_name_left_back") {
+                    window.webkit.messageHandlers.requestHybrid.postMessage(back);
+                }
+                //点击了关闭按钮
+                else if  (data.callback == "callback_name_left_close") {
+                    back.params.step = -1
+                    window.webkit.messageHandlers.requestHybrid.postMessage(back);
+                }
+                //callback_name_pageshow
+                else if  (data.callback == "callback_name_pageshow") {
+                    console.log("Native页面显示")
+                }
+                //callback_name_pagehide
+                else if  (data.callback == "callback_name_pagehide") {
+                    console.log("Native页面隐藏")
+                }
+                //callback_name_device
+                else if  (data.callback == "callback_name_device") {
+                    console.log(data.data)
+                }
+                //callback_name_located
+                else if  (data.callback == "callback_name_located") {
+                    console.log("定位获取成功")
+                    console.log(data.data)
+                }
+                //callback_name_failed
+                else if  (data.callback == "callback_name_failed") {
+                    console.log("定位获取失败")
+                }
+                //callback_name_updated
+                else if  (data.callback == "callback_name_updated") {
+                    console.log("定位更新")
+                    console.log(data.data)
+                }
+            }
+        }
+                    
+    </script>
+</head>
+<body>
+    hello world!
+    <p>这是按钮调用</p>
+    <input type="button" value="刷新页面" onclick="location.reload()" />
+    <br><br>
+    <input type="button" value="init" onclick="window.webkit.messageHandlers.requestHybrid.postMessage(init);" />
+    <br><br>
+    <input type="button" value="header" onclick="window.webkit.messageHandlers.requestHybrid.postMessage(header);" />
+    <br><br>
+    <input type="button" value="forward" onclick="window.webkit.messageHandlers.requestHybrid.postMessage(forward);" />
+    <br><br>
+    <input type="button" value="modal" onclick="window.webkit.messageHandlers.requestHybrid.postMessage(modal);" />
+    <br><br>
+    <input type="button" value="back" onclick="window.webkit.messageHandlers.requestHybrid.postMessage(back);" />
+    <br><br>
+    <input type="button" value="scroll" onclick="window.webkit.messageHandlers.requestHybrid.postMessage(scroll);" />
+    <br><br>
+    <input type="button" value="pageshow" onclick="window.webkit.messageHandlers.requestHybrid.postMessage(pageshow);" />
+    <br><br>
+    <input type="button" value="pagehide" onclick="window.webkit.messageHandlers.requestHybrid.postMessage(pagehide);" />
+    <br><br>
+    <input type="button" value="device" onclick="window.webkit.messageHandlers.requestHybrid.postMessage(device);" />
+    <br><br>
+    <input type="button" value="location" onclick="window.webkit.messageHandlers.requestHybrid.postMessage(location);" />
+    <br><br>
+    <input type="button" value="clipboard" onclick="window.webkit.messageHandlers.requestHybrid.postMessage(clipboard);" />
+</body>
+</html>
