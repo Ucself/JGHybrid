@@ -15,15 +15,16 @@ open class MLHybridViewController: UIViewController {
     public var needHidesBottomBar = true
     //MARK: 私有参数
     var locationModel = MLHybridLocation()
-    let tool: MLHybridTools = MLHybridTools()
-    var onShowCallBack: String?
-    var onHideCallBack: String?
+    var tool: MLHybridTools = MLHybridTools()
     var URLPath: URL?
     var htmlString: String?
     var progressView:UIProgressView!
     var contentView: MLHybridContentView!
     //回调js函数
     var hybridEvent = "Hybrid.callback"
+    //回调callbackid
+    var onShowCallBack: String?
+    var onHideCallBack: String?
     
     //MARK: 系统方法
     deinit {
@@ -160,6 +161,13 @@ open class MLHybridViewController: UIViewController {
     @objc func back() {
         self.navigationController?.popViewController(animated: true)
     }
+    @objc func hybridHeaderButtonClick(sender: MLHybridTools.hybridHeaderButton) {
+        //默认是返回
+        if sender.buttonModel.callback.count == 0 {
+            self.navigationController?.popViewController(animated: true)
+        }
+        let _ = self.tool.callBack(callback: sender.buttonModel.callback, webView: contentView) { (str) in }
+    }
 }
 
 
@@ -197,8 +205,6 @@ extension MLHybridViewController:WKScriptMessageHandler {
         
         //Hybird命令对象
         let command:MLHybirdCommand = MLHybirdCommand()
-        //Hybird执行工具对象
-        let tool: MLHybridTools = MLHybridTools()
         
         //判断是否有tagname
         if let name = commandDic["name"] as? String {
@@ -215,6 +221,7 @@ extension MLHybridViewController:WKScriptMessageHandler {
             command.callbackId = callback
         }
         command.webView = self.contentView
+        command.viewController = self
         tool.command = command
         _ = tool.performCommand(command: command)
     }

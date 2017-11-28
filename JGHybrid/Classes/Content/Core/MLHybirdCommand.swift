@@ -19,20 +19,7 @@ open class MLHybirdCommand {
     //发出指令的控制器
     public weak var viewController: MLHybridViewController!
     //
-    public weak var webView: WKWebView! = WKWebView() {
-        didSet {
-            viewController = self.commandFromVC()
-        }
-    }
-    
-    //获取发出命令的控制器
-    private func commandFromVC() -> MLHybridViewController {
-        var nextResponder = self.webView.next
-        while !(nextResponder is MLHybridViewController) {
-            nextResponder = nextResponder?.next ?? MLHybridViewController()
-        }
-        return nextResponder as? MLHybridViewController ?? MLHybridViewController()
-    }
+    public weak var webView: WKWebView! = WKWebView()
 
     /// 解析并执行hybrid指令
     ///

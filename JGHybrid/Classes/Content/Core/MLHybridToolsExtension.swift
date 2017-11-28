@@ -142,7 +142,7 @@ extension MLHybridTools {
             }
             //添加点击事件
             button.buttonModel = model
-            button.addTarget(self, action: #selector(hybridHeaderButtonClick(sender:)), for: .touchUpInside)
+            button.addTarget(self.command.viewController, action: #selector(hybridHeaderButtonClick(sender:)), for: .touchUpInside)
             //添加到数组
             barButtonItem.customView = coverView
             button.frame = coverView.frame
@@ -163,13 +163,7 @@ extension MLHybridTools {
     class hybridHeaderButton: UIButton {
         var buttonModel:HybridHeaderParams.HybridHeaderButtonParams = HybridHeaderParams.HybridHeaderButtonParams()
     }
-    @objc func hybridHeaderButtonClick(sender: hybridHeaderButton) {
-        //默认是返回
-        if sender.buttonModel.callback.count == 0 {
-            self.command.viewController.navigationController?.popViewController(animated: true)
-        }
-        let _ = self.callBack(callback: sender.buttonModel.callback, webView: self.command.webView) { (str) in }
-    }
+    @objc func hybridHeaderButtonClick(sender: hybridHeaderButton) {}
     
     //scroll - ( 页面滚动 ,主要是回弹效果)
     func hybridScroll(){
