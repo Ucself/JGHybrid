@@ -25,7 +25,7 @@ class ViewController: UIViewController {
 //        let vc:UIViewController =  MLHybrid.load(urlString: "https://yexiaochai.github.io/Hybrid/webapp/demo/index.html")!
 //        let vc:UIViewController =  MLHybrid.load(urlString: "http://web-dev.doctorwork.com/app/health/clinic")!
 //        let vc:UIViewController =  MLHybrid.load(urlString: "http://www.iqiyi.com/playlist249635302.htmll")!
-        let vc:UIViewController =  MLHybrid.load(urlString: "https://ucself.github.io/JGHybrid/gh/")!
+        let vc:UIViewController =  MLHybrid.load(urlString: "http://web-dev.doctorwork.com/ios/")!
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
