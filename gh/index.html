@@ -83,6 +83,15 @@
             'name':'device',
             'callback':'callback_name_device'
         }
+
+        var locationCommand = {
+            'name':'location',
+            'params':{
+                'located': 'callback_name_located',
+                'failed': 'callback_name_failed',
+                'updated':'updated'
+            }
+        }
         var clipboard = {
             'name':'clipboard',
             'params':{
@@ -172,7 +181,7 @@
     <br><br>
     <input type="button" value="device" onclick="window.webkit.messageHandlers.requestHybrid.postMessage(device);" />
     <br><br>
-    <input type="button" value="location" onclick="window.webkit.messageHandlers.requestHybrid.postMessage(location);" />
+    <input type="button" value="location" onclick="window.webkit.messageHandlers.requestHybrid.postMessage(locationCommand);" />
     <br><br>
     <input type="button" value="clipboard" onclick="window.webkit.messageHandlers.requestHybrid.postMessage(clipboard);" />
 </body>

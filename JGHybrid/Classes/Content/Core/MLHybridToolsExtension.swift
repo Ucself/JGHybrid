@@ -178,26 +178,26 @@ extension MLHybridTools {
     }
     //pageshow - ( 页面显示 )
     func hybridPageshow() {
-        guard let params:HybridPageshowParams = self.command.args.commandParams as? HybridPageshowParams  else {
-            return
-        }
-        _ = params
+//        guard let params:HybridPageshowParams = self.command.args.commandParams as? HybridPageshowParams  else {
+//            return
+//        }
+//        _ = params
         self.command.viewController.onShowCallBack = self.command.callbackId
     }
     //pagehide - ( 页面隐藏 )
     func hybridPagehide() {
-        guard let params:HybridPagehideParams = self.command.args.commandParams as? HybridPagehideParams  else {
-            return
-        }
-        _ = params
+//        guard let params:HybridPagehideParams = self.command.args.commandParams as? HybridPagehideParams  else {
+//            return
+//        }
+//        _ = params
         self.command.viewController.onHideCallBack = self.command.callbackId
     }
     //device - ( 获取设备信息 )
     func hybridDevice() {
-        guard let params:HybridDeviceParams = self.command.args.commandParams as? HybridDeviceParams  else {
-            return
-        }
-        _ = params
+//        guard let params:HybridDeviceParams = self.command.args.commandParams as? HybridDeviceParams  else {
+//            return
+//        }
+//        _ = params
         let deviceInfor:[String:String] = ["version":Hybrid_constantModel.nativeVersion,
                                            "os":UIDevice.current.systemName,
                                            "dist":"app store",
