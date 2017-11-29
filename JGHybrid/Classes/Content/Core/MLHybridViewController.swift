@@ -55,7 +55,7 @@ open class MLHybridViewController: UIViewController {
         self.contentView.addObserver(self, forKeyPath: "estimatedProgress", options: NSKeyValueObservingOptions(rawValue: 0), context: nil)
         //回调Hybrid
         if let callback = self.onShowCallBack {
-            MLHybridTools().callBack(data: "", err_no: 0, msg: "onwebviewshow", callback: callback, webView: self.contentView, completion: {js in })
+            self.tool.callBack(data: "", err_no: 0, msg: "onwebviewshow", callback: callback, webView: self.contentView, completion: {js in })
         }
     }
     
@@ -67,7 +67,7 @@ open class MLHybridViewController: UIViewController {
         self.contentView.removeObserver(self, forKeyPath: "estimatedProgress")
         //回调Hybrid
         if let callback = self.onHideCallBack {
-            let _ =  MLHybridTools().callBack(data: "", err_no: 0, msg: "onwebviewshow", callback: callback, webView: self.contentView, completion: {js in })
+            let _ =  self.tool.callBack(data: "", err_no: 0, msg: "onwebviewshow", callback: callback, webView: self.contentView, completion: {js in })
         }
     }
     
