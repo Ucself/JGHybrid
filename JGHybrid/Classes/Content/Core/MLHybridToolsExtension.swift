@@ -128,7 +128,7 @@ extension MLHybridTools {
             }
             //设置图片
             if model.icon != ""{
-                button.kf.setImage(with: URL(string: model.icon), for: .normal)
+                //button.kf.setImage(with: URL(string: model.icon), for: .normal)
                 //button.contentMode = .scaleAspectFit
                 coverView.frame = CGRect.init(x: 0, y: 0, width: 44, height: 44)
             }

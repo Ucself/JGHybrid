@@ -23,7 +23,6 @@ open class MLHybrid {
     var platform: String = unregistered
     var userAgent: String = unregistered
     var scheme: String = unregistered
-    var domain: String = unregistered
     var backIndicator: String = unregistered
     
     //注册信息
@@ -39,17 +38,12 @@ open class MLHybrid {
         shared.scheme = "doc" + appName + "hybrid"
         shared.backIndicator = backIndicator
         shared.delegate = delegate
-        //设置UserAgent
-        //MLHybrid.configUserAgent()
         
         //设置拦截
 //        URLProtocol.registerClass(MLHybridURLProtocol.self)
 //        URLProtocol.wk_registerScheme("http")
 //        URLProtocol.wk_registerScheme("https")
     }
-    
-    
-
     //加载页面
     open class func load(urlString: String) -> MLHybridViewController? {
         guard let url = URL(string: urlString.hybridUrlPathAllowedString()) else {return nil}

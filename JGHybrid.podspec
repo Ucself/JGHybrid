@@ -42,7 +42,7 @@ TODO: Add long description of the pod here.
 
     s.frameworks = 'UIKit', 'WebKit'
     s.dependency 'SSZipArchive'
-    s.dependency 'Kingfisher'
+  #s.dependency 'Kingfisher'
     s.dependency 'JGWebKitURLProtocol'
 
 end

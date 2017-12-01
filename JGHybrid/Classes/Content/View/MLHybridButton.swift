@@ -27,7 +27,7 @@ class MLHybridButton: UIButton {
             button.titleLabel?.font = UIFont.systemFont(ofSize: 15)
             button.setTitleColor(UIColor(red: 0, green: 122/255.0, blue: 255/255.0, alpha: 1), for: .normal)
             if model.icon.count > 0 {
-                button.kf.setImage(with: URL(string: model.icon), for: .normal)
+                //button.kf.setImage(with: URL(string: model.icon), for: .normal)
             }
             else if model.tagname.count > 0 {
                 print("加载图片 \(Hybrid_constantModel.naviImageHeader + model.tagname)")

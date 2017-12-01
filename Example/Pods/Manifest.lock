@@ -1,10 +1,8 @@
 PODS:
-  - JGHybrid (2.0.0):
+  - JGHybrid (3.1.2):
     - JGWebKitURLProtocol
-    - Kingfisher
     - SSZipArchive
   - JGWebKitURLProtocol (1.0.1)
-  - Kingfisher (4.2.0)
   - SSZipArchive (2.1.1)
 
 DEPENDENCIES:
@@ -15,9 +13,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  JGHybrid: 29201195020afeb66c078af1be16cf454efaca14
+  JGHybrid: 400d65cd1adb637549f785781e7ec8542df0708a
   JGWebKitURLProtocol: 3086024bce4da9e8b9d639a12a9083048b3ca1cd
-  Kingfisher: 9ee7e788d8ba07c3f21ce0d43f33cec310a4f781
   SSZipArchive: 14401ade5f8e82aba1ff03e9f88e9de60937ae60
 
 PODFILE CHECKSUM: 4f491e54c6148dd76841d8cb74cad4b281687e91

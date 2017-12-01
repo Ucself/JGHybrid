@@ -13,7 +13,9 @@ open class MLHybridViewController: UIViewController {
     public var naviBarHidden = false
     public var needBackButton = false
     public var needHidesBottomBar = true
-    public var needLargeTitle = true       //是否需要大标题
+    public var needLargeTitle = true            //是否需要大标题
+    public var titleColor:String?               //Title颜色
+    public var titleBackgroundColor:String?     //Title背景色
     //MARK: 私有参数
     var locationModel = MLHybridLocation()
     var tool: MLHybridTools = MLHybridTools()
@@ -34,7 +36,6 @@ open class MLHybridViewController: UIViewController {
     deinit {
         locationModel.stopUpdateLocation()
         if contentView != nil {
-            //contentView.loadRequest(URLRequest(url: URL(string: "about:blank")!))
             contentView.load(URLRequest(url: URL(string: "about:blank")!))
             contentView.stopLoading()
             contentView.removeFromSuperview()

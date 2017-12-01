@@ -72,6 +72,9 @@ class HybridForwardParams: BaseParams {
     var type:String = "h5"
     var url:String = ""
     var title:String = ""
+    var bigTitle:Bool = false
+    var color:String = ""
+    var background:String = ""
     var animate:Bool = true
     //解析数据对象
     override class func convert(_ dic: [String: AnyObject]) -> HybridForwardParams {
@@ -79,6 +82,9 @@ class HybridForwardParams: BaseParams {
         obj.type = dic["type"] as? String ?? "h5"
         obj.url = dic["url"] as? String ?? ""
         obj.title = dic["title"] as? String ?? ""
+        obj.bigTitle = dic["bigTitle"] as? Bool ?? false
+        obj.color = dic["color"] as? String ?? ""
+        obj.background = dic["background"] as? String ?? ""
         obj.animate = dic["animate"] as? Bool ?? true
         return obj
     }
@@ -114,6 +120,8 @@ class HybridBackParams: BaseParams {
 class HybridHeaderParams: BaseParams {
     var title:String = ""
     var show:Bool = true
+    var bigTitle:Bool = false
+    var color:String = ""
     var background:String = ""
     var left:[HybridHeaderButtonParams] = []
     var right:[HybridHeaderButtonParams] = []
@@ -122,6 +130,8 @@ class HybridHeaderParams: BaseParams {
         let obj:HybridHeaderParams = HybridHeaderParams.init()
         obj.title = dic["title"] as? String ?? ""
         obj.show = dic["show"] as? Bool ?? true
+        obj.bigTitle = dic["bigTitle"] as? Bool ?? false
+        obj.color = dic["color"] as? String ?? ""
         obj.background = dic["background"] as? String ?? ""
         //左边Button
         if let leftArray:[[String: AnyObject]] = dic["left"] as? [[String: AnyObject]] {
