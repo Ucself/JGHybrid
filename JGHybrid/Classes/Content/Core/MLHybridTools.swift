@@ -8,8 +8,6 @@ import CoreLocation
 import SSZipArchive
 import WebKit
 
-
-
 class MLHybridTools: NSObject {
     
     var command: MLHybirdCommand = MLHybirdCommand()

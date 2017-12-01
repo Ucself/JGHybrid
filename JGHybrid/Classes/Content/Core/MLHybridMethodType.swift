@@ -34,7 +34,7 @@ enum MLHybridMethodType: String {
     case Pop = "pop"
     case Openlink = "openLink"
     case Addtoclipboard = "addtoclipboard"
-    
+    case UnKonw = "UnKonw"
 }
 
 

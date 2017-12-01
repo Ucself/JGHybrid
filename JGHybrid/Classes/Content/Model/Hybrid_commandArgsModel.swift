@@ -8,7 +8,7 @@
 import UIKit
 
 extension MLCommandArgs {
-
+    
     //新的参数解析方式
     class func convert(_ dic: [String: AnyObject], nameType:MLHybridMethodType?) -> MLCommandArgs {
         let args = MLCommandArgs()
@@ -221,6 +221,7 @@ class HybridClipboardParams: BaseParams {
         return obj
     }
 }
+
 
 
 

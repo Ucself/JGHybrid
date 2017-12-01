@@ -70,10 +70,9 @@
 		80258E0D53B4348EF4FE00B529376076 /* FormatIndicatedCacheSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E4967A795784CAFE139AD0842332A5 /* FormatIndicatedCacheSerializer.swift */; };
 		82D3412AB83D3C9AC525D14F7FBA2DED /* aes_ni.h in Headers */ = {isa = PBXBuildFile; fileRef = EE36724D39ED502FBF4B7397F24AA38C /* aes_ni.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		8B79E183FDB804D6BB53F8AE3D60E918 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E76EE337F36463337B85694366863D51 /* Kingfisher.framework */; };
-		916C875C1FB43D6500CA5099 /* TestURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916C875B1FB43D6500CA5099 /* TestURLProtocol.swift */; };
 		916C875F1FB487AA00CA5099 /* Hybrid_constantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916C875E1FB487AA00CA5099 /* Hybrid_constantModel.swift */; };
+		918C6EE41FD1531F00C7B387 /* Hybrid_commandArgsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918C6EE31FD1531F00C7B387 /* Hybrid_commandArgsModel.swift */; };
 		91ACA6F71FC815AF00C156B0 /* MLHybridToolsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91ACA6F61FC815AF00C156B0 /* MLHybridToolsExtension.swift */; };
-		91ACA6FB1FC822D600C156B0 /* MLCommandArgsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91ACA6FA1FC822D600C156B0 /* MLCommandArgsExtension.swift */; };
 		9405824F62ABB8E4E78D1CB75E193314 /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = E09CCCE88F04F851A35225451BB7C166 /* unzip.c */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		98BFDCCA489AD6A934293706A2D2CAF8 /* Hybrid_swiftJavaScriptModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106DD3F14CA3F0E259E739523CCFA40A /* Hybrid_swiftJavaScriptModel.swift */; };
 		A0AD615B38E8E0C5A51D4152AFD8E6FB /* hmac.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FAC4621F6AB9A4EA97BA5665357CFAF /* hmac.h */; settings = {ATTRIBUTES = (Project, ); }; };
@@ -241,10 +240,9 @@
 		889A9F9EEFEC1FC66103E81B3532937F /* ImageProcessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageProcessor.swift; path = Sources/ImageProcessor.swift; sourceTree = "<group>"; };
 		88E4967A795784CAFE139AD0842332A5 /* FormatIndicatedCacheSerializer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormatIndicatedCacheSerializer.swift; path = Sources/FormatIndicatedCacheSerializer.swift; sourceTree = "<group>"; };
 		8CB323FCE6735314E3A0CEEB08FD5832 /* KingfisherOptionsInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KingfisherOptionsInfo.swift; path = Sources/KingfisherOptionsInfo.swift; sourceTree = "<group>"; };
-		916C875B1FB43D6500CA5099 /* TestURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestURLProtocol.swift; sourceTree = "<group>"; };
 		916C875E1FB487AA00CA5099 /* Hybrid_constantModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hybrid_constantModel.swift; sourceTree = "<group>"; };
+		918C6EE31FD1531F00C7B387 /* Hybrid_commandArgsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hybrid_commandArgsModel.swift; sourceTree = "<group>"; };
 		91ACA6F61FC815AF00C156B0 /* MLHybridToolsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLHybridToolsExtension.swift; sourceTree = "<group>"; };
-		91ACA6FA1FC822D600C156B0 /* MLCommandArgsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLCommandArgsExtension.swift; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		952F5CDCDD93A686E03A566B1FC29C34 /* fileenc.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = fileenc.c; path = SSZipArchive/minizip/aes/fileenc.c; sourceTree = "<group>"; };
 		967678D23CE9EFC8DA85A50BD77F7AB6 /* SSZipArchive.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SSZipArchive.modulemap; sourceTree = "<group>"; };
@@ -381,7 +379,6 @@
 				91ACA6F61FC815AF00C156B0 /* MLHybridToolsExtension.swift */,
 				C50A4AE0F00EF9C64B4722B16902BBFB /* MLHybirdCommand.swift */,
 				2B5207A5E32A64F5654EA3548FE6F922 /* MLCommandArgs.swift */,
-				91ACA6FA1FC822D600C156B0 /* MLCommandArgsExtension.swift */,
 				166FD8A54379AF34CECA0B4E3DB90C69 /* MLHybridMethodType.swift */,
 			);
 			path = Core;
@@ -611,6 +608,7 @@
 				106DD3F14CA3F0E259E739523CCFA40A /* Hybrid_swiftJavaScriptModel.swift */,
 				07CA3819BA67F5AB87677C64F3431E3B /* Hybrid_titleModel.swift */,
 				916C875E1FB487AA00CA5099 /* Hybrid_constantModel.swift */,
+				918C6EE31FD1531F00C7B387 /* Hybrid_commandArgsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -714,7 +712,6 @@
 			isa = PBXGroup;
 			children = (
 				6E403062F8BB5149EF23C21818B2AD04 /* MLHybirdURLProtocol.swift */,
-				916C875B1FB43D6500CA5099 /* TestURLProtocol.swift */,
 			);
 			path = MLHybirdURLProtocol;
 			sourceTree = "<group>";
@@ -1022,8 +1019,8 @@
 				26335CBE9EB01F84CE77EA3313606317 /* JGHybrid-dummy.m in Sources */,
 				4B01B8BDA1FCA521522B1B59998B3BEC /* MLCommandArgs.swift in Sources */,
 				7CF68C78F66EDDD1AB0C3C0DDF2F6571 /* MLHybirdCommand.swift in Sources */,
+				918C6EE41FD1531F00C7B387 /* Hybrid_commandArgsModel.swift in Sources */,
 				7DCCB6F58B25F08C05D92DE069358598 /* MLHybirdURLProtocol.swift in Sources */,
-				91ACA6FB1FC822D600C156B0 /* MLCommandArgsExtension.swift in Sources */,
 				3B70D6CE6258CF388C72C12C1F2CDBBE /* MLHybrid.swift in Sources */,
 				AB08AAD063C1B349BD7A9B11A93FB1C5 /* MLHybridButton.swift in Sources */,
 				566AEA750DFDCD358FD57205A86F0164 /* MLHybridContentView.swift in Sources */,
@@ -1033,7 +1030,6 @@
 				F81E38CA5AFBC509E6961830723A39CE /* MLHybridTextField.swift in Sources */,
 				B1720DFD663CD1308F8792D4F0D02862 /* MLHybridTools.swift in Sources */,
 				41F95CFCE6629BA1038385237BF2F83B /* MLHybridViewController.swift in Sources */,
-				916C875C1FB43D6500CA5099 /* TestURLProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1113,7 +1109,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/JGHybrid/JGHybrid-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/JGHybrid/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/JGHybrid/JGHybrid.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -1165,7 +1161,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
@@ -1227,7 +1223,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/JGHybrid/JGHybrid-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/JGHybrid/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/JGHybrid/JGHybrid.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -1495,7 +1491,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;

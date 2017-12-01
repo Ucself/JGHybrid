@@ -13,16 +13,20 @@ open class MLHybridViewController: UIViewController {
     public var naviBarHidden = false
     public var needBackButton = false
     public var needHidesBottomBar = true
+    public var needLargeTitle = true       //是否需要大标题
     //MARK: 私有参数
     var locationModel = MLHybridLocation()
     var tool: MLHybridTools = MLHybridTools()
-    var URLPath: URL?
-    var htmlString: String?
+    //视图控件
     var progressView:UIProgressView!
     var contentView: MLHybridContentView!
-    //回调js函数
+    var largeTitleView:UIView!
+    var largeTitleLabel:UILabel!
+    var largeTitleViewTop: NSLayoutConstraint!
+    let largeTitleViewHeight:CGFloat = 74.5
+    //回调相关变量
+    var urlPath: URL?
     var hybridEvent = "Hybrid.callback"
-    //回调callbackid
     var onShowCallBack: String?
     var onHideCallBack: String?
     
@@ -43,6 +47,7 @@ open class MLHybridViewController: UIViewController {
         self.initUI()
         self.initContentView()
         self.initProgressView()
+        self.initData()
     }
     
     override open func viewWillAppear(_ animated: Bool) {
@@ -102,35 +107,54 @@ open class MLHybridViewController: UIViewController {
     }
     
     func initContentView() {
+        //容器数据对象
         self.contentView = MLHybridContentView()
+        self.largeTitleView = UIView.init()
+        self.largeTitleView.backgroundColor = UIColor.blue
         self.view.addSubview(self.contentView)
+        self.view.addSubview(self.largeTitleView)
+        //Title
+        self.largeTitleLabel = UILabel.init()
+        self.largeTitleLabel.font = UIFont.init(name: "PingFangSC-Medium", size: 22)
+        self.largeTitleLabel.textColor = UIColor.red
+        self.largeTitleLabel.text = "我是大标题"
+        self.largeTitleView.addSubview(self.largeTitleLabel)
+        //约束变量
+        self.largeTitleView.translatesAutoresizingMaskIntoConstraints = false
         self.contentView.translatesAutoresizingMaskIntoConstraints = false
-        let leftConstraint = NSLayoutConstraint(item: self.contentView, attribute: .left, relatedBy: .equal, toItem: self.view, attribute: .left, multiplier: 1.0, constant: 0)
-        self.view.addConstraint(leftConstraint)
-        let rightConstraint = NSLayoutConstraint(item: self.contentView, attribute: .right, relatedBy: .equal, toItem: self.view, attribute: .right, multiplier: 1.0, constant: 0)
-        self.view.addConstraint(rightConstraint)
+        self.largeTitleLabel.translatesAutoresizingMaskIntoConstraints = false
         let topGuide = self.topLayoutGuide
-        let topConstraint = NSLayoutConstraint(item: self.contentView, attribute: .top, relatedBy: .equal, toItem: topGuide, attribute: .bottom, multiplier: 1.0, constant: 0)
-        self.view.addConstraint(topConstraint)
-        let bottomConstraint = NSLayoutConstraint(item: self.contentView, attribute: .bottom, relatedBy: .equal, toItem: self.view, attribute: .bottom, multiplier: 1.0, constant: 0)
-        self.view.addConstraint(bottomConstraint)
+        let bottomGuide = self.bottomLayoutGuide
+        //大标题Label布局
+        let leftTitleLabelConstraint = NSLayoutConstraint(item: self.largeTitleLabel, attribute: .left, relatedBy: .equal, toItem: self.largeTitleView, attribute: .left, multiplier: 1.0, constant: 22)
+        let rightTitleLabelConstraint = NSLayoutConstraint(item: self.largeTitleLabel, attribute: .right, relatedBy: .equal, toItem: self.largeTitleView, attribute: .right, multiplier: 1.0, constant: 0)
+        let topTitleLabelConstraint = NSLayoutConstraint(item: self.largeTitleLabel, attribute: .top, relatedBy: .equal, toItem: self.largeTitleView, attribute: .top, multiplier: 1.0, constant: 0)
+        let bottomTitleLabelConstraintt = NSLayoutConstraint(item: self.largeTitleLabel, attribute: .bottom, relatedBy: .equal, toItem: self.largeTitleView, attribute: .bottom, multiplier: 1.0, constant: 0)
+        //大标题布局
+        let leftLargeTitleConstraint = NSLayoutConstraint(item: self.largeTitleView, attribute: .left, relatedBy: .equal, toItem: self.view, attribute: .left, multiplier: 1.0, constant: 0)
+        let rightLargeTitleConstraint = NSLayoutConstraint(item: self.largeTitleView, attribute: .right, relatedBy: .equal, toItem: self.view, attribute: .right, multiplier: 1.0, constant: 0)
+        let topLargeTitleConstraint = NSLayoutConstraint(item: self.largeTitleView, attribute: .top, relatedBy: .equal, toItem: topGuide, attribute: .bottom, multiplier: 1.0, constant: 0)
+        let heightLargeTitleConstrain = NSLayoutConstraint(item: self.largeTitleView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 74.5)
+        self.largeTitleViewTop = topLargeTitleConstraint
+        //容器布局
+        let leftConstraint = NSLayoutConstraint(item: self.contentView, attribute: .left, relatedBy: .equal, toItem: self.view, attribute: .left, multiplier: 1.0, constant: 0)
+        let rightConstraint = NSLayoutConstraint(item: self.contentView, attribute: .right, relatedBy: .equal, toItem: self.view, attribute: .right, multiplier: 1.0, constant: 0)
+        let topConstraint = NSLayoutConstraint(item: self.contentView, attribute: .top, relatedBy: .equal, toItem: self.largeTitleView, attribute: .bottom, multiplier: 1.0, constant: 0)
+        let bottomConstraint = NSLayoutConstraint(item: self.contentView, attribute: .bottom, relatedBy: .equal, toItem: bottomGuide, attribute: .top, multiplier: 1.0, constant: 0)
         
-        if let htmlString = self.htmlString {
-            self.contentView.htmlString = htmlString
-        }
+        self.view.addConstraints([leftTitleLabelConstraint,rightTitleLabelConstraint,topTitleLabelConstraint,bottomTitleLabelConstraintt,
+                                  leftLargeTitleConstraint,rightLargeTitleConstraint,topLargeTitleConstraint,heightLargeTitleConstrain,
+                                  leftConstraint,rightConstraint,topConstraint,bottomConstraint])
+        
+        //设置代理
         self.contentView.uiDelegate = self
         self.contentView.navigationDelegate = self
-        
-        guard URLPath != nil else {return}
-        //self.contentView.loadRequest(URLRequest(url: URLPath!))
-        
-        self.contentView.load(self.getRequest(URLPath!))
-    }
-    
-    func getRequest(_ url:URL) -> URLRequest {
-        var urlRequest:URLRequest = URLRequest.init(url: url)
+        self.contentView.scrollView.delegate = self
+        //加载
+        guard urlPath != nil else {return}
+        var urlRequest:URLRequest = URLRequest.init(url: urlPath!)
         urlRequest.setValue("platform=\(MLHybrid.shared.platform); sess=\(MLHybrid.shared.sess)", forHTTPHeaderField: "Cookie")
-        return urlRequest
+        self.contentView.load(urlRequest)
     }
     
     func initProgressView() {
@@ -139,7 +163,22 @@ open class MLHybridViewController: UIViewController {
         self.progressView.trackTintColor = UIColor.clear
         self.progressView.frame = CGRect.init(x: 0, y: 0, width: self.view.frame.size.width, height: 3)
         self.view.addSubview(self.progressView)
-        
+    }
+    
+    //初始化控件数据
+    func initData(){
+        //设置userAgent
+        self.contentView.evaluateJavaScript("navigator.userAgent") { [weak self](result, error) in
+            //获取userAgent数据
+            guard let weakSelf = self,var userAgentStr:String = result as? String else { return }
+            //查看是否设置过
+            guard userAgentStr.range(of: MLHybrid.shared.userAgent) == nil else { return }
+            //未获取到版本
+            guard let versionStr = Bundle.main.infoDictionary?["CFBundleShortVersionString"] else {return}
+            userAgentStr.append(" \(MLHybrid.shared.userAgent)\(versionStr) ")
+            userAgentStr.append(" Hybrid/\(versionStr) ")
+            weakSelf.contentView.customUserAgent = userAgentStr
+        }
     }
     
     func setUpBackButton() {
@@ -150,7 +189,7 @@ open class MLHybridViewController: UIViewController {
         
         let button = UIButton()
         button.frame = CGRect(x: 0, y: 0, width: 42, height: 44)
-        button.addTarget(self, action: #selector(MLHybridViewController.back), for: .touchUpInside)
+        button.addTarget(self, action: #selector(self.backButtonClick), for: .touchUpInside)
         let image = UIImage(named: MLHybrid.shared.backIndicator)
         button.setImage(image, for: .normal)
         button.contentHorizontalAlignment = .left
@@ -158,27 +197,67 @@ open class MLHybridViewController: UIViewController {
         self.navigationItem.leftBarButtonItem = item
     }
     
-    @objc func back() {
+    @objc func backButtonClick() {
         self.navigationController?.popViewController(animated: true)
     }
-    @objc func hybridHeaderButtonClick(sender: MLHybridTools.hybridHeaderButton) {
-        //默认是返回
-        if sender.buttonModel.callback.count == 0 {
-            self.navigationController?.popViewController(animated: true)
+}
+//MARK: 模拟大标题 功能 UIScrollViewDelegate
+extension MLHybridViewController:UIScrollViewDelegate {
+    //位置变化回调
+    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        let newY = largeTitleViewTop.constant - scrollView.contentOffset.y
+        largeTitleViewTop.constant = newY < -largeTitleViewHeight ? -largeTitleViewHeight : (newY > 0 ? 0 : newY)
+        _adjustTitleTopConstant(largeTitleViewTop.constant)
+        if scrollView.frame.origin.y > 0.0 && scrollView.frame.origin.y < largeTitleViewHeight {
+            if scrollView.isDragging {
+                scrollView.contentOffset = CGPoint.zero
+            }
         }
-        let _ = self.tool.callBack(callback: sender.buttonModel.callback, webView: contentView) { (str) in }
+    }
+    
+    public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        _adjustContentOffset(scrollView)
+    }
+    
+    public func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if !decelerate {
+            _adjustContentOffset(scrollView)
+        }
+    }
+    //调整回弹
+    private func _adjustContentOffset(_ scrollView: UIScrollView) {
+        
+        let current = largeTitleViewTop.constant
+        if current < -largeTitleViewHeight / 2 && current > -largeTitleViewHeight {
+            largeTitleViewTop.constant = -largeTitleViewHeight
+            _adjustTitleTopConstant(largeTitleViewTop.constant)
+        } else if current >= -largeTitleViewHeight / 2 && current < 0 {
+            largeTitleViewTop.constant = 0
+            _adjustTitleTopConstant(largeTitleViewTop.constant)
+        }
+        UIView.animate(withDuration: 0.2, animations: { [weak self] in
+            self?.view.layoutIfNeeded()
+        })
+    }
+    //根据顶部常量设置Title
+    private func _adjustTitleTopConstant(_ topConstant:CGFloat){
+        let current = topConstant
+        if current < -largeTitleViewHeight / 2 && current > -largeTitleViewHeight {
+            //大标题显示大部分的时候
+            self.title = "我是大标题"
+        } else if current >= -largeTitleViewHeight / 2 && current < 0 {
+            //大标题隐藏大部分的时候
+            self.title = ""
+        }
     }
 }
 
-
+//MARK: WKUIDelegate WKNavigationDelegate
 extension MLHybridViewController: WKUIDelegate,WKNavigationDelegate {
     
     public func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!){
         
-        if let htmlString = self.htmlString {
-            webView.evaluateJavaScript("document.body.innerHTML = document.body.innerHTML + '\(htmlString)'", completionHandler: { (any, error) in })
-            self.htmlString = nil
-        }
     }
     
     public func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
@@ -194,7 +273,7 @@ extension MLHybridViewController: WKUIDelegate,WKNavigationDelegate {
     }
     
 }
-
+//MARK:WKScriptMessageHandler
 extension MLHybridViewController:WKScriptMessageHandler {
     //MessageHandler 回调
     public func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
