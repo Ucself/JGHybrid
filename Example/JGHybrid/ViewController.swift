@@ -34,7 +34,7 @@ class ViewController: UIViewController {
 //        let vc:UIViewController =  MLHybrid.load(urlString: "http://www.iqiyi.com/playlist249635302.htmll")!
         let vc:MLHybridViewController =  MLHybrid.load(urlString: "http://web-dev.doctorwork.com/ios/")!
 //        let vc:UIViewController =  MLHybrid.load(urlString: "https://www.baidu.com")!
-        vc.needLargeTitle = true
+        vc.needLargeTitle = false
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
