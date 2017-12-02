@@ -90,17 +90,20 @@ extension MLHybridTools {
         guard let vc:MLHybridViewController = self.command.viewController else {
             return
         }
-        self.command.viewController.title = params.title
         self.command.viewController.titleName = params.title
         //设置导航栏是否显示
         vc.naviBarHidden = !params.show
-        vc.navigationController?.setNavigationBarHidden(vc.naviBarHidden, animated: true)
+        vc.needLargeTitle = params.bigTitle
+        if vc.needLargeTitle {
+            vc.largeTitleViewHeight = 74.5
+            vc.largeTitleViewTop.constant = vc.largeTitleViewHeight
+        }
         //标题颜色
         if UIColor.colorWithHex(params.color) != .clear {
             self.command.viewController.titleColor = UIColor.colorWithHex(params.color)
         }
         //设置背景色
-        if params.background != "" {
+        if UIColor.colorWithHex(params.background) != .clear {
             //根据16进制获取颜色值
             let backgroundColor:UIColor = UIColor.colorWithHex(params.background)
             self.command.viewController.titleBackgroundColor = UIColor.colorWithHex(params.background)

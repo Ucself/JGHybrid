@@ -10,12 +10,26 @@ open class MLHybridViewController: UIViewController {
     
     //MARK: 公共参数
     public var needSetHeader = true
-    public var naviBarHidden = false
+    public var naviBarHidden = false {
+        didSet {
+            self.navigationController?.setNavigationBarHidden(self.naviBarHidden, animated: true)
+        }
+    }
     public var needBackButton = false
     public var needHidesBottomBar = true
     public var needLargeTitle = false            //是否需要大标题
-    public var titleColor:UIColor = UIColor.colorWithHex("2F2929")               //Title颜色
-    public var titleBackgroundColor:UIColor = UIColor.white      //Title背景色
+    public var titleColor:UIColor = UIColor.colorWithHex("2F2929"){               //Title颜色
+        didSet {
+            self.largeTitleLabel?.textColor = self.titleColor
+            self.navigationController?.navigationBar.setTitleColor(self.titleColor)
+        }
+    }
+    public var titleBackgroundColor:UIColor = UIColor.white{      //Title背景色
+        didSet {
+            self.largeTitleView.backgroundColor = self.titleBackgroundColor
+            self.navigationController?.navigationBar.setBackgroundColor(self.titleBackgroundColor)
+        }
+    }
     public var titleName:String = "" {
         didSet {
             self.title = titleName
