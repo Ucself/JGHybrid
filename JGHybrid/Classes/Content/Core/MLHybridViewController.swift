@@ -199,7 +199,12 @@ open class MLHybridViewController: UIViewController {
             guard let versionStr = Bundle.main.infoDictionary?["CFBundleShortVersionString"] else {return}
             userAgentStr.append(" \(MLHybrid.shared.userAgent)\(versionStr) ")
             userAgentStr.append(" Hybrid/\(versionStr) ")
-            weakSelf.contentView.customUserAgent = userAgentStr
+            if #available(iOS 9.0, *) {
+                weakSelf.contentView.customUserAgent = userAgentStr
+            } else {
+                // Fallback on earlier versions
+                UserDefaults.standard.register(defaults: ["UserAgent" : userAgentStr])
+            }
         }
     }
     
