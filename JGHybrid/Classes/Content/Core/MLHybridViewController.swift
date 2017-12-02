@@ -26,7 +26,7 @@ open class MLHybridViewController: UIViewController {
     }
     public var titleBackgroundColor:UIColor = UIColor.white{      //Title背景色
         didSet {
-            self.largeTitleView.backgroundColor = self.titleBackgroundColor
+            self.largeTitleView?.backgroundColor = self.titleBackgroundColor
             self.navigationController?.navigationBar.setBackgroundColor(self.titleBackgroundColor)
         }
     }
@@ -42,7 +42,7 @@ open class MLHybridViewController: UIViewController {
     //视图控件
     var progressView:UIProgressView!
     var contentView: MLHybridContentView!
-    var largeTitleView:UIView!
+    var largeTitleView:UIView?
     var largeTitleLabel:UILabel?
     var largeTitleViewTop: NSLayoutConstraint!
     var largeTitleViewHeight:CGFloat = 74.5
@@ -86,7 +86,7 @@ open class MLHybridViewController: UIViewController {
         //设置颜色
         self.navigationController?.navigationBar.setTitleColor(self.titleColor)
         self.navigationController?.navigationBar.setBackgroundColor(self.titleBackgroundColor)
-        self.largeTitleView.backgroundColor = self.titleBackgroundColor
+        self.largeTitleView?.backgroundColor = self.titleBackgroundColor
         self.largeTitleLabel?.textColor = self.titleColor
     }
     
@@ -148,15 +148,15 @@ open class MLHybridViewController: UIViewController {
         self.contentView = MLHybridContentView()
         self.largeTitleView = UIView.init()
         self.view.addSubview(self.contentView)
-        self.view.addSubview(self.largeTitleView)
+        self.view.addSubview(self.largeTitleView!)
         //Title
         self.largeTitleLabel = UILabel.init()
         self.largeTitleLabel!.font = UIFont.init(name: "PingFangSC-Medium", size: 22)
         self.largeTitleLabel!.backgroundColor = self.titleBackgroundColor
         self.largeTitleLabel!.text = self.titleName
-        self.largeTitleView.addSubview(self.largeTitleLabel!)
+        self.largeTitleView!.addSubview(self.largeTitleLabel!)
         //约束变量
-        self.largeTitleView.translatesAutoresizingMaskIntoConstraints = false
+        self.largeTitleView!.translatesAutoresizingMaskIntoConstraints = false
         self.contentView.translatesAutoresizingMaskIntoConstraints = false
         self.largeTitleLabel!.translatesAutoresizingMaskIntoConstraints = false
         let topGuide = self.topLayoutGuide
@@ -167,10 +167,10 @@ open class MLHybridViewController: UIViewController {
         let topTitleLabelConstraint = NSLayoutConstraint(item: self.largeTitleLabel!, attribute: .top, relatedBy: .equal, toItem: self.largeTitleView, attribute: .top, multiplier: 1.0, constant: 0)
         let bottomTitleLabelConstraintt = NSLayoutConstraint(item: self.largeTitleLabel!, attribute: .bottom, relatedBy: .equal, toItem: self.largeTitleView, attribute: .bottom, multiplier: 1.0, constant: 0)
         //大标题布局
-        let leftLargeTitleConstraint = NSLayoutConstraint(item: self.largeTitleView, attribute: .left, relatedBy: .equal, toItem: self.view, attribute: .left, multiplier: 1.0, constant: 0)
-        let rightLargeTitleConstraint = NSLayoutConstraint(item: self.largeTitleView, attribute: .right, relatedBy: .equal, toItem: self.view, attribute: .right, multiplier: 1.0, constant: 0)
-        let topLargeTitleConstraint = NSLayoutConstraint(item: self.largeTitleView, attribute: .top, relatedBy: .equal, toItem: topGuide, attribute: .bottom, multiplier: 1.0, constant: 0)
-        let heightLargeTitleConstrain = NSLayoutConstraint(item: self.largeTitleView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: self.largeTitleViewHeight)
+        let leftLargeTitleConstraint = NSLayoutConstraint(item: self.largeTitleView!, attribute: .left, relatedBy: .equal, toItem: self.view, attribute: .left, multiplier: 1.0, constant: 0)
+        let rightLargeTitleConstraint = NSLayoutConstraint(item: self.largeTitleView!, attribute: .right, relatedBy: .equal, toItem: self.view, attribute: .right, multiplier: 1.0, constant: 0)
+        let topLargeTitleConstraint = NSLayoutConstraint(item: self.largeTitleView!, attribute: .top, relatedBy: .equal, toItem: topGuide, attribute: .bottom, multiplier: 1.0, constant: 0)
+        let heightLargeTitleConstrain = NSLayoutConstraint(item: self.largeTitleView!, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: self.largeTitleViewHeight)
         self.largeTitleViewTop = topLargeTitleConstraint
         //容器布局
         let leftConstraint = NSLayoutConstraint(item: self.contentView, attribute: .left, relatedBy: .equal, toItem: self.view, attribute: .left, multiplier: 1.0, constant: 0)

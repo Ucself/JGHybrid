@@ -105,9 +105,7 @@ extension MLHybridTools {
         //设置背景色
         if UIColor.colorWithHex(params.background) != .clear {
             //根据16进制获取颜色值
-            let backgroundColor:UIColor = UIColor.colorWithHex(params.background)
             self.command.viewController.titleBackgroundColor = UIColor.colorWithHex(params.background)
-            self.command.viewController.navigationController?.navigationBar.setBackgroundColor(backgroundColor)
         }
         //设置左边按钮
         if params.left.count != 0 {
