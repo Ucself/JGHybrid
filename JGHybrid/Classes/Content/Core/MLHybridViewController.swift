@@ -13,9 +13,15 @@ open class MLHybridViewController: UIViewController {
     public var naviBarHidden = false
     public var needBackButton = false
     public var needHidesBottomBar = true
-    public var needLargeTitle = true            //是否需要大标题
-    public var titleColor:String?               //Title颜色
-    public var titleBackgroundColor:String?     //Title背景色
+    public var needLargeTitle = false            //是否需要大标题
+    public var titleColor:UIColor = UIColor.colorWithHex("2F2929")               //Title颜色
+    public var titleBackgroundColor:UIColor = UIColor.white      //Title背景色
+    public var titleName:String = "" {
+        didSet {
+            self.title = titleName
+            self.largeTitleLabel?.text = titleName
+        }
+    }
     //MARK: 私有参数
     var locationModel = MLHybridLocation()
     var tool: MLHybridTools = MLHybridTools()
@@ -23,9 +29,9 @@ open class MLHybridViewController: UIViewController {
     var progressView:UIProgressView!
     var contentView: MLHybridContentView!
     var largeTitleView:UIView!
-    var largeTitleLabel:UILabel!
+    var largeTitleLabel:UILabel?
     var largeTitleViewTop: NSLayoutConstraint!
-    let largeTitleViewHeight:CGFloat = 74.5
+    var largeTitleViewHeight:CGFloat = 74.5
     //回调相关变量
     var urlPath: URL?
     var hybridEvent = "Hybrid.callback"
@@ -63,6 +69,11 @@ open class MLHybridViewController: UIViewController {
         if let callback = self.onShowCallBack {
             self.tool.callBack(data: "", err_no: 0, msg: "onwebviewshow", callback: callback, webView: self.contentView, completion: {js in })
         }
+        //设置颜色
+        self.navigationController?.navigationBar.setTitleColor(self.titleColor)
+        self.navigationController?.navigationBar.setBackgroundColor(self.titleBackgroundColor)
+        self.largeTitleView.backgroundColor = self.titleBackgroundColor
+        self.largeTitleLabel?.textColor = self.titleColor
     }
     
     override open func viewWillDisappear(_ animated: Bool) {
@@ -108,34 +119,44 @@ open class MLHybridViewController: UIViewController {
     }
     
     func initContentView() {
+        //设置大标题数据
+        //设置大标题
+        if !self.needLargeTitle {
+            //设置约束高度
+            self.largeTitleViewHeight = 0
+            self.title = self.titleName
+        }
+        else {
+            self.largeTitleViewHeight = 74.5
+            self.title = ""
+        }
         //容器数据对象
         self.contentView = MLHybridContentView()
         self.largeTitleView = UIView.init()
-        self.largeTitleView.backgroundColor = UIColor.blue
         self.view.addSubview(self.contentView)
         self.view.addSubview(self.largeTitleView)
         //Title
         self.largeTitleLabel = UILabel.init()
-        self.largeTitleLabel.font = UIFont.init(name: "PingFangSC-Medium", size: 22)
-        self.largeTitleLabel.textColor = UIColor.red
-        self.largeTitleLabel.text = "我是大标题"
-        self.largeTitleView.addSubview(self.largeTitleLabel)
+        self.largeTitleLabel!.font = UIFont.init(name: "PingFangSC-Medium", size: 22)
+        self.largeTitleLabel!.backgroundColor = self.titleBackgroundColor
+        self.largeTitleLabel!.text = self.titleName
+        self.largeTitleView.addSubview(self.largeTitleLabel!)
         //约束变量
         self.largeTitleView.translatesAutoresizingMaskIntoConstraints = false
         self.contentView.translatesAutoresizingMaskIntoConstraints = false
-        self.largeTitleLabel.translatesAutoresizingMaskIntoConstraints = false
+        self.largeTitleLabel!.translatesAutoresizingMaskIntoConstraints = false
         let topGuide = self.topLayoutGuide
         let bottomGuide = self.bottomLayoutGuide
         //大标题Label布局
-        let leftTitleLabelConstraint = NSLayoutConstraint(item: self.largeTitleLabel, attribute: .left, relatedBy: .equal, toItem: self.largeTitleView, attribute: .left, multiplier: 1.0, constant: 22)
-        let rightTitleLabelConstraint = NSLayoutConstraint(item: self.largeTitleLabel, attribute: .right, relatedBy: .equal, toItem: self.largeTitleView, attribute: .right, multiplier: 1.0, constant: 0)
-        let topTitleLabelConstraint = NSLayoutConstraint(item: self.largeTitleLabel, attribute: .top, relatedBy: .equal, toItem: self.largeTitleView, attribute: .top, multiplier: 1.0, constant: 0)
-        let bottomTitleLabelConstraintt = NSLayoutConstraint(item: self.largeTitleLabel, attribute: .bottom, relatedBy: .equal, toItem: self.largeTitleView, attribute: .bottom, multiplier: 1.0, constant: 0)
+        let leftTitleLabelConstraint = NSLayoutConstraint(item: self.largeTitleLabel!, attribute: .left, relatedBy: .equal, toItem: self.largeTitleView, attribute: .left, multiplier: 1.0, constant: 22)
+        let rightTitleLabelConstraint = NSLayoutConstraint(item: self.largeTitleLabel!, attribute: .right, relatedBy: .equal, toItem: self.largeTitleView, attribute: .right, multiplier: 1.0, constant: 0)
+        let topTitleLabelConstraint = NSLayoutConstraint(item: self.largeTitleLabel!, attribute: .top, relatedBy: .equal, toItem: self.largeTitleView, attribute: .top, multiplier: 1.0, constant: 0)
+        let bottomTitleLabelConstraintt = NSLayoutConstraint(item: self.largeTitleLabel!, attribute: .bottom, relatedBy: .equal, toItem: self.largeTitleView, attribute: .bottom, multiplier: 1.0, constant: 0)
         //大标题布局
         let leftLargeTitleConstraint = NSLayoutConstraint(item: self.largeTitleView, attribute: .left, relatedBy: .equal, toItem: self.view, attribute: .left, multiplier: 1.0, constant: 0)
         let rightLargeTitleConstraint = NSLayoutConstraint(item: self.largeTitleView, attribute: .right, relatedBy: .equal, toItem: self.view, attribute: .right, multiplier: 1.0, constant: 0)
         let topLargeTitleConstraint = NSLayoutConstraint(item: self.largeTitleView, attribute: .top, relatedBy: .equal, toItem: topGuide, attribute: .bottom, multiplier: 1.0, constant: 0)
-        let heightLargeTitleConstrain = NSLayoutConstraint(item: self.largeTitleView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 74.5)
+        let heightLargeTitleConstrain = NSLayoutConstraint(item: self.largeTitleView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: self.largeTitleViewHeight)
         self.largeTitleViewTop = topLargeTitleConstraint
         //容器布局
         let leftConstraint = NSLayoutConstraint(item: self.contentView, attribute: .left, relatedBy: .equal, toItem: self.view, attribute: .left, multiplier: 1.0, constant: 0)
@@ -246,7 +267,7 @@ extension MLHybridViewController:UIScrollViewDelegate {
         let current = topConstant
         if current < -largeTitleViewHeight / 2 && current > -largeTitleViewHeight {
             //大标题显示大部分的时候
-            self.title = "我是大标题"
+            self.title = self.titleName
         } else if current >= -largeTitleViewHeight / 2 && current < 0 {
             //大标题隐藏大部分的时候
             self.title = ""

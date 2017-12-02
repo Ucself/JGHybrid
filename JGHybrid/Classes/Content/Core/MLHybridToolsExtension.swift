@@ -26,7 +26,17 @@ extension MLHybridTools {
         if params.type == "h5" {
             guard let webViewController = MLHybrid.load(urlString: params.url) else {return}
             guard let navi = self.command.viewController.navigationController else {return}
-            webViewController.title = params.title
+            webViewController.titleName = params.title
+            webViewController.needLargeTitle = params.bigTitle  //大标题
+            //标题颜色
+            if UIColor.colorWithHex(params.color) != .clear {
+                webViewController.titleColor = UIColor.colorWithHex(params.color)
+            }
+            //标题背景
+            if UIColor.colorWithHex(params.background) != .clear {
+                webViewController.titleBackgroundColor = UIColor.colorWithHex(params.background)
+            }
+            
             navi.pushViewController(webViewController, animated: params.animate)
         } else {
             //native跳转交给外部处理
@@ -81,18 +91,20 @@ extension MLHybridTools {
             return
         }
         self.command.viewController.title = params.title
+        self.command.viewController.titleName = params.title
         //设置导航栏是否显示
         vc.naviBarHidden = !params.show
         vc.navigationController?.setNavigationBarHidden(vc.naviBarHidden, animated: true)
-        
+        //标题颜色
+        if UIColor.colorWithHex(params.color) != .clear {
+            self.command.viewController.titleColor = UIColor.colorWithHex(params.color)
+        }
         //设置背景色
         if params.background != "" {
             //根据16进制获取颜色值
-            let backgroundColor:UIColor? = UIColor.colorWithHex(params.background)
-            vc.navigationController?.navigationBar.isTranslucent = false
-            vc.navigationController?.navigationBar.backgroundColor = backgroundColor
-            vc.navigationController?.navigationBar.barTintColor = backgroundColor
-            vc.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+            let backgroundColor:UIColor = UIColor.colorWithHex(params.background)
+            self.command.viewController.titleBackgroundColor = UIColor.colorWithHex(params.background)
+            self.command.viewController.navigationController?.navigationBar.setBackgroundColor(backgroundColor)
         }
         //设置左边按钮
         if params.left.count != 0 {
@@ -116,7 +128,6 @@ extension MLHybridTools {
             //Button按钮
             let button:hybridHeaderButton = hybridHeaderButton.init()
             
-            
             let titleWidth = model.title.hybridStringWidthWith(15, height: 20)
             let itemWidth = titleWidth > 44 ? titleWidth : 44
             //这是大小
@@ -124,12 +135,11 @@ extension MLHybridTools {
             //设置颜色
             let titleColor:UIColor = UIColor.colorWithHex(model.color)
             if titleColor != .clear {
-                button.setTitleColor(UIColor.colorWithHex(model.color), for: .normal)
+                button.setTitleColor(titleColor, for: .normal)
             }
             //设置图片
-            if model.icon != ""{
-                //button.kf.setImage(with: URL(string: model.icon), for: .normal)
-                //button.contentMode = .scaleAspectFit
+            if model.icon != "" ,let buttonIcon:UIImage = UIImage.init(named: "hybrid_\(model.icon)"){
+                button.setImage(buttonIcon, for: .normal)
                 coverView.frame = CGRect.init(x: 0, y: 0, width: 44, height: 44)
             }
             if model.title == "back" {
