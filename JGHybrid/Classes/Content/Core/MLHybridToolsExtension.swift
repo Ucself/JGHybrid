@@ -93,11 +93,6 @@ extension MLHybridTools {
         self.command.viewController.titleName = params.title
         //设置导航栏是否显示
         vc.naviBarHidden = !params.show
-        vc.needLargeTitle = params.bigTitle
-        if vc.needLargeTitle {
-            vc.largeTitleViewHeight = 74.5
-            vc.largeTitleViewTop.constant = vc.largeTitleViewHeight
-        }
         //标题颜色
         if UIColor.colorWithHex(params.color) != .clear {
             self.command.viewController.titleColor = UIColor.colorWithHex(params.color)

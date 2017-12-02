@@ -147,12 +147,13 @@ open class MLHybridViewController: UIViewController {
         //容器数据对象
         self.contentView = MLHybridContentView()
         self.largeTitleView = UIView.init()
+        self.largeTitleView?.backgroundColor = self.titleBackgroundColor
         self.view.addSubview(self.contentView)
         self.view.addSubview(self.largeTitleView!)
         //Title
         self.largeTitleLabel = UILabel.init()
         self.largeTitleLabel!.font = UIFont.init(name: "PingFangSC-Medium", size: 22)
-        self.largeTitleLabel!.backgroundColor = self.titleBackgroundColor
+        self.largeTitleLabel!.textColor = self.titleColor
         self.largeTitleLabel!.text = self.titleName
         self.largeTitleView!.addSubview(self.largeTitleLabel!)
         //约束变量
