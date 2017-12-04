@@ -10,7 +10,7 @@ import UIKit
 class Hybrid_constantModel: NSObject {
     
     static var naviImageHeader = "hybrid_navi_"
-    static var switchCache = "HybridSwitchCacheClose"
+    static var switchCache = "HybridSwitchCache"
     static var hybridVersion = "HybridVersion"
     static var nativeVersion = "3.0.0"
     static var updateCookie = "MLHybridUpdateCookie"

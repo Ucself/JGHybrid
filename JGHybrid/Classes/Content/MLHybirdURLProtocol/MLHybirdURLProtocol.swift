@@ -6,32 +6,15 @@
 import UIKit
 import Foundation
 
-open class MLHybridURLProtocol: URLProtocol {
+class MLHybridURLProtocol: URLProtocol {
     
-    //查找本地文件是否存在
-    fileprivate class func findCache(_ request: URLRequest) -> String? {
-        let closeSwitch = UserDefaults.standard.bool(forKey: Hybrid_constantModel.switchCache)
-        if closeSwitch {
-            print("读取本地资源 关闭")
-            return nil
-        }
-        if let url = request.url, request.url?.host == Hybrid_constantModel.webAppBaseUrl  {
-            if !Hybrid_constantModel.types.contains(url.pathExtension) {
-                return nil
-            }
-            let documentPath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)[0]
-            if FileManager.default.fileExists(atPath: documentPath + url.path) {
-                return documentPath + url.path
-            }
-            
-        }
-        return nil
-    }
-
     override open class func canInit(with request: URLRequest) -> Bool {
         print("MLHybridURLProtocol------------------>canInit")
+        self.canUseCache(request)
+        return false
         //如果被标记为已处理 直接跳过
-        if let hasHandled = URLProtocol.property(forKey: Hybrid_constantModel.urlProtocolHandled, in: request) as? Bool , hasHandled == true {
+        if let hasHandled = URLProtocol.property(forKey: Hybrid_constantModel.urlProtocolHandled, in: request) as? Bool ,
+            hasHandled == true {
             return false
         }
         if let _ = self.findCache(request) {
@@ -68,4 +51,32 @@ open class MLHybridURLProtocol: URLProtocol {
         print("MLHybridURLProtocol------------------>stopLoading")
     }
     
+}
+
+extension MLHybridURLProtocol {
+    //是否使用缓存文件
+    fileprivate class func canUseCache(_ request: URLRequest) -> Bool {
+        //如果缓存开关关闭
+        return false
+    }
+    
+    //查找本地文件是否存在
+    fileprivate class func findCache(_ request: URLRequest) -> String? {
+        //        let closeSwitch = UserDefaults.standard.bool(forKey: Hybrid_constantModel.switchCache)
+        //        if closeSwitch {
+        //            print("读取本地资源 关闭")
+        //            return nil
+        //        }
+        if let url = request.url, request.url?.host == Hybrid_constantModel.webAppBaseUrl  {
+            if !Hybrid_constantModel.types.contains(url.pathExtension) {
+                return nil
+            }
+            let documentPath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)[0]
+            if FileManager.default.fileExists(atPath: documentPath + url.path) {
+                return documentPath + url.path
+            }
+            
+        }
+        return nil
+    }
 }

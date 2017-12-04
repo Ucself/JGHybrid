@@ -100,7 +100,7 @@ extension Dictionary {
 }
 extension UIColor {
     //通过十六进制获取颜色
-    public class func colorWithHex(_ hex: String, alpha:CGFloat = 1) -> UIColor {
+    public class func hybridColorWithHex(_ hex: String, alpha:CGFloat = 1) -> UIColor {
         let hexString = hex.trimmingCharacters(in: .whitespaces).uppercased()
         let nsHexString = hexString.replacingOccurrences(of: "#", with: "") as NSString
         if nsHexString.length == 6 {

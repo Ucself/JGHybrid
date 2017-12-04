@@ -18,7 +18,7 @@ open class MLHybridViewController: UIViewController {
     public var needBackButton = false
     public var needHidesBottomBar = true
     public var needLargeTitle = false            //是否需要大标题
-    public var titleColor:UIColor = UIColor.colorWithHex("2F2929"){               //Title颜色
+    public var titleColor:UIColor = UIColor.hybridColorWithHex("2F2929"){               //Title颜色
         didSet {
             self.largeTitleLabel?.textColor = self.titleColor
             self.navigationController?.navigationBar.setTitleColor(self.titleColor)

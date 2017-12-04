@@ -231,6 +231,21 @@ class HybridClipboardParams: BaseParams {
         return obj
     }
 }
+//离线 mainfest
+class HybridMainfestParams:BaseParams {
+    var _hash:String = ""
+    var base:String = ""
+    var assets:[String] = []
+    //解析数据对象
+    override class func convert(_ dic: [String: AnyObject]) -> HybridMainfestParams {
+        let obj:HybridMainfestParams = HybridMainfestParams.init()
+        obj._hash = dic["hash"] as? String ?? ""
+        obj.base = dic["base"] as? String ?? ""
+        obj.assets = dic["assets"] as? [String] ?? []
+        return obj
+    }
+}
+
 
 
 

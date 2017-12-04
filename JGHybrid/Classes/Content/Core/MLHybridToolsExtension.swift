@@ -16,7 +16,7 @@ extension MLHybridTools {
             return
         }
         self.command.viewController.hybridEvent = params.callback_name
-        UserDefaults.standard.set(!params.cache, forKey: Hybrid_constantModel.switchCache)
+        UserDefaults.standard.set(params.cache, forKey: Hybrid_constantModel.switchCache)
     }
     //forward - (push 页面 )
     func hybridForward(){
@@ -29,12 +29,12 @@ extension MLHybridTools {
             webViewController.titleName = params.title
             webViewController.needLargeTitle = params.bigTitle  //大标题
             //标题颜色
-            if UIColor.colorWithHex(params.color) != .clear {
-                webViewController.titleColor = UIColor.colorWithHex(params.color)
+            if UIColor.hybridColorWithHex(params.color) != .clear {
+                webViewController.titleColor = UIColor.hybridColorWithHex(params.color)
             }
             //标题背景
-            if UIColor.colorWithHex(params.background) != .clear {
-                webViewController.titleBackgroundColor = UIColor.colorWithHex(params.background)
+            if UIColor.hybridColorWithHex(params.background) != .clear {
+                webViewController.titleBackgroundColor = UIColor.hybridColorWithHex(params.background)
             }
             
             navi.pushViewController(webViewController, animated: params.animate)
@@ -94,13 +94,13 @@ extension MLHybridTools {
         //设置导航栏是否显示
         vc.naviBarHidden = !params.show
         //标题颜色
-        if UIColor.colorWithHex(params.color) != .clear {
-            self.command.viewController.titleColor = UIColor.colorWithHex(params.color)
+        if UIColor.hybridColorWithHex(params.color) != .clear {
+            self.command.viewController.titleColor = UIColor.hybridColorWithHex(params.color)
         }
         //设置背景色
-        if UIColor.colorWithHex(params.background) != .clear {
+        if UIColor.hybridColorWithHex(params.background) != .clear {
             //根据16进制获取颜色值
-            self.command.viewController.titleBackgroundColor = UIColor.colorWithHex(params.background)
+            self.command.viewController.titleBackgroundColor = UIColor.hybridColorWithHex(params.background)
         }
         //设置左边按钮
         if params.left.count != 0 {
@@ -129,7 +129,7 @@ extension MLHybridTools {
             //这是大小
             coverView.frame = CGRect.init(x: 0, y: 0, width: itemWidth, height: 44)
             //设置颜色
-            let titleColor:UIColor = UIColor.colorWithHex(model.color)
+            let titleColor:UIColor = UIColor.hybridColorWithHex(model.color)
             if titleColor != .clear {
                 button.setTitleColor(titleColor, for: .normal)
             }
@@ -180,7 +180,7 @@ extension MLHybridTools {
             return
         }
         self.command.webView.scrollView.bounces = params.enable
-        let backgroundColor:UIColor = UIColor.colorWithHex(params.background)
+        let backgroundColor:UIColor = UIColor.hybridColorWithHex(params.background)
         if backgroundColor != .clear {
             self.command.webView.scrollView.backgroundColor = backgroundColor
         }
@@ -229,5 +229,28 @@ extension MLHybridTools {
             return
         }
         UIPasteboard.general.string = params.content
+    }
+    //离线缓存根据
+    func hybridOfflineCacheMainfest(){
+        //请求会话
+        let session:URLSession = URLSession.shared
+        guard let url:URL = URL.init(string: MLHybrid.shared.cacheURLString) else { return }
+        let task:URLSessionTask = session.dataTask(with: url) { (data, response, error) in
+            do {
+                //获取返回的数据
+                if let responseData = data {
+                    let jsonData = try JSONSerialization.jsonObject(with: responseData, options: JSONSerialization.ReadingOptions.allowFragments)
+                    if let dic = jsonData as? [String:AnyObject]{
+                        let mainfestParams:HybridMainfestParams = HybridMainfestParams.convert(dic)
+                        MLHybrid.shared.mainfestParams = mainfestParams
+                    }
+                }
+            }
+            catch let catchError {
+                print("hybridOfflineCacheMainfest.catchError -> \(catchError)")
+            }
+            
+        }
+        task.resume()
     }
 }

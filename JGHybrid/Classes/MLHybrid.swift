@@ -24,6 +24,10 @@ open class MLHybrid {
     var userAgent: String = unregistered
     var scheme: String = unregistered
     var backIndicator: String = unregistered
+    //可设置地址
+    open var cacheURLString:String = "http://web-dev.doctorwork.com/app/health/manifest.json"
+//    open var cacheURLString:String = "http://www.baidu.com"
+    var mainfestParams:HybridMainfestParams = HybridMainfestParams()
     
     //注册信息
     //应用启动、登陆、注销 都需要调用
@@ -40,9 +44,9 @@ open class MLHybrid {
         shared.delegate = delegate
         
         //设置拦截
-//        URLProtocol.registerClass(MLHybridURLProtocol.self)
-//        URLProtocol.wk_registerScheme("http")
-//        URLProtocol.wk_registerScheme("https")
+        URLProtocol.registerClass(MLHybridURLProtocol.self)
+        URLProtocol.wk_registerScheme("http")
+        URLProtocol.wk_registerScheme("https")
     }
     //加载页面
     open class func load(urlString: String) -> MLHybridViewController? {
@@ -58,6 +62,6 @@ open class MLHybrid {
 
     //版本检测并更新
     open class func checkVersion() {
-        MLHybridTools().checkVersion()
+        MLHybridTools().hybridOfflineCacheMainfest()
     }
 }
