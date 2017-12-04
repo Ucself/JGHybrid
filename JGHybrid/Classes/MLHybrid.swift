@@ -45,8 +45,8 @@ open class MLHybrid {
         
         //设置拦截
         URLProtocol.registerClass(MLHybridURLProtocol.self)
-        URLProtocol.wk_registerScheme("http")
-        URLProtocol.wk_registerScheme("https")
+        //默认开启拦截
+        UserDefaults.standard.set(true, forKey: Hybrid_constantModel.switchCache)
     }
     //加载页面
     open class func load(urlString: String) -> MLHybridViewController? {
@@ -61,7 +61,7 @@ open class MLHybrid {
     }
 
     //版本检测并更新
-    open class func checkVersion() {
+    open class func checkMainfest() {
         MLHybridTools().hybridOfflineCacheMainfest()
     }
 }

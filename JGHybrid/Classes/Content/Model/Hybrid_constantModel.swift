@@ -22,7 +22,7 @@ class Hybrid_constantModel: NSObject {
     
     //URLProtocol相关
     static var urlProtocolHandled = "MLHybridURLProtocolHandled"
-    static var types = ["html","js","css","jpg","png"]
+    static var types = ["html","js","css","jpg","png","jpeg"]
     static var contentTpye = ["html": "text/html", "js": "application/javascript", "css": "text/css", "jpg": "image/jpeg", "png": "image/png"]
     
 }

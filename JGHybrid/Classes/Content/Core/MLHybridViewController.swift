@@ -221,6 +221,9 @@ open class MLHybridViewController: UIViewController {
                 UserDefaults.standard.register(defaults: ["UserAgent" : userAgentStr])
             }
         }
+        //设置拦截
+        URLProtocol.wk_registerScheme("http")
+        URLProtocol.wk_registerScheme("https")
     }
     
     func setUpBackButton() {
