@@ -18,7 +18,7 @@ enum MLHybridMethodType: String {
     case hybridPagehide         = "pagehide"            //pagehide - ( 页面隐藏 )
     case hybridDevice           = "device"              //device - ( 获取设备信息 )
     case hybridLocation         = "location"            //location - ( 定位 )
-    case hybridClipboard        = "clipboard"            //clipboard - ( 剪贴板 )
+    case hybridClipboard        = "clipboard"           //clipboard - ( 剪贴板 )
     //Old
     case UpdateHeader = "updateheader"
     //case Back = "back"

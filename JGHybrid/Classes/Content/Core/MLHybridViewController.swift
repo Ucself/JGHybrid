@@ -190,7 +190,7 @@ open class MLHybridViewController: UIViewController {
         //加载
         guard urlPath != nil else {return}
         var urlRequest:URLRequest = URLRequest.init(url: urlPath!)
-        urlRequest.setValue("platform=\(MLHybrid.shared.platform); sess=\(MLHybrid.shared.sess)", forHTTPHeaderField: "Cookie")
+        urlRequest.setValue("platform=\(MLHybridConfiguration.default.platform); sess=\(MLHybridConfiguration.default.sess)", forHTTPHeaderField: "Cookie")
         self.contentView.load(urlRequest)
     }
     
@@ -209,10 +209,10 @@ open class MLHybridViewController: UIViewController {
             //获取userAgent数据
             guard let weakSelf = self,var userAgentStr:String = result as? String else { return }
             //查看是否设置过
-            guard userAgentStr.range(of: MLHybrid.shared.userAgent) == nil else { return }
+            guard userAgentStr.range(of: MLHybridConfiguration.default.userAgent) == nil else { return }
             //未获取到版本
             guard let versionStr = Bundle.main.infoDictionary?["CFBundleShortVersionString"] else {return}
-            userAgentStr.append(" \(MLHybrid.shared.userAgent)\(versionStr) ")
+            userAgentStr.append(" \(MLHybridConfiguration.default.userAgent)\(versionStr) ")
             userAgentStr.append(" Hybrid/\(versionStr) ")
             if #available(iOS 9.0, *) {
                 weakSelf.contentView.customUserAgent = userAgentStr
@@ -235,7 +235,7 @@ open class MLHybridViewController: UIViewController {
         let button = UIButton()
         button.frame = CGRect(x: 0, y: 0, width: 42, height: 44)
         button.addTarget(self, action: #selector(self.backButtonClick), for: .touchUpInside)
-        let image = UIImage(named: MLHybrid.shared.backIndicator)
+        let image = UIImage(named: MLHybridConfiguration.default.backIndicator)
         button.setImage(image, for: .normal)
         button.contentHorizontalAlignment = .left
         let item = UIBarButtonItem(customView: button)

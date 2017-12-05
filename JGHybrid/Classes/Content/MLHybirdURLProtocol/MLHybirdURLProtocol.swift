@@ -9,17 +9,17 @@ import Foundation
 class MLHybridURLProtocol: URLProtocol {
     
     override open class func canInit(with request: URLRequest) -> Bool {
-        print("MLHybridURLProtocol------------------>canInit")
+        //print("MLHybridURLProtocol------------------>canInit")
         return MLHybridURLProtocol.canUseCache(request)
     }
 
     override open class func canonicalRequest(for request: URLRequest) -> URLRequest {
-        print("MLHybridURLProtocol------------------>canonicalRequest")
+        //print("MLHybridURLProtocol------------------>canonicalRequest")
         return request
     }
 
     override open func startLoading() {
-        print("MLHybridURLProtocol------------------>startLoading")
+        //print("MLHybridURLProtocol------------------>startLoading")
         //标记请求  防止重复处理
         let mutableReqeust: NSMutableURLRequest = (self.request as NSURLRequest).mutableCopy() as! NSMutableURLRequest
         URLProtocol.setProperty(true, forKey: Hybrid_constantModel.urlProtocolHandled, in: mutableReqeust)
@@ -34,20 +34,17 @@ class MLHybridURLProtocol: URLProtocol {
     }
     
     override open func stopLoading() {
-        print("MLHybridURLProtocol------------------>stopLoading")
+        //print("MLHybridURLProtocol------------------>stopLoading")
     }
     
 }
 
 extension MLHybridURLProtocol {
+    
     //是否使用缓存文件
     fileprivate class func canUseCache(_ request: URLRequest) -> Bool {
         //是否是有效的URL路径
         guard let requestURL:URL = request.url else { return false }
-//        print("canUseCache(_ request: URLRequest) -> requestURL.absoluteString == \(requestURL.absoluteString)")
-//        print("canUseCache(_ request: URLRequest) -> requestURL.pathExtension == \(requestURL.pathExtension)")
-//        print("canUseCache(_ request: URLRequest) -> requestURL.path == \(requestURL.path)")
-//        print("canUseCache(_ request: URLRequest) -> requestURL.lastPathComponent == \(requestURL.lastPathComponent)")
         //查看缓存开关
         let closeSwitch = UserDefaults.standard.bool(forKey: Hybrid_constantModel.switchCache)
         if !closeSwitch {
@@ -62,34 +59,45 @@ extension MLHybridURLProtocol {
         if !Hybrid_constantModel.types.contains(requestURL.pathExtension) {
             return false
         }
+        //如果是上次的下载就返回失败
+        if requestURL.absoluteString.contains("?hybrid_download=xxx") {
+            return false
+        }
+        
         //是否在需要加载的本地文件里面
-        if MLHybrid.shared.mainfestParams.assetsPathExtension.contains(requestURL.lastPathComponent) {
-            //文件路径
-            let urlFile:URL = MLHybridURLProtocol.getUrlFolder().appendingPathComponent(requestURL.lastPathComponent, isDirectory: false)
-            //检测文件是否存在 不存在则异步缓存文件
-            if !FileManager.default.fileExists(atPath: urlFile.path) {
-                //异步执行下载程序
-                DispatchQueue.global().async {
-                    let session:URLSession =  URLSession.shared
-                    let task:URLSessionTask = session.dataTask(with: requestURL, completionHandler: { (data, response, error) in
-                        //如果有数据且不为空
-                        if data == nil || error != nil {
-                            return
-                        }
-                        //写入文件
-                        do {
-                            try data?.write(to: urlFile)
-                        }
-                        catch let catchError {
-                            _ = catchError
-//                            print("canUseCache(_ request: URLRequest) -> \(catchError)")
-                        }
-                    })
-                    task.resume()
-                }
-                return false
-            }
+        if !MLHybrid.shared.mainfestParams.assetsPathExtension.contains(requestURL.lastPathComponent) {
+            return false
+        }
+        //文件路径
+        let urlFile:URL = MLHybridURLProtocol.getUrlFolder().appendingPathComponent(requestURL.lastPathComponent, isDirectory: false)
+        //检测文件是否存在 不存在则异步缓存文件
+        if FileManager.default.fileExists(atPath: urlFile.path) {
             return true
+        }
+        //重新拼接下载URL
+        let newUrlString:String = requestURL.absoluteString + "?hybrid_download=xxx"
+        //是否是有效的URL
+        guard let newDownloadURL:URL = URL.init(string: newUrlString) else {
+            return false
+        }
+        //异步执行下载程序
+        DispatchQueue.global().async {
+            let session:URLSession =  URLSession.shared
+            let task:URLSessionTask = session.dataTask(with: newDownloadURL, completionHandler: { (data, response, error) in
+                //如果有数据且不为空
+                if data == nil || error != nil {
+                    return
+                }
+                //写入文件
+                do {
+                    try data?.write(to: urlFile)
+                }
+                catch let catchError {
+                    _ = catchError
+                }
+            })
+            print("下载文件   ->   \(newDownloadURL.absoluteString)")
+            task.resume()
         }
         return false
     }
@@ -115,7 +123,6 @@ extension MLHybridURLProtocol {
         let uuid:String = UIDevice.current.identifierForVendor?.uuidString ?? ""
         //文件夹路径
         let urlFolder:URL = documentURL.appendingPathComponent("\(uuid)_JGHybrid", isDirectory: true)
-        print("canUseCache(_ request: URLRequest) -> urlFolder:\(urlFolder)")
         //创建文件夹
         if !FileManager.default.fileExists(atPath: urlFolder.path){
             do {
@@ -123,7 +130,6 @@ extension MLHybridURLProtocol {
             }
             catch let catchError {
                 _ = catchError
-//                print("canUseCache(_ request: URLRequest) -> \(catchError)")
             }
         }
         return urlFolder

@@ -53,6 +53,7 @@
 		8C887927C4B8D695613A00E55F46259B /* aestab.c in Sources */ = {isa = PBXBuildFile; fileRef = 7BD64D04E274C10D42D10717D9C67F4A /* aestab.c */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		8CE59C25F59794F2CE1DBB81BAFFE363 /* hmac.h in Headers */ = {isa = PBXBuildFile; fileRef = 89E2654DC5477986F330E6618435A6DA /* hmac.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		914FFE8BEF9CF99BE398D6880895F169 /* aestab.h in Headers */ = {isa = PBXBuildFile; fileRef = 33D359EE1D5B81F3F5A41663BC1434B9 /* aestab.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		9154F7741FD695F200EA6A57 /* MLHybridConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9154F7731FD695F200EA6A57 /* MLHybridConfiguration.swift */; };
 		96DC677F577233F2A0A8430E9E96404F /* ioapi_mem.h in Headers */ = {isa = PBXBuildFile; fileRef = 04BA7F2C4153D966E98C2AC404D818F5 /* ioapi_mem.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		9B4BFDE7B8AB3092EB759BE4D174F305 /* Hybrid_constantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B1B184B0025CE770908E65E8B3B320 /* Hybrid_constantModel.swift */; };
 		9B668BBFA74669EB2D98FE27CFAF617F /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = 60D33BA6AF1CA803038FAAF2E8A4315C /* zip.c */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
@@ -187,6 +188,7 @@
 		84B970A4DA818D4F5DCB898B2A4F3109 /* JGHybrid-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JGHybrid-umbrella.h"; sourceTree = "<group>"; };
 		89E2654DC5477986F330E6618435A6DA /* hmac.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = hmac.h; path = SSZipArchive/minizip/aes/hmac.h; sourceTree = "<group>"; };
 		9149FE074AF5E57D6D2E86C17CE2F0AA /* ioapi_buf.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ioapi_buf.h; path = SSZipArchive/minizip/ioapi_buf.h; sourceTree = "<group>"; };
+		9154F7731FD695F200EA6A57 /* MLHybridConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLHybridConfiguration.swift; sourceTree = "<group>"; };
 		92E341E848CF134473A9D4C0CE5F1789 /* aescrypt.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = aescrypt.c; path = SSZipArchive/minizip/aes/aescrypt.c; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9632279C1BF1A49D2D98E9908EFB12B4 /* ioapi.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ioapi.h; path = SSZipArchive/minizip/ioapi.h; sourceTree = "<group>"; };
@@ -399,6 +401,7 @@
 			isa = PBXGroup;
 			children = (
 				2BF2B551849F9D14E23370CC420FF14A /* MLHybrid.swift */,
+				9154F7731FD695F200EA6A57 /* MLHybridConfiguration.swift */,
 				C0FB096A542AC8F9220815E64ABDC53C /* Content */,
 			);
 			path = Classes;
@@ -796,6 +799,7 @@
 				B24D7962DC15D8681B0BC128A3E4F60D /* MLCommandArgs.swift in Sources */,
 				27309DFAC3C263C1CDC63E7432EF896D /* MLHybirdCommand.swift in Sources */,
 				1D4916CE79E6F358FF10D5AA3EE67ED6 /* MLHybirdURLProtocol.swift in Sources */,
+				9154F7741FD695F200EA6A57 /* MLHybridConfiguration.swift in Sources */,
 				095CB63ACD659BCAB376562F62EF8751 /* MLHybrid.swift in Sources */,
 				5A8E8488B6A05D4A6584149DFD10A488 /* MLHybridButton.swift in Sources */,
 				C86D4BDCAE134A1FC4337983EDB0ACBC /* MLHybridContentView.swift in Sources */,

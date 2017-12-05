@@ -17,11 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        MLHybrid.register(sess: "cr2iPYCeaU6ElkldDKowOoJFpSqVaWXRZIFbk7vNbA9xQ3IvK8h2QtYwujGj1esT",
-                          platform: "i",
-                          appName: "medlinker",
-                          backIndicator: "return－no click",
-                          delegate: MethodExtension())
+        MLHybrid.register(MethodExtension())
         return true
     }
 

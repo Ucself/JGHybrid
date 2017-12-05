@@ -30,18 +30,18 @@ class MLHybridButton: UIButton {
                 //button.kf.setImage(with: URL(string: model.icon), for: .normal)
             }
             else if model.tagname.count > 0 {
-                print("加载图片 \(Hybrid_constantModel.naviImageHeader + model.tagname)")
-                print(UIImage(named: Hybrid_constantModel.naviImageHeader + model.tagname) ?? "未找到对应图片资源")
-                button.setImage(UIImage(named: Hybrid_constantModel.naviImageHeader + model.tagname), for: .normal)
+                print("加载图片 \(MLHybridConfiguration.default.naviImagePrefixes + model.tagname)")
+                print(UIImage(named: MLHybridConfiguration.default.naviImagePrefixes + model.tagname) ?? "未找到对应图片资源")
+                button.setImage(UIImage(named: MLHybridConfiguration.default.naviImagePrefixes + model.tagname), for: .normal)
             }
-            if let _ = UIImage(named: Hybrid_constantModel.naviImageHeader + model.tagname) {
+            if let _ = UIImage(named: MLHybridConfiguration.default.naviImagePrefixes + model.tagname) {
             } else {
                 if model.value.count > 0 {
                     button.setTitle(model.value, for: .normal)
                 }
             }
             if model.tagname == "back" {
-                let image = UIImage(named: MLHybrid.shared.backIndicator)
+                let image = UIImage(named: MLHybridConfiguration.default.backIndicator)
                 button.setImage(image, for: .normal)
                 button.contentHorizontalAlignment = .left
             } else {

@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'JGHybrid'
-  s.version          = '3.1.4'
+  s.version          = '3.2.0'
   s.summary          = 'A short description of JGHybrid.'
 
 # This description is used to generate tags and improve search results.

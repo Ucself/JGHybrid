@@ -13,7 +13,7 @@ open class MLHybridContentView: WKWebView {
     public convenience init(frame: CGRect) {
         //初始化和设置cookie
         let userContentController:WKUserContentController = WKUserContentController()
-        let cookieValue = "document.cookie ='platform=\(MLHybrid.shared.platform);path=/;expires=Sat, 02 May 2020 23:38:25 GMT;';document.cookie = 'sess=\(MLHybrid.shared.sess);path=/;expires=Sat, 02 May 2020 23:38:25 GMT;';"
+        let cookieValue = "document.cookie ='platform=\(MLHybridConfiguration.default.platform);path=/;expires=Sat, 02 May 2020 23:38:25 GMT;';document.cookie = 'sess=\(MLHybridConfiguration.default.sess);path=/;expires=Sat, 02 May 2020 23:38:25 GMT;';"
         let cookieScript:WKUserScript = WKUserScript.init(source: cookieValue, injectionTime: .atDocumentStart, forMainFrameOnly: false)
         userContentController.addUserScript(cookieScript)
         let webViewConfig:WKWebViewConfiguration = WKWebViewConfiguration()

@@ -134,12 +134,12 @@ extension MLHybridTools {
                 button.setTitleColor(titleColor, for: .normal)
             }
             //设置图片
-            if model.icon != "" ,let buttonIcon:UIImage = UIImage.init(named: "hybrid_\(model.icon)"){
+            if model.icon != "" ,let buttonIcon:UIImage = UIImage.init(named: MLHybridConfiguration.default.naviImagePrefixes + model.icon){
                 button.setImage(buttonIcon, for: .normal)
                 coverView.frame = CGRect.init(x: 0, y: 0, width: 44, height: 44)
             }
             if model.title == "back" {
-                let image = UIImage(named: MLHybrid.shared.backIndicator)
+                let image = UIImage(named: MLHybridConfiguration.default.backIndicator)
                 button.setImage(image, for: .normal)
             }
             //设置标题
@@ -234,7 +234,7 @@ extension MLHybridTools {
     func hybridOfflineCacheMainfest(){
         //请求会话
         let session:URLSession = URLSession.shared
-        guard let url:URL = URL.init(string: MLHybrid.shared.cacheURLString) else { return }
+        guard let url:URL = URL.init(string: MLHybridConfiguration.default.cacheURLString) else { return }
         let task:URLSessionTask = session.dataTask(with: url) { (data, response, error) in
             do {
                 //获取返回的数据
