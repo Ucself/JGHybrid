@@ -9,26 +9,42 @@ import WebKit
 open class MLHybridViewController: UIViewController {
     
     //MARK: 公共参数
+    /// 是否隐藏 NavigationBar
     public var naviBarHidden = false {
         didSet {
             self.navigationController?.setNavigationBarHidden(self.naviBarHidden, animated: true)
         }
     }
+    
+    /// 是否需要返回按钮: false 为系统默认
     public var needBackButton = false
+    
+    /// 是否需要隐藏 NavigationBottomBar
     public var needHidesBottomBar = true
-    public var needLargeTitle = false            //是否需要大标题
+    
+    /// 是否需要模拟大标题
+    public var needLargeTitle = false
+    
+    /// 是否需要加载进度
+    public var needLoadProgress = false
+    
+    /// 标题颜色
     public var titleColor:UIColor = UIColor.hybridColorWithHex("2F2929"){               //Title颜色
         didSet {
             self.largeTitleLabel?.textColor = self.titleColor
             self.navigationController?.navigationBar.setTitleColor(self.titleColor)
         }
     }
+    
+    /// 标题背景色
     public var titleBackgroundColor:UIColor = UIColor.white{      //Title背景色
         didSet {
             self.largeTitleView?.backgroundColor = self.titleBackgroundColor
             self.navigationController?.navigationBar.setBackgroundColor(self.titleBackgroundColor)
         }
     }
+    
+    /// 标题
     public var titleName:String = "" {
         didSet {
             self.title = titleName
@@ -36,8 +52,6 @@ open class MLHybridViewController: UIViewController {
         }
     }
     //MARK: 私有参数
-    var locationModel = MLHybridLocation()
-    var tool: MLHybirdCommandExecute = MLHybirdCommandExecute()
     //视图控件
     var progressView:UIProgressView!
     var contentView: MLHybridContentView!
@@ -47,9 +61,17 @@ open class MLHybridViewController: UIViewController {
     var largeTitleViewHeight:CGFloat = 74.5
     //回调相关变量
     var urlPath: URL?
-    var hybridEvent = "Hybrid.callback"
     var onShowCallBack: String?
     var onHideCallBack: String?
+    
+    /// Hybrid js默认回调函数
+    var hybridEvent = "Hybrid.callback"
+    
+    /// 定位对象
+    var locationModel = MLHybridLocation()
+    
+    /// 执行命令对象
+    var tool: MLHybirdCommandExecute = MLHybirdCommandExecute()
     
     //MARK: 系统方法
     deinit {
@@ -87,6 +109,13 @@ open class MLHybridViewController: UIViewController {
         self.navigationController?.navigationBar.setBackgroundColor(self.titleBackgroundColor)
         self.largeTitleView?.backgroundColor = self.titleBackgroundColor
         self.largeTitleLabel?.textColor = self.titleColor
+        
+        //不需要自动边距
+        if #available(iOS 11.0, *) {
+            self.contentView.scrollView.contentInsetAdjustmentBehavior = .never
+        } else {
+            self.automaticallyAdjustsScrollViewInsets = false
+        }
     }
     
     override open func viewWillDisappear(_ animated: Bool) {
@@ -132,7 +161,6 @@ open class MLHybridViewController: UIViewController {
     }
     
     func initContentView() {
-        //设置大标题数据
         //设置大标题
         if !self.needLargeTitle {
             //设置约束高度
@@ -198,7 +226,11 @@ open class MLHybridViewController: UIViewController {
         self.progressView.progressTintColor = UIColor.blue
         self.progressView.trackTintColor = UIColor.clear
         self.progressView.frame = CGRect.init(x: 0, y: 0, width: self.view.frame.size.width, height: 3)
-        self.view.addSubview(self.progressView)
+        //添加进度条
+        if self.needLoadProgress {
+            self.view.addSubview(self.progressView)
+        }
+        
     }
     
     //初始化控件数据

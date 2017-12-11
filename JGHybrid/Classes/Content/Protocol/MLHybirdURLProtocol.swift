@@ -96,7 +96,7 @@ extension MLHybridURLProtocol {
                     _ = catchError
                 }
             })
-            print("下载文件   ->   \(newDownloadURL.absoluteString)")
+            //print("下载文件   ->   \(newDownloadURL.absoluteString)")
             task.resume()
         }
         return false
