@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '9326A957386943A979BC1D1110692E8C'
+               BlueprintIdentifier = '663C09C0AA9FB461644F191DB201D375'
                BlueprintName = 'JGHybrid'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'JGHybrid.framework'>

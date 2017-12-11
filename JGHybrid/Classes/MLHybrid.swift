@@ -7,15 +7,11 @@ import Foundation
 import WebKit
 import JGWebKitURLProtocol
 
-public protocol MLHybridMethodProtocol {
-    func methodExtension(command: MLHybirdCommand)
-}
-
 open class MLHybrid {
     //单例对象
     open static let shared = MLHybrid()
     private init() {}
-    //室友变量
+    //私有变量
     var delegate: MLHybridMethodProtocol?
     var mainfestParams:HybridMainfestParams = HybridMainfestParams()
     //初始化注册
@@ -24,7 +20,7 @@ open class MLHybrid {
         //设置拦截
         URLProtocol.registerClass(MLHybridURLProtocol.self)
         //默认开启拦截
-        UserDefaults.standard.set(true, forKey: Hybrid_constantModel.switchCache)
+        UserDefaults.standard.set(true, forKey: HybridConstantModel.switchCache)
     }
     //加载页面
     open class func load(urlString: String) -> MLHybridViewController? {
@@ -36,6 +32,12 @@ open class MLHybrid {
     
     //版本检测并更新
     open class func checkMainfest() {
-        MLHybridTools().hybridOfflineCacheMainfest()
+        MLHybirdCommandExecute().hybridOfflineCacheMainfest()
     }
+}
+
+//命令扩展协议
+public protocol MLHybridMethodProtocol {
+    //和业务有关的协议
+    func methodExtension(command: MLHybirdCommand)
 }

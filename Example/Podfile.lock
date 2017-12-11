@@ -1,9 +1,7 @@
 PODS:
-  - JGHybrid (3.1.2):
+  - JGHybrid (3.2.0):
     - JGWebKitURLProtocol
-    - SSZipArchive
   - JGWebKitURLProtocol (1.0.1)
-  - SSZipArchive (2.1.1)
 
 DEPENDENCIES:
   - JGHybrid (from `../`)
@@ -13,10 +11,9 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  JGHybrid: 400d65cd1adb637549f785781e7ec8542df0708a
+  JGHybrid: 43df3bd48b057bdb261a8ba050f392e53741c88c
   JGWebKitURLProtocol: 3086024bce4da9e8b9d639a12a9083048b3ca1cd
-  SSZipArchive: 14401ade5f8e82aba1ff03e9f88e9de60937ae60
 
-PODFILE CHECKSUM: 4f491e54c6148dd76841d8cb74cad4b281687e91
+PODFILE CHECKSUM: 8443499083c01df9966868c36f9f98ee26bd8c2d
 
 COCOAPODS: 1.2.1

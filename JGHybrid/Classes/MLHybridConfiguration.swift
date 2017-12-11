@@ -34,6 +34,6 @@ open class MLHybridConfiguration: NSObject {
     /// 返回按钮图片名称
     open var backIndicator:String = "backButton"
     
-    ///导航栏图片前缀
+    /// 导航栏图片前缀
     open var naviImagePrefixes:String = "hybrid_navi_"
 }

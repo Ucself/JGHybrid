@@ -41,8 +41,6 @@ TODO: Add long description of the pod here.
   # s.dependency 'AFNetworking', '~> 2.3'
 
     s.frameworks = 'UIKit', 'WebKit'
-    s.dependency 'SSZipArchive'
-  #s.dependency 'Kingfisher'
     s.dependency 'JGWebKitURLProtocol'
 
 end

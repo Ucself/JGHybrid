@@ -5,7 +5,6 @@ target 'JGHybrid_Example' do
 
   target 'JGHybrid_Tests' do
     inherit! :search_paths
-
     
   end
 end

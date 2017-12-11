@@ -9,7 +9,6 @@ import WebKit
 open class MLHybridViewController: UIViewController {
     
     //MARK: 公共参数
-    public var needSetHeader = true
     public var naviBarHidden = false {
         didSet {
             self.navigationController?.setNavigationBarHidden(self.naviBarHidden, animated: true)
@@ -38,7 +37,7 @@ open class MLHybridViewController: UIViewController {
     }
     //MARK: 私有参数
     var locationModel = MLHybridLocation()
-    var tool: MLHybridTools = MLHybridTools()
+    var tool: MLHybirdCommandExecute = MLHybirdCommandExecute()
     //视图控件
     var progressView:UIProgressView!
     var contentView: MLHybridContentView!
@@ -177,7 +176,7 @@ open class MLHybridViewController: UIViewController {
         let leftConstraint = NSLayoutConstraint(item: self.contentView, attribute: .left, relatedBy: .equal, toItem: self.view, attribute: .left, multiplier: 1.0, constant: 0)
         let rightConstraint = NSLayoutConstraint(item: self.contentView, attribute: .right, relatedBy: .equal, toItem: self.view, attribute: .right, multiplier: 1.0, constant: 0)
         let topConstraint = NSLayoutConstraint(item: self.contentView, attribute: .top, relatedBy: .equal, toItem: self.largeTitleView, attribute: .bottom, multiplier: 1.0, constant: 0)
-        let bottomConstraint = NSLayoutConstraint(item: self.contentView, attribute: .bottom, relatedBy: .equal, toItem: bottomGuide, attribute: .top, multiplier: 1.0, constant: 0)
+        let bottomConstraint = NSLayoutConstraint(item: self.contentView, attribute: .bottom, relatedBy: .equal, toItem: self.view, attribute: .bottom, multiplier: 1.0, constant: 0)
         
         self.view.addConstraints([leftTitleLabelConstraint,rightTitleLabelConstraint,topTitleLabelConstraint,bottomTitleLabelConstraintt,
                                   leftLargeTitleConstraint,rightLargeTitleConstraint,topLargeTitleConstraint,heightLargeTitleConstrain,
@@ -337,8 +336,8 @@ extension MLHybridViewController:WKScriptMessageHandler {
         if let params = commandDic["params"] as? [String: AnyObject] {
             command.params = params
             //转换为内部使用参数
-            //let args = MLCommandArgs.convert(params)   //旧的解析方式
-            let args = MLCommandArgs.convert(params, nameType: MLHybridMethodType(rawValue:command.name))
+            //let args = MLHybirdCommandParams.convert(params)   //旧的解析方式
+            let args = MLHybirdCommandParams.convert(params, nameType: MLHybridMethodType(rawValue:command.name))
             command.args = args
         }
         if let callback = commandDic["callback"] as? String {
