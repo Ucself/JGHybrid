@@ -217,7 +217,7 @@ open class MLHybridViewController: UIViewController {
         //加载
         guard urlPath != nil else {return}
         var urlRequest:URLRequest = URLRequest.init(url: urlPath!)
-        urlRequest.setValue("platform=\(MLHybridConfiguration.default.platform); sess=\(MLHybridConfiguration.default.sess)", forHTTPHeaderField: "Cookie")
+        urlRequest.setValue(MLHybridConfiguration.default.cookieString, forHTTPHeaderField: MLHybridConfiguration.default.cookieName)
         self.contentView.load(urlRequest)
     }
     
