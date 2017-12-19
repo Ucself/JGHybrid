@@ -2,4 +2,54 @@
 <Bucket
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../JGHybrid/Classes/Content/Command/MLHybirdCommandExecuteExtension.swift"
+            timestampString = "535361199.731373"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
+            landmarkName = "hybridHeader()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "JGHybrid.MLHybirdCommandExecute.hybridHeader() -&gt; ()"
+                  moduleName = "JGHybrid"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/libaojun/Documents/WorkProject/JGHybrid_%E4%BC%81%E9%B9%85/JGHybrid/Classes/Content/Command/MLHybirdCommandExecuteExtension.swift"
+                  timestampString = "535361200.032915"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "92"
+                  endingLineNumber = "92"
+                  offsetFromSymbolStart = "672">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Any&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in JGHybrid.MLHybirdCommandExecute.hybridHeader() -&gt; ()"
+                  moduleName = "JGHybrid"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/libaojun/Documents/WorkProject/JGHybrid_%E4%BC%81%E9%B9%85/JGHybrid/Classes/Content/Command/MLHybirdCommandExecuteExtension.swift"
+                  timestampString = "535361200.034876"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "93"
+                  endingLineNumber = "93"
+                  offsetFromSymbolStart = "26">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

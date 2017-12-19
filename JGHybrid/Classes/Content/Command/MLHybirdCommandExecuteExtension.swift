@@ -84,6 +84,16 @@ extension MLHybirdCommandExecute {
     }
     //header - ( 导航栏 )
     func hybridHeader(){
+        //执行一次请求数据
+        
+        let postData = "{'a':1,'b':2,'c':3}"
+        let url = "http://healthapp-dev.doctorwork.com/mobile/v1/appoint/create"
+        let js = "$.post('\(url)', \(postData))"
+        self.command.webView.evaluateJavaScript(js) { (data, error) in
+            print("datadatadatadata == \(String(describing: data))")
+            print("errorerrorerrorerror == \(String(describing: error))")
+        }
+        
         guard let params:HybridHeaderParams = self.command.args.commandParams as? HybridHeaderParams  else {
             return
         }

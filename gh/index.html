@@ -171,8 +171,9 @@
             }
         }
 
-        var ajaxRequest = function (){
-            $.post('http://healthapp-dev.doctorwork.com/mobile/v1/appoint/create', {'a':1,'b':2,'c':3})
+        var ajaxRequest = function (url,data){
+            // $.post('http://healthapp-dev.doctorwork.com/mobile/v1/appoint/create', {'a':1,'b':2,'c':3})
+            $.post('url', data)
         }         
     </script>
 </head>
