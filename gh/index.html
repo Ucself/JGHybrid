@@ -172,7 +172,7 @@
         }
 
         var ajaxRequest = function (){
-            $.post('http://www.baidu.com', {'a':1,'b':2,'c':3})
+            $.post('http://healthapp-dev.doctorwork.com/mobile/v1/appoint/create', {'a':1,'b':2,'c':3})
         }         
     </script>
 </head>
@@ -205,6 +205,6 @@
     <br><br>
     <input type="button" value="clipboard" onclick="window.webkit.messageHandlers.requestHybrid.postMessage(clipboard);" />
     <br><br>
-    <input type="button" value="ajax request" onclick="window.webkit.messageHandlers.requestHybrid.postMessage(clipboard);" />
+    <input type="button" value="ajax request" onclick="ajaxRequest()" />
 </body>
 </html>
