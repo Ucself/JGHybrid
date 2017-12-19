@@ -253,8 +253,8 @@ open class MLHybridViewController: UIViewController {
             }
         }
         //设置拦截
-        URLProtocol.wk_registerScheme("http")
-        URLProtocol.wk_registerScheme("https")
+//        URLProtocol.wk_registerScheme("http")
+//        URLProtocol.wk_registerScheme("https")
     }
     
     func setUpBackButton() {
