@@ -83,9 +83,9 @@ class MLHybirdCommandExecute: NSObject {
     /// - Returns: 回调执行结果
     func callBack(data:Any = "", err_no: Int = 0, msg: String = "succuess", callback: String, webView: WKWebView , completion: @escaping ((String) ->Void))  {
         let data = ["data": data,
-                    "errno": err_no,
-                    "msg": msg,
-                    "callback": callback] as [String : Any]
+                    "code": err_no,
+                    "callback": callback,
+                    "msg": msg] as [String : Any]
         
         let dataString = data.hybridJSONString()
         webView.evaluateJavaScript(self.command.viewController.hybridEvent + "(\(dataString));") { (result, error) in
