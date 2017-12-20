@@ -41,7 +41,7 @@ extension MLHybirdCommandExecute {
         } else {
             //native跳转交给外部处理
             command.name = "forwardNative"
-            MLHybrid.shared.delegate?.methodExtension(command: command)
+            MLHybrid.shared.delegate?.commandExtension(command: command)
         }
     }
     ////modal - (modal 页面)
@@ -56,7 +56,7 @@ extension MLHybirdCommandExecute {
         } else {
             //native跳转交给外部处理
             command.name = "forwardModal"
-            MLHybrid.shared.delegate?.methodExtension(command: command)
+            MLHybrid.shared.delegate?.commandExtension(command: command)
         }
     }
     //back - ( 返回上一页 )
@@ -172,7 +172,7 @@ extension MLHybirdCommandExecute {
     }
     
     @objc func hybridHeaderButtonClick(sender: MLHybirdCommandExecute.hybridHeaderButton) {
-        self.callBack(callback:  sender.buttonModel.callback, webView: self.command.webView) { (str) in }
+        self.command.callBack(callback:  sender.buttonModel.callback) { (str) in }
     }
     
     //scroll - ( 页面滚动 ,主要是回弹效果)
@@ -200,7 +200,7 @@ extension MLHybirdCommandExecute {
                                            "os":UIDevice.current.systemName,
                                            "dist":"app store",
                                            "uuid":UUID.init().uuidString]
-        self.callBack(data: deviceInfor, err_no: 0, msg: "", callback: self.command.callbackId, webView:self.command.webView) { (result) in }
+        self.command.callBack(data: deviceInfor, err_no: 0, msg: "", callback: self.command.callbackId) { (result) in }
     }
     //location - ( 定位 )
     func hybridLocation(){
@@ -212,13 +212,13 @@ extension MLHybirdCommandExecute {
             switch errcode {
             case 0:
                 //定位成功
-                _ = self.callBack(data: resultData as AnyObject? ?? "" as AnyObject, err_no: errcode, callback: params.located, webView: self.command.webView, completion: {js in })
+                _ = self.command.callBack(data: resultData as AnyObject? ?? "" as AnyObject, err_no: errcode, callback: params.located ,completion: {js in })
             case 1:
                 //无权限
-                _ = self.callBack(data: resultData as AnyObject? ?? "" as AnyObject, err_no: 2, callback: params.failed, webView: self.command.webView, completion: {js in })
+                _ = self.command.callBack(data: resultData as AnyObject? ?? "" as AnyObject, err_no: 2, callback: params.failed, completion: {js in })
             case 2:
                 //定位失败
-                _ = self.callBack(data: resultData as AnyObject? ?? "" as AnyObject, err_no: 1, callback: params.failed, webView: self.command.webView, completion: {js in })
+                _ = self.command.callBack(data: resultData as AnyObject? ?? "" as AnyObject, err_no: 1, callback: params.failed, completion: {js in })
             default:
                 break
             }

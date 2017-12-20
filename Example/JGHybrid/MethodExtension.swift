@@ -10,16 +10,10 @@ import Foundation
 import JGHybrid
 
 class MethodExtension: MLHybridMethodProtocol {
+    
 
-    func methodExtension(command: MLHybirdCommand) {
+    func commandExtension(command: MLHybirdCommand) {
         print("自定义响应Hybrid命令 ===> \(command.name)")
-//        command.callback { (str) in
-//
-//        }
-//
-//        command.callback(data: "", err_no: 0, msg: "") { (str) in
-//
-//        }
     }
 
 }

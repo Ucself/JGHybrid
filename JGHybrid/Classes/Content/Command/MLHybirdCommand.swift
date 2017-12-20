@@ -18,9 +18,37 @@ open class MLHybirdCommand {
     public var callbackId: String = ""
     //发出指令的控制器
     public weak var viewController: MLHybridViewController!
-    //
+    //webView
     public weak var webView: WKWebView! = WKWebView()
 
+    /// 执行回调
+    ///
+    /// - Parameters:
+    ///   - data: 回调数据
+    ///   - err_no: 错误码
+    ///   - msg: 描述
+    ///   - callback: js回调id
+    ///   - completion: 回掉完成后回调
+    public func callBack(data:Any = "", err_no: Int = 0, msg: String = "succuess", callback: String, completion: @escaping ((String) ->Void))  {
+        let data = ["data": data,
+                    "code": err_no,
+                    "callback": callback,
+                    "msg": msg] as [String : Any]
+        
+        let dataString = data.hybridJSONString()
+        webView.evaluateJavaScript(self.viewController.hybridEvent + "(\(dataString));") { (result, error) in
+            if let resultStr = result as? String {
+                completion(resultStr)
+            }else  if  let error = error{
+                completion(error.localizedDescription)
+            }
+            else {
+                completion("")
+            }
+        }
+    }
+    //MARK: - private
+    
     /// 解析并执行hybrid指令
     ///
     /// - Parameters:
@@ -55,5 +83,6 @@ open class MLHybirdCommand {
         let callBackId = paramDic["callback"] ?? ""
         return (functionName, argsDic, args, callBackId)
     }
+    
     
 }

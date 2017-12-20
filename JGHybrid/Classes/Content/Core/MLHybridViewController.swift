@@ -71,7 +71,7 @@ open class MLHybridViewController: UIViewController {
     var locationModel = MLHybridLocation()
     
     /// 执行命令对象
-    var tool: MLHybirdCommandExecute = MLHybirdCommandExecute()
+    var commandExecute: MLHybirdCommandExecute = MLHybirdCommandExecute()
     
     //MARK: 系统方法
     deinit {
@@ -104,7 +104,7 @@ open class MLHybridViewController: UIViewController {
         self.contentView.addObserver(self, forKeyPath: "estimatedProgress", options: NSKeyValueObservingOptions(rawValue: 0), context: nil)
         //回调Hybrid
         if let callback = self.onShowCallBack {
-            self.tool.callBack(data: "", err_no: 0, msg: "onwebviewshow", callback: callback, webView: self.contentView, completion: {js in })
+            self.commandExecute.command.callBack(data: "", err_no: 0, msg: "onwebviewshow", callback: callback, completion: {js in })
         }
         //设置颜色
         self.navigationController?.navigationBar.setTitleColor(self.titleColor)
@@ -128,7 +128,7 @@ open class MLHybridViewController: UIViewController {
         self.contentView.removeObserver(self, forKeyPath: "estimatedProgress")
         //回调Hybrid
         if let callback = self.onHideCallBack {
-            let _ =  self.tool.callBack(data: "", err_no: 0, msg: "onwebviewshow", callback: callback, webView: self.contentView, completion: {js in })
+            let _ =  self.commandExecute.command.callBack(data: "", err_no: 0, msg: "onwebviewshow", callback: callback, completion: {js in })
         }
     }
     
@@ -342,7 +342,7 @@ extension MLHybridViewController: WKUIDelegate,WKNavigationDelegate {
     }
     
     public func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-        if self.tool.performCommand(request: navigationAction.request, webView: webView) {
+        if self.commandExecute.performCommand(request: navigationAction.request, webView: webView) {
             decisionHandler(.cancel)
         } else {
             decisionHandler(.allow)
@@ -382,8 +382,8 @@ extension MLHybridViewController:WKScriptMessageHandler {
         }
         command.webView = self.contentView
         command.viewController = self
-        tool.command = command
-        _ = tool.performCommand(command: command)
+        commandExecute.command = command
+        _ = commandExecute.performCommand(command: command)
     }
 }
 

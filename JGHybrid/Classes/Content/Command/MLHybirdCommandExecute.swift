@@ -40,7 +40,7 @@ class MLHybirdCommandExecute: NSObject {
         print("---------------command end-------------------")
         
         guard let funType = MLHybridMethodType(rawValue: command.name) else {
-            MLHybrid.shared.delegate?.methodExtension(command: command)
+            MLHybrid.shared.delegate?.commandExtension(command: command)
             return
         }
         switch funType {
@@ -69,34 +69,6 @@ class MLHybirdCommandExecute: NSObject {
             self.hybridClipboard()
         default:
             break
-        }
-    }
-    
-    /// 执行回调
-    ///
-    /// - Parameters:
-    ///   - data: 回调数据
-    ///   - err_no: 错误码
-    ///   - msg: 描述
-    ///   - callback: 回调方法
-    ///   - webView: 执行回调的容器
-    /// - Returns: 回调执行结果
-    func callBack(data:Any = "", err_no: Int = 0, msg: String = "succuess", callback: String, webView: WKWebView , completion: @escaping ((String) ->Void))  {
-        let data = ["data": data,
-                    "code": err_no,
-                    "callback": callback,
-                    "msg": msg] as [String : Any]
-        
-        let dataString = data.hybridJSONString()
-        webView.evaluateJavaScript(self.command.viewController.hybridEvent + "(\(dataString));") { (result, error) in
-            if let resultStr = result as? String {
-                completion(resultStr)
-            }else  if  let error = error{
-                completion(error.localizedDescription)
-            }
-            else {
-                completion("")
-            }
         }
     }
 }

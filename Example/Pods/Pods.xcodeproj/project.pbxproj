@@ -78,16 +78,16 @@
 /* Begin PBXFileReference section */
 		0089762421E40398CD591B499AB60B07 /* Pods-JGHybrid_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JGHybrid_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		027996DA478859367830D62572D415BD /* MLHybridViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MLHybridViewController.swift; sourceTree = "<group>"; };
-		07EE09F7289CD61C2670536597B6772E /* Pods_JGHybrid_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JGHybrid_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		07EE09F7289CD61C2670536597B6772E /* Pods_JGHybrid_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_JGHybrid_Tests.framework; path = "Pods-JGHybrid_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		087EB1EC80C7BAE9C9776A66414F4FD6 /* Pods-JGHybrid_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JGHybrid_Tests-dummy.m"; sourceTree = "<group>"; };
-		0A32F4E61115C4818256F2EBEADC02B9 /* JGWebKitURLProtocol.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JGWebKitURLProtocol.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A32F4E61115C4818256F2EBEADC02B9 /* JGWebKitURLProtocol.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = JGWebKitURLProtocol.framework; path = JGWebKitURLProtocol.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CE1EC0EB4BDF22D0FC9C95B43BB78A0 /* MLHybridConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MLHybridConfiguration.swift; sourceTree = "<group>"; };
 		0F65D2BFAAB2DF50CED8AA09812D51FD /* HybridLocationParams.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HybridLocationParams.swift; sourceTree = "<group>"; };
 		1051F0001FDABBB7365B23030FD23978 /* MLHybirdCommandExecute.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MLHybirdCommandExecute.swift; sourceTree = "<group>"; };
 		17C0F9F717EF903101A082642D4151B1 /* MLHybirdCommandExecuteExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MLHybirdCommandExecuteExtension.swift; sourceTree = "<group>"; };
 		199B75FE7D44377586A65102993E49AE /* MLHybridExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MLHybridExtension.swift; sourceTree = "<group>"; };
 		1E0BB9124CDA34D245158E3266F295B8 /* HybridConstantModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HybridConstantModel.swift; sourceTree = "<group>"; };
-		2091E9F34576FCF3CA20909707896863 /* Pods_JGHybrid_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JGHybrid_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2091E9F34576FCF3CA20909707896863 /* Pods_JGHybrid_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_JGHybrid_Example.framework; path = "Pods-JGHybrid_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		21A22DD6860A8FE6B8C3FAE8B4C89E9B /* Pods-JGHybrid_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JGHybrid_Example-resources.sh"; sourceTree = "<group>"; };
 		2596A1B79322AE5D81C878A275FCCF8C /* JGWebKitURLProtocol-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JGWebKitURLProtocol-prefix.pch"; sourceTree = "<group>"; };
 		25E6B21D607CB30F1A99C7DFBB230123 /* Pods-JGHybrid_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JGHybrid_Example-acknowledgements.plist"; sourceTree = "<group>"; };
@@ -102,7 +102,7 @@
 		44091546BFD4B70D96EA02BF88F62381 /* NSURLProtocol+WebKitSupport.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSURLProtocol+WebKitSupport.m"; path = "JGWebKitURLProtocol/Classes/NSURLProtocol+WebKitSupport.m"; sourceTree = "<group>"; };
 		49C4D142E2BD618911626B8E87F85F4D /* Pods-JGHybrid_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JGHybrid_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		4FC80135F9AFCF3D87F0BD58F9312F49 /* Pods-JGHybrid_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JGHybrid_Example.release.xcconfig"; sourceTree = "<group>"; };
-		5217583D901B5BEF764C386D76A1E207 /* JGHybrid.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = JGHybrid.modulemap; sourceTree = "<group>"; };
+		5217583D901B5BEF764C386D76A1E207 /* JGHybrid.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = JGHybrid.modulemap; sourceTree = "<group>"; };
 		5281906EC57DA0EB82718A0ADDD6543F /* HybridBackParams.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HybridBackParams.swift; sourceTree = "<group>"; };
 		53FA2D0BA88813929F8E98EE8E4C94A2 /* MLHybrid.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MLHybrid.swift; sourceTree = "<group>"; };
 		55493F31E03745A925A9FDCB4A9AA1F3 /* JGWebKitURLProtocol-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JGWebKitURLProtocol-umbrella.h"; sourceTree = "<group>"; };
@@ -115,10 +115,10 @@
 		77961D390F7E0DB3BCABB1B6E5EE05C2 /* HybridMainfestParams.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HybridMainfestParams.swift; sourceTree = "<group>"; };
 		7EDE50430E2E1BE1D4A2A67200157CC9 /* HybridForwardParams.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HybridForwardParams.swift; sourceTree = "<group>"; };
 		84B970A4DA818D4F5DCB898B2A4F3109 /* JGHybrid-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JGHybrid-umbrella.h"; sourceTree = "<group>"; };
-		860C2608ED768B30C02820CD6F29205B /* JGHybrid.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JGHybrid.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		860C2608ED768B30C02820CD6F29205B /* JGHybrid.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = JGHybrid.framework; path = JGHybrid.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DCED8881CC91A1A1FA7A066FBABD32E /* MLHybridLocation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MLHybridLocation.swift; sourceTree = "<group>"; };
 		9017DF7DFE29E9FEDF0AB97E4CC3B274 /* MLHybridContentView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MLHybridContentView.swift; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		992F8530CE36858703B082FB84805DA9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		99667244845D59F40F0847EFA46BD1C7 /* HybridPagehideParams.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HybridPagehideParams.swift; sourceTree = "<group>"; };
 		9F36AB2FE29BC280D2719CD752FD71B6 /* Pods-JGHybrid_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JGHybrid_Tests-frameworks.sh"; sourceTree = "<group>"; };
@@ -129,7 +129,7 @@
 		BD55E3D31A68EDA8F08D3EB3393C4D5C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		BF81B889B0A87BA7394B152D1588D4AB /* Pods-JGHybrid_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-JGHybrid_Tests-umbrella.h"; sourceTree = "<group>"; };
 		C4C8D32E86DB727DBFEF0B14CB5ED908 /* Pods-JGHybrid_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-JGHybrid_Example-umbrella.h"; sourceTree = "<group>"; };
-		C9B9229FCAA3E3A4D8D14CCEC725BA97 /* Pods-JGHybrid_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-JGHybrid_Example.modulemap"; sourceTree = "<group>"; };
+		C9B9229FCAA3E3A4D8D14CCEC725BA97 /* Pods-JGHybrid_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-JGHybrid_Example.modulemap"; sourceTree = "<group>"; };
 		CC9471029ECA08D5D3AABE2E19D029E0 /* Pods-JGHybrid_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JGHybrid_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		D004A34236DEE1E3B4089AD251929D5E /* NSURLProtocol+WebKitSupport.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSURLProtocol+WebKitSupport.h"; path = "JGWebKitURLProtocol/Classes/NSURLProtocol+WebKitSupport.h"; sourceTree = "<group>"; };
 		D1ED9785C36F0AA153F2EB19FD2F7FB0 /* Pods-JGHybrid_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JGHybrid_Tests-resources.sh"; sourceTree = "<group>"; };
@@ -137,11 +137,11 @@
 		D66ACA138DA4CBCD58594D9E7307C29B /* JGHybrid.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JGHybrid.xcconfig; sourceTree = "<group>"; };
 		D7A0A7A29C247D4AA710BCAC960F060E /* Pods-JGHybrid_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JGHybrid_Example-dummy.m"; sourceTree = "<group>"; };
 		D83E122224B464BB51D30D437E946449 /* JGHybrid-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JGHybrid-dummy.m"; sourceTree = "<group>"; };
-		DF90B86296A6D158A6B190A8ED1E052E /* JGWebKitURLProtocol.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = JGWebKitURLProtocol.modulemap; sourceTree = "<group>"; };
+		DF90B86296A6D158A6B190A8ED1E052E /* JGWebKitURLProtocol.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = JGWebKitURLProtocol.modulemap; sourceTree = "<group>"; };
 		E6A9CD96A6859A2538F8FFCD5B725264 /* Pods-JGHybrid_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-JGHybrid_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		EAFD54A20C10117F4CCB4CC0C67693F6 /* MLHybridMethodProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MLHybridMethodProtocol.swift; sourceTree = "<group>"; };
 		EB02AD7E61624AF17DFB6DAD3CBAAF69 /* Pods-JGHybrid_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JGHybrid_Example-frameworks.sh"; sourceTree = "<group>"; };
-		EDB74ADFDE3A6412A9C9AFFA0CD68628 /* Pods-JGHybrid_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-JGHybrid_Tests.modulemap"; sourceTree = "<group>"; };
+		EDB74ADFDE3A6412A9C9AFFA0CD68628 /* Pods-JGHybrid_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-JGHybrid_Tests.modulemap"; sourceTree = "<group>"; };
 		FBD061FE7E6DD2F8BEA37C3E02AE7F05 /* JGWebKitURLProtocol-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JGWebKitURLProtocol-dummy.m"; sourceTree = "<group>"; };
 		FE7886BD6A01179E8FD89F60DC68BD50 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -246,6 +246,7 @@
 				199B75FE7D44377586A65102993E49AE /* MLHybridExtension.swift */,
 				8DCED8881CC91A1A1FA7A066FBABD32E /* MLHybridLocation.swift */,
 			);
+			name = Tool;
 			path = Tool;
 			sourceTree = "<group>";
 		};
@@ -305,12 +306,13 @@
 		8F0A4330ABE12DA014837E048A879F77 /* Content */ = {
 			isa = PBXGroup;
 			children = (
-				F9521105E7610A0A1594671F23C6ECFA /* Core */,
 				B166718A31932BA78555968FB3C2A925 /* Command */,
+				F9521105E7610A0A1594671F23C6ECFA /* Core */,
 				BC0FFBD538C0BE1792100F9A06F248C5 /* Model */,
 				BA305A359967635A3B86D3C9E72AFBC6 /* Protocol */,
 				62C9180E963AF88D52E25C7B0B877306 /* Tool */,
 			);
+			name = Content;
 			path = Content;
 			sourceTree = "<group>";
 		};
@@ -321,6 +323,7 @@
 				44091546BFD4B70D96EA02BF88F62381 /* NSURLProtocol+WebKitSupport.m */,
 				6E5F3456DCC4FEB5E0B3ADB713CBAF50 /* Support Files */,
 			);
+			name = JGWebKitURLProtocol;
 			path = JGWebKitURLProtocol;
 			sourceTree = "<group>";
 		};
@@ -346,6 +349,7 @@
 				17C0F9F717EF903101A082642D4151B1 /* MLHybirdCommandExecuteExtension.swift */,
 				6B61DB7AC3D1D3399C5B1086E0A21D95 /* MLHybirdCommandParams.swift */,
 			);
+			name = Command;
 			path = Command;
 			sourceTree = "<group>";
 		};
@@ -355,6 +359,7 @@
 				622E0A2D7F5BFA484741630B7C5C6EAE /* MLHybirdURLProtocol.swift */,
 				EAFD54A20C10117F4CCB4CC0C67693F6 /* MLHybridMethodProtocol.swift */,
 			);
+			name = Protocol;
 			path = Protocol;
 			sourceTree = "<group>";
 		};
@@ -375,6 +380,7 @@
 				39AEC2AB0527D8437B9F3A3BB0364878 /* HybridPageshowParams.swift */,
 				755EC6E226CCCD845D6BDBEA9832D078 /* HybridScrollParams.swift */,
 			);
+			name = Model;
 			path = Model;
 			sourceTree = "<group>";
 		};
@@ -383,6 +389,7 @@
 			children = (
 				CC9609F759F38A5EEA0AF0A02E2B3376 /* Classes */,
 			);
+			name = JGHybrid;
 			path = JGHybrid;
 			sourceTree = "<group>";
 		};
@@ -393,6 +400,7 @@
 				0CE1EC0EB4BDF22D0FC9C95B43BB78A0 /* MLHybridConfiguration.swift */,
 				8F0A4330ABE12DA014837E048A879F77 /* Content */,
 			);
+			name = Classes;
 			path = Classes;
 			sourceTree = "<group>";
 		};
@@ -421,6 +429,7 @@
 				9017DF7DFE29E9FEDF0AB97E4CC3B274 /* MLHybridContentView.swift */,
 				027996DA478859367830D62572D415BD /* MLHybridViewController.swift */,
 			);
+			name = Core;
 			path = Core;
 			sourceTree = "<group>";
 		};

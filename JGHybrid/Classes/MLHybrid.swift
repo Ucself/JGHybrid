@@ -36,8 +36,4 @@ open class MLHybrid {
     }
 }
 
-//命令扩展协议
-public protocol MLHybridMethodProtocol {
-    //和业务有关的协议
-    func methodExtension(command: MLHybirdCommand)
-}
+
