@@ -94,7 +94,7 @@ open class MLHybridViewController: UIViewController {
     
     override open func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        //加载等待
+        //加载等待开始
         MLHybrid.shared.delegate?.startWait()
         //设置导航栏
         self.navigationController?.setNavigationBarHidden(naviBarHidden, animated: true)
@@ -135,6 +135,8 @@ open class MLHybridViewController: UIViewController {
     override open func viewDidAppear(_ animated: Bool) {
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self as? UIGestureRecognizerDelegate;
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+        //加载等待结束
+        MLHybrid.shared.delegate?.stopWait()
     }
     
     open override  func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
@@ -336,6 +338,9 @@ extension MLHybridViewController:UIScrollViewDelegate {
 //MARK: WKUIDelegate WKNavigationDelegate
 extension MLHybridViewController: WKUIDelegate,WKNavigationDelegate {
     
+    public func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+        MLHybrid.shared.delegate?.startWait()
+    }
     public func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!){
         //加载等待结束
         MLHybrid.shared.delegate?.stopWait()
