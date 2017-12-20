@@ -29,7 +29,7 @@ open class MLHybridViewController: UIViewController {
     public var needLoadProgress = false
     
     /// 标题颜色
-    public var titleColor:UIColor = UIColor.hybridColorWithHex("2F2929"){               //Title颜色
+    public var titleColor:UIColor = MLHybridConfiguration.default.defaultTitleColor{               //Title颜色
         didSet {
             self.largeTitleLabel?.textColor = self.titleColor
             self.navigationController?.navigationBar.setTitleColor(self.titleColor)
@@ -37,7 +37,7 @@ open class MLHybridViewController: UIViewController {
     }
     
     /// 标题背景色
-    public var titleBackgroundColor:UIColor = UIColor.white{      //Title背景色
+    public var titleBackgroundColor:UIColor = MLHybridConfiguration.default.defaultTitleBackgroundTColor{      //Title背景色
         didSet {
             self.largeTitleView?.backgroundColor = self.titleBackgroundColor
             self.navigationController?.navigationBar.setBackgroundColor(self.titleBackgroundColor)
@@ -94,6 +94,8 @@ open class MLHybridViewController: UIViewController {
     
     override open func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        //加载等待
+        MLHybridConfiguration.default.startWait()
         //设置导航栏
         self.navigationController?.setNavigationBarHidden(naviBarHidden, animated: true)
         //js方法注入
@@ -253,8 +255,10 @@ open class MLHybridViewController: UIViewController {
             }
         }
         //设置拦截
-//        URLProtocol.wk_registerScheme("http")
-//        URLProtocol.wk_registerScheme("https")
+        if MLHybridConfiguration.default.isRegisterURLProtocol {
+            URLProtocol.wk_registerScheme("http")
+            URLProtocol.wk_registerScheme("https")
+        }
     }
     
     func setUpBackButton() {
@@ -333,7 +337,8 @@ extension MLHybridViewController:UIScrollViewDelegate {
 extension MLHybridViewController: WKUIDelegate,WKNavigationDelegate {
     
     public func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!){
-        
+        //加载等待结束
+        MLHybridConfiguration.default.stopWait()
     }
     
     public func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {

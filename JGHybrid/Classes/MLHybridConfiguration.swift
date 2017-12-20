@@ -16,6 +16,9 @@ open class MLHybridConfiguration: NSObject {
     /// 是否开启日志
     open var openLog:Bool = true
     
+    /// 是否注册Protocol拦截
+    open var isRegisterURLProtocol:Bool = false
+    
     /// 获取的缓存文件地址
     open var cacheURLString:String = "http://web-dev.doctorwork.com/app/health/manifest.json"
     
@@ -42,4 +45,16 @@ open class MLHybridConfiguration: NSObject {
     
     /// 导航栏图片前缀
     open var naviImagePrefixes:String = "hybrid_navi_"
+    
+    /// 默认标题颜色
+    open var defaultTitleColor:UIColor = UIColor.hybridColorWithHex("2F2929")
+    
+    /// 默认标题背景颜色
+    open var defaultTitleBackgroundTColor:UIColor = UIColor.white
+    
+    /// 加载等待开始  业务需要重写
+    open func startWait() {}
+    
+    /// 加载等待结束  业务需要重写
+    open func stopWait() {}
 }
