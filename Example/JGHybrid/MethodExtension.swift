@@ -10,8 +10,14 @@ import Foundation
 import JGHybrid
 
 class MethodExtension: MLHybridMethodProtocol {
+    func startWait() {
+        
+    }
     
-
+    func stopWait() {
+        
+    }
+    
     func commandExtension(command: MLHybirdCommand) {
         print("自定义响应Hybrid命令 ===> \(command.name)")
     }

@@ -95,7 +95,7 @@ open class MLHybridViewController: UIViewController {
     override open func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         //加载等待
-        MLHybridConfiguration.default.startWait()
+        MLHybrid.shared.delegate?.startWait()
         //设置导航栏
         self.navigationController?.setNavigationBarHidden(naviBarHidden, animated: true)
         //js方法注入
@@ -338,7 +338,7 @@ extension MLHybridViewController: WKUIDelegate,WKNavigationDelegate {
     
     public func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!){
         //加载等待结束
-        MLHybridConfiguration.default.stopWait()
+        MLHybrid.shared.delegate?.stopWait()
     }
     
     public func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {

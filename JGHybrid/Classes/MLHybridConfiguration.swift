@@ -52,9 +52,4 @@ open class MLHybridConfiguration: NSObject {
     /// 默认标题背景颜色
     open var defaultTitleBackgroundTColor:UIColor = UIColor.white
     
-    /// 加载等待开始  业务需要重写
-    open func startWait() {}
-    
-    /// 加载等待结束  业务需要重写
-    open func stopWait() {}
 }
