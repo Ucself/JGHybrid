@@ -94,8 +94,7 @@ open class MLHybridViewController: UIViewController {
     
     override open func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        //加载等待开始
-        MLHybrid.shared.delegate?.startWait()
+        
         //设置导航栏
         self.navigationController?.setNavigationBarHidden(naviBarHidden, animated: true)
         //js方法注入
@@ -158,6 +157,8 @@ open class MLHybridViewController: UIViewController {
     
     //MARK: 自定义方法
     func initUI() {
+        //加载等待开始
+        MLHybrid.shared.delegate?.startWait()
         self.hidesBottomBarWhenPushed = needHidesBottomBar
         self.automaticallyAdjustsScrollViewInsets = false
         self.navigationController?.navigationBar.isTranslucent = false
@@ -339,17 +340,31 @@ extension MLHybridViewController:UIScrollViewDelegate {
 extension MLHybridViewController: WKUIDelegate,WKNavigationDelegate {
     
     public func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
-        MLHybrid.shared.delegate?.startWait()
+        //MLHybrid.shared.delegate?.startWait()
     }
+    
     public func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!){
         //加载等待结束
         MLHybrid.shared.delegate?.stopWait()
     }
     
     public func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+        
         if self.commandExecute.performCommand(request: navigationAction.request, webView: webView) {
             decisionHandler(.cancel)
-        } else {
+        } else  {
+            //h5打电话
+            if let url:NSURL = navigationAction.request.url as! NSURL,
+                let resourceSpecifier:String = url.resourceSpecifier ,
+                let scheme:String = url.scheme ,
+                scheme == "tel" {
+                //打电话字符串
+                let callPhone:String = "telprompt://\(resourceSpecifier)"
+                DispatchQueue.main.async {
+                    UIApplication.shared.openURL(URL.init(string: callPhone)!)
+                }
+            }
+            
             decisionHandler(.allow)
         }
     }
