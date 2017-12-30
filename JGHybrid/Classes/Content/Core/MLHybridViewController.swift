@@ -354,7 +354,7 @@ extension MLHybridViewController: WKUIDelegate,WKNavigationDelegate {
             decisionHandler(.cancel)
         } else  {
             //h5打电话
-            if let url:NSURL = navigationAction.request.url as! NSURL,
+            if let url:NSURL = navigationAction.request.url as NSURL?,
                 let resourceSpecifier:String = url.resourceSpecifier ,
                 let scheme:String = url.scheme ,
                 scheme == "tel" {
