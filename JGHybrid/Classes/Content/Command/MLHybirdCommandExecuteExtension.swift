@@ -59,6 +59,11 @@ extension MLHybirdCommandExecute {
             MLHybrid.shared.delegate?.commandExtension(command: command)
         }
     }
+    
+    ////modal - (modal 页面 dismiss)
+    func hybridDismiss(){
+        self.command.viewController.dismiss(animated: true, completion: nil)
+    }
     //back - ( 返回上一页 )
     func hybridBack(){
         guard let params:HybridBackParams = self.command.args.commandParams as? HybridBackParams  else {

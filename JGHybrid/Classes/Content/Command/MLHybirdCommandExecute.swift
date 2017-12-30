@@ -51,6 +51,8 @@ class MLHybirdCommandExecute: NSObject {
             self.hybridForward()
         case .hybridModal:
             self.hybridModal()
+        case .hybridDismiss:
+            self.hybridDismiss()
         case .hybridBack:
             self.hybridBack()
         case .hybridHeader:

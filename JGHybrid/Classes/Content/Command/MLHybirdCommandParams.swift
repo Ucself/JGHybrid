@@ -11,6 +11,7 @@ enum MLHybridMethodType: String {
     case hybridInit             = "init"                //init - ( 初始化 )
     case hybridForward          = "forward"             //forward - (push 页面)
     case hybridModal            = "modal"               //modal - (modal 页面)
+    case hybridDismiss          = "dismiss"             //modal - (modal 页面 dismiss)
     case hybridBack             = "back"                //back - ( 返回上一页 )
     case hybridHeader           = "header"              //header - ( 导航栏 )
     case hybridScroll           = "scroll"              //scroll - ( 页面滚动 ,主要是回弹效果)
