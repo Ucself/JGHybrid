@@ -23,7 +23,7 @@ open class MLHybridConfiguration: NSObject {
     open var cacheURLString:String = "http://web-dev.doctorwork.com/app/health/manifest.json"
     
     /// 登录后的session
-    open var sess:String = "51f76888-27e1-4721-9d8f-1923ac8eabc6"
+    open var sess:String = ""
     
     /// 传输给H5 的平台信息
     open var platform:String = "i"
@@ -32,7 +32,7 @@ open class MLHybridConfiguration: NSObject {
     open var cookieName:String = "Cookie"
     
     /// cookie 注入的字符串
-    open var cookieString:String = "SESSIONID=51f76888-27e1-4721-9d8f-1923ac8eabc6;domain=doctorwork.com;path=/;HttpOnly"
+    open var cookieString:String = ""
     
     /// userAgent 新的解析方式已经弃用
     open var userAgent:String = "doc_hybrid_heath_"

@@ -18,7 +18,11 @@ open class MLHybrid {
     open class func register(_ delegate: MLHybridMethodProtocol) {
         shared.delegate = delegate
         //设置拦截
-        URLProtocol.registerClass(MLHybridURLProtocol.self)
+        if MLHybridConfiguration.default.isRegisterURLProtocol {
+            URLProtocol.registerClass(MLHybridURLProtocol.self)
+            URLProtocol.wk_registerScheme("http")
+            URLProtocol.wk_registerScheme("https")
+        }
         //默认开启拦截
         UserDefaults.standard.set(true, forKey: HybridConstantModel.switchCache)
     }
