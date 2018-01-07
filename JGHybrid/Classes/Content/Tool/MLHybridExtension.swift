@@ -157,6 +157,6 @@ extension UINavigationBar {
     //设置Title颜色
     public func setTitleColor(_ text:UIColor){
         tintColor = text
-        titleTextAttributes = [NSAttributedStringKey.foregroundColor: text]
+        titleTextAttributes = [NSAttributedStringKey.foregroundColor: text, NSAttributedStringKey.font : UIFont.init(name: "PingFangSC-Regular", size: 17) ?? UIFont.systemFont(ofSize: 17)]
     }
 }

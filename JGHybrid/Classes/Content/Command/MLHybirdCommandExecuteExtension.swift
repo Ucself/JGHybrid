@@ -9,7 +9,7 @@ import UIKit
 
 //新版的Hybrid解析
 extension MLHybirdCommandExecute {
-
+    
     //init - ( 初始化 )
     func hybridInit(){
         guard let params:HybridInitParams = self.command.args.commandParams as? HybridInitParams  else {
@@ -110,17 +110,17 @@ extension MLHybirdCommandExecute {
         }
         //设置左边按钮
         if params.left.count != 0 {
-            let leftButtonItems:[UIBarButtonItem] = self.hybridHeaderBarButtonItems(params.left)
+            let leftButtonItems:[UIBarButtonItem] = self.hybridHeaderLeftBarButtonItems(params.left)
             self.command.viewController.navigationItem.setLeftBarButtonItems(leftButtonItems, animated: true)
         }
         //设置右边按钮
         if params.right.count != 0 {
-            let rightButtonItems:[UIBarButtonItem] = self.hybridHeaderBarButtonItems(params.right)
+            let rightButtonItems:[UIBarButtonItem] = self.hybridHeaderRightBarButtonItems(params.right)
             self.command.viewController.navigationItem.setRightBarButtonItems(rightButtonItems, animated: true)
         }
     }
     //设置按钮
-    func hybridHeaderBarButtonItems(_ buttonModels:[HybridHeaderParams.HybridHeaderButtonParams]) -> [UIBarButtonItem] {
+    func hybridHeaderLeftBarButtonItems(_ buttonModels:[HybridHeaderParams.HybridHeaderButtonParams]) -> [UIBarButtonItem] {
         var barButtons:[UIBarButtonItem] = []
         for model:HybridHeaderParams.HybridHeaderButtonParams in buttonModels {
             //需要添加的item
@@ -139,18 +139,20 @@ extension MLHybirdCommandExecute {
             if titleColor != .clear {
                 button.setTitleColor(titleColor, for: .normal)
             }
+            
+            //设置标题
+            if model.title.count > 0 {
+                button.setTitle(model.title, for: .normal)
+            }
             //设置图片
             if model.icon != "" ,let buttonIcon:UIImage = UIImage.init(named: MLHybridConfiguration.default.naviImagePrefixes + model.icon){
                 button.setImage(buttonIcon, for: .normal)
                 coverView.frame = CGRect.init(x: 0, y: 0, width: 44, height: 44)
+                button.setTitle("", for: .normal)
             }
             if model.title == "back" {
                 let image = UIImage(named: MLHybridConfiguration.default.backIndicator)
                 button.setImage(image, for: .normal)
-            }
-            //设置标题
-            if model.title.count > 0 {
-                button.setTitle(model.title, for: .normal)
             }
             //添加点击事件
             button.buttonModel = model
@@ -159,7 +161,7 @@ extension MLHybirdCommandExecute {
             barButtonItem.customView = coverView
             button.frame = coverView.frame
             button.backgroundColor = UIColor.clear
-            button.contentHorizontalAlignment = .center
+            button.contentHorizontalAlignment = .left
             button.contentVerticalAlignment = .center
             coverView.addSubview(button)
             
@@ -167,8 +169,62 @@ extension MLHybirdCommandExecute {
         }
         
         let spaceBar = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
-        spaceBar.width = 1
+        spaceBar.width = 6
         barButtons.insert(spaceBar, at: 0)
+        return barButtons
+    }
+    //设置按钮
+    func hybridHeaderRightBarButtonItems(_ buttonModels:[HybridHeaderParams.HybridHeaderButtonParams]) -> [UIBarButtonItem] {
+        var barButtons:[UIBarButtonItem] = []
+        for model:HybridHeaderParams.HybridHeaderButtonParams in buttonModels {
+            //需要添加的item
+            let barButtonItem:UIBarButtonItem = UIBarButtonItem.init()
+            //覆盖一层view
+            let coverView:UIView = UIView.init();coverView.backgroundColor = UIColor.clear
+            //Button按钮
+            let button:hybridHeaderButton = hybridHeaderButton.init()
+            
+            let titleWidth = model.title.hybridStringWidthWith(15, height: 20)
+            let itemWidth = titleWidth > 44 ? titleWidth : 44
+            //这是大小
+            coverView.frame = CGRect.init(x: 0, y: 0, width: itemWidth, height: 44)
+            //设置颜色
+            let titleColor:UIColor = UIColor.hybridColorWithHex(model.color)
+            if titleColor != .clear {
+                button.setTitleColor(titleColor, for: .normal)
+            }
+            
+            //设置标题
+            if model.title.count > 0 {
+                button.setTitle(model.title, for: .normal)
+            }
+            //设置图片
+            if model.icon != "" ,let buttonIcon:UIImage = UIImage.init(named: MLHybridConfiguration.default.naviImagePrefixes + model.icon){
+                button.setImage(buttonIcon, for: .normal)
+                coverView.frame = CGRect.init(x: 0, y: 0, width: 44, height: 44)
+                button.setTitle("", for: .normal)
+            }
+            if model.title == "back" {
+                let image = UIImage(named: MLHybridConfiguration.default.backIndicator)
+                button.setImage(image, for: .normal)
+            }
+            //添加点击事件
+            button.buttonModel = model
+            button.addTarget(self, action: #selector(hybridHeaderButtonClick(sender:)), for: .touchUpInside)
+            //添加到数组
+            barButtonItem.customView = coverView
+            button.frame = coverView.frame
+            button.backgroundColor = UIColor.clear
+            button.contentHorizontalAlignment = .right
+            button.contentVerticalAlignment = .center
+            coverView.addSubview(button)
+            barButtons.append(barButtonItem)
+        }
+        
+        let spaceBar = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
+        spaceBar.width = 6
+        barButtons.insert(spaceBar, at: 0)
+        
         return barButtons
     }
     //给UIButton添加数据
@@ -260,3 +316,4 @@ extension MLHybirdCommandExecute {
         task.resume()
     }
 }
+
