@@ -51,6 +51,12 @@ open class MLHybridViewController: UIViewController {
             self.largeTitleLabel?.text = titleName
         }
     }
+    //状态栏
+    public var statusBarStyle: UIStatusBarStyle? {
+        didSet {
+            setNeedsStatusBarAppearanceUpdate()
+        }
+    }
     //MARK: 私有参数
     //视图控件
     var progressView:UIProgressView!
@@ -154,7 +160,9 @@ open class MLHybridViewController: UIViewController {
             }
         }
     }
-    
+    override open var preferredStatusBarStyle: UIStatusBarStyle {
+        return statusBarStyle ?? .default
+    }
     //MARK: 自定义方法
     func initUI() {
         //加载等待开始

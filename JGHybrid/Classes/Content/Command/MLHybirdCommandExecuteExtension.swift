@@ -157,20 +157,21 @@ extension MLHybirdCommandExecute {
             //添加点击事件
             button.buttonModel = model
             button.addTarget(self, action: #selector(hybridHeaderButtonClick(sender:)), for: .touchUpInside)
-            //添加到数组
-            barButtonItem.customView = coverView
             button.frame = coverView.frame
             button.backgroundColor = UIColor.clear
             button.contentHorizontalAlignment = .left
             button.contentVerticalAlignment = .center
+            button.imageEdgeInsets = UIEdgeInsetsMake(0, 6, 0, 0)
             coverView.addSubview(button)
-            
+            //设置View
+            barButtonItem.customView = coverView
+            //添加到数组
             barButtons.append(barButtonItem)
         }
         
-        let spaceBar = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
-        spaceBar.width = 6
-        barButtons.insert(spaceBar, at: 0)
+        //        let spaceBar = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
+        //        spaceBar.width = 6
+        //        barButtons.insert(spaceBar, at: 0)
         return barButtons
     }
     //设置按钮
@@ -316,4 +317,3 @@ extension MLHybirdCommandExecute {
         task.resume()
     }
 }
-
