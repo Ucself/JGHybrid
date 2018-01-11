@@ -32,9 +32,13 @@ open class MLHybridContentView: WKWebView {
         super.init(coder: aDecoder)
     }
     
+    deinit {
+        //self.scrollView.delegate = nil
+    }
+    
     //MARK:自定义方法
     func initUI () {
-        self.scrollView.backgroundColor = UIColor.init(red: 0.97, green: 0.97, blue: 0.97, alpha: 1.0)
+        self.scrollView.backgroundColor = UIColor.hybridColorWithHex("FAFAFA")
         self.scrollView.bounces = true
         self.translatesAutoresizingMaskIntoConstraints = false
     }

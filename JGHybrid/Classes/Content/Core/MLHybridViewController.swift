@@ -82,12 +82,10 @@ open class MLHybridViewController: UIViewController {
     //MARK: 系统方法
     deinit {
         locationModel.stopUpdateLocation()
-        if contentView != nil {
-            contentView.load(URLRequest(url: URL(string: "about:blank")!))
-            contentView.stopLoading()
-            contentView.removeFromSuperview()
-            contentView = nil
-        }
+        self.contentView.uiDelegate = nil
+        self.contentView.navigationDelegate = nil
+        self.contentView.scrollView.delegate = nil
+        self.contentView.scrollView.delegate = nil
     }
     
     override open func viewDidLoad() {
