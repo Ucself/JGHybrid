@@ -47,7 +47,7 @@ open class MLHybridViewController: UIViewController {
     /// 标题
     public var titleName:String = "" {
         didSet {
-            self.title = titleName
+            self.navigationItem.title = titleName
             self.largeTitleLabel?.text = titleName
         }
     }
@@ -82,10 +82,15 @@ open class MLHybridViewController: UIViewController {
     //MARK: 系统方法
     deinit {
         locationModel.stopUpdateLocation()
-        self.contentView.uiDelegate = nil
-        self.contentView.navigationDelegate = nil
-        self.contentView.scrollView.delegate = nil
-        self.contentView.scrollView.delegate = nil
+        if self.contentView != nil {
+            self.contentView.load(URLRequest(url: URL(string: "about:blank")!))
+            self.contentView.stopLoading()
+            self.contentView.removeFromSuperview()
+            self.contentView.uiDelegate = nil
+            self.contentView.navigationDelegate = nil
+            self.contentView.scrollView.delegate = nil
+            self.contentView = nil
+        }
     }
     
     override open func viewDidLoad() {
@@ -176,11 +181,11 @@ open class MLHybridViewController: UIViewController {
         if !self.needLargeTitle {
             //设置约束高度
             self.largeTitleViewHeight = 0
-            self.title = self.titleName
+            self.navigationItem.title = self.titleName
         }
         else {
             self.largeTitleViewHeight = 74.5
-            self.title = ""
+            self.navigationItem.title = ""
         }
         //容器数据对象
         self.contentView = MLHybridContentView()
@@ -329,10 +334,10 @@ extension MLHybridViewController:UIScrollViewDelegate {
         let current = topConstant
         if current < -largeTitleViewHeight / 2 && current > -largeTitleViewHeight {
             //大标题显示大部分的时候
-            self.title = self.titleName
+            self.navigationItem.title = self.titleName
         } else if current >= -largeTitleViewHeight / 2 && current < 0 {
             //大标题隐藏大部分的时候
-            self.title = ""
+            self.navigationItem.title = ""
         }
     }
 }
