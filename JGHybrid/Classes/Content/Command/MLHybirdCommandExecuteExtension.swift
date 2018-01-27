@@ -36,6 +36,10 @@ extension MLHybirdCommandExecute {
             if UIColor.hybridColorWithHex(params.background) != .clear {
                 webViewController.titleBackgroundColor = UIColor.hybridColorWithHex(params.background)
             }
+            //如果是全屏，则为透明色
+            if params.fullscreen {
+                webViewController.isFullScreen = params.fullscreen
+            }
             
             navi.pushViewController(webViewController, animated: params.animate)
         } else {
@@ -52,6 +56,10 @@ extension MLHybirdCommandExecute {
         if params.type == "h5" {
             guard let webViewController = MLHybrid.load(urlString: params.url) else {return}
             webViewController.title = params.title
+            //是否全屏
+            if params.fullscreen {
+                webViewController.isFullScreen = params.fullscreen
+            }
             self.command.viewController.present(webViewController, animated: params.animate, completion: nil)
         } else {
             //native跳转交给外部处理

@@ -40,7 +40,14 @@ open class MLHybridViewController: UIViewController {
     public var titleBackgroundColor:UIColor = MLHybridConfiguration.default.defaultTitleBackgroundTColor{      //Title背景色
         didSet {
             self.largeTitleView?.backgroundColor = self.titleBackgroundColor
-            self.navigationController?.navigationBar.setBackgroundColor(self.titleBackgroundColor)
+            //全屏的话就不用设置需要的颜色
+            if isFullScreen {
+                self.navigationController?.navigationBar.setBackgroundClear()
+            }
+            else {
+                self.navigationController?.navigationBar.setBackgroundColor(self.titleBackgroundColor)
+            }
+            
         }
     }
     
@@ -57,6 +64,8 @@ open class MLHybridViewController: UIViewController {
             setNeedsStatusBarAppearanceUpdate()
         }
     }
+    //是否全屏
+    public var isFullScreen:Bool = false
     //MARK: 私有参数
     //视图控件
     var progressView:UIProgressView!
@@ -126,6 +135,10 @@ open class MLHybridViewController: UIViewController {
         } else {
             self.automaticallyAdjustsScrollViewInsets = false
         }
+        //设置透明
+        if isFullScreen {
+            self.navigationController?.navigationBar.setBackgroundClear()
+        }
     }
     
     override open func viewWillDisappear(_ animated: Bool) {
@@ -171,8 +184,6 @@ open class MLHybridViewController: UIViewController {
         //加载等待开始
         MLHybrid.shared.delegate?.startWait()
         self.hidesBottomBarWhenPushed = needHidesBottomBar
-        self.automaticallyAdjustsScrollViewInsets = false
-        self.navigationController?.navigationBar.isTranslucent = false
         self.setUpBackButton()
     }
     
@@ -203,6 +214,7 @@ open class MLHybridViewController: UIViewController {
         self.largeTitleView!.translatesAutoresizingMaskIntoConstraints = false
         self.contentView.translatesAutoresizingMaskIntoConstraints = false
         self.largeTitleLabel!.translatesAutoresizingMaskIntoConstraints = false
+        
         let topGuide = self.topLayoutGuide
         let bottomGuide = self.bottomLayoutGuide
         //大标题Label布局
@@ -213,7 +225,12 @@ open class MLHybridViewController: UIViewController {
         //大标题布局
         let leftLargeTitleConstraint = NSLayoutConstraint(item: self.largeTitleView!, attribute: .left, relatedBy: .equal, toItem: self.view, attribute: .left, multiplier: 1.0, constant: 0)
         let rightLargeTitleConstraint = NSLayoutConstraint(item: self.largeTitleView!, attribute: .right, relatedBy: .equal, toItem: self.view, attribute: .right, multiplier: 1.0, constant: 0)
-        let topLargeTitleConstraint = NSLayoutConstraint(item: self.largeTitleView!, attribute: .top, relatedBy: .equal, toItem: topGuide, attribute: .bottom, multiplier: 1.0, constant: 0)
+        var topLargeTitleConstraint:NSLayoutConstraint! = NSLayoutConstraint(item: self.largeTitleView!, attribute: .top, relatedBy: .equal, toItem: topGuide, attribute: .bottom, multiplier: 1.0, constant: 0)
+        if isFullScreen {
+            //全屏的话约束到view
+            topLargeTitleConstraint = NSLayoutConstraint(item: self.largeTitleView!, attribute: .top, relatedBy: .equal, toItem: self.view, attribute: .top, multiplier: 1.0, constant: 0)
+            topLargeTitleConstraint.constant = -44 - UIApplication.shared.statusBarFrame.size.height
+        }
         let heightLargeTitleConstrain = NSLayoutConstraint(item: self.largeTitleView!, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: self.largeTitleViewHeight)
         self.largeTitleViewTop = topLargeTitleConstraint
         //容器布局

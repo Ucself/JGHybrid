@@ -148,7 +148,7 @@ extension UIImage {
 
 extension UINavigationBar {
     //设置背景色
-    public func setBackgroundColor(_ background:UIColor) {
+    public func setBackgroundColor(_ background:UIColor?) {
         isTranslucent = false
         backgroundColor = background
         barTintColor = background
@@ -158,5 +158,13 @@ extension UINavigationBar {
     public func setTitleColor(_ text:UIColor){
         tintColor = text
         titleTextAttributes = [NSAttributedStringKey.foregroundColor: text, NSAttributedStringKey.font : UIFont.init(name: "PingFangSC-Regular", size: 17) ?? UIFont.systemFont(ofSize: 17)]
+    }
+    //设置全透明
+    public func setBackgroundClear() {
+        isTranslucent = true
+        backgroundColor = UIColor.clear
+        barTintColor = UIColor.clear
+        setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        shadowImage = UIImage()
     }
 }
