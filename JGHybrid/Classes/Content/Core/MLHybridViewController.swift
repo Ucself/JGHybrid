@@ -216,7 +216,7 @@ open class MLHybridViewController: UIViewController {
         self.largeTitleLabel!.translatesAutoresizingMaskIntoConstraints = false
         
         let topGuide = self.topLayoutGuide
-        let bottomGuide = self.bottomLayoutGuide
+//        let bottomGuide = self.bottomLayoutGuide
         //大标题Label布局
         let leftTitleLabelConstraint = NSLayoutConstraint(item: self.largeTitleLabel!, attribute: .left, relatedBy: .equal, toItem: self.largeTitleView, attribute: .left, multiplier: 1.0, constant: 22)
         let rightTitleLabelConstraint = NSLayoutConstraint(item: self.largeTitleLabel!, attribute: .right, relatedBy: .equal, toItem: self.largeTitleView, attribute: .right, multiplier: 1.0, constant: 0)
@@ -229,10 +229,9 @@ open class MLHybridViewController: UIViewController {
         if isFullScreen {
             //全屏的话约束到view
             topLargeTitleConstraint = NSLayoutConstraint(item: self.largeTitleView!, attribute: .top, relatedBy: .equal, toItem: self.view, attribute: .top, multiplier: 1.0, constant: 0)
-            topLargeTitleConstraint.constant = -44 - UIApplication.shared.statusBarFrame.size.height
         }
-        let heightLargeTitleConstrain = NSLayoutConstraint(item: self.largeTitleView!, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: self.largeTitleViewHeight)
         self.largeTitleViewTop = topLargeTitleConstraint
+        let heightLargeTitleConstrain = NSLayoutConstraint(item: self.largeTitleView!, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: self.largeTitleViewHeight)
         //容器布局
         let leftConstraint = NSLayoutConstraint(item: self.contentView, attribute: .left, relatedBy: .equal, toItem: self.view, attribute: .left, multiplier: 1.0, constant: 0)
         let rightConstraint = NSLayoutConstraint(item: self.contentView, attribute: .right, relatedBy: .equal, toItem: self.view, attribute: .right, multiplier: 1.0, constant: 0)

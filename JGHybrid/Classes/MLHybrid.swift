@@ -1,6 +1,8 @@
 //
-//  MLHybrid.swift
-//  Pods
+//  MLHybridConfiguration.swift
+//  JGHybrid
+//
+//  Created by 李保君 on 2017/12/5.
 //
 
 import Foundation
