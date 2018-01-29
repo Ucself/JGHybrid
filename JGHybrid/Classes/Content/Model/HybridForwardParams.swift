@@ -27,7 +27,7 @@ class HybridForwardParams: BaseParams {
         obj.color = dic["color"] as? String ?? ""
         obj.background = dic["background"] as? String ?? ""
         obj.animate = dic["animate"] as? Bool ?? true
-        obj.fullscreen = dic["fullscreen"] as? Bool ?? true
+        obj.fullscreen = dic["fullscreen"] as? Bool ?? false
         return obj
     }
 }

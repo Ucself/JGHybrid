@@ -20,7 +20,7 @@ class HybridModalParams: BaseParams {
         obj.url = dic["url"] as? String ?? ""
         obj.title = dic["title"] as? String ?? ""
         obj.animate = dic["animate"] as? Bool ?? true
-        obj.fullscreen = dic["fullscreen"] as? Bool ?? true
+        obj.fullscreen = dic["fullscreen"] as? Bool ?? false
         return obj
     }
 }

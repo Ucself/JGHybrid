@@ -116,6 +116,26 @@
                 'content': '复制内容'
             }
         }
+    var storageSet = {
+        'name':'storage',
+        'params':{
+            'action': 'set',
+            'hash': {'testkey1':'testvalue1','testkey2':'testvalue2'}
+        }
+    }
+    var storageGet = {
+        'name':'storage',
+        'params':{
+            'action': 'get',
+        }
+    }
+    var storageRemove = {
+        'name':'storage',
+        'params':{
+            'action': 'remove',
+        }
+    }
+    
         //MARK: 初始化的时候执行js
         //window.webkit.messageHandlers.requestHybrid.postMessage(pageshow);
         //window.webkit.messageHandlers.requestHybrid.postMessage(pagehide);
@@ -220,5 +240,11 @@
     <input type="button" value="clipboard" onclick="window.webkit.messageHandlers.requestHybrid.postMessage(clipboard);" />
     <br><br>
     <input type="button" value="ajax request" onclick="ajaxRequest()" />
+    <br><br>
+    <input type="button" value="storageSet" onclick="window.webkit.messageHandlers.requestHybrid.postMessage(storageSet);" />
+    <br><br>
+    <input type="button" value="storageGet" onclick="window.webkit.messageHandlers.requestHybrid.postMessage(storageGet);" />
+    <br><br>
+    <input type="button" value="storageRemove" onclick="window.webkit.messageHandlers.requestHybrid.postMessage(storageRemove);" />
 </body>
 </html>
