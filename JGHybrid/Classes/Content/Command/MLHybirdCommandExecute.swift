@@ -69,6 +69,8 @@ class MLHybirdCommandExecute: NSObject {
             self.hybridLocation()
         case .hybridClipboard:
             self.hybridClipboard()
+        case .hybridStorage:
+            self.hybridStorage()
         default:
             break
         }

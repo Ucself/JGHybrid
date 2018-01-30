@@ -20,6 +20,7 @@ enum MLHybridMethodType: String {
     case hybridDevice           = "device"              //device - ( 获取设备信息 )
     case hybridLocation         = "location"            //location - ( 定位 )
     case hybridClipboard        = "clipboard"           //clipboard - ( 剪贴板 )
+    case hybridStorage          = "storage"             //storage - （ 模拟Storage存储 ）
     
     case UnKonw = "UnKonw"
 }
@@ -62,6 +63,8 @@ open class MLHybirdCommandParams: NSObject {
             args.commandParams = HybridLocationParams.convert(dic)
         case .hybridClipboard:
             args.commandParams = HybridClipboardParams.convert(dic)
+        case .hybridStorage:
+            args.commandParams = HybridStorageParams.convert(dic)
         default:
             break
         }

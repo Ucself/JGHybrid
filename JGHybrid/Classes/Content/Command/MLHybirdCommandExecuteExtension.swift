@@ -296,6 +296,42 @@ extension MLHybirdCommandExecute {
     }
     //clipboard - ( 剪贴板 )
     func hybridClipboard(){
+        guard let params:HybridStorageParams = self.command.args.commandParams as? HybridStorageParams  else {
+            return
+        }
+        //Storage类型
+        let action:String = params.action
+        //userdefault key
+        let userDefaultKey:String = "HybridStorageUserDefaultKey"
+        switch action {
+        case "set":
+            //设置存储
+            if params.hashDic.count > 0 {
+                UserDefaults.standard.set(params.hashDic, forKey: userDefaultKey)
+            }
+        case "get":
+            //获取存储
+            if let hashDic:[String:String] = UserDefaults.standard.object(forKey: userDefaultKey) as? [String:String] {
+                command.callBack(data: hashDic,
+                                 err_no: 0,
+                                 msg: "",
+                                 callback: command.callbackId, completion: { (msg) in })
+            }
+            else {
+                command.callBack(data: [],
+                                 err_no: -1,
+                                 msg: "No data stored",
+                                 callback: command.callbackId, completion: { (msg) in })
+            }
+            
+        case "remove":
+            UserDefaults.standard.removeObject(forKey: userDefaultKey)
+        default:
+            break
+        }
+    }
+    //clipboard - ( 剪贴板 )
+    func hybridStorage(){
         guard let params:HybridClipboardParams = self.command.args.commandParams as? HybridClipboardParams  else {
             return
         }
