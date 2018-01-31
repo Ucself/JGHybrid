@@ -10,12 +10,24 @@ import Foundation
 import JGHybrid
 
 class MethodExtension: MLHybridMethodProtocol {
+    func didFailLoad(command: MLHybirdCommand) {
+        
+    }
+    
+    
     func startWait() {
         
     }
     
     func stopWait() {
         
+    }
+ 
+    //页面加载失败所需操作
+    func didFailLoad(viewController: MLHybridViewController) {
+        let failView:LoadFailedView = LoadFailedView.initWithXib()
+        viewController.view.addSubview(failView)
+        failView.frame = viewController.view.frame
     }
     
     func commandExtension(command: MLHybirdCommand) {

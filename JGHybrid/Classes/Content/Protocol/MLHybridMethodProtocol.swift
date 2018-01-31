@@ -17,9 +17,16 @@ public protocol MLHybridMethodProtocol {
     /// - Parameter command: 命令对象
     func commandExtension(command: MLHybirdCommand)
     
+    /// 页面加载失败所需操作
+    ///
+    /// - Parameter command: 命令对象
+    func didFailLoad(viewController: MLHybridViewController)
+    
     /// 加载等待开始  业务需要重写
     func startWait()
     
     /// 加载等待结束  业务需要重写
     func stopWait()
 }
+
+

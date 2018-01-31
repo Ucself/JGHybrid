@@ -66,10 +66,11 @@ open class MLHybridViewController: UIViewController {
     }
     //是否全屏
     public var isFullScreen:Bool = false
+    
     //MARK: 私有参数
     //视图控件
-    var progressView:UIProgressView!
     var contentView: MLHybridContentView!
+    var progressView:UIProgressView!
     var largeTitleView:UIView?
     var largeTitleLabel:UILabel?
     var largeTitleViewTop: NSLayoutConstraint!
@@ -216,7 +217,7 @@ open class MLHybridViewController: UIViewController {
         self.largeTitleLabel!.translatesAutoresizingMaskIntoConstraints = false
         
         let topGuide = self.topLayoutGuide
-//        let bottomGuide = self.bottomLayoutGuide
+        //        let bottomGuide = self.bottomLayoutGuide
         //大标题Label布局
         let leftTitleLabelConstraint = NSLayoutConstraint(item: self.largeTitleLabel!, attribute: .left, relatedBy: .equal, toItem: self.largeTitleView, attribute: .left, multiplier: 1.0, constant: 22)
         let rightTitleLabelConstraint = NSLayoutConstraint(item: self.largeTitleLabel!, attribute: .right, relatedBy: .equal, toItem: self.largeTitleView, attribute: .right, multiplier: 1.0, constant: 0)
@@ -265,6 +266,8 @@ open class MLHybridViewController: UIViewController {
         
     }
     
+    
+    
     //初始化控件数据
     func initData(){
         //设置userAgent
@@ -301,9 +304,15 @@ open class MLHybridViewController: UIViewController {
         let item = UIBarButtonItem(customView: button)
         self.navigationItem.leftBarButtonItem = item
     }
-    
     @objc func backButtonClick() {
         self.navigationController?.popViewController(animated: true)
+    }
+    //重新加载WKWebview
+    public func reloadContentView(){
+        guard urlPath != nil else {return}
+        var urlRequest:URLRequest = URLRequest.init(url: urlPath!)
+        //urlRequest.setValue(MLHybridConfiguration.default.cookieString, forHTTPHeaderField: MLHybridConfiguration.default.cookieName)
+        self.contentView.load(urlRequest)
     }
 }
 //MARK: 模拟大标题 功能 UIScrollViewDelegate
@@ -394,6 +403,17 @@ extension MLHybridViewController: WKUIDelegate,WKNavigationDelegate {
     public func webViewWebContentProcessDidTerminate(_ webView: WKWebView){
         webView.reload()
     }
+    //页面加载失败
+    public func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
+        print("页面加载失败----\(error)")
+        MLHybrid.shared.delegate?.didFailLoad(viewController: self)
+    }
+    
+    //页面跳转失败
+    public func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+        print("页面跳转失败----\(error)")
+    }
+    
     
 }
 //MARK:WKScriptMessageHandler
