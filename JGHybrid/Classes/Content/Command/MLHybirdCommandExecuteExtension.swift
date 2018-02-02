@@ -226,13 +226,14 @@ extension MLHybirdCommandExecute {
             button.backgroundColor = UIColor.clear
             button.contentHorizontalAlignment = .right
             button.contentVerticalAlignment = .center
+            button.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 6)
             coverView.addSubview(button)
             barButtons.append(barButtonItem)
         }
         
-        let spaceBar = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
-        spaceBar.width = 6
-        barButtons.insert(spaceBar, at: 0)
+        //        let spaceBar = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
+        //        spaceBar.width = 6
+        //        barButtons.insert(spaceBar, at: 0)
         
         return barButtons
     }
@@ -295,7 +296,7 @@ extension MLHybirdCommandExecute {
         }
     }
     //clipboard - ( 剪贴板 )
-    func hybridClipboard(){
+    func hybridStorage(){
         guard let params:HybridStorageParams = self.command.args.commandParams as? HybridStorageParams  else {
             return
         }
@@ -305,9 +306,21 @@ extension MLHybirdCommandExecute {
         let userDefaultKey:String = "HybridStorageUserDefaultKey"
         switch action {
         case "set":
+            //首先拿出现有的存储
+            var newHashDic:[String:String] = [:]
+            if let hashDic:[String:String] = UserDefaults.standard.object(forKey: userDefaultKey) as? [String:String] {
+                newHashDic = hashDic
+                //累加新值
+                for (key,value) in params.hashDic {
+                    newHashDic[key] = value
+                }
+            }
+            else {
+                newHashDic = params.hashDic
+            }
             //设置存储
-            if params.hashDic.count > 0 {
-                UserDefaults.standard.set(params.hashDic, forKey: userDefaultKey)
+            if newHashDic.count > 0 {
+                UserDefaults.standard.set(newHashDic, forKey: userDefaultKey)
             }
         case "get":
             //获取存储
@@ -331,7 +344,7 @@ extension MLHybirdCommandExecute {
         }
     }
     //clipboard - ( 剪贴板 )
-    func hybridStorage(){
+    func hybridClipboard(){
         guard let params:HybridClipboardParams = self.command.args.commandParams as? HybridClipboardParams  else {
             return
         }
@@ -361,3 +374,4 @@ extension MLHybirdCommandExecute {
         task.resume()
     }
 }
+
