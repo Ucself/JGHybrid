@@ -136,6 +136,14 @@
         }
     }
     
+    var networkStream = {
+        'name':'storage',
+        'params':{
+            'method': 'GET',
+            'url':'https://httpbin.org/get',
+        },
+        'callback':'callback_name_stream'
+    }
         //MARK: 初始化的时候执行js
         //window.webkit.messageHandlers.requestHybrid.postMessage(pageshow);
         //window.webkit.messageHandlers.requestHybrid.postMessage(pagehide);
@@ -246,5 +254,7 @@
     <input type="button" value="storageGet" onclick="window.webkit.messageHandlers.requestHybrid.postMessage(storageGet);" />
     <br><br>
     <input type="button" value="storageRemove" onclick="window.webkit.messageHandlers.requestHybrid.postMessage(storageRemove);" />
+    <br><br>
+    <input type="button" value="networkStream" onclick="window.webkit.messageHandlers.requestHybrid.postMessage(networkStream);" />
 </body>
 </html>
