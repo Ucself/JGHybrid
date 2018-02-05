@@ -52,6 +52,16 @@
                 'fullscreen':true
             }
         }
+        var forwardBaidu = {
+            'name':'forward',
+            'params':{
+                'type':'h5',
+                'url':'http://www.baidu.com',
+                'title':'forward /h5',
+                'animate':false,
+                'fullscreen':true
+            }
+        }
         var forwardLargeTitle = {
             'name':'forward',
             'params':{
@@ -245,6 +255,8 @@
     <input type="button" value="header" onclick="window.webkit.messageHandlers.requestHybrid.postMessage(header);" />
     <br><br>
     <input type="button" value="forward" onclick="window.webkit.messageHandlers.requestHybrid.postMessage(forward);" />
+    <br><br>
+    <input type="button" value="forwardBaidu" onclick="window.webkit.messageHandlers.requestHybrid.postMessage(forwardBaidu);" />
     <br><br>
     <input type="button" value="forwardLargeTitle" onclick="window.webkit.messageHandlers.requestHybrid.postMessage(forwardLargeTitle);" />
     <br><br>

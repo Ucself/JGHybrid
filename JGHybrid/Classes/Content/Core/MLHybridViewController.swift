@@ -406,7 +406,10 @@ extension MLHybridViewController: WKUIDelegate,WKNavigationDelegate {
     //页面加载失败
     public func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
         print("页面加载失败----\(error)")
-        MLHybrid.shared.delegate?.didFailLoad(viewController: self)
+        //无法连接服务器显示错误页面
+        if let ocError:NSError = error as NSError?, ocError.code == -1005 {
+            MLHybrid.shared.delegate?.didFailLoad(viewController: self)
+        }
     }
     
     //页面跳转失败
