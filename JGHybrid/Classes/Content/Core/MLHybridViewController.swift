@@ -93,6 +93,8 @@ open class MLHybridViewController: UIViewController {
     deinit {
         locationModel.stopUpdateLocation()
         if self.contentView != nil {
+            //取消方法注入
+            self.contentView?.configuration.userContentController.removeScriptMessageHandler(forName: "requestHybrid")
             self.contentView.load(URLRequest(url: URL(string: "about:blank")!))
             self.contentView.stopLoading()
             self.contentView.removeFromSuperview()
@@ -117,7 +119,7 @@ open class MLHybridViewController: UIViewController {
         //设置导航栏
         self.navigationController?.setNavigationBarHidden(naviBarHidden, animated: true)
         //js方法注入
-        self.contentView?.configuration.userContentController.add(self, name: "requestHybrid")
+        //self.contentView?.configuration.userContentController.add(self, name: "requestHybrid")
         //添加wkwebview监听
         self.contentView.addObserver(self, forKeyPath: "estimatedProgress", options: NSKeyValueObservingOptions(rawValue: 0), context: nil)
         //回调Hybrid
@@ -145,7 +147,7 @@ open class MLHybridViewController: UIViewController {
     override open func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         //取消方法注入
-        self.contentView?.configuration.userContentController.removeScriptMessageHandler(forName: "requestHybrid")
+        //self.contentView?.configuration.userContentController.removeScriptMessageHandler(forName: "requestHybrid")
         //移除KVO
         self.contentView.removeObserver(self, forKeyPath: "estimatedProgress")
         //回调Hybrid
@@ -157,8 +159,6 @@ open class MLHybridViewController: UIViewController {
     override open func viewDidAppear(_ animated: Bool) {
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self as? UIGestureRecognizerDelegate;
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
-        //加载等待结束
-        MLHybrid.shared.delegate?.stopWait()
     }
     
     open override  func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
@@ -252,6 +252,8 @@ open class MLHybridViewController: UIViewController {
         var urlRequest:URLRequest = URLRequest.init(url: urlPath!)
         //urlRequest.setValue(MLHybridConfiguration.default.cookieString, forHTTPHeaderField: MLHybridConfiguration.default.cookieName)
         self.contentView.load(urlRequest)
+        //js 注入
+        self.contentView?.configuration.userContentController.add(self, name: "requestHybrid")
     }
     
     func initProgressView() {
@@ -371,12 +373,9 @@ extension MLHybridViewController:UIScrollViewDelegate {
 extension MLHybridViewController: WKUIDelegate,WKNavigationDelegate {
     
     public func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
-        //MLHybrid.shared.delegate?.startWait()
     }
     
     public func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!){
-        //加载等待结束
-        MLHybrid.shared.delegate?.stopWait()
     }
     
     public func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
@@ -410,11 +409,15 @@ extension MLHybridViewController: WKUIDelegate,WKNavigationDelegate {
         if let ocError:NSError = error as NSError?, ocError.code == -1005 {
             MLHybrid.shared.delegate?.didFailLoad(viewController: self)
         }
+        //加载失败
+        MLHybrid.shared.delegate?.stopWait()
     }
     
     //页面跳转失败
     public func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
         print("页面跳转失败----\(error)")
+        //加载失败
+        MLHybrid.shared.delegate?.stopWait()
     }
     
     
