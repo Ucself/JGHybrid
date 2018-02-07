@@ -94,7 +94,7 @@ open class MLHybridViewController: UIViewController {
         locationModel.stopUpdateLocation()
         if self.contentView != nil {
             //取消方法注入
-            self.contentView?.configuration.userContentController.removeScriptMessageHandler(forName: "requestHybrid")
+            self.contentView.configuration.userContentController.removeScriptMessageHandler(forName: "requestHybrid")
             self.contentView.load(URLRequest(url: URL(string: "about:blank")!))
             self.contentView.stopLoading()
             self.contentView.removeFromSuperview()
@@ -252,8 +252,8 @@ open class MLHybridViewController: UIViewController {
         var urlRequest:URLRequest = URLRequest.init(url: urlPath!)
         //urlRequest.setValue(MLHybridConfiguration.default.cookieString, forHTTPHeaderField: MLHybridConfiguration.default.cookieName)
         self.contentView.load(urlRequest)
-        //js 注入
-        self.contentView?.configuration.userContentController.add(self, name: "requestHybrid")
+        //js 注入 requestHybrid
+        self.contentView.configuration.userContentController.add(self, name: "requestHybrid")
     }
     
     func initProgressView() {
