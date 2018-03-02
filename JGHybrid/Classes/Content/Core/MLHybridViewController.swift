@@ -372,12 +372,6 @@ extension MLHybridViewController:UIScrollViewDelegate {
 //MARK: WKUIDelegate WKNavigationDelegate
 extension MLHybridViewController: WKUIDelegate,WKNavigationDelegate {
     
-    public func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
-    }
-    
-    public func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!){
-    }
-    
     public func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         
         if self.commandExecute.performCommand(request: navigationAction.request, webView: webView) {
@@ -398,6 +392,16 @@ extension MLHybridViewController: WKUIDelegate,WKNavigationDelegate {
             decisionHandler(.allow)
         }
     }
+    public func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
+        
+        if  let response = navigationResponse.response as? HTTPURLResponse, response.statusCode == 500 {
+            //显示错误页面
+            MLHybrid.shared.delegate?.didFailLoad(viewController: self)
+            //加载关闭
+            MLHybrid.shared.delegate?.stopWait()
+        }
+        decisionHandler(.allow)
+    }
     
     public func webViewWebContentProcessDidTerminate(_ webView: WKWebView){
         webView.reload()
@@ -405,8 +409,8 @@ extension MLHybridViewController: WKUIDelegate,WKNavigationDelegate {
     //页面加载失败
     public func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
         print("页面加载失败----\(error)")
-        //无法连接服务器显示错误页面
-        if let ocError:NSError = error as NSError?, ocError.code == -1005 {
+        //无法连接服务器显示错误页面    -1002 不支持的URL
+        if let ocError:NSError = error as NSError?, ocError.code != -1002 {
             MLHybrid.shared.delegate?.didFailLoad(viewController: self)
         }
         //加载失败
