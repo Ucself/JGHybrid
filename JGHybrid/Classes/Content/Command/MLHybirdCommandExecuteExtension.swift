@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import WebKit
 
 //新版的Hybrid解析
 extension MLHybirdCommandExecute {
@@ -350,28 +351,50 @@ extension MLHybirdCommandExecute {
         }
         UIPasteboard.general.string = params.content
     }
-    //离线缓存根据
+    //离线缓存数据
     func hybridOfflineCacheMainfest(){
-        //请求会话
-        let session:URLSession = URLSession.shared
-        guard let url:URL = URL.init(string: MLHybridConfiguration.default.cacheURLString) else { return }
-        let task:URLSessionTask = session.dataTask(with: url) { (data, response, error) in
-            do {
-                //获取返回的数据
-                if let responseData = data {
-                    let jsonData = try JSONSerialization.jsonObject(with: responseData, options: JSONSerialization.ReadingOptions.allowFragments)
-                    if let dic = jsonData as? [String:AnyObject]{
-                        let mainfestParams:HybridMainfestParams = HybridMainfestParams.convert(dic)
-                        MLHybrid.shared.mainfestParams = mainfestParams
-                    }
+        //异步请求
+        DispatchQueue.global().async {
+            //请求会话
+            let session:URLSession = URLSession.shared
+            guard let url:URL = URL.init(string: MLHybridConfiguration.default.cacheURLString) else { return }
+            let task:URLSessionTask = session.dataTask(with: url) { (data, response, error) in
+                //数据文件逻辑判断
+                self.hybridOfflineCacheFile(data: data)
+            }
+            task.resume()
+        }
+    }
+    //离线缓存判断
+    func hybridOfflineCacheFile(data:Data?){
+        do {
+            //旧的ManiFest.json
+            let oldManifestParams:HybridMainfestParams = MLHybrid.shared.mainfestParams
+            //获取返回的数据
+            guard let responseData = data else { return }
+            //返回的data 转换为 字典
+            let jsonData = try JSONSerialization.jsonObject(with: responseData, options: JSONSerialization.ReadingOptions.allowFragments)
+            guard let manifestDic = jsonData as? [String:AnyObject] else { return }
+            //字典转换为对象
+            let mainfestParams:HybridMainfestParams = HybridMainfestParams.convert(manifestDic)
+            MLHybrid.shared.mainfestParams = mainfestParams
+            //如果manifest没有改变就直接返回
+            if oldManifestParams._hash == mainfestParams._hash { return }
+            //清空WKWebview 磁盘缓存
+            if mainfestParams._hash != "" && oldManifestParams._hash != "" {
+                //异步清除缓存
+                if #available(iOS 9.0, *) {
+                    WKWebsiteDataStore.default().removeData(ofTypes: [WKWebsiteDataTypeDiskCache], modifiedSince: Date.init(timeIntervalSince1970: 0)) { }
+                } else {
+                    // Fallback on earlier versions
+                    //之前版本直接删文件
                 }
             }
-            catch let catchError {
-                print("hybridOfflineCacheMainfest.catchError -> \(catchError)")
-            }
-            
         }
-        task.resume()
+        catch let catchError {
+            print("hybridOfflineCacheMainfest.catchError -> \(catchError)")
+        }
+        
     }
 }
 
