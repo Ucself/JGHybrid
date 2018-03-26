@@ -1,5 +1,5 @@
 PODS:
-  - JGHybrid (3.3.4):
+  - JGHybrid (3.4.0):
     - JGWebKitURLProtocol
   - JGWebKitURLProtocol (1.0.1)
 
@@ -11,7 +11,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  JGHybrid: 5833ccbd190a848dee1bf19fd2e1a2a372edc127
+  JGHybrid: 791092d0f978c1a60d80bb9715648aa3e37094a6
   JGWebKitURLProtocol: 3086024bce4da9e8b9d639a12a9083048b3ca1cd
 
 PODFILE CHECKSUM: 8443499083c01df9966868c36f9f98ee26bd8c2d
