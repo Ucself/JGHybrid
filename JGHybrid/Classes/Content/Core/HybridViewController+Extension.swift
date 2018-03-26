@@ -86,7 +86,7 @@ extension MLHybridViewController {
         self.contentView.scrollView.delegate = self
         //加载
         guard urlPath != nil else {return}
-        var urlRequest:URLRequest = URLRequest.init(url: urlPath!)
+        let urlRequest:URLRequest = URLRequest.init(url: urlPath!)
         //urlRequest.setValue(MLHybridConfiguration.default.cookieString, forHTTPHeaderField: MLHybridConfiguration.default.cookieName)
         self.contentView.load(urlRequest)
         //js 注入 requestHybrid
@@ -149,7 +149,7 @@ extension MLHybridViewController {
     //重新加载WKWebview
     public func reloadContentView(){
         guard urlPath != nil else {return}
-        var urlRequest:URLRequest = URLRequest.init(url: urlPath!)
+        let urlRequest:URLRequest = URLRequest.init(url: urlPath!)
         //urlRequest.setValue(MLHybridConfiguration.default.cookieString, forHTTPHeaderField: MLHybridConfiguration.default.cookieName)
         self.contentView.load(urlRequest)
     }

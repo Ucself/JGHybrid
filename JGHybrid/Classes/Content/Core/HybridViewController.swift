@@ -41,7 +41,7 @@ open class MLHybridViewController: UIViewController {
         didSet {
             self.largeTitleView?.backgroundColor = self.titleBackgroundColor
             //全屏的话就不用设置需要的颜色
-            if isFullScreen {
+            if self.isFullScreen {
                 self.navigationController?.navigationBar.setBackgroundClear()
             }
             else {
@@ -128,11 +128,12 @@ open class MLHybridViewController: UIViewController {
         //设置颜色
         self.navigationController?.navigationBar.setTitleColor(self.titleColor)
         self.navigationController?.navigationBar.setBackgroundColor(self.titleBackgroundColor)
+        self.view.backgroundColor = self.titleBackgroundColor
         self.largeTitleView?.backgroundColor = self.titleBackgroundColor
         self.largeTitleLabel?.textColor = self.titleColor
         
         //设置透明
-        if isFullScreen {
+        if self.isFullScreen {
             self.navigationController?.navigationBar.setBackgroundClear()
         }
     }
@@ -151,7 +152,13 @@ open class MLHybridViewController: UIViewController {
     
     override open func viewDidAppear(_ animated: Bool) {
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self as? UIGestureRecognizerDelegate;
-        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+        //导航栏全屏透明的话就不要手势回退，有渐变bug
+        if self.isFullScreen {
+            self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+        }
+        else {
+            self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+        }
     }
     
     open override  func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
