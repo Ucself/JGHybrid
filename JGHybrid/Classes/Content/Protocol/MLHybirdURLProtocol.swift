@@ -8,17 +8,17 @@ import Foundation
 
 class MLHybridURLProtocol: URLProtocol {
     
-    override open class func canInit(with request: URLRequest) -> Bool {
+    override class func canInit(with request: URLRequest) -> Bool {
         //print("MLHybridURLProtocol------------------>canInit")
         return MLHybridURLProtocol.canUseCache(request)
     }
 
-    override open class func canonicalRequest(for request: URLRequest) -> URLRequest {
+    override class func canonicalRequest(for request: URLRequest) -> URLRequest {
         //print("MLHybridURLProtocol------------------>canonicalRequest")
         return request
     }
 
-    override open func startLoading() {
+    override func startLoading() {
         //print("MLHybridURLProtocol------------------>startLoading")
         //标记请求  防止重复处理
         let mutableReqeust: NSMutableURLRequest = (self.request as NSURLRequest).mutableCopy() as! NSMutableURLRequest
@@ -33,7 +33,7 @@ class MLHybridURLProtocol: URLProtocol {
         }
     }
     
-    override open func stopLoading() {
+    override func stopLoading() {
         //print("MLHybridURLProtocol------------------>stopLoading")
     }
     

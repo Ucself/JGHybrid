@@ -6,7 +6,7 @@
 import UIKit
 
 //MARK: 事件类型
-enum MLHybridMethodType: String {
+public enum MLHybridMethodType: String {
     
     case hybridInit             = "init"                //init - ( 初始化 )
     case hybridForward          = "forward"             //forward - (push 页面)
@@ -25,7 +25,7 @@ enum MLHybridMethodType: String {
     case UnKonw = "UnKonw"
 }
 
-open class MLHybirdCommandParams: NSObject {
+public class MLHybirdCommandParams: NSObject {
     
     var dic: [String: AnyObject] = [:]                  //储存原始数据
     var commandParams:BaseParams = BaseParams.init()    //解析的对象

@@ -9,13 +9,22 @@ import UIKit
 import WebKit
 
 //MARK:WKScriptMessageHandler
-extension MLHybridViewController:WKScriptMessageHandler {
+extension MLHybridViewController {
     //MessageHandler 回调
-    public func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+    open func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+        
+        if let command:MLHybirdCommand = self.parseScriptMessage(message: message) {
+            self.commandExecute.command = command
+            _ = commandExecute.performCommand(command: command)
+        }
+        
+    }
+    //解析命令消息成对象
+    public func parseScriptMessage(message:WKScriptMessage) -> MLHybirdCommand?{
         //判断是否是requestHybrid 命令
-        guard message.name == "requestHybrid"  else {  return }
+        guard message.name == "requestHybrid"  else { return  nil }
         //判断是否符合参数
-        guard let commandDic:Dictionary<String,Any> = message.body as? Dictionary<String,Any> else { return }
+        guard let commandDic:Dictionary<String,Any> = message.body as? Dictionary<String,Any> else { return nil }
         
         //Hybird命令对象
         let command:MLHybirdCommand = MLHybirdCommand()
@@ -36,7 +45,8 @@ extension MLHybridViewController:WKScriptMessageHandler {
         }
         command.webView = self.contentView
         command.viewController = self
-        commandExecute.command = command
-        _ = commandExecute.performCommand(command: command)
+        
+        return command
     }
+    
 }

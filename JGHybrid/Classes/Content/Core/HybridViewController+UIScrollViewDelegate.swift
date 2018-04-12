@@ -8,9 +8,9 @@
 import UIKit
 
 //MARK: 模拟大标题 功能 UIScrollViewDelegate
-extension MLHybridViewController:UIScrollViewDelegate {
+extension MLHybridViewController {
     //位置变化回调
-    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    open func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
         let newY = largeTitleViewTop.constant - scrollView.contentOffset.y
         largeTitleViewTop.constant = newY < -largeTitleViewHeight ? -largeTitleViewHeight : (newY > 0 ? 0 : newY)
@@ -22,17 +22,17 @@ extension MLHybridViewController:UIScrollViewDelegate {
         }
     }
     
-    public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+    open func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         _adjustContentOffset(scrollView)
     }
     
-    public func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+    open func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         if !decelerate {
             _adjustContentOffset(scrollView)
         }
     }
     //调整回弹
-    private func _adjustContentOffset(_ scrollView: UIScrollView) {
+    open func _adjustContentOffset(_ scrollView: UIScrollView) {
         
         let current = largeTitleViewTop.constant
         if current < -largeTitleViewHeight / 2 && current > -largeTitleViewHeight {
@@ -47,7 +47,7 @@ extension MLHybridViewController:UIScrollViewDelegate {
         })
     }
     //根据顶部常量设置Title
-    private func _adjustTitleTopConstant(_ topConstant:CGFloat){
+    open func _adjustTitleTopConstant(_ topConstant:CGFloat){
         let current = topConstant
         if current < -largeTitleViewHeight / 2 && current > -largeTitleViewHeight {
             //大标题显示大部分的时候

@@ -9,9 +9,9 @@ import UIKit
 import WebKit
 
 //MARK: WKUIDelegate WKNavigationDelegate
-extension MLHybridViewController: WKUIDelegate,WKNavigationDelegate {
+extension MLHybridViewController {
     
-    public func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+    open func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         
         if self.commandExecute.performCommand(request: navigationAction.request, webView: webView) {
             decisionHandler(.cancel)
@@ -31,7 +31,7 @@ extension MLHybridViewController: WKUIDelegate,WKNavigationDelegate {
             decisionHandler(.allow)
         }
     }
-    public func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
+    open func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
         
         if  let response = navigationResponse.response as? HTTPURLResponse, response.statusCode == 500 {
             //显示错误页面
@@ -42,11 +42,11 @@ extension MLHybridViewController: WKUIDelegate,WKNavigationDelegate {
         decisionHandler(.allow)
     }
     
-    public func webViewWebContentProcessDidTerminate(_ webView: WKWebView){
+    open func webViewWebContentProcessDidTerminate(_ webView: WKWebView){
         webView.reload()
     }
     //页面加载失败
-    public func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
+    open func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
         print("页面加载失败----\(error)")
         //无法连接服务器显示错误页面    -1002 不支持的URL
         if let ocError:NSError = error as NSError?, ocError.code != -1002 {
@@ -57,7 +57,7 @@ extension MLHybridViewController: WKUIDelegate,WKNavigationDelegate {
     }
     
     //页面跳转失败
-    public func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+    open func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
         print("页面跳转失败----\(error)")
         //加载失败
         MLHybrid.shared.delegate?.stopWait()

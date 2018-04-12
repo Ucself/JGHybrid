@@ -6,7 +6,7 @@
 import UIKit
 import WebKit
 
-open class MLHybridViewController: UIViewController {
+open class MLHybridViewController: UIViewController,UIScrollViewDelegate,WKUIDelegate,WKNavigationDelegate,WKScriptMessageHandler  {
     
     //MARK: 对外公布可设置属性
     /// 是否隐藏 NavigationBar
@@ -32,7 +32,7 @@ open class MLHybridViewController: UIViewController {
     public var titleColor:UIColor = MLHybridConfiguration.default.defaultTitleColor {               //Title颜色
         didSet {
             self.largeTitleLabel?.textColor = self.titleColor
-            self.navigationController?.navigationBar.setTitleColor(self.titleColor)
+            self.navigationController?.navigationBar.hybridSetTitleColor(self.titleColor)
         }
     }
     
@@ -42,10 +42,10 @@ open class MLHybridViewController: UIViewController {
             self.largeTitleView?.backgroundColor = self.titleBackgroundColor
             //全屏的话就不用设置需要的颜色
             if self.isFullScreen {
-                self.navigationController?.navigationBar.setBackgroundClear()
+                self.navigationController?.navigationBar.hybridSetBackgroundClear()
             }
             else {
-                self.navigationController?.navigationBar.setBackgroundColor(self.titleBackgroundColor)
+                self.navigationController?.navigationBar.hybridSetBackgroundColor(self.titleBackgroundColor)
             }
         }
     }
@@ -66,6 +66,8 @@ open class MLHybridViewController: UIViewController {
     //是否全屏
     public var isFullScreen:Bool = false
     
+    //webView 的URL
+    public var urlPath: URL?
     //MARK: 私有属性
     //视图控件
     var contentView: MLHybridContentView!
@@ -75,7 +77,6 @@ open class MLHybridViewController: UIViewController {
     var largeTitleViewTop: NSLayoutConstraint!
     var largeTitleViewHeight:CGFloat = 74.5
     //回调相关变量
-    var urlPath: URL?
     var onShowCallBack: String?
     var onHideCallBack: String?
     
@@ -126,15 +127,15 @@ open class MLHybridViewController: UIViewController {
             self.commandExecute.command.callBack(data: "", err_no: 0, msg: "onwebviewshow", callback: callback, completion: {js in })
         }
         //设置颜色
-        self.navigationController?.navigationBar.setTitleColor(self.titleColor)
-        self.navigationController?.navigationBar.setBackgroundColor(self.titleBackgroundColor)
+        self.navigationController?.navigationBar.hybridSetTitleColor(self.titleColor)
+        self.navigationController?.navigationBar.hybridSetBackgroundColor(self.titleBackgroundColor)
         self.view.backgroundColor = self.titleBackgroundColor
         self.largeTitleView?.backgroundColor = self.titleBackgroundColor
         self.largeTitleLabel?.textColor = self.titleColor
         
         //设置透明
         if self.isFullScreen {
-            self.navigationController?.navigationBar.setBackgroundClear()
+            self.navigationController?.navigationBar.hybridSetBackgroundClear()
         }
     }
     
@@ -161,7 +162,7 @@ open class MLHybridViewController: UIViewController {
         }
     }
     
-    open override  func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+    override open func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if let observeObject:MLHybridContentView = object as? MLHybridContentView {
             guard keyPath == "estimatedProgress" && observeObject == self.contentView else { return }
             //设置显示
@@ -180,6 +181,5 @@ open class MLHybridViewController: UIViewController {
     override open var preferredStatusBarStyle: UIStatusBarStyle {
         return statusBarStyle ?? .default
     }
-    
 }
 

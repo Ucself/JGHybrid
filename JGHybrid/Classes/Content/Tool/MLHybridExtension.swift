@@ -13,7 +13,7 @@ extension String{
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineBreakMode = .byWordWrapping;
         let attributes = [NSAttributedStringKey.font:font, NSAttributedStringKey.paragraphStyle:paragraphStyle.copy()]
-//        let attributes = [NSFontAttributeName:font, NSParagraphStyleAttributeName:paragraphStyle.copy()]
+//        let attributes = [NSFontAttributeName:font, NSParagraphStyleAttributeName:paragraphStyle.copy()]  //swift 3.2
         let text = self as NSString
         let rect = text.boundingRect(with: size, options:.usesLineFragmentOrigin, attributes: attributes, context:nil)
         let height = Int(rect.size.height) + 1
@@ -27,8 +27,7 @@ extension String{
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineBreakMode = .byWordWrapping;
         let attributes = [NSAttributedStringKey.font:font, NSAttributedStringKey.paragraphStyle:paragraphStyle.copy()]
-//        let attributes = [NSFontAttributeName:font, NSParagraphStyleAttributeName:paragraphStyle.copy()]
-
+//        let attributes = [NSFontAttributeName:font, NSParagraphStyleAttributeName:paragraphStyle.copy()] //swift 3.2
         let text = self as NSString
         let rect = text.boundingRect(with: size, options:.usesLineFragmentOrigin, attributes: attributes, context:nil)
         let width = Int(rect.size.width) + 1
@@ -122,7 +121,7 @@ extension UIColor {
 
 extension UIImage {
     
-    public func filled(withColor color: UIColor) -> UIImage {
+    public func hybridFilled(withColor color: UIColor) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(size, false, scale)
         color.setFill()
         guard let context = UIGraphicsGetCurrentContext() else {
@@ -148,19 +147,19 @@ extension UIImage {
 
 extension UINavigationBar {
     //设置背景色
-    public func setBackgroundColor(_ background:UIColor?) {
+    public func hybridSetBackgroundColor(_ background:UIColor?) {
         isTranslucent = false
         backgroundColor = background
         barTintColor = background
         setBackgroundImage(UIImage(), for: UIBarMetrics.default)
     }
     //设置Title颜色
-    public func setTitleColor(_ text:UIColor){
+    public func hybridSetTitleColor(_ text:UIColor){
         tintColor = text
         titleTextAttributes = [NSAttributedStringKey.foregroundColor: text, NSAttributedStringKey.font : UIFont.init(name: "PingFangSC-Regular", size: 17) ?? UIFont.systemFont(ofSize: 17)]
     }
     //设置全透明
-    public func setBackgroundClear() {
+    public func hybridSetBackgroundClear() {
         isTranslucent = true
         backgroundColor = UIColor.clear
         barTintColor = UIColor.clear

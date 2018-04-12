@@ -24,8 +24,8 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.navigationController?.navigationBar.setTitleColor(UIColor.black)
-        self.navigationController?.navigationBar.setBackgroundColor(UIColor.white)
+        self.navigationController?.navigationBar.hybridSetTitleColor(UIColor.black)
+        self.navigationController?.navigationBar.hybridSetBackgroundColor(UIColor.white)
     }
 
     @IBAction func buttonClick(_ sender: Any) {
@@ -38,6 +38,13 @@ class ViewController: UIViewController {
 //        vc.isFullScreen = true]
 //        let vc:MLHybridViewController =  MLHybrid.load(urlString: "http://web-dev.doctorwork.com/app/health1/")!
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func buttonTwoClick(_ sender: Any) {
+        guard let url = URL(string: "http://web-dev.doctorwork.com/ios/".hybridUrlPathAllowedString()) else {return}
+        let webViewController = HybridNativeViewController()
+        webViewController.urlPath = url
+        self.navigationController?.pushViewController(webViewController, animated: true)
     }
     
 }
