@@ -8,7 +8,7 @@ import WebKit
 
 open class MLHybridViewController: UIViewController,UIScrollViewDelegate,WKUIDelegate,WKNavigationDelegate,WKScriptMessageHandler  {
     
-    //MARK: 对外公布可设置属性
+    //MARK: 设置属性
     /// 是否隐藏 NavigationBar
     public var naviBarHidden = false {
         didSet {
@@ -66,22 +66,29 @@ open class MLHybridViewController: UIViewController,UIScrollViewDelegate,WKUIDel
     //是否全屏
     public var isFullScreen:Bool = false
     
+    //MARK: 视图控件
+    public var contentView: MLHybridContentView!
+    
+    public var progressView:UIProgressView!
+    
+    public var largeTitleView:UIView?
+    
+    public var largeTitleLabel:UILabel?
+    
+    public var largeTitleViewTop: NSLayoutConstraint!
+    
+    public var largeTitleViewHeight:CGFloat = 74.5
+    //MARK: 控制器数据
+    //回调相关变量
+    public var onShowCallBack: String?
+    
+    public var onHideCallBack: String?
+    
     //webView 的URL
     public var urlPath: URL?
-    //MARK: 私有属性
-    //视图控件
-    var contentView: MLHybridContentView!
-    var progressView:UIProgressView!
-    var largeTitleView:UIView?
-    var largeTitleLabel:UILabel?
-    var largeTitleViewTop: NSLayoutConstraint!
-    var largeTitleViewHeight:CGFloat = 74.5
-    //回调相关变量
-    var onShowCallBack: String?
-    var onHideCallBack: String?
     
     /// Hybrid js默认回调函数
-    var hybridEvent = "Hybrid.callback"
+    public var hybridEvent = "Hybrid.callback"
     
     /// 定位对象
     var locationModel = MLHybridLocation()

@@ -16,7 +16,6 @@
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		9140A1DB1FCC08C000F1B131 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 9140A1DA1FCC08C000F1B131 /* index.html */; };
 		9154BEB82004C87900BA5A5E /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9154BEB72004C87900BA5A5E /* BaseNavigationController.swift */; };
-		915AF4F3207DEA03007D52F3 /* HybridNativeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915AF4F2207DEA03007D52F3 /* HybridNativeViewController.swift */; };
 		916A9D2F1FB04B0F003DCF99 /* MethodExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916A9D2E1FB04B0F003DCF99 /* MethodExtension.swift */; };
 		91F1973F2021A0A200C98BEE /* LoadFailedView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91F1973E2021A0A200C98BEE /* LoadFailedView.xib */; };
 		91F197412021A0B900C98BEE /* LoadFailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F197402021A0B900C98BEE /* LoadFailedView.swift */; };
@@ -54,7 +53,6 @@
 		8AA1597A5587CE99A6870EBF /* Pods_JGHybrid_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JGHybrid_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9140A1DA1FCC08C000F1B131 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		9154BEB72004C87900BA5A5E /* BaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
-		915AF4F2207DEA03007D52F3 /* HybridNativeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HybridNativeViewController.swift; sourceTree = "<group>"; };
 		916A9D2E1FB04B0F003DCF99 /* MethodExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MethodExtension.swift; sourceTree = "<group>"; };
 		91F1973E2021A0A200C98BEE /* LoadFailedView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadFailedView.xib; sourceTree = "<group>"; };
 		91F197402021A0B900C98BEE /* LoadFailedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadFailedView.swift; sourceTree = "<group>"; };
@@ -120,7 +118,6 @@
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				9154BEB72004C87900BA5A5E /* BaseNavigationController.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
-				915AF4F2207DEA03007D52F3 /* HybridNativeViewController.swift */,
 				916A9D2E1FB04B0F003DCF99 /* MethodExtension.swift */,
 				91F197402021A0B900C98BEE /* LoadFailedView.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
@@ -396,7 +393,6 @@
 				916A9D2F1FB04B0F003DCF99 /* MethodExtension.swift in Sources */,
 				91F197412021A0B900C98BEE /* LoadFailedView.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
-				915AF4F3207DEA03007D52F3 /* HybridNativeViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

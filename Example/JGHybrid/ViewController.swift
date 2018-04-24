@@ -28,6 +28,7 @@ class ViewController: UIViewController {
         self.navigationController?.navigationBar.hybridSetBackgroundColor(UIColor.white)
     }
 
+
     @IBAction func buttonClick(_ sender: Any) {
 //        let vc:UIViewController =  MLHybrid.load(urlString: "https://yexiaochai.github.io/Hybrid/webapp/demo/index.html")!
 //        let vc:UIViewController =  MLHybrid.load(urlString: "http://web-dev.doctorwork.com/app/health/clinic")!
@@ -39,13 +40,5 @@ class ViewController: UIViewController {
 //        let vc:MLHybridViewController =  MLHybrid.load(urlString: "http://web-dev.doctorwork.com/app/health1/")!
         self.navigationController?.pushViewController(vc, animated: true)
     }
-    
-    @IBAction func buttonTwoClick(_ sender: Any) {
-        guard let url = URL(string: "http://web-dev.doctorwork.com/ios/".hybridUrlPathAllowedString()) else {return}
-        let webViewController = HybridNativeViewController()
-        webViewController.urlPath = url
-        self.navigationController?.pushViewController(webViewController, animated: true)
-    }
-    
 }
 
