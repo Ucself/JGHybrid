@@ -52,4 +52,7 @@ open class MLHybridConfiguration: NSObject {
     /// 默认标题背景颜色
     open var defaultTitleBackgroundTColor:UIColor = UIColor.white
     
+    /// pageShow 回调字符串，h5临时要求
+    open var pageShowEvent:String = "Hybrid.event('pageshow')"
+    
 }

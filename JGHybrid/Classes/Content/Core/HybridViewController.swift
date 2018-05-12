@@ -96,6 +96,9 @@ open class MLHybridViewController: UIViewController,UIScrollViewDelegate,WKUIDel
     /// 执行命令对象
     var commandExecute: MLHybirdCommandExecute = MLHybirdCommandExecute()
     
+    /// H5需要不是第一次显示的回调
+    var pageFirstShow = true
+    
     //MARK: 系统重写方法
     deinit {
         locationModel.stopUpdateLocation()
@@ -144,6 +147,14 @@ open class MLHybridViewController: UIViewController,UIScrollViewDelegate,WKUIDel
         if self.isFullScreen {
             self.navigationController?.navigationBar.hybridSetBackgroundClear()
         }
+        //临时要求的回调
+        if self.pageFirstShow {
+            self.pageFirstShow = false
+        }
+        else {
+            self.commandExecute.command.webView.evaluateJavaScript(MLHybridConfiguration.default.pageShowEvent) { (result, error) in }
+        }
+
     }
     
     override open func viewWillDisappear(_ animated: Bool) {

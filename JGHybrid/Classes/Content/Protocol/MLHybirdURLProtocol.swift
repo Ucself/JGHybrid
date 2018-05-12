@@ -46,7 +46,7 @@ extension MLHybridURLProtocol {
         //是否是有效的URL路径
         guard let requestURL:URL = request.url else { return false }
         //查看缓存开关
-        let closeSwitch = UserDefaults.standard.bool(forKey: HybridConstantModel.switchCache)
+        let closeSwitch = UserDefaults.standard.bool(forKey: HybridConstantModel.userDefaultSwitchCache)
         if !closeSwitch {
             return false
         }

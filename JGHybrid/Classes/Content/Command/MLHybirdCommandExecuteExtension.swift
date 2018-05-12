@@ -17,7 +17,7 @@ extension MLHybirdCommandExecute {
             return
         }
         self.command.viewController.hybridEvent = params.callback_name
-        UserDefaults.standard.set(params.cache, forKey: HybridConstantModel.switchCache)
+        UserDefaults.standard.set(params.cache, forKey: HybridConstantModel.userDefaultSwitchCache)
     }
     //forward - (push 页面 )
     func hybridForward(){
@@ -268,7 +268,7 @@ extension MLHybirdCommandExecute {
     }
     //device - ( 获取设备信息 )
     func hybridDevice() {
-        let deviceInfor:[String:String] = ["version":HybridConstantModel.nativeVersion,
+        let deviceInfor:[String:String] = ["version":"",
                                            "os":UIDevice.current.systemName,
                                            "dist":"app store",
                                            "uuid":UUID.init().uuidString]
@@ -368,8 +368,9 @@ extension MLHybirdCommandExecute {
     //离线缓存判断
     func hybridOfflineCacheFile(data:Data?){
         do {
-            //旧的ManiFest.json
-            let oldManifestParams:HybridMainfestParams = MLHybrid.shared.mainfestParams
+            //旧的ManiFest.json 的 hash
+            let oldManifestHash:String? = UserDefaults.standard.string(forKey: HybridConstantModel.userDefaultMainfest)
+//            let oldManifestHash:String? = "\(Date.init().timeIntervalSince1970)"          //测试代码
             //获取返回的数据
             guard let responseData = data else { return }
             //返回的data 转换为 字典
@@ -377,17 +378,24 @@ extension MLHybirdCommandExecute {
             guard let manifestDic = jsonData as? [String:AnyObject] else { return }
             //字典转换为对象
             let mainfestParams:HybridMainfestParams = HybridMainfestParams.convert(manifestDic)
-            MLHybrid.shared.mainfestParams = mainfestParams
+            MLHybrid.shared.mainfestParams = mainfestParams     //设置过去方便加载本地使用
+            //写入新的数据
+            UserDefaults.standard.set(mainfestParams._hash, forKey: HybridConstantModel.userDefaultMainfest)
             //如果manifest没有改变就直接返回
-            if oldManifestParams._hash == mainfestParams._hash { return }
+            if oldManifestHash == mainfestParams._hash { return }
             //清空WKWebview 磁盘缓存
-            if mainfestParams._hash != "" && oldManifestParams._hash != "" {
-                //异步清除缓存
-                if #available(iOS 9.0, *) {
-                    WKWebsiteDataStore.default().removeData(ofTypes: [WKWebsiteDataTypeDiskCache], modifiedSince: Date.init(timeIntervalSince1970: 0)) { }
-                } else {
-                    // Fallback on earlier versions
-                    //之前版本直接删文件
+            if oldManifestHash != nil
+                && oldManifestHash != ""
+                && mainfestParams._hash != ""
+                && mainfestParams._hash != oldManifestHash {
+                //主线程清除缓存
+                DispatchQueue.main.sync {
+                    if #available(iOS 9.0, *) {
+                        WKWebsiteDataStore.default().removeData(ofTypes: [WKWebsiteDataTypeDiskCache], modifiedSince: Date.init(timeIntervalSince1970: 0)) { }
+                    } else {
+                        // Fallback on earlier versions
+                        //之前版本直接删文件
+                    }
                 }
             }
         }

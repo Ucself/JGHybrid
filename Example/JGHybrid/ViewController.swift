@@ -33,11 +33,11 @@ class ViewController: UIViewController {
 //        let vc:UIViewController =  MLHybrid.load(urlString: "https://yexiaochai.github.io/Hybrid/webapp/demo/index.html")!
 //        let vc:UIViewController =  MLHybrid.load(urlString: "http://web-dev.doctorwork.com/app/health/clinic")!
 //        let vc:UIViewController =  MLHybrid.load(urlString: "http://www.iqiyi.com/playlist249635302.htmll")!
-        let vc:MLHybridViewController =  MLHybrid.load(urlString: "http://web-dev.doctorwork.com/ios/")!
+//        let vc:MLHybridViewController =  MLHybrid.load(urlString: "http://web-dev.doctorwork.com/ios/")!
 //        let vc:UIViewController =  MLHybrid.load(urlString: "https://www.baidu.com")!
 //        let vc:MLHybridViewController =  MLHybrid.load(urlString: "http://web-dev.doctorwork.com/app/health/member")!
 //        vc.isFullScreen = true]
-//        let vc:MLHybridViewController =  MLHybrid.load(urlString: "http://web-dev.doctorwork.com/app/health1/")!
+        let vc:MLHybridViewController =  MLHybrid.load(urlString: "http://web-qa.doctorwork.com/rapp/health/health-package/0?sku=HS2018002")!
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

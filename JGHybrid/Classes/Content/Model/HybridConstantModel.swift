@@ -8,16 +8,9 @@
 import UIKit
 
 class HybridConstantModel: NSObject {
-    
-    static var switchCache = "HybridSwitchCache"
-    static var hybridVersion = "HybridVersion"
-    static var nativeVersion = "3.0.0"
-    
-    //MARK: 资源路径相关
-    static var checkVersionQAURL = "http://h5.qa.medlinker.com/app/version/latestList?app=medlinker&sys_p=i&cli_v="
-    static var checkVersionURL = "http://h5.medlinker.com/app/version/latestList?app=medlinker&sys_p=i&cli_v="
-    static var webAppBaseUrl = "web.qa.medlinker.com"
-    
+    //缓存少量文件Key
+    static var userDefaultSwitchCache = "HybridSwitchCache"
+    static var userDefaultMainfest = "HybridMainfest"
     //URLProtocol相关
     static var urlProtocolHandled = "MLHybridURLProtocolHandled"
     static var types = ["html","js","css","jpg","png","jpeg"]
