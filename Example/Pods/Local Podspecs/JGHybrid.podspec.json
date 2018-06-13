@@ -1,6 +1,6 @@
 {
   "name": "JGHybrid",
-  "version": "3.4.0",
+  "version": "3.6.0",
   "summary": "A short description of JGHybrid.",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/Ucself/JGHybrid",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/Ucself/JGHybrid.git",
-    "tag": "3.4.0"
+    "tag": "3.6.0"
   },
   "platforms": {
     "ios": "8.0"
@@ -25,6 +25,9 @@
   ],
   "dependencies": {
     "JGWebKitURLProtocol": [
+
+    ],
+    "SSZipArchive": [
 
     ]
   }

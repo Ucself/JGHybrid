@@ -40,6 +40,11 @@ open class MLHybrid {
     open class func checkMainfest() {
         MLHybirdCommandExecute().hybridOfflineCacheMainfest()
     }
+    
+    //新的zip包版本检测
+    func checkVersion() {
+        
+    }
 }
 
 
