@@ -6,7 +6,10 @@
 import UIKit
 import CoreLocation
 
-class MLHybridLocation: NSObject, CLLocationManagerDelegate {
+//更换类名 兼容老版本
+typealias MLHybridLocation = HybridLocation
+
+class HybridLocation: NSObject, CLLocationManagerDelegate {
     //定位管理器
     let locationManager:CLLocationManager = CLLocationManager()
     //* errcode错误码：
