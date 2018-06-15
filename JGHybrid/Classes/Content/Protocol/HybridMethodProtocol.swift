@@ -7,10 +7,10 @@
 
 import UIKit
 
-open class MLHybridMethod {}
-
+//更换名 兼容老版本
+public typealias MLHybridMethodProtocol = HybridMethodProtocol
 /// 命令扩展协议
-public protocol MLHybridMethodProtocol {
+public protocol HybridMethodProtocol {
     
     /// 和业务有关的命令扩展
     ///

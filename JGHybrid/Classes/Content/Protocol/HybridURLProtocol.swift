@@ -6,7 +6,10 @@
 import UIKit
 import Foundation
 
-class MLHybridURLProtocol: URLProtocol {
+//更换类名 兼容老版本
+typealias MLHybridURLProtocol = HybridURLProtocol
+
+class HybridURLProtocol: URLProtocol {
     
     override class func canInit(with request: URLRequest) -> Bool {
         //print("MLHybridURLProtocol------------------>canInit")
@@ -39,7 +42,7 @@ class MLHybridURLProtocol: URLProtocol {
     
 }
 
-extension MLHybridURLProtocol {
+extension HybridURLProtocol {
     
     //是否使用缓存文件
     fileprivate class func canUseCache(_ request: URLRequest) -> Bool {
