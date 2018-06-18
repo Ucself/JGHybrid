@@ -9,7 +9,10 @@ import Foundation
 import WebKit
 import JGWebKitURLProtocol
 
-open class MLHybrid {
+//更换类名 兼容老版本
+public typealias MLHybrid = Hybrid
+
+open class Hybrid {
     //单例对象
     open static let shared = MLHybrid()
     private init() {}

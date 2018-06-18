@@ -7,8 +7,11 @@
 
 import UIKit
 
+
+//更换类名 兼容老版本
+public typealias MLHybridConfiguration = HybridConfiguration
 /// Hybrid 配置类
-open class MLHybridConfiguration: NSObject {
+open class HybridConfiguration: NSObject {
     /// 单例对象
     open static let `default` = MLHybridConfiguration()
     private override init() {}

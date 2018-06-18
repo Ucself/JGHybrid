@@ -7,7 +7,10 @@ import UIKit
 import CoreLocation
 import WebKit
 
-class MLHybirdCommandExecute: NSObject {
+//更换类名 兼容老版本
+typealias MLHybirdCommandExecute = HybirdCommandExecute
+
+class HybirdCommandExecute: NSObject {
     
     var command: MLHybirdCommand = MLHybirdCommand()
     

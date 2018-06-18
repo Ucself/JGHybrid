@@ -9,7 +9,7 @@ import UIKit
 import WebKit
 
 //新版的Hybrid解析
-extension MLHybirdCommandExecute {
+extension HybirdCommandExecute {
     
     //init - ( 初始化 )
     func hybridInit(){

@@ -6,7 +6,10 @@
 import Foundation
 import WebKit
 
-open class MLHybirdCommand {
+//更换类名 兼容老版本
+public typealias MLHybirdCommand = HybirdCommand
+
+open class HybirdCommand {
     
     //指令名
     public var name:String = ""

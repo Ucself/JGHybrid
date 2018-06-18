@@ -7,7 +7,7 @@
 
 import UIKit
 
-public extension MLHybridViewController {
+public extension HybridViewController {
 
     //MARK: 自定义方法
     func initUI() {

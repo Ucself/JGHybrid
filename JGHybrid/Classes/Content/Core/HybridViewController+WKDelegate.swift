@@ -9,7 +9,7 @@ import UIKit
 import WebKit
 
 //MARK: WKUIDelegate WKNavigationDelegate
-extension MLHybridViewController {
+extension HybridViewController {
     
     open func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         

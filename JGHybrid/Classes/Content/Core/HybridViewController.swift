@@ -6,7 +6,10 @@
 import UIKit
 import WebKit
 
-open class MLHybridViewController: UIViewController,UIScrollViewDelegate,WKUIDelegate,WKNavigationDelegate,WKScriptMessageHandler  {
+//更换类名 兼容老版本
+public typealias MLHybridViewController = HybridViewController
+
+open class HybridViewController: UIViewController,UIScrollViewDelegate,WKUIDelegate,WKNavigationDelegate,WKScriptMessageHandler  {
     
     //MARK: 设置属性
     /// 是否隐藏 NavigationBar

@@ -8,7 +8,7 @@
 import UIKit
 
 //MARK: 模拟大标题 功能 UIScrollViewDelegate
-extension MLHybridViewController {
+extension HybridViewController {
     //位置变化回调
     open func scrollViewDidScroll(_ scrollView: UIScrollView) {
         

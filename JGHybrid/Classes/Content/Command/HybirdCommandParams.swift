@@ -5,8 +5,10 @@
 
 import UIKit
 
+//更换类名 兼容老版本
+public typealias MLHybridMethodType = HybridMethodType
 //MARK: 事件类型
-public enum MLHybridMethodType: String {
+public enum HybridMethodType: String {
     
     case hybridInit             = "init"                //init - ( 初始化 )
     case hybridForward          = "forward"             //forward - (push 页面)
@@ -25,7 +27,10 @@ public enum MLHybridMethodType: String {
     case UnKonw = "UnKonw"
 }
 
-public class MLHybirdCommandParams: NSObject {
+//更换类名 兼容老版本
+public typealias MLHybirdCommandParams = HybirdCommandParams
+
+public class HybirdCommandParams: NSObject {
     
     var dic: [String: AnyObject] = [:]                  //储存原始数据
     var commandParams:BaseParams = BaseParams.init()    //解析的对象

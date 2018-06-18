@@ -7,7 +7,10 @@
 import UIKit
 import WebKit
 
-open class MLHybridContentView: WKWebView {
+//更换类名 兼容老版本
+public typealias MLHybridContentView = HybridContentView
+
+open class HybridContentView: WKWebView {
     
     //MARK:系统方法
     public convenience init(frame: CGRect) {

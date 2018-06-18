@@ -37,7 +37,8 @@ class ViewController: UIViewController {
 //        let vc:UIViewController =  MLHybrid.load(urlString: "https://www.baidu.com")!
 //        let vc:MLHybridViewController =  MLHybrid.load(urlString: "http://web-dev.doctorwork.com/app/health/member")!
 //        vc.isFullScreen = true]
-        let vc:MLHybridViewController =  MLHybrid.load(urlString: "http://web-qa.doctorwork.com/rapp/health/health-package/0?sku=HS2018002")!
+//        let vc:MLHybridViewController =  MLHybrid.load(urlString: "http://web-qa.doctorwork.com/rapp/health/health-package/0?sku=HS2018002")!
+        let vc:HybridViewController =  Hybrid.load(urlString: "http://web-dev.doctorwork.com/ios/")!
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
