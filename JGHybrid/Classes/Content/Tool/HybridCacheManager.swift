@@ -11,7 +11,7 @@ import SSZipArchive
 class HybridCacheManager: NSObject {
     static let `default` = HybridCacheManager()
     
-    func downZip(name:String, version:String, urlString:String, complet:((_ success:Bool,_ msg:String)->Void)?=nil) {
+    func downZip(name:String, urlString:String, complet:((_ success:Bool,_ msg:String)->Void)?=nil) {
         guard let url = URL.init(string: urlString) else { return }
         DispatchQueue.global().async {
             let session:URLSession = URLSession.shared
@@ -55,7 +55,7 @@ class HybridCacheManager: NSObject {
     
     private func filePath(name: String) -> String {
         do {
-            let documentPath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)[0] + "/h5Zip"
+            let documentPath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)[0]
             let fileManager = FileManager.default
             try fileManager.createDirectory(atPath: documentPath, withIntermediateDirectories: true, attributes: nil)
             return documentPath + "/" + name

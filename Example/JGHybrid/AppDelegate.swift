@@ -41,6 +41,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //版本检测文件
         MLHybrid.checkMainfest()
+        //离线包检测
+        Hybrid.checkOfflinePackage()
     }
 
     func applicationWillTerminate(_ application: UIApplication) {

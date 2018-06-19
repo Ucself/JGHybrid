@@ -15,15 +15,14 @@ class HybridOfflinePackageJsonParams: BaseParams {
     //解析数据对象
     override class func convert(_ dic: [String: AnyObject]) -> HybridOfflinePackageJsonParams {
         let obj:HybridOfflinePackageJsonParams = HybridOfflinePackageJsonParams.init()
-//        obj._hash = dic["hash"] as? String ?? ""
-//        obj.base = dic["base"] as? String ?? ""
-//        obj.assets = dic["assets"] as? [String] ?? []
-//        for item in obj.assets {
-//            let itemSeparatedArray:[String] = item.components(separatedBy: "/")
-//            if let itemPathExtension = itemSeparatedArray.last {
-//                obj.assetsPathExtension.append(itemPathExtension)
-//            }
-//        }
+        obj.errcode = dic["errcode"] as? Int ?? -1
+        if let dataArray = dic["data"] as? [[String: AnyObject]] {
+            for itemDic in dataArray {
+                let itemData:HybridOfflinePackageDataParams = HybridOfflinePackageDataParams.convert(itemDic)
+                obj.data.append(itemData)
+            }
+        }
+        obj.errmsg = dic["errmsg"] as? String ?? ""
         return obj
     }
 }
@@ -35,15 +34,8 @@ class HybridOfflinePackageDataParams: BaseParams {
     //解析数据对象
     override class func convert(_ dic: [String: AnyObject]) -> HybridOfflinePackageDataParams {
         let obj:HybridOfflinePackageDataParams = HybridOfflinePackageDataParams.init()
-        //        obj._hash = dic["hash"] as? String ?? ""
-        //        obj.base = dic["base"] as? String ?? ""
-        //        obj.assets = dic["assets"] as? [String] ?? []
-        //        for item in obj.assets {
-        //            let itemSeparatedArray:[String] = item.components(separatedBy: "/")
-        //            if let itemPathExtension = itemSeparatedArray.last {
-        //                obj.assetsPathExtension.append(itemPathExtension)
-        //            }
-        //        }
+        obj.version = dic["version"] as? String ?? ""
+        obj.src = dic["src"] as? String ?? ""
         return obj
     }
 }

@@ -11,6 +11,7 @@ class HybridConstantModel: NSObject {
     //缓存少量文件Key
     static var userDefaultSwitchCache = "HybridSwitchCache"
     static var userDefaultMainfest = "HybridMainfest"
+    static var userDefaultOfflineVersion = "HybridOfflineVersion"
     //URLProtocol相关
     static var urlProtocolHandled = "MLHybridURLProtocolHandled"
     static var types = ["html","js","css","jpg","png","jpeg"]

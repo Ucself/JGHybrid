@@ -415,7 +415,7 @@ extension HybirdCommandExecute {
             guard let url:URL = URL.init(string: MLHybridConfiguration.default.offlinePackageJsonUrl) else { return }
             let task:URLSessionTask = session.dataTask(with: url) { (data, response, error) in
                 //数据文件逻辑判断
-                self.hybridOfflineCacheFile(data: data)
+                self.hybridOfflinePackageJson(data: data)
             }
             task.resume()
         }
@@ -424,33 +424,36 @@ extension HybirdCommandExecute {
     func hybridOfflinePackageJson(data:Data?) {
         do {
             //旧的ManiFest.json 的 hash
-            let oldManifestHash:String? = UserDefaults.standard.string(forKey: HybridConstantModel.userDefaultMainfest)
+            let oldOfflineVersion:String? = UserDefaults.standard.string(forKey: HybridConstantModel.userDefaultOfflineVersion)
             
             //获取返回的数据
             guard let responseData = data else { return }
             //返回的data 转换为 字典
             let jsonData = try JSONSerialization.jsonObject(with: responseData, options: JSONSerialization.ReadingOptions.allowFragments)
-            guard let manifestDic = jsonData as? [String:AnyObject] else { return }
+            guard let offlineDic = jsonData as? [String:AnyObject] else { return }
             //字典转换为对象
-            let mainfestParams:HybridMainfestParams = HybridMainfestParams.convert(manifestDic)
-            MLHybrid.shared.mainfestParams = mainfestParams     //设置过去方便加载本地使用
+            let offlinePackageJsonParams:HybridOfflinePackageJsonParams = HybridOfflinePackageJsonParams.convert(offlineDic)
+            //判断是否请求成功
+            if offlinePackageJsonParams.errcode != 0 || offlinePackageJsonParams.data.count == 0 {
+                return
+            }
+            //新版本号码
+            let newOfflineVersionParams:HybridOfflinePackageDataParams = offlinePackageJsonParams.data[0]
+            //判断是否是新版本
+            if oldOfflineVersion == newOfflineVersionParams.version || newOfflineVersionParams.version == "" {
+                return
+            }
             //写入新的数据
-            UserDefaults.standard.set(mainfestParams._hash, forKey: HybridConstantModel.userDefaultMainfest)
-            //如果manifest没有改变就直接返回
-            if oldManifestHash == mainfestParams._hash { return }
-            //清空WKWebview 磁盘缓存
-            if oldManifestHash != nil
-                && oldManifestHash != ""
-                && mainfestParams._hash != ""
-                && mainfestParams._hash != oldManifestHash {
-                //主线程清除缓存
-                DispatchQueue.main.sync {
-                    if #available(iOS 9.0, *) {
-                        WKWebsiteDataStore.default().removeData(ofTypes: [WKWebsiteDataTypeDiskCache], modifiedSince: Date.init(timeIntervalSince1970: 0)) { }
-                    } else {
-                        // Fallback on earlier versions
-                        //之前版本直接删文件
-                    }
+            //UserDefaults.standard.set("", forKey: HybridConstantModel.userDefaultOfflineVersion)
+            //文件名称
+            let folderName:String = "Hybrid_offlinePackage_" + newOfflineVersionParams.version
+            //下载并解压
+            HybridCacheManager.default.downZip(name: folderName, urlString: newOfflineVersionParams.src) { (result, msg) in
+                if result {
+                    UserDefaults.standard.set(newOfflineVersionParams.version, forKey: HybridConstantModel.userDefaultOfflineVersion)
+                }
+                else {
+                    print( "HybridCacheManager.default.downZip" + msg)
                 }
             }
         }
