@@ -445,10 +445,8 @@ extension HybirdCommandExecute {
             }
             //写入新的数据
             //UserDefaults.standard.set("", forKey: HybridConstantModel.userDefaultOfflineVersion)
-            //文件名称
-            let folderName:String = "Hybrid_offlinePackage_" + newOfflineVersionParams.version
             //下载并解压
-            HybridCacheManager.default.downZip(name: folderName, urlString: newOfflineVersionParams.src) { (result, msg) in
+            HybridCacheManager.default.downZip(name: newOfflineVersionParams.version, urlString: newOfflineVersionParams.src) { (result, msg) in
                 if result {
                     UserDefaults.standard.set(newOfflineVersionParams.version, forKey: HybridConstantModel.userDefaultOfflineVersion)
                 }

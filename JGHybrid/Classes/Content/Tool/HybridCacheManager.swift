@@ -55,7 +55,7 @@ class HybridCacheManager: NSObject {
     
     private func filePath(name: String) -> String {
         do {
-            let documentPath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)[0]
+            let documentPath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)[0] + "/Hybrid_offlinePackage"
             let fileManager = FileManager.default
             try fileManager.createDirectory(atPath: documentPath, withIntermediateDirectories: true, attributes: nil)
             return documentPath + "/" + name
