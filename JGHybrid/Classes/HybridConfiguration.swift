@@ -58,4 +58,7 @@ open class HybridConfiguration: NSObject {
     /// pageShow 回调字符串，h5临时要求
     open var pageShowEvent:String = "Hybrid.event('pageshow')"
     
+    /// 离线包json地址
+    open var offlinePackageJsonUrl:String = "http://h5.medlinker.com/app/version/latestList?app=medlinker&sys_p=i&cli_v="
+    
 }

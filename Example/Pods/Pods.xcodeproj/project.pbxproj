@@ -56,6 +56,7 @@
 		8B5D2172E923790261F63E1D513768C2 /* HybridHeaderParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A1E5E49162EF907267BE28B0680D6E /* HybridHeaderParams.swift */; };
 		8C4FDB99F14487F75807129296943FC3 /* aestab.h in Headers */ = {isa = PBXBuildFile; fileRef = 33D359EE1D5B81F3F5A41663BC1434B9 /* aestab.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		8CB8BE897FB41C904598560615CF8C2C /* HybirdCommandExecuteExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8BC161FAC1823BD3811A29A746A64E /* HybirdCommandExecuteExtension.swift */; };
+		9147B46B20D8B60B00AE65F1 /* HybridOfflinePackageJsonParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9147B46A20D8B60B00AE65F1 /* HybridOfflinePackageJsonParams.swift */; };
 		92BFE231D748994D76FE011C3C8165DA /* ioapi_buf.h in Headers */ = {isa = PBXBuildFile; fileRef = 9149FE074AF5E57D6D2E86C17CE2F0AA /* ioapi_buf.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		9B4C257CA52B656DBFCE2E1A4894962B /* zip.h in Headers */ = {isa = PBXBuildFile; fileRef = 999052AC9EF5CDE7AD364BBE7A4A683D /* zip.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		9D4F5482984692FC6538E45A40E4FA8A /* NSURLProtocol+WebKitSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = BB405F1E01525498C4A8A857E7940A7B /* NSURLProtocol+WebKitSupport.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -215,6 +216,7 @@
 		83A1E5E49162EF907267BE28B0680D6E /* HybridHeaderParams.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HybridHeaderParams.swift; sourceTree = "<group>"; };
 		8447C04608017B3D3972378F00F37F81 /* brg_endian.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = brg_endian.h; path = SSZipArchive/minizip/aes/brg_endian.h; sourceTree = "<group>"; };
 		89E2654DC5477986F330E6618435A6DA /* hmac.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = hmac.h; path = SSZipArchive/minizip/aes/hmac.h; sourceTree = "<group>"; };
+		9147B46A20D8B60B00AE65F1 /* HybridOfflinePackageJsonParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HybridOfflinePackageJsonParams.swift; sourceTree = "<group>"; };
 		9149FE074AF5E57D6D2E86C17CE2F0AA /* ioapi_buf.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ioapi_buf.h; path = SSZipArchive/minizip/ioapi_buf.h; sourceTree = "<group>"; };
 		919D68C3E0D47C29796EB4BC9A715527 /* SSZipArchive-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SSZipArchive-umbrella.h"; sourceTree = "<group>"; };
 		91B27240BD26371392ECC23731B5F861 /* HybridViewController+WKScriptMessageHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "HybridViewController+WKScriptMessageHandler.swift"; sourceTree = "<group>"; };
@@ -335,6 +337,7 @@
 				AC25D185DF2B5264A46FAF5C536D343F /* HybridPageshowParams.swift */,
 				188580CA709DD55F80F8B9736B268CCA /* HybridScrollParams.swift */,
 				BA5D4A57D2740127AA837D26402F2D67 /* HybridStorageParams.swift */,
+				9147B46A20D8B60B00AE65F1 /* HybridOfflinePackageJsonParams.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -816,6 +819,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9147B46B20D8B60B00AE65F1 /* HybridOfflinePackageJsonParams.swift in Sources */,
 				A3782A824A7AF74BBA3205446D4C5A97 /* HybridBackParams.swift in Sources */,
 				C5F6441E5076FEBB1BA0E012461B9A19 /* HybridCacheManager.swift in Sources */,
 				B8256775C693CBDE49A1FEC617D9AE40 /* HybridClipboardParams.swift in Sources */,

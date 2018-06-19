@@ -45,8 +45,8 @@ open class Hybrid {
     }
     
     //新的zip包版本检测
-    func checkVersion() {
-        
+    open class func checkOfflinePackage() {
+        MLHybirdCommandExecute().hybridOfflinePackage()
     }
 }
 
