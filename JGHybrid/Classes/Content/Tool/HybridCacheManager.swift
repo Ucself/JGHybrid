@@ -11,7 +11,7 @@ import SSZipArchive
 class HybridCacheManager: NSObject {
     static let `default` = HybridCacheManager()
     
-    func downZip(name:String, urlString:String, complet:((_ success:Bool,_ msg:String)->Void)?=nil) {
+    func downZip(addPath:String, urlString:String, complet:((_ success:Bool,_ msg:String)->Void)?=nil) {
         guard let url = URL.init(string: urlString) else { return }
         DispatchQueue.global().async {
             let session:URLSession = URLSession.shared
@@ -28,7 +28,7 @@ class HybridCacheManager: NSObject {
                     }
                     return
                 }
-                let filePath = weakSelf.filePath(name: name)
+                let filePath = weakSelf.filePath(addPath: addPath)
                 let zipPath = filePath + ".zip"
                 weakSelf.deleteAllFiles(path: filePath)
                 if (try? responseData.write(to: URL(fileURLWithPath: zipPath), options: [.atomic])) != nil {
@@ -53,12 +53,12 @@ class HybridCacheManager: NSObject {
         }
     }
     
-    private func filePath(name: String) -> String {
+    private func filePath(addPath: String) -> String {
         do {
-            let documentPath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)[0] + "/Hybrid_offlinePackage"
+            let documentPath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)[0] + "/Hybrid_offlinePackage" + addPath
             let fileManager = FileManager.default
             try fileManager.createDirectory(atPath: documentPath, withIntermediateDirectories: true, attributes: nil)
-            return documentPath + "/" + name
+            return documentPath + "/resources"
         } catch {
             return ""
         }

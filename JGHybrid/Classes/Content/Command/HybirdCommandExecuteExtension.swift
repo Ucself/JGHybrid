@@ -437,24 +437,24 @@ extension HybirdCommandExecute {
             if offlinePackageJsonParams.errcode != 0 {
                 return
             }
-            //新版本号码
+            //新版本数据
             let newOfflinePackageDataParams:HybridOfflinePackageDataParams = offlinePackageJsonParams.data
             //判断是否是新版本
             if oldOfflineVersion == newOfflinePackageDataParams.version || newOfflinePackageDataParams.version == "" {
                 return
             }
-            //写入新的数据
-            //UserDefaults.standard.set("", forKey: HybridConstantModel.userDefaultOfflineVersion)
-            //newOfflineVersionParams.src = "http://web-dev.doctorwork.com/ios/resources.zip"
             //下载并解压
-//            HybridCacheManager.default.downZip(name: newOfflinePackageDataParams.version, urlString: newOfflineVersionParams.src) { (result, msg) in
-//                if result {
-//                    UserDefaults.standard.set(newOfflineVersionParams.version, forKey: HybridConstantModel.userDefaultOfflineVersion)
-//                }
-//                else {
-//                    print( "HybridCacheManager.default.downZip" + msg)
-//                }
-//            }
+            for itemResources:HybridOfflinePackageResourcesParams in newOfflinePackageDataParams.resources {
+                HybridCacheManager.default.downZip(addPath: itemResources.channel, urlString: itemResources.src) { (result, msg) in
+                    if result {
+                        UserDefaults.standard.set(newOfflinePackageDataParams.version, forKey: HybridConstantModel.userDefaultOfflineVersion)
+                    }
+                    else {
+                        print( "HybridCacheManager.default.downZip" + msg)
+                    }
+                }
+            }
+            
         }
         catch let catchError {
             print("hybridOfflinePackageJson.catchError -> \(catchError)")

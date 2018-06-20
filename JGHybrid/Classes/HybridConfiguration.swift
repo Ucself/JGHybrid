@@ -59,6 +59,6 @@ open class HybridConfiguration: NSObject {
     open var pageShowEvent:String = "Hybrid.event('pageshow')"
     
     /// 离线包json地址
-    open var offlinePackageJsonUrl:String = "http://h5.medlinker.com/app/version/latestList?app=medlinker&sys_p=i&cli_v="
+    open var offlinePackageJsonUrl:String = "http://web-dev.doctorwork.com/ios/resources.json"
     
 }
