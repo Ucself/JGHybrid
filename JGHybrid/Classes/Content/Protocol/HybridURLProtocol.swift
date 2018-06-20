@@ -11,18 +11,21 @@ typealias MLHybridURLProtocol = HybridURLProtocol
 
 class HybridURLProtocol: URLProtocol {
     
+    //是否需要拦截
     override class func canInit(with request: URLRequest) -> Bool {
-        //print("MLHybridURLProtocol------------------>canInit")
+        print("MLHybridURLProtocol------------------>canInit")
         return MLHybridURLProtocol.canUseCache(request)
     }
 
+    //重定向使用
     override class func canonicalRequest(for request: URLRequest) -> URLRequest {
-        //print("MLHybridURLProtocol------------------>canonicalRequest")
+        print("MLHybridURLProtocol------------------>canonicalRequest")
         return request
     }
 
+    //拦截开始
     override func startLoading() {
-        //print("MLHybridURLProtocol------------------>startLoading")
+        print("MLHybridURLProtocol------------------>startLoading")
         //标记请求  防止重复处理
         let mutableReqeust: NSMutableURLRequest = (self.request as NSURLRequest).mutableCopy() as! NSMutableURLRequest
         URLProtocol.setProperty(true, forKey: HybridConstantModel.urlProtocolHandled, in: mutableReqeust)
@@ -48,6 +51,10 @@ extension HybridURLProtocol {
     fileprivate class func canUseCache(_ request: URLRequest) -> Bool {
         //是否是有效的URL路径
         guard let requestURL:URL = request.url else { return false }
+        //是否是http 或 https
+        if let scheme = requestURL.scheme, scheme != "http", scheme != "https" {
+            return false
+        }
         //查看缓存开关
         let closeSwitch = UserDefaults.standard.bool(forKey: HybridConstantModel.userDefaultSwitchCache)
         if !closeSwitch {
@@ -62,46 +69,11 @@ extension HybridURLProtocol {
         if !HybridConstantModel.types.contains(requestURL.pathExtension) {
             return false
         }
-        //如果是上次的下载就返回失败
-        if requestURL.absoluteString.contains("?hybrid_download=xxx") {
-            return false
-        }
-        
-        //是否在需要加载的本地文件里面
-        if !MLHybrid.shared.mainfestParams.assetsPathExtension.contains(requestURL.lastPathComponent) {
-            return false
-        }
-        //文件路径
-        let urlFile:URL = MLHybridURLProtocol.getUrlFolder().appendingPathComponent(requestURL.lastPathComponent, isDirectory: false)
-        //检测文件是否存在 不存在则异步缓存文件
-        if FileManager.default.fileExists(atPath: urlFile.path) {
+        //检测是否有该文件
+        if self.findCache(request) != nil {
             return true
         }
-        //重新拼接下载URL
-        let newUrlString:String = requestURL.absoluteString + "?hybrid_download=xxx"
-        //是否是有效的URL
-        guard let newDownloadURL:URL = URL.init(string: newUrlString) else {
-            return false
-        }
-        //异步执行下载程序
-        DispatchQueue.global().async {
-            let session:URLSession =  URLSession.shared
-            let task:URLSessionTask = session.dataTask(with: newDownloadURL, completionHandler: { (data, response, error) in
-                //如果有数据且不为空
-                if data == nil || error != nil {
-                    return
-                }
-                //写入文件
-                do {
-                    try data?.write(to: urlFile)
-                }
-                catch let catchError {
-                    _ = catchError
-                }
-            })
-            //print("下载文件   ->   \(newDownloadURL.absoluteString)")
-            task.resume()
-        }
+        
         return false
     }
     
@@ -110,7 +82,7 @@ extension HybridURLProtocol {
         //是否为有效的文件路径
         guard let requestURL:URL = request.url else { return nil }
         //文件路径
-        let urlFile:URL = MLHybridURLProtocol.getUrlFolder().appendingPathComponent(requestURL.lastPathComponent, isDirectory: false)
+        let urlFile:URL = MLHybridURLProtocol.getUrlFolder().appendingPathComponent(requestURL.path, isDirectory: false)
         
         if !FileManager.default.fileExists(atPath: urlFile.path){
             return nil
@@ -122,19 +94,8 @@ extension HybridURLProtocol {
     //返回文件夹路径
     fileprivate class func getUrlFolder() -> URL{
         let documentURL:URL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-        //获取UUID
-        let uuid:String = UIDevice.current.identifierForVendor?.uuidString ?? ""
-        //文件夹路径
-        let urlFolder:URL = documentURL.appendingPathComponent("\(uuid)_JGHybrid", isDirectory: true)
-        //创建文件夹
-        if !FileManager.default.fileExists(atPath: urlFolder.path){
-            do {
-                try FileManager.default.createDirectory(at: urlFolder, withIntermediateDirectories: true, attributes: nil)
-            }
-            catch let catchError {
-                _ = catchError
-            }
-        }
+        //缓存文件夹路径
+        let urlFolder:URL = documentURL.appendingPathComponent(HybridConstantModel.offlinePackageFolder, isDirectory: true)
         return urlFolder
     }
 }

@@ -447,7 +447,7 @@ extension HybirdCommandExecute {
                     continue
                 }
                 //下载路径
-                let uZipPath = "/" + itemSource.name
+                let uZipPath = "/\(HybridConstantModel.offlinePackageFolder)/" + itemSource.name
                 HybridCacheManager.default.downZip(addPath: uZipPath, urlString: itemSource.bundle) { (result, msg) in
                     if result {
                         UserDefaults.standard.set(itemSource.version, forKey: HybridConstantModel.userDefaultOfflineVersion + itemSource.name)
