@@ -9,21 +9,44 @@ import UIKit
 
 class HybridOfflinePackageJsonParams: BaseParams {
 
-    var errcode:Int = -1
-    var data:HybridOfflinePackageDataParams = HybridOfflinePackageDataParams()
-    var errmsg:String = ""
+    var version:String = ""
+    var appName:String = ""
+    var source:[HybridOfflinePackageSourceParams] = []
     //解析数据对象
     override class func convert(_ dic: [String: AnyObject]) -> HybridOfflinePackageJsonParams {
         let obj:HybridOfflinePackageJsonParams = HybridOfflinePackageJsonParams.init()
-        obj.errcode = dic["errcode"] as? Int ?? -1
-        if let dataDic = dic["data"] as? [String: AnyObject] {
-            obj.data = HybridOfflinePackageDataParams.convert(dataDic)
+        obj.version = dic["version"] as? String ?? ""
+        obj.appName = dic["appName"] as? String ?? ""
+        
+        if let dataArray = dic["source"] as? [[String: AnyObject]] {
+            for itemDic in dataArray {
+                let itemSource = HybridOfflinePackageSourceParams.convert(itemDic)
+                obj.source.append(itemSource)
+            }
         }
-        obj.errmsg = dic["errmsg"] as? String ?? ""
+        
+        return obj
+    }
+}
+//频道资源模型
+class HybridOfflinePackageSourceParams: BaseParams {
+    
+    var id:String = ""              //频道 id
+    var name:String = ""            //频道
+    var version:String = ""         //频道 版本
+    var bundle:String = ""          //频道 资源
+    //解析数据对象
+    override class func convert(_ dic: [String: AnyObject]) -> HybridOfflinePackageSourceParams {
+        let obj:HybridOfflinePackageSourceParams = HybridOfflinePackageSourceParams.init()
+        obj.id = dic["id"] as? String ?? ""
+        obj.name = dic["name"] as? String ?? ""
+        obj.version = dic["version"] as? String ?? ""
+        obj.bundle = dic["bundle"] as? String ?? ""
         return obj
     }
 }
 
+//MARK : - 丢弃的模型
 class HybridOfflinePackageDataParams: BaseParams {
     
     var version:String = ""

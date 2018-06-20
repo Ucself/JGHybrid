@@ -1,29 +1,51 @@
-{
-  "errcode" : 0,
-  "data" : {
-    "version" : "1.1.1",
-    "resources" : [
+[
+  {
+    "_id": "5b2a2057374a4600d476ec73",
+    "name": "healthapp-1.0.2",
+    "version": "1.0.2",
+    "appName": "healthapp",
+    "createdAt": "2018-06-20T09:37:27.870Z",
+    "updatedAt": "2018-06-20T09:37:27.874Z",
+    "__v": 0,
+    "id": "5b2a2057374a4600d476ec73",
+    "source": [
       {
-        "channel" : "\/rapp\/health",
-        "version" : "1.3.0",
-        "src" : "http:\/\/web-dev.doctorwork.com\/ios\/resources.zip"
+        "_id": "5b2a1ff5374a4600d476ec72",
+        "key": "app-health-1.0.1",
+        "name": "app/health",
+        "version": "1.0.1",
+        "bundle": "http://web-dev.doctorwork.com/ios/resources.zip",
+        "createdAt": "2018-06-20T09:35:49.002Z",
+        "updatedAt": "2018-06-20T09:43:25.066Z",
+        "__v": 0,
+        "app": "5b2a2057374a4600d476ec73",
+        "id": "5b2a1ff5374a4600d476ec72"
       },
       {
-        "channel" : "\/rapp\/activity",
-        "version" : "1.0.2",
-        "src" : "http:\/\/web-dev.doctorwork.com\/ios\/resources.zip"
-      },
-      {
-        "channel" : "\/app\/health",
-        "version" : "1.1.2",
-        "src" : "http:\/\/web-dev.doctorwork.com\/ios\/resources.zip"
-      },
-      {
-        "channel" : "\/app\/activity",
-        "version" : "1.1.2",
-        "src" : "http:\/\/web-dev.doctorwork.com\/ios\/resources.zip"
+        "_id": "5b2a2103374a4600d476ec74",
+        "key": "rapp-health-1.0.1",
+        "name": "rapp/health",
+        "version": "1.0.1",
+        "bundle": "http://web-dev.doctorwork.com/ios/resources.zip",
+        "createdAt": "2018-06-20T09:40:19.946Z",
+        "updatedAt": "2018-06-20T09:43:28.852Z",
+        "__v": 0,
+        "app": "5b2a2057374a4600d476ec73",
+        "id": "5b2a2103374a4600d476ec74"
       }
     ]
   },
-  "errmsg" : "返回成功"
-}
+  {
+    "_id": "5b2a1fe6374a4600d476ec71",
+    "name": "healthapp-1.0.1",
+    "version": "1.0.1",
+    "appName": "healthapp",
+    "createdAt": "2018-06-20T09:35:34.595Z",
+    "updatedAt": "2018-06-20T09:37:18.084Z",
+    "__v": 0,
+    "id": "5b2a1fe6374a4600d476ec71",
+    "source": [
+      
+    ]
+  }
+]

@@ -421,33 +421,36 @@ extension HybirdCommandExecute {
         }
     }
     
+    
+    
+    
+    
     func hybridOfflinePackageJson(data:Data?) {
         do {
-            //旧的ManiFest.json 的 hash
-            let oldOfflineVersion:String? = UserDefaults.standard.string(forKey: HybridConstantModel.userDefaultOfflineVersion)
+            //旧的版本oldOfflineVersion
+            //let oldOfflineVersion:String? = UserDefaults.standard.string(forKey: HybridConstantModel.userDefaultOfflineVersion)
             
             //获取返回的数据
             guard let responseData = data else { return }
             //返回的data 转换为 字典
             let jsonData = try JSONSerialization.jsonObject(with: responseData, options: JSONSerialization.ReadingOptions.allowFragments)
-            guard let offlineDic = jsonData as? [String:AnyObject] else { return }
+            guard let offlineDic = jsonData as? [[String:AnyObject]] else { return }
+            //判断数组个数
+            guard offlineDic.count >= 1 else { return }
             //字典转换为对象
-            let offlinePackageJsonParams:HybridOfflinePackageJsonParams = HybridOfflinePackageJsonParams.convert(offlineDic)
-            //判断是否请求成功
-            if offlinePackageJsonParams.errcode != 0 {
-                return
-            }
-            //新版本数据
-            let newOfflinePackageDataParams:HybridOfflinePackageDataParams = offlinePackageJsonParams.data
-            //判断是否是新版本
-            if oldOfflineVersion == newOfflinePackageDataParams.version || newOfflinePackageDataParams.version == "" {
-                return
-            }
+            let offlinePackageJsonParams:HybridOfflinePackageJsonParams = HybridOfflinePackageJsonParams.convert(offlineDic[0])
             //下载并解压
-            for itemResources:HybridOfflinePackageResourcesParams in newOfflinePackageDataParams.resources {
-                HybridCacheManager.default.downZip(addPath: itemResources.channel, urlString: itemResources.src) { (result, msg) in
+            for itemSource:HybridOfflinePackageSourceParams in offlinePackageJsonParams.source {
+                //版本检测
+                let oldVersion:String? = UserDefaults.standard.string(forKey: HybridConstantModel.userDefaultOfflineVersion + itemSource.name)
+                if oldVersion == itemSource.version {
+                    continue
+                }
+                //下载路径
+                let uZipPath = "/" + itemSource.name
+                HybridCacheManager.default.downZip(addPath: uZipPath, urlString: itemSource.bundle) { (result, msg) in
                     if result {
-                        UserDefaults.standard.set(newOfflinePackageDataParams.version, forKey: HybridConstantModel.userDefaultOfflineVersion)
+                        UserDefaults.standard.set(itemSource.version, forKey: HybridConstantModel.userDefaultOfflineVersion + itemSource.name)
                     }
                     else {
                         print( "HybridCacheManager.default.downZip" + msg)
