@@ -434,26 +434,27 @@ extension HybirdCommandExecute {
             //字典转换为对象
             let offlinePackageJsonParams:HybridOfflinePackageJsonParams = HybridOfflinePackageJsonParams.convert(offlineDic)
             //判断是否请求成功
-            if offlinePackageJsonParams.errcode != 0 || offlinePackageJsonParams.data.count == 0 {
+            if offlinePackageJsonParams.errcode != 0 {
                 return
             }
             //新版本号码
-            let newOfflineVersionParams:HybridOfflinePackageDataParams = offlinePackageJsonParams.data[0]
+            let newOfflinePackageDataParams:HybridOfflinePackageDataParams = offlinePackageJsonParams.data
             //判断是否是新版本
-            if oldOfflineVersion == newOfflineVersionParams.version || newOfflineVersionParams.version == "" {
+            if oldOfflineVersion == newOfflinePackageDataParams.version || newOfflinePackageDataParams.version == "" {
                 return
             }
             //写入新的数据
             //UserDefaults.standard.set("", forKey: HybridConstantModel.userDefaultOfflineVersion)
+            //newOfflineVersionParams.src = "http://web-dev.doctorwork.com/ios/resources.zip"
             //下载并解压
-            HybridCacheManager.default.downZip(name: newOfflineVersionParams.version, urlString: newOfflineVersionParams.src) { (result, msg) in
-                if result {
-                    UserDefaults.standard.set(newOfflineVersionParams.version, forKey: HybridConstantModel.userDefaultOfflineVersion)
-                }
-                else {
-                    print( "HybridCacheManager.default.downZip" + msg)
-                }
-            }
+//            HybridCacheManager.default.downZip(name: newOfflinePackageDataParams.version, urlString: newOfflineVersionParams.src) { (result, msg) in
+//                if result {
+//                    UserDefaults.standard.set(newOfflineVersionParams.version, forKey: HybridConstantModel.userDefaultOfflineVersion)
+//                }
+//                else {
+//                    print( "HybridCacheManager.default.downZip" + msg)
+//                }
+//            }
         }
         catch let catchError {
             print("hybridOfflinePackageJson.catchError -> \(catchError)")
