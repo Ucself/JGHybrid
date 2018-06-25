@@ -31,6 +31,9 @@ open class HybridViewController: UIViewController,UIScrollViewDelegate,WKUIDeleg
     /// 是否需要加载进度
     public var needLoadProgress = false
     
+    //需要去命中的url
+    public var cacheUrlMap: [String] = []
+    
     /// 标题颜色
     public var titleColor:UIColor = MLHybridConfiguration.default.defaultTitleColor {               //Title颜色
         didSet {
@@ -124,6 +127,7 @@ open class HybridViewController: UIViewController,UIScrollViewDelegate,WKUIDeleg
         self.initContentView()
         self.initProgressView()
         self.initData()
+        self.loadRequest()
     }
     
     override open func viewWillAppear(_ animated: Bool) {
@@ -199,8 +203,37 @@ open class HybridViewController: UIViewController,UIScrollViewDelegate,WKUIDeleg
             }
         }
     }
+    
     override open var preferredStatusBarStyle: UIStatusBarStyle {
         return statusBarStyle ?? .default
+    }
+    
+    func loadRequest() {
+        //加载
+        guard let loadUrl = urlPath else { return }
+        //urlRequest.setValue(MLHybridConfiguration.default.cookieString, forHTTPHeaderField: MLHybridConfiguration.default.cookieName)
+        let urlString = loadUrl.absoluteString
+        
+        if cacheUrlMap.count > 0 {
+            for url in cacheUrlMap {
+                if urlString.contains(url) {
+                    let path = NSHomeDirectory() + "/Documents/HybridOfflinePackage/\(url)/index.html"
+                    
+                    do {
+                        let htmlData = try NSData(contentsOfFile: path, options: NSData.ReadingOptions.uncached)
+                        if let htmlString = String(data: htmlData as Data, encoding: .utf8) {
+                            contentView.loadHTMLString(htmlString, baseURL: loadUrl)
+                            return
+                        }
+                    } catch {
+                        
+                    }
+                }
+            }
+        }
+        
+        let urlRequest:URLRequest = URLRequest.init(url: loadUrl)
+        self.contentView.load(urlRequest)
     }
 }
 

@@ -8,6 +8,7 @@
 import Foundation
 import WebKit
 import JGWebKitURLProtocol
+import SSZipArchive
 
 //更换类名 兼容老版本
 public typealias MLHybrid = Hybrid
@@ -15,6 +16,7 @@ public typealias MLHybrid = Hybrid
 open class Hybrid {
     //单例对象
     open static let shared = MLHybrid()
+    var cacheMap: [String] = []
     private init() {}
     //私有变量
     var delegate: MLHybridMethodProtocol?
@@ -36,6 +38,7 @@ open class Hybrid {
         guard let url = URL(string: urlString.hybridUrlPathAllowedString()) else {return nil}
         let webViewController = MLHybridViewController()
         webViewController.urlPath = url
+        webViewController.cacheUrlMap = self.shared.cacheMap
         return webViewController        
     }
     
@@ -47,6 +50,16 @@ open class Hybrid {
     //新的zip包版本检测
     open class func checkOfflinePackage() {
         MLHybirdCommandExecute().hybridOfflinePackage()
+    }
+    
+    open class func unzipHybiryOfflineZip(){
+        let documentPath = NSHomeDirectory() + "/Documents"
+        guard let zipPath = Bundle.main.path(forResource: "HybridOfflinePackage", ofType: "zip") else { return }
+        if !FileManager.default.fileExists(atPath: documentPath+"/HybridOfflinePackage") {
+            DispatchQueue.global().async {
+                SSZipArchive.unzipFile(atPath: zipPath, toDestination: documentPath)
+            }
+        }
     }
 }
 

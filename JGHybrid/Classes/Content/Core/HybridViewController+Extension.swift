@@ -84,11 +84,7 @@ public extension HybridViewController {
         self.contentView.uiDelegate = self
         self.contentView.navigationDelegate = self
         self.contentView.scrollView.delegate = self
-        //加载
-        guard urlPath != nil else {return}
-        let urlRequest:URLRequest = URLRequest.init(url: urlPath!)
-        //urlRequest.setValue(MLHybridConfiguration.default.cookieString, forHTTPHeaderField: MLHybridConfiguration.default.cookieName)
-        self.contentView.load(urlRequest)
+        
         //js 注入 requestHybrid
         self.contentView.configuration.userContentController.add(self, name: "requestHybrid")
     }
