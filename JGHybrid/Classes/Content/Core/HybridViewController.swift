@@ -217,7 +217,7 @@ open class HybridViewController: UIViewController,UIScrollViewDelegate,WKUIDeleg
         if cacheUrlMap.count > 0 {
             for url in cacheUrlMap {
                 if urlString.contains(url) {
-                    let path = NSHomeDirectory() + "/Documents/HybridOfflinePackage/\(url)/index.html"
+                    let path = NSHomeDirectory() + "/Documents/HybridOfflinePackage\(url)/index.html"
                     
                     do {
                         let htmlData = try NSData(contentsOfFile: path, options: NSData.ReadingOptions.uncached)
