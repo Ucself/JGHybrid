@@ -13,11 +13,11 @@ import SSZipArchive
 //更换类名 兼容老版本
 public typealias MLHybrid = Hybrid
 
-open class Hybrid {
+open class Hybrid: NSObject {
     //单例对象
     open static let shared = MLHybrid()
-    var cacheMap: [String] = []
-    private init() {}
+    public var cacheMap: [String] = []
+    private override init() {}
     //私有变量
     var delegate: MLHybridMethodProtocol?
     var mainfestParams:HybridMainfestParams = HybridMainfestParams()
