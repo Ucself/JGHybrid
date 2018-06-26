@@ -31,9 +31,6 @@ open class HybridViewController: UIViewController,UIScrollViewDelegate,WKUIDeleg
     /// 是否需要加载进度
     public var needLoadProgress = false
     
-    //需要去命中的url
-    public var cacheUrlMap: [String] = []
-    
     /// 标题颜色
     public var titleColor:UIColor = MLHybridConfiguration.default.defaultTitleColor {               //Title颜色
         didSet {
@@ -214,8 +211,8 @@ open class HybridViewController: UIViewController,UIScrollViewDelegate,WKUIDeleg
         //urlRequest.setValue(MLHybridConfiguration.default.cookieString, forHTTPHeaderField: MLHybridConfiguration.default.cookieName)
         let urlString = loadUrl.absoluteString
         
-        if cacheUrlMap.count > 0 {
-            for url in cacheUrlMap {
+        if HybridConfiguration.default.cacheMap.count > 0 {
+            for url in HybridConfiguration.default.cacheMap {
                 if urlString.contains(url) {
                     let path = NSHomeDirectory() + "/Documents/HybridOfflinePackage\(url)/index.html"
                     

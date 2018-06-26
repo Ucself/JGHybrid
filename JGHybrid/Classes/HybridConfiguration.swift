@@ -16,31 +16,19 @@ open class HybridConfiguration: NSObject {
     open static let `default` = MLHybridConfiguration()
     private override init() {}
     
-    /// 是否开启日志
-    open var openLog:Bool = true
-    
     /// 是否注册Protocol拦截
     open var isRegisterURLProtocol:Bool = false
     
     /// 获取的缓存文件地址
     open var cacheURLString:String = "http://web-dev.doctorwork.com/app/health/manifest.json"
     
-    /// 登录后的session
-    open var sess:String = ""
+    /// 离线包html需要解析的地址
+    open var cacheMap: [String] = []
     
-    /// 传输给H5 的平台信息
-    open var platform:String = "i"
-    
-    /// cookie 注入的名称
-    open var cookieName:String = "Cookie"
-    
-    /// cookie 注入的字符串
-    open var cookieString:String = ""
-    
-    /// userAgent 新的解析方式已经弃用
+    /// userAgent
     open var userAgent:String = "doc_hybrid_heath_"
     
-    /// userAgent 新的解析方式已经弃用
+    /// scheme
     open var scheme:String = "docheathhybrid"
     
     /// 返回按钮图片名称

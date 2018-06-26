@@ -16,7 +16,6 @@ public typealias MLHybrid = Hybrid
 open class Hybrid: NSObject {
     //单例对象
     open static let shared = MLHybrid()
-    public var cacheMap: [String] = []
     private override init() {}
     //私有变量
     var delegate: MLHybridMethodProtocol?
@@ -38,7 +37,6 @@ open class Hybrid: NSObject {
         guard let url = URL(string: urlString.hybridUrlPathAllowedString()) else {return nil}
         let webViewController = MLHybridViewController()
         webViewController.urlPath = url
-        webViewController.cacheUrlMap = self.shared.cacheMap
         return webViewController        
     }
     
