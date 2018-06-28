@@ -102,7 +102,7 @@ open class HybridViewController: UIViewController,UIScrollViewDelegate,WKUIDeleg
     /// H5需要不是第一次显示的回调
     var pageFirstShow = true
     
-    //MARK: 系统重写方法
+    
     deinit {
         locationModel.stopUpdateLocation()
         if self.contentView != nil {
@@ -116,121 +116,6 @@ open class HybridViewController: UIViewController,UIScrollViewDelegate,WKUIDeleg
             self.contentView.scrollView.delegate = nil
             self.contentView = nil
         }
-    }
-    
-    override open func viewDidLoad() {
-        super.viewDidLoad()
-        self.initUI()
-        self.initContentView()
-        self.initProgressView()
-        self.initData()
-        self.loadRequest()
-    }
-    
-    override open func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        //设置导航栏
-        self.navigationController?.setNavigationBarHidden(naviBarHidden, animated: true)
-        //js方法注入
-        //self.contentView?.configuration.userContentController.add(self, name: "requestHybrid")
-        //添加wkwebview监听
-        self.contentView.addObserver(self, forKeyPath: "estimatedProgress", options: NSKeyValueObservingOptions(rawValue: 0), context: nil)
-        //回调Hybrid
-        if let callback = self.onShowCallBack {
-            self.commandExecute.command.callBack(data: "", err_no: 0, msg: "onwebviewshow", callback: callback, completion: {js in })
-        }
-        //设置颜色
-        self.navigationController?.navigationBar.hybridSetTitleColor(self.titleColor)
-        self.navigationController?.navigationBar.hybridSetBackgroundColor(self.titleBackgroundColor)
-        self.view.backgroundColor = self.titleBackgroundColor
-        self.largeTitleView?.backgroundColor = self.titleBackgroundColor
-        self.largeTitleLabel?.textColor = self.titleColor
-        
-        //设置透明
-        if self.isFullScreen {
-            self.navigationController?.navigationBar.hybridSetBackgroundClear()
-        }
-        //临时要求的回调
-        if self.pageFirstShow {
-            self.pageFirstShow = false
-        }
-        else {
-            self.commandExecute.command.webView.evaluateJavaScript(MLHybridConfiguration.default.pageShowEvent) { (result, error) in }
-        }
-
-    }
-    
-    override open func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        //取消方法注入
-        //self.contentView?.configuration.userContentController.removeScriptMessageHandler(forName: "requestHybrid")
-        //移除KVO
-        self.contentView.removeObserver(self, forKeyPath: "estimatedProgress")
-        //回调Hybrid
-        if let callback = self.onHideCallBack {
-            let _ =  self.commandExecute.command.callBack(data: "", err_no: 0, msg: "onwebviewshow", callback: callback, completion: {js in })
-        }
-    }
-    
-    override open func viewDidAppear(_ animated: Bool) {
-        self.navigationController?.interactivePopGestureRecognizer?.delegate = self as? UIGestureRecognizerDelegate;
-        //导航栏全屏透明的话就不要手势回退，有渐变bug
-        if self.isFullScreen {
-            self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
-        }
-        else {
-            self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
-        }
-    }
-    
-    override open func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        if let observeObject:MLHybridContentView = object as? MLHybridContentView {
-            guard keyPath == "estimatedProgress" && observeObject == self.contentView else { return }
-            //设置显示
-            self.progressView.alpha = 1.0
-            self.progressView.setProgress(Float(self.contentView.estimatedProgress), animated: true)
-            //加载完成
-            if self.contentView.estimatedProgress >= 1 {
-                UIView.animate(withDuration: 0.3, delay: 0.3, options:.curveEaseInOut, animations: {
-                    self.progressView.alpha = 0
-                }, completion: { (finished) in
-                    self.progressView.setProgress(0, animated: true)
-                })
-            }
-        }
-    }
-    
-    override open var preferredStatusBarStyle: UIStatusBarStyle {
-        return statusBarStyle ?? .default
-    }
-    
-    func loadRequest() {
-        //加载
-        guard let loadUrl = urlPath else { return }
-        //urlRequest.setValue(MLHybridConfiguration.default.cookieString, forHTTPHeaderField: MLHybridConfiguration.default.cookieName)
-        let urlString = loadUrl.absoluteString
-        
-        if HybridConfiguration.default.cacheMap.count > 0 {
-            for url in HybridConfiguration.default.cacheMap {
-                if urlString.contains(url) {
-                    let path = NSHomeDirectory() + "/Documents/HybridOfflinePackage\(url)/index.html"
-                    
-                    do {
-                        let htmlData = try NSData(contentsOfFile: path, options: NSData.ReadingOptions.uncached)
-                        if let htmlString = String(data: htmlData as Data, encoding: .utf8) {
-                            contentView.loadHTMLString(htmlString, baseURL: loadUrl)
-                            return
-                        }
-                    } catch {
-                        
-                    }
-                }
-            }
-        }
-        
-        let urlRequest:URLRequest = URLRequest.init(url: loadUrl)
-        self.contentView.load(urlRequest)
     }
 }
 

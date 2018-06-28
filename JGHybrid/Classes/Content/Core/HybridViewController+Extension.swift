@@ -124,6 +124,35 @@ public extension HybridViewController {
         }
     }
     
+    func loadRequest() {
+        //加载
+        guard let loadUrl = urlPath else { return }
+        //urlRequest.setValue(MLHybridConfiguration.default.cookieString, forHTTPHeaderField: MLHybridConfiguration.default.cookieName)
+        let urlString = loadUrl.absoluteString
+        
+        if HybridConfiguration.default.cacheMap.count > 0 {
+            for url in HybridConfiguration.default.cacheMap {
+                if urlString.contains(url) {
+                    let path = NSHomeDirectory() + "/Documents/HybridOfflinePackage\(url)/index.html"
+                    
+                    do {
+                        let htmlData = try NSData(contentsOfFile: path, options: NSData.ReadingOptions.uncached)
+                        if let htmlString = String(data: htmlData as Data, encoding: .utf8) {
+                            contentView.loadHTMLString(htmlString, baseURL: loadUrl)
+                            return
+                        }
+                    } catch {
+                        
+                    }
+                }
+            }
+        }
+        
+        let urlRequest:URLRequest = URLRequest.init(url: loadUrl)
+        self.contentView.load(urlRequest)
+    }
+    
+    //MARK: ------
     func setUpBackButton() {
         //如果初始化不需要返回按钮
         if !self.needBackButton {
