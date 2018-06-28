@@ -7,7 +7,7 @@
 
 import UIKit
 
-public extension HybridViewController {
+extension HybridViewController {
     //MARK: 系统重写方法
     
     override open func viewDidLoad() {
@@ -16,7 +16,7 @@ public extension HybridViewController {
         self.initContentView()
         self.initProgressView()
         self.initData()
-        self.loadRequest()
+        self.initRequest()
     }
     
     override open func viewWillAppear(_ animated: Bool) {
@@ -63,6 +63,15 @@ public extension HybridViewController {
         if let callback = self.onHideCallBack {
             let _ =  self.commandExecute.command.callBack(data: "", err_no: 0, msg: "onwebviewshow", callback: callback, completion: {js in })
         }
+        
+        //还原上一个控制器
+        if self.upNavigationBarIsHide != nil {
+            self.navigationController?.setNavigationBarHidden(upNavigationBarIsHide, animated: true)
+        }
+        if self.upNavigationBarBackgroundColor != nil {
+            self.navigationController?.navigationBar.hybridSetBackgroundColor(self.upNavigationBarBackgroundColor)
+        }
+        
     }
     
     override open func viewDidAppear(_ animated: Bool) {

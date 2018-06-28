@@ -102,6 +102,11 @@ open class HybridViewController: UIViewController,UIScrollViewDelegate,WKUIDeleg
     /// H5需要不是第一次显示的回调
     var pageFirstShow = true
     
+    //上一个控制器的NavigationBar的颜色
+    var upNavigationBarBackgroundColor:UIColor?
+    
+    //上一个控制器的NavigationBar是否隐藏
+    var upNavigationBarIsHide:Bool?
     
     deinit {
         locationModel.stopUpdateLocation()

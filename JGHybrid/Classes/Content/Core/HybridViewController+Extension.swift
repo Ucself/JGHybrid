@@ -7,7 +7,7 @@
 
 import UIKit
 
-public extension HybridViewController {
+extension HybridViewController {
 
     //MARK: 自定义方法
     func initUI() {
@@ -17,6 +17,10 @@ public extension HybridViewController {
         self.setUpBackButton()
         //设置布局到顶部self.view
         self.extendedLayoutIncludesOpaqueBars = true
+        
+        //获取上一个控制器的数据
+        self.upNavigationBarIsHide = self.navigationController?.isNavigationBarHidden
+        self.upNavigationBarBackgroundColor = self.navigationController?.navigationBar.backgroundColor
     }
     
     func initContentView() {
@@ -123,8 +127,8 @@ public extension HybridViewController {
             }
         }
     }
-    
-    func loadRequest() {
+    //加载数据
+    func initRequest() {
         //加载
         guard let loadUrl = urlPath else { return }
         //urlRequest.setValue(MLHybridConfiguration.default.cookieString, forHTTPHeaderField: MLHybridConfiguration.default.cookieName)
@@ -168,9 +172,11 @@ public extension HybridViewController {
         let item = UIBarButtonItem(customView: button)
         self.navigationItem.leftBarButtonItem = item
     }
+    
     @objc func backButtonClick() {
         self.navigationController?.popViewController(animated: true)
     }
+    
     //重新加载WKWebview
     public func reloadContentView(){
         guard urlPath != nil else {return}
