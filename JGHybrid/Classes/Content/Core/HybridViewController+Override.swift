@@ -64,13 +64,13 @@ extension HybridViewController {
             let _ =  self.commandExecute.command.callBack(data: "", err_no: 0, msg: "onwebviewshow", callback: callback, completion: {js in })
         }
         
-        //还原上一个控制器
-        if self.upNavigationBarIsHide != nil {
-            self.navigationController?.setNavigationBarHidden(upNavigationBarIsHide, animated: true)
-        }
-        if self.upNavigationBarBackgroundColor != nil {
-            self.navigationController?.navigationBar.hybridSetBackgroundColor(self.upNavigationBarBackgroundColor)
-        }
+        //还原上一个控制器  项目中还是有问题 屏蔽
+//        if self.upNavigationBarIsHide != nil {
+//            self.navigationController?.setNavigationBarHidden(upNavigationBarIsHide!, animated: true)
+//        }
+//        if self.upNavigationBarBackgroundColor != nil {
+//            self.navigationController?.navigationBar.hybridSetBackgroundColor(self.upNavigationBarBackgroundColor)
+//        }
         
     }
     
