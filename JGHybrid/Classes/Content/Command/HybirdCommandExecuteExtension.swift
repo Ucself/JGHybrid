@@ -7,6 +7,7 @@
 
 import UIKit
 import WebKit
+import SSZipArchive
 
 //新版的Hybrid解析
 extension HybirdCommandExecute {
@@ -422,9 +423,6 @@ extension HybirdCommandExecute {
     }
     
     
-    
-    
-    
     func hybridOfflinePackageJson(data:Data?) {
         do {
             //旧的版本oldOfflineVersion
@@ -461,6 +459,17 @@ extension HybirdCommandExecute {
         }
         catch let catchError {
             print("hybridOfflinePackageJson.catchError -> \(catchError)")
+        }
+    }
+    
+    //解压项目中的文件
+    func HybridUnzipHybiryOfflineZip(){
+        let documentPath = NSHomeDirectory() + "/Documents"
+        guard let zipPath = Bundle.main.path(forResource: "HybridOfflinePackage", ofType: "zip") else { return }
+        if !FileManager.default.fileExists(atPath: documentPath+"/HybridOfflinePackage") {
+            DispatchQueue.global().async {
+                SSZipArchive.unzipFile(atPath: zipPath, toDestination: documentPath)
+            }
         }
     }
 }

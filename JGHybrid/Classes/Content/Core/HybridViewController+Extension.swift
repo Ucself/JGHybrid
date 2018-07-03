@@ -134,7 +134,7 @@ extension HybridViewController {
         //urlRequest.setValue(MLHybridConfiguration.default.cookieString, forHTTPHeaderField: MLHybridConfiguration.default.cookieName)
         let urlString = loadUrl.absoluteString
         
-        if HybridConfiguration.default.cacheMap.count > 0 {
+        if HybridConfiguration.default.cacheMap.count > 0 && HybridConfiguration.default.isCacheHtml{
             for url in HybridConfiguration.default.cacheMap {
                 if urlString.contains(url) {
                     let path = NSHomeDirectory() + "/Documents/HybridOfflinePackage\(url)/index.html"
