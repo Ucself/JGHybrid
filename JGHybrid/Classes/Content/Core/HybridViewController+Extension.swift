@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import WebKit
 
 extension HybridViewController {
 
@@ -88,6 +89,9 @@ extension HybridViewController {
         self.contentView.uiDelegate = self
         self.contentView.navigationDelegate = self
         self.contentView.scrollView.delegate = self
+        if #available(iOS 9.0, *) {
+            self.contentView.customUserAgent = defaultUserAgent
+        }
         
         //js 注入 requestHybrid
         self.contentView.configuration.userContentController.add(self, name: "requestHybrid")
@@ -102,29 +106,36 @@ extension HybridViewController {
         if self.needLoadProgress {
             self.view.addSubview(self.progressView)
         }
-        
     }
-    
-    
     
     //初始化控件数据
     func initData(){
         //设置userAgent
-        self.contentView.evaluateJavaScript("navigator.userAgent") { [weak self](result, error) in
+        if MLHybridConfiguration.default.userAgent == defaultUserAgent {
+            return
+        }
+        let webView = WKWebView.init(frame: CGRect.zero)
+        self.view.addSubview(webView)
+        webView.evaluateJavaScript("navigator.userAgent") { [weak self](result, error) in
             //获取userAgent数据
             guard let weakSelf = self,var userAgentStr:String = result as? String else { return }
             //查看是否设置过
-            guard userAgentStr.range(of: MLHybridConfiguration.default.userAgent) == nil else { return }
+            guard MLHybridConfiguration.default.userAgent == "" else {
+                webView.removeFromSuperview()
+                return
+            }
             //未获取到版本
             guard let versionStr = Bundle.main.infoDictionary?["CFBundleShortVersionString"] else {return}
-            userAgentStr.append(" \(MLHybridConfiguration.default.userAgent)\(versionStr) ")
+            userAgentStr.append(" doc_hybrid_heath_\(versionStr) ")
             userAgentStr.append(" Hybrid/\(versionStr) ")
+            MLHybridConfiguration.default.userAgent = userAgentStr
             if #available(iOS 9.0, *) {
                 weakSelf.contentView.customUserAgent = userAgentStr
             } else {
                 // Fallback on earlier versions
                 UserDefaults.standard.register(defaults: ["UserAgent" : userAgentStr])
             }
+            webView.removeFromSuperview()
         }
     }
     //加载数据

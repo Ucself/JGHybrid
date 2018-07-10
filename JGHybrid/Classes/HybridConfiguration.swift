@@ -29,7 +29,7 @@ open class HybridConfiguration: NSObject {
     open var cacheMap: [String] = ["/app/health","/rapp/health"]
     
     /// userAgent
-    open var userAgent:String = "doc_hybrid_heath_"
+    open var userAgent:String = ""
     
     /// scheme
     open var scheme:String = "docheathhybrid"
@@ -48,6 +48,14 @@ open class HybridConfiguration: NSObject {
     
     /// pageShow 回调字符串，h5临时要求
     open var pageShowEvent:String = "Hybrid.event('pageshow')"
+    
+    /// 设置 navigator.vendorSub
+    open var vendorSub:String = {
+        var hybridStr:String = "navigator.vendorSub ="
+        guard let versionStr = Bundle.main.infoDictionary?["CFBundleShortVersionString"] else {return ""}
+        hybridStr += "/'Hybrid/\(versionStr)/'"
+        return hybridStr
+    }()
     
     /// 离线包json地址
     open var offlinePackageJsonUrl:String = "http://web-dev.doctorwork.com/ios/resources.json"
