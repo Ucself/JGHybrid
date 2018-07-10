@@ -25,14 +25,7 @@ pod 'JGHybrid'
 ## How To Use
 
 ```
-MLHybrid.register(sess: "GuU7KeV154f8juslkNWRONyVE3m8Sq9h5nJFpcARiCFIvrMsp6boxDzcYabBwAoM",
-                  platform: "i",
-                  appName: "medlinker",
-                  domain: "medlinker.com",
-                  backIndicator: "hybridBack",
-                  delegate: MethodExtension())
-                  
-let vc:UIViewController =  MLHybrid.load(urlString: "https://yexiaochai.github.io/Hybrid/webapp/demo/index.html")!
+let vc:HybridViewController =  Hybrid.load(urlString: "http://web-qa.doctorwork.com/rapp/health/health-package/0?sku=HS2018002")!
 self.navigationController?.pushViewController(vc, animated: true)
 ```
 

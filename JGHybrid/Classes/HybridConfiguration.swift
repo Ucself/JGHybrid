@@ -26,7 +26,7 @@ open class HybridConfiguration: NSObject {
     open var cacheURLString:String = "http://web-dev.doctorwork.com/app/health/manifest.json"
     
     /// 离线包html需要解析的地址
-    open var cacheMap: [String] = []
+    open var cacheMap: [String] = ["/app/health","/rapp/health"]
     
     /// userAgent
     open var userAgent:String = "doc_hybrid_heath_"

@@ -422,7 +422,7 @@ extension HybirdCommandExecute {
         }
     }
     
-    
+    //H5 版本问题
     func hybridOfflinePackageJson(data:Data?) {
         do {
             //旧的版本oldOfflineVersion
