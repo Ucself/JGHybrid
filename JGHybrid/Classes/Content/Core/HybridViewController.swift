@@ -108,6 +108,9 @@ open class HybridViewController: UIViewController,UIScrollViewDelegate,WKUIDeleg
     //上一个控制器的NavigationBar是否隐藏
     var upNavigationBarIsHide:Bool?
     
+    //默认的userAgent
+    var defaultUserAgent:String = "Mozilla/5.0 (iPhone; CPU iPhone OS 12_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/16A5318d doc_hybrid_heath_1.0.3  Hybrid/1.0.3"
+    
     deinit {
         locationModel.stopUpdateLocation()
         if self.contentView != nil {
