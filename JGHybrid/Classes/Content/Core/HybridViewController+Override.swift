@@ -38,7 +38,6 @@ extension HybridViewController {
         self.view.backgroundColor = self.titleBackgroundColor
         self.largeTitleView?.backgroundColor = self.titleBackgroundColor
         self.largeTitleLabel?.textColor = self.titleColor
-        self.commandExecute.command.webView.evaluateJavaScript(MLHybridConfiguration.default.vendorSub) { (_,_) in }
         
         //设置透明
         if self.isFullScreen {
