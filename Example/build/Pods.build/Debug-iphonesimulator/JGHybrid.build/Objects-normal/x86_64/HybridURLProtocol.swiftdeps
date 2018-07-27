@@ -1,0 +1,626 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "MLHybridURLProtocol"
+- "HybridURLProtocol"
+provides-nominal:
+- "8JGHybrid17HybridURLProtocolC"
+provides-member:
+- ["8JGHybrid17HybridURLProtocolC", ""]
+provides-dynamic-lookup:
+- "canInit"
+- "canonicalRequest"
+- "startLoading"
+- "stopLoading"
+depends-top-level:
+- !private "!"
+- !private "!="
+- !private "=="
+- !private "??"
+- "Bool"
+- !private "BooleanLiteralType"
+- "CastingPrecedence"
+- !private "Data"
+- !private "FileManager"
+- !private "HybridConstantModel"
+- "HybridURLProtocol"
+- "MLHybridURLProtocol"
+- !private "NSMutableURLRequest"
+- !private "NSURLRequest"
+- !private "StringLiteralType"
+- "URL"
+- "URLProtocol"
+- !private "URLProtocolClient"
+- "URLRequest"
+- !private "URLResponse"
+- !private "UserDefaults"
+- !private "print"
+depends-member:
+- !private ["Sa", "contains"]
+- !private ["Sa", "first"]
+- !private ["s23BidirectionalCollectionP", "contains"]
+- !private ["s23BidirectionalCollectionP", "count"]
+- !private ["s23BidirectionalCollectionP", "first"]
+- !private ["s23BidirectionalCollectionP", "init"]
+- !private ["Sb", "_getBuiltinLogicValue"]
+- !private ["s7CVarArgP", "Data"]
+- !private ["s7CVarArgP", "FileManager"]
+- !private ["s7CVarArgP", "HybridConstantModel"]
+- !private ["s7CVarArgP", "MLHybridURLProtocol"]
+- !private ["s7CVarArgP", "URLProtocol"]
+- !private ["s7CVarArgP", "URLResponse"]
+- !private ["s7CVarArgP", "UserDefaults"]
+- ["s7CVarArgP", ""]
+- !private ["s7CVarArgP", "_getBuiltinLogicValue"]
+- !private ["s7CVarArgP", "bool"]
+- !private ["s7CVarArgP", "canUseCache"]
+- !private ["s7CVarArgP", "client"]
+- !private ["s7CVarArgP", "contains"]
+- !private ["s7CVarArgP", "contentTpye"]
+- !private ["s7CVarArgP", "default"]
+- !private ["s7CVarArgP", "fileExists"]
+- !private ["s7CVarArgP", "findCache"]
+- !private ["s7CVarArgP", "first"]
+- !private ["s7CVarArgP", "getUrlFolder"]
+- !private ["s7CVarArgP", "init"]
+- !private ["s7CVarArgP", "mutableCopy"]
+- !private ["s7CVarArgP", "offlinePackageFolder"]
+- !private ["s7CVarArgP", "print"]
+- !private ["s7CVarArgP", "property"]
+- !private ["s7CVarArgP", "request"]
+- !private ["s7CVarArgP", "setProperty"]
+- !private ["s7CVarArgP", "standard"]
+- !private ["s7CVarArgP", "subscript"]
+- !private ["s7CVarArgP", "types"]
+- !private ["s7CVarArgP", "urlProtocolHandled"]
+- !private ["s7CVarArgP", "urls"]
+- !private ["s7CVarArgP", "userDefaultSwitchCache"]
+- !private ["s10CollectionP", "contains"]
+- !private ["s10CollectionP", "count"]
+- !private ["s10CollectionP", "first"]
+- !private ["s10CollectionP", "init"]
+- !private ["s10CollectionP", "subscript"]
+- !private ["s10ComparableP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "Data"]
+- !private ["s28CustomDebugStringConvertibleP", "FileManager"]
+- !private ["s28CustomDebugStringConvertibleP", "HybridConstantModel"]
+- !private ["s28CustomDebugStringConvertibleP", "MLHybridURLProtocol"]
+- !private ["s28CustomDebugStringConvertibleP", "URLProtocol"]
+- !private ["s28CustomDebugStringConvertibleP", "URLResponse"]
+- !private ["s28CustomDebugStringConvertibleP", "UserDefaults"]
+- ["s28CustomDebugStringConvertibleP", ""]
+- !private ["s28CustomDebugStringConvertibleP", "appendingPathComponent"]
+- !private ["s28CustomDebugStringConvertibleP", "bool"]
+- !private ["s28CustomDebugStringConvertibleP", "canUseCache"]
+- !private ["s28CustomDebugStringConvertibleP", "client"]
+- !private ["s28CustomDebugStringConvertibleP", "contains"]
+- !private ["s28CustomDebugStringConvertibleP", "contentTpye"]
+- !private ["s28CustomDebugStringConvertibleP", "count"]
+- !private ["s28CustomDebugStringConvertibleP", "default"]
+- !private ["s28CustomDebugStringConvertibleP", "fileExists"]
+- !private ["s28CustomDebugStringConvertibleP", "findCache"]
+- !private ["s28CustomDebugStringConvertibleP", "first"]
+- !private ["s28CustomDebugStringConvertibleP", "getUrlFolder"]
+- !private ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "mutableCopy"]
+- !private ["s28CustomDebugStringConvertibleP", "offlinePackageFolder"]
+- !private ["s28CustomDebugStringConvertibleP", "path"]
+- !private ["s28CustomDebugStringConvertibleP", "pathExtension"]
+- !private ["s28CustomDebugStringConvertibleP", "print"]
+- !private ["s28CustomDebugStringConvertibleP", "property"]
+- !private ["s28CustomDebugStringConvertibleP", "request"]
+- !private ["s28CustomDebugStringConvertibleP", "scheme"]
+- !private ["s28CustomDebugStringConvertibleP", "setProperty"]
+- !private ["s28CustomDebugStringConvertibleP", "standard"]
+- !private ["s28CustomDebugStringConvertibleP", "subscript"]
+- !private ["s28CustomDebugStringConvertibleP", "types"]
+- !private ["s28CustomDebugStringConvertibleP", "url"]
+- !private ["s28CustomDebugStringConvertibleP", "urlProtocolHandled"]
+- !private ["s28CustomDebugStringConvertibleP", "urls"]
+- !private ["s28CustomDebugStringConvertibleP", "userDefaultSwitchCache"]
+- !private ["s29CustomPlaygroundQuickLookableP", "_getBuiltinLogicValue"]
+- !private ["s29CustomPlaygroundQuickLookableP", "appendingPathComponent"]
+- !private ["s29CustomPlaygroundQuickLookableP", "init"]
+- !private ["s29CustomPlaygroundQuickLookableP", "path"]
+- !private ["s29CustomPlaygroundQuickLookableP", "pathExtension"]
+- !private ["s29CustomPlaygroundQuickLookableP", "scheme"]
+- !private ["s17CustomReflectableP", "_getBuiltinLogicValue"]
+- !private ["s17CustomReflectableP", "contains"]
+- !private ["s17CustomReflectableP", "count"]
+- !private ["s17CustomReflectableP", "first"]
+- !private ["s17CustomReflectableP", "init"]
+- !private ["s17CustomReflectableP", "subscript"]
+- !private ["s17CustomReflectableP", "url"]
+- !private ["s23CustomStringConvertibleP", "Data"]
+- !private ["s23CustomStringConvertibleP", "FileManager"]
+- !private ["s23CustomStringConvertibleP", "HybridConstantModel"]
+- !private ["s23CustomStringConvertibleP", "MLHybridURLProtocol"]
+- !private ["s23CustomStringConvertibleP", "URLProtocol"]
+- !private ["s23CustomStringConvertibleP", "URLResponse"]
+- !private ["s23CustomStringConvertibleP", "UserDefaults"]
+- ["s23CustomStringConvertibleP", ""]
+- !private ["s23CustomStringConvertibleP", "_getBuiltinLogicValue"]
+- !private ["s23CustomStringConvertibleP", "appendingPathComponent"]
+- !private ["s23CustomStringConvertibleP", "bool"]
+- !private ["s23CustomStringConvertibleP", "canUseCache"]
+- !private ["s23CustomStringConvertibleP", "client"]
+- !private ["s23CustomStringConvertibleP", "contains"]
+- !private ["s23CustomStringConvertibleP", "contentTpye"]
+- !private ["s23CustomStringConvertibleP", "count"]
+- !private ["s23CustomStringConvertibleP", "default"]
+- !private ["s23CustomStringConvertibleP", "fileExists"]
+- !private ["s23CustomStringConvertibleP", "findCache"]
+- !private ["s23CustomStringConvertibleP", "first"]
+- !private ["s23CustomStringConvertibleP", "getUrlFolder"]
+- !private ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "mutableCopy"]
+- !private ["s23CustomStringConvertibleP", "offlinePackageFolder"]
+- !private ["s23CustomStringConvertibleP", "path"]
+- !private ["s23CustomStringConvertibleP", "pathExtension"]
+- !private ["s23CustomStringConvertibleP", "print"]
+- !private ["s23CustomStringConvertibleP", "property"]
+- !private ["s23CustomStringConvertibleP", "request"]
+- !private ["s23CustomStringConvertibleP", "scheme"]
+- !private ["s23CustomStringConvertibleP", "setProperty"]
+- !private ["s23CustomStringConvertibleP", "standard"]
+- !private ["s23CustomStringConvertibleP", "subscript"]
+- !private ["s23CustomStringConvertibleP", "types"]
+- !private ["s23CustomStringConvertibleP", "url"]
+- !private ["s23CustomStringConvertibleP", "urlProtocolHandled"]
+- !private ["s23CustomStringConvertibleP", "urls"]
+- !private ["s23CustomStringConvertibleP", "userDefaultSwitchCache"]
+- !private ["10Foundation4DataV", "count"]
+- !private ["10Foundation4DataV", "init"]
+- !private ["s9DecodableP", "_getBuiltinLogicValue"]
+- !private ["s9DecodableP", "appendingPathComponent"]
+- !private ["s9DecodableP", "contains"]
+- !private ["s9DecodableP", "count"]
+- !private ["s9DecodableP", "first"]
+- !private ["s9DecodableP", "init"]
+- !private ["s9DecodableP", "path"]
+- !private ["s9DecodableP", "pathExtension"]
+- !private ["s9DecodableP", "scheme"]
+- !private ["s9DecodableP", "subscript"]
+- !private ["s10DictionaryV", "subscript"]
+- !private ["s9EncodableP", "_getBuiltinLogicValue"]
+- !private ["s9EncodableP", "appendingPathComponent"]
+- !private ["s9EncodableP", "contains"]
+- !private ["s9EncodableP", "count"]
+- !private ["s9EncodableP", "first"]
+- !private ["s9EncodableP", "init"]
+- !private ["s9EncodableP", "path"]
+- !private ["s9EncodableP", "pathExtension"]
+- !private ["s9EncodableP", "scheme"]
+- !private ["s9EncodableP", "subscript"]
+- !private ["s9EquatableP", "Data"]
+- !private ["s9EquatableP", "FileManager"]
+- !private ["s9EquatableP", "HybridConstantModel"]
+- !private ["s9EquatableP", "MLHybridURLProtocol"]
+- !private ["s9EquatableP", "URLProtocol"]
+- !private ["s9EquatableP", "URLResponse"]
+- !private ["s9EquatableP", "UserDefaults"]
+- ["s9EquatableP", ""]
+- !private ["s9EquatableP", "_getBuiltinLogicValue"]
+- !private ["s9EquatableP", "allowed"]
+- !private ["s9EquatableP", "appendingPathComponent"]
+- !private ["s9EquatableP", "bool"]
+- !private ["s9EquatableP", "canUseCache"]
+- !private ["s9EquatableP", "client"]
+- !private ["s9EquatableP", "contains"]
+- !private ["s9EquatableP", "contentTpye"]
+- !private ["s9EquatableP", "count"]
+- !private ["s9EquatableP", "default"]
+- !private ["s9EquatableP", "documentDirectory"]
+- !private ["s9EquatableP", "fileExists"]
+- !private ["s9EquatableP", "findCache"]
+- !private ["s9EquatableP", "first"]
+- !private ["s9EquatableP", "getUrlFolder"]
+- !private ["s9EquatableP", "init"]
+- !private ["s9EquatableP", "mutableCopy"]
+- !private ["s9EquatableP", "offlinePackageFolder"]
+- !private ["s9EquatableP", "path"]
+- !private ["s9EquatableP", "pathExtension"]
+- !private ["s9EquatableP", "print"]
+- !private ["s9EquatableP", "property"]
+- !private ["s9EquatableP", "request"]
+- !private ["s9EquatableP", "scheme"]
+- !private ["s9EquatableP", "setProperty"]
+- !private ["s9EquatableP", "standard"]
+- !private ["s9EquatableP", "subscript"]
+- !private ["s9EquatableP", "types"]
+- !private ["s9EquatableP", "url"]
+- !private ["s9EquatableP", "urlProtocolHandled"]
+- !private ["s9EquatableP", "urls"]
+- !private ["s9EquatableP", "userDefaultSwitchCache"]
+- !private ["s9EquatableP", "userDomainMask"]
+- !private ["s25ExpressibleByArrayLiteralP", "contains"]
+- !private ["s25ExpressibleByArrayLiteralP", "first"]
+- !private ["s25ExpressibleByArrayLiteralP", "userDomainMask"]
+- !private ["s27ExpressibleByBooleanLiteralP", "_getBuiltinLogicValue"]
+- !private ["s30ExpressibleByDictionaryLiteralP", "subscript"]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s26ExpressibleByStringLiteralP", "init"]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
+- !private ["So11FileManagerC", "default"]
+- !private ["So11FileManagerC", "fileExists"]
+- !private ["So11FileManagerC", "urls"]
+- !private ["s8HashableP", "Data"]
+- !private ["s8HashableP", "FileManager"]
+- !private ["s8HashableP", "HybridConstantModel"]
+- !private ["s8HashableP", "MLHybridURLProtocol"]
+- !private ["s8HashableP", "URLProtocol"]
+- !private ["s8HashableP", "URLResponse"]
+- !private ["s8HashableP", "UserDefaults"]
+- ["s8HashableP", ""]
+- !private ["s8HashableP", "_getBuiltinLogicValue"]
+- !private ["s8HashableP", "allowed"]
+- !private ["s8HashableP", "appendingPathComponent"]
+- !private ["s8HashableP", "bool"]
+- !private ["s8HashableP", "canUseCache"]
+- !private ["s8HashableP", "client"]
+- !private ["s8HashableP", "contentTpye"]
+- !private ["s8HashableP", "count"]
+- !private ["s8HashableP", "default"]
+- !private ["s8HashableP", "documentDirectory"]
+- !private ["s8HashableP", "fileExists"]
+- !private ["s8HashableP", "findCache"]
+- !private ["s8HashableP", "getUrlFolder"]
+- !private ["s8HashableP", "init"]
+- !private ["s8HashableP", "mutableCopy"]
+- !private ["s8HashableP", "offlinePackageFolder"]
+- !private ["s8HashableP", "path"]
+- !private ["s8HashableP", "pathExtension"]
+- !private ["s8HashableP", "print"]
+- !private ["s8HashableP", "property"]
+- !private ["s8HashableP", "request"]
+- !private ["s8HashableP", "scheme"]
+- !private ["s8HashableP", "setProperty"]
+- !private ["s8HashableP", "standard"]
+- !private ["s8HashableP", "types"]
+- !private ["s8HashableP", "url"]
+- !private ["s8HashableP", "urlProtocolHandled"]
+- !private ["s8HashableP", "urls"]
+- !private ["s8HashableP", "userDefaultSwitchCache"]
+- !private ["8JGHybrid19HybridConstantModelC", "contentTpye"]
+- !private ["8JGHybrid19HybridConstantModelC", "offlinePackageFolder"]
+- !private ["8JGHybrid19HybridConstantModelC", "types"]
+- !private ["8JGHybrid19HybridConstantModelC", "urlProtocolHandled"]
+- !private ["8JGHybrid19HybridConstantModelC", "userDefaultSwitchCache"]
+- ["8JGHybrid17HybridURLProtocolC", "Bool"]
+- !private ["8JGHybrid17HybridURLProtocolC", "Data"]
+- !private ["8JGHybrid17HybridURLProtocolC", "FileManager"]
+- !private ["8JGHybrid17HybridURLProtocolC", "HybridConstantModel"]
+- !private ["8JGHybrid17HybridURLProtocolC", "MLHybridURLProtocol"]
+- !private ["8JGHybrid17HybridURLProtocolC", "NSMutableURLRequest"]
+- !private ["8JGHybrid17HybridURLProtocolC", "NSURLRequest"]
+- ["8JGHybrid17HybridURLProtocolC", "URL"]
+- !private ["8JGHybrid17HybridURLProtocolC", "URLProtocol"]
+- !private ["8JGHybrid17HybridURLProtocolC", "URLProtocolClient"]
+- ["8JGHybrid17HybridURLProtocolC", "URLRequest"]
+- !private ["8JGHybrid17HybridURLProtocolC", "URLResponse"]
+- !private ["8JGHybrid17HybridURLProtocolC", "UserDefaults"]
+- ["8JGHybrid17HybridURLProtocolC", "canInit"]
+- !private ["8JGHybrid17HybridURLProtocolC", "canUseCache"]
+- ["8JGHybrid17HybridURLProtocolC", "canonicalRequest"]
+- !private ["8JGHybrid17HybridURLProtocolC", "client"]
+- ["8JGHybrid17HybridURLProtocolC", "deinit"]
+- !private ["8JGHybrid17HybridURLProtocolC", "findCache"]
+- !private ["8JGHybrid17HybridURLProtocolC", "getUrlFolder"]
+- ["8JGHybrid17HybridURLProtocolC", "init"]
+- !private ["8JGHybrid17HybridURLProtocolC", "print"]
+- !private ["8JGHybrid17HybridURLProtocolC", "request"]
+- ["8JGHybrid17HybridURLProtocolC", "startLoading"]
+- ["8JGHybrid17HybridURLProtocolC", "stopLoading"]
+- !private ["s25LosslessStringConvertibleP", "_getBuiltinLogicValue"]
+- !private ["s25LosslessStringConvertibleP", "init"]
+- !private ["s10MirrorPathP", "init"]
+- !private ["s17MutableCollectionP", "contains"]
+- !private ["s17MutableCollectionP", "count"]
+- !private ["s17MutableCollectionP", "first"]
+- !private ["s17MutableCollectionP", "init"]
+- !private ["So8NSCodingP", "init"]
+- !private ["So8NSCodingP", "mutableCopy"]
+- !private ["So9NSCopyingP", "init"]
+- !private ["So9NSCopyingP", "mutableCopy"]
+- !private ["So16NSMutableCopyingP", "mutableCopy"]
+- ["So8NSObjectC", "Bool"]
+- !private ["So8NSObjectC", "Data"]
+- !private ["So8NSObjectC", "FileManager"]
+- !private ["So8NSObjectC", "HybridConstantModel"]
+- !private ["So8NSObjectC", "MLHybridURLProtocol"]
+- !private ["So8NSObjectC", "NSMutableURLRequest"]
+- !private ["So8NSObjectC", "NSURLRequest"]
+- ["So8NSObjectC", "URL"]
+- !private ["So8NSObjectC", "URLProtocol"]
+- !private ["So8NSObjectC", "URLProtocolClient"]
+- ["So8NSObjectC", "URLRequest"]
+- !private ["So8NSObjectC", "URLResponse"]
+- !private ["So8NSObjectC", "UserDefaults"]
+- !private ["So8NSObjectC", "bool"]
+- ["So8NSObjectC", "canInit"]
+- ["So8NSObjectC", "canUseCache"]
+- ["So8NSObjectC", "canonicalRequest"]
+- !private ["So8NSObjectC", "client"]
+- !private ["So8NSObjectC", "contentTpye"]
+- !private ["So8NSObjectC", "default"]
+- !private ["So8NSObjectC", "fileExists"]
+- ["So8NSObjectC", "findCache"]
+- ["So8NSObjectC", "getUrlFolder"]
+- ["So8NSObjectC", "init"]
+- !private ["So8NSObjectC", "mutableCopy"]
+- !private ["So8NSObjectC", "offlinePackageFolder"]
+- !private ["So8NSObjectC", "print"]
+- !private ["So8NSObjectC", "property"]
+- !private ["So8NSObjectC", "request"]
+- !private ["So8NSObjectC", "setProperty"]
+- !private ["So8NSObjectC", "standard"]
+- ["So8NSObjectC", "startLoading"]
+- ["So8NSObjectC", "stopLoading"]
+- !private ["So8NSObjectC", "types"]
+- !private ["So8NSObjectC", "urlProtocolHandled"]
+- !private ["So8NSObjectC", "urls"]
+- !private ["So8NSObjectC", "userDefaultSwitchCache"]
+- !private ["So16NSObjectProtocolP", "Data"]
+- !private ["So16NSObjectProtocolP", "FileManager"]
+- !private ["So16NSObjectProtocolP", "HybridConstantModel"]
+- !private ["So16NSObjectProtocolP", "MLHybridURLProtocol"]
+- !private ["So16NSObjectProtocolP", "URLProtocol"]
+- !private ["So16NSObjectProtocolP", "URLResponse"]
+- !private ["So16NSObjectProtocolP", "UserDefaults"]
+- ["So16NSObjectProtocolP", ""]
+- !private ["So16NSObjectProtocolP", "bool"]
+- !private ["So16NSObjectProtocolP", "canUseCache"]
+- !private ["So16NSObjectProtocolP", "client"]
+- !private ["So16NSObjectProtocolP", "contentTpye"]
+- !private ["So16NSObjectProtocolP", "default"]
+- !private ["So16NSObjectProtocolP", "fileExists"]
+- !private ["So16NSObjectProtocolP", "findCache"]
+- !private ["So16NSObjectProtocolP", "getUrlFolder"]
+- !private ["So16NSObjectProtocolP", "init"]
+- !private ["So16NSObjectProtocolP", "mutableCopy"]
+- !private ["So16NSObjectProtocolP", "offlinePackageFolder"]
+- !private ["So16NSObjectProtocolP", "print"]
+- !private ["So16NSObjectProtocolP", "property"]
+- !private ["So16NSObjectProtocolP", "request"]
+- !private ["So16NSObjectProtocolP", "setProperty"]
+- !private ["So16NSObjectProtocolP", "standard"]
+- !private ["So16NSObjectProtocolP", "types"]
+- !private ["So16NSObjectProtocolP", "urlProtocol"]
+- !private ["So16NSObjectProtocolP", "urlProtocolDidFinishLoading"]
+- !private ["So16NSObjectProtocolP", "urlProtocolHandled"]
+- !private ["So16NSObjectProtocolP", "urls"]
+- !private ["So16NSObjectProtocolP", "userDefaultSwitchCache"]
+- !private ["So14NSSecureCodingP", "init"]
+- !private ["So14NSSecureCodingP", "mutableCopy"]
+- !private ["So12NSURLRequestC", "mutableCopy"]
+- !private ["s9OptionSetP", "userDomainMask"]
+- !private ["s22RandomAccessCollectionP", "contains"]
+- !private ["s22RandomAccessCollectionP", "count"]
+- !private ["s22RandomAccessCollectionP", "first"]
+- !private ["s22RandomAccessCollectionP", "init"]
+- !private ["s26RangeReplaceableCollectionP", "contains"]
+- !private ["s26RangeReplaceableCollectionP", "count"]
+- !private ["s26RangeReplaceableCollectionP", "first"]
+- !private ["s26RangeReplaceableCollectionP", "init"]
+- !private ["s16RawRepresentableP", "allowed"]
+- !private ["s16RawRepresentableP", "documentDirectory"]
+- !private ["s16RawRepresentableP", "userDomainMask"]
+- !private ["10Foundation20ReferenceConvertibleP", "appendingPathComponent"]
+- !private ["10Foundation20ReferenceConvertibleP", "count"]
+- !private ["10Foundation20ReferenceConvertibleP", "init"]
+- !private ["10Foundation20ReferenceConvertibleP", "path"]
+- !private ["10Foundation20ReferenceConvertibleP", "pathExtension"]
+- !private ["10Foundation20ReferenceConvertibleP", "scheme"]
+- !private ["10Foundation20ReferenceConvertibleP", "url"]
+- !private ["So11FileManagerC19SearchPathDirectoryO", "documentDirectory"]
+- !private ["So11FileManagerC20SearchPathDomainMaskV", "userDomainMask"]
+- !private ["s8SequenceP", "contains"]
+- !private ["s8SequenceP", "count"]
+- !private ["s8SequenceP", "first"]
+- !private ["s8SequenceP", "init"]
+- !private ["s8SequenceP", "subscript"]
+- !private ["s10SetAlgebraP", "userDomainMask"]
+- !private ["So8URLCacheC13StoragePolicyO", "allowed"]
+- !private ["SS", "init"]
+- !private ["s14StringProtocolP", "init"]
+- !private ["s16TextOutputStreamP", "init"]
+- !private ["s20TextOutputStreamableP", "init"]
+- !private ["10Foundation3URLV", "appendingPathComponent"]
+- !private ["10Foundation3URLV", "path"]
+- !private ["10Foundation3URLV", "pathExtension"]
+- !private ["10Foundation3URLV", "scheme"]
+- ["So11URLProtocolC", "Bool"]
+- !private ["So11URLProtocolC", "Data"]
+- !private ["So11URLProtocolC", "FileManager"]
+- !private ["So11URLProtocolC", "HybridConstantModel"]
+- !private ["So11URLProtocolC", "MLHybridURLProtocol"]
+- !private ["So11URLProtocolC", "NSMutableURLRequest"]
+- !private ["So11URLProtocolC", "NSURLRequest"]
+- ["So11URLProtocolC", "URL"]
+- !private ["So11URLProtocolC", "URLProtocol"]
+- !private ["So11URLProtocolC", "URLProtocolClient"]
+- ["So11URLProtocolC", "URLRequest"]
+- !private ["So11URLProtocolC", "URLResponse"]
+- !private ["So11URLProtocolC", "UserDefaults"]
+- ["So11URLProtocolC", ""]
+- ["So11URLProtocolC", "canInit"]
+- ["So11URLProtocolC", "canUseCache"]
+- ["So11URLProtocolC", "canonicalRequest"]
+- !private ["So11URLProtocolC", "client"]
+- ["So11URLProtocolC", "findCache"]
+- ["So11URLProtocolC", "getUrlFolder"]
+- ["So11URLProtocolC", "init"]
+- !private ["So11URLProtocolC", "print"]
+- !private ["So11URLProtocolC", "property"]
+- !private ["So11URLProtocolC", "request"]
+- !private ["So11URLProtocolC", "setProperty"]
+- ["So11URLProtocolC", "startLoading"]
+- ["So11URLProtocolC", "stopLoading"]
+- !private ["So17URLProtocolClientP", "urlProtocol"]
+- !private ["So17URLProtocolClientP", "urlProtocolDidFinishLoading"]
+- !private ["10Foundation10URLRequestV", "url"]
+- !private ["So11URLResponseC", "init"]
+- !private ["So12UserDefaultsC", "bool"]
+- !private ["So12UserDefaultsC", "standard"]
+- !private ["s14_ArrayProtocolP", "contains"]
+- !private ["s14_ArrayProtocolP", "first"]
+- !private ["s24_DestructorSafeContainerP", "contains"]
+- !private ["s24_DestructorSafeContainerP", "first"]
+- !private ["s35_ExpressibleByBuiltinBooleanLiteralP", "_getBuiltinLogicValue"]
+- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
+- !private ["s39_ExpressibleByBuiltinUTF16StringLiteralP", "init"]
+- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "init"]
+- !private ["s34_ExpressibleByFileReferenceLiteralP", "appendingPathComponent"]
+- !private ["s34_ExpressibleByFileReferenceLiteralP", "path"]
+- !private ["s34_ExpressibleByFileReferenceLiteralP", "pathExtension"]
+- !private ["s34_ExpressibleByFileReferenceLiteralP", "scheme"]
+- !private ["s33_ExpressibleByStringInterpolationP", "init"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "mutableCopy"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "Data"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "FileManager"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "HybridConstantModel"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "MLHybridURLProtocol"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "URLProtocol"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "URLResponse"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "UserDefaults"]
+- ["10Foundation27_KeyValueCodingAndObservingP", ""]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "bool"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "canUseCache"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "client"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "contentTpye"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "default"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "fileExists"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "findCache"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "getUrlFolder"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "init"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "mutableCopy"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "offlinePackageFolder"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "print"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "property"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "request"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "setProperty"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "standard"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "types"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "urlProtocolHandled"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "urls"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "userDefaultSwitchCache"]
+- !private ["s21_ObjectiveCBridgeableP", "_getBuiltinLogicValue"]
+- !private ["s21_ObjectiveCBridgeableP", "appendingPathComponent"]
+- !private ["s21_ObjectiveCBridgeableP", "contains"]
+- !private ["s21_ObjectiveCBridgeableP", "count"]
+- !private ["s21_ObjectiveCBridgeableP", "first"]
+- !private ["s21_ObjectiveCBridgeableP", "init"]
+- !private ["s21_ObjectiveCBridgeableP", "path"]
+- !private ["s21_ObjectiveCBridgeableP", "pathExtension"]
+- !private ["s21_ObjectiveCBridgeableP", "scheme"]
+- !private ["s21_ObjectiveCBridgeableP", "subscript"]
+- !private ["s21_ObjectiveCBridgeableP", "url"]
+- !private ["s16_SwiftStringViewP", "init"]
+depends-nominal:
+- !private "Sa"
+- !private "s23BidirectionalCollectionP"
+- !private "Sb"
+- "s7CVarArgP"
+- !private "s10CollectionP"
+- !private "s10ComparableP"
+- "s28CustomDebugStringConvertibleP"
+- !private "s29CustomPlaygroundQuickLookableP"
+- !private "s17CustomReflectableP"
+- "s23CustomStringConvertibleP"
+- !private "10Foundation4DataV"
+- !private "s9DecodableP"
+- !private "s10DictionaryV"
+- !private "s9EncodableP"
+- "s9EquatableP"
+- !private "s25ExpressibleByArrayLiteralP"
+- !private "s27ExpressibleByBooleanLiteralP"
+- !private "s30ExpressibleByDictionaryLiteralP"
+- !private "s43ExpressibleByExtendedGraphemeClusterLiteralP"
+- !private "s26ExpressibleByStringLiteralP"
+- !private "s33ExpressibleByUnicodeScalarLiteralP"
+- !private "So11FileManagerC"
+- "s8HashableP"
+- !private "8JGHybrid19HybridConstantModelC"
+- "8JGHybrid17HybridURLProtocolC"
+- !private "s25LosslessStringConvertibleP"
+- !private "s10MirrorPathP"
+- !private "s17MutableCollectionP"
+- !private "So8NSCodingP"
+- !private "So9NSCopyingP"
+- !private "So16NSMutableCopyingP"
+- "So8NSObjectC"
+- "So16NSObjectProtocolP"
+- !private "So14NSSecureCodingP"
+- !private "So12NSURLRequestC"
+- !private "s9OptionSetP"
+- !private "s22RandomAccessCollectionP"
+- !private "s26RangeReplaceableCollectionP"
+- !private "s16RawRepresentableP"
+- !private "10Foundation20ReferenceConvertibleP"
+- !private "So11FileManagerC19SearchPathDirectoryO"
+- !private "So11FileManagerC20SearchPathDomainMaskV"
+- !private "s8SequenceP"
+- !private "s10SetAlgebraP"
+- !private "So8URLCacheC13StoragePolicyO"
+- !private "SS"
+- !private "s14StringProtocolP"
+- !private "s16TextOutputStreamP"
+- !private "s20TextOutputStreamableP"
+- !private "10Foundation3URLV"
+- "So11URLProtocolC"
+- !private "So17URLProtocolClientP"
+- !private "10Foundation10URLRequestV"
+- !private "So11URLResponseC"
+- !private "So12UserDefaultsC"
+- !private "s14_ArrayProtocolP"
+- !private "s24_DestructorSafeContainerP"
+- !private "s35_ExpressibleByBuiltinBooleanLiteralP"
+- !private "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
+- !private "s34_ExpressibleByBuiltinStringLiteralP"
+- !private "s39_ExpressibleByBuiltinUTF16StringLiteralP"
+- !private "s41_ExpressibleByBuiltinUnicodeScalarLiteralP"
+- !private "s34_ExpressibleByFileReferenceLiteralP"
+- !private "s33_ExpressibleByStringInterpolationP"
+- !private "s35_HasCustomAnyHashableRepresentationP"
+- "10Foundation27_KeyValueCodingAndObservingP"
+- !private "s21_ObjectiveCBridgeableP"
+- !private "s16_SwiftStringViewP"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/QuartzCore.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Metal.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreLocation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreFoundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/Pods/Target Support Files/JGHybrid/JGHybrid-umbrella.h"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/Pods/Target Support Files/SSZipArchive/SSZipArchive-umbrella.h"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/Pods/Target Support Files/JGWebKitURLProtocol/JGWebKitURLProtocol-umbrella.h"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/Pods/SSZipArchive/SSZipArchive/ZipArchive.h"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/Pods/SSZipArchive/SSZipArchive/SSZipArchive.h"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/Pods/SSZipArchive/SSZipArchive/SSZipCommon.h"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/Pods/JGWebKitURLProtocol/JGWebKitURLProtocol/Classes/NSURLProtocol+WebKitSupport.h"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/build/Pods.build/Debug-iphonesimulator/JGHybrid.build/unextended-module.modulemap"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/build/Pods.build/Debug-iphonesimulator/SSZipArchive.build/module.modulemap"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/build/Pods.build/Debug-iphonesimulator/JGWebKitURLProtocol.build/module.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/OpenGLES.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CoreImage.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/usr/include/Darwin.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/CoreLocation.framework/Headers/CoreLocation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/WebKit.framework/Headers/WebKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
+interface-hash: "382194951b99a5abbf9acc0f5fb1d98c"

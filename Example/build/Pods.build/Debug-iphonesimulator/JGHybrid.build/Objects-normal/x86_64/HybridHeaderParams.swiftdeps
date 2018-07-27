@@ -1,0 +1,320 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "HybridHeaderParams"
+provides-nominal:
+- "8JGHybrid18HybridHeaderParamsC"
+- "8JGHybrid18HybridHeaderParamsC0bc6ButtonD0C"
+provides-member:
+- ["8JGHybrid18HybridHeaderParamsC", ""]
+- ["8JGHybrid18HybridHeaderParamsC0bc6ButtonD0C", ""]
+provides-dynamic-lookup:
+depends-top-level:
+- !private "??"
+- "AnyObject"
+- "AssignmentPrecedence"
+- "BaseParams"
+- "Bool"
+- "BooleanLiteralType"
+- "CastingPrecedence"
+- "HybridHeaderParams"
+- "String"
+- "StringLiteralType"
+depends-member:
+- !private ["Sa", "append"]
+- ["8JGHybrid10BaseParamsC", "AnyObject"]
+- ["8JGHybrid10BaseParamsC", "BaseParams"]
+- ["8JGHybrid10BaseParamsC", "Bool"]
+- ["8JGHybrid10BaseParamsC", "HybridHeaderButtonParams"]
+- ["8JGHybrid10BaseParamsC", "HybridHeaderParams"]
+- ["8JGHybrid10BaseParamsC", "String"]
+- ["8JGHybrid10BaseParamsC", ""]
+- ["8JGHybrid10BaseParamsC", "background"]
+- ["8JGHybrid10BaseParamsC", "bigTitle"]
+- ["8JGHybrid10BaseParamsC", "callback"]
+- ["8JGHybrid10BaseParamsC", "color"]
+- ["8JGHybrid10BaseParamsC", "convert"]
+- ["8JGHybrid10BaseParamsC", "icon"]
+- ["8JGHybrid10BaseParamsC", "init"]
+- ["8JGHybrid10BaseParamsC", "left"]
+- ["8JGHybrid10BaseParamsC", "right"]
+- ["8JGHybrid10BaseParamsC", "show"]
+- ["8JGHybrid10BaseParamsC", "title"]
+- !private ["s23BidirectionalCollectionP", "append"]
+- ["s23BidirectionalCollectionP", "init"]
+- !private ["s7CVarArgP", "HybridHeaderButtonParams"]
+- !private ["s7CVarArgP", "HybridHeaderParams"]
+- ["s7CVarArgP", ""]
+- !private ["s7CVarArgP", "append"]
+- !private ["s7CVarArgP", "background"]
+- !private ["s7CVarArgP", "bigTitle"]
+- !private ["s7CVarArgP", "callback"]
+- !private ["s7CVarArgP", "color"]
+- !private ["s7CVarArgP", "convert"]
+- !private ["s7CVarArgP", "icon"]
+- ["s7CVarArgP", "init"]
+- !private ["s7CVarArgP", "left"]
+- !private ["s7CVarArgP", "right"]
+- !private ["s7CVarArgP", "show"]
+- !private ["s7CVarArgP", "subscript"]
+- !private ["s7CVarArgP", "title"]
+- !private ["s10CollectionP", "append"]
+- ["s10CollectionP", "init"]
+- !private ["s10CollectionP", "subscript"]
+- ["s10ComparableP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "HybridHeaderButtonParams"]
+- !private ["s28CustomDebugStringConvertibleP", "HybridHeaderParams"]
+- ["s28CustomDebugStringConvertibleP", ""]
+- !private ["s28CustomDebugStringConvertibleP", "append"]
+- !private ["s28CustomDebugStringConvertibleP", "background"]
+- !private ["s28CustomDebugStringConvertibleP", "bigTitle"]
+- !private ["s28CustomDebugStringConvertibleP", "callback"]
+- !private ["s28CustomDebugStringConvertibleP", "color"]
+- !private ["s28CustomDebugStringConvertibleP", "convert"]
+- !private ["s28CustomDebugStringConvertibleP", "icon"]
+- ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "left"]
+- !private ["s28CustomDebugStringConvertibleP", "right"]
+- !private ["s28CustomDebugStringConvertibleP", "show"]
+- !private ["s28CustomDebugStringConvertibleP", "subscript"]
+- !private ["s28CustomDebugStringConvertibleP", "title"]
+- ["s29CustomPlaygroundQuickLookableP", "init"]
+- !private ["s17CustomReflectableP", "append"]
+- ["s17CustomReflectableP", "init"]
+- !private ["s17CustomReflectableP", "subscript"]
+- !private ["s23CustomStringConvertibleP", "HybridHeaderButtonParams"]
+- !private ["s23CustomStringConvertibleP", "HybridHeaderParams"]
+- ["s23CustomStringConvertibleP", ""]
+- !private ["s23CustomStringConvertibleP", "append"]
+- !private ["s23CustomStringConvertibleP", "background"]
+- !private ["s23CustomStringConvertibleP", "bigTitle"]
+- !private ["s23CustomStringConvertibleP", "callback"]
+- !private ["s23CustomStringConvertibleP", "color"]
+- !private ["s23CustomStringConvertibleP", "convert"]
+- !private ["s23CustomStringConvertibleP", "icon"]
+- ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "left"]
+- !private ["s23CustomStringConvertibleP", "right"]
+- !private ["s23CustomStringConvertibleP", "show"]
+- !private ["s23CustomStringConvertibleP", "subscript"]
+- !private ["s23CustomStringConvertibleP", "title"]
+- !private ["s9DecodableP", "append"]
+- ["s9DecodableP", "init"]
+- !private ["s9DecodableP", "subscript"]
+- !private ["s10DictionaryV", "subscript"]
+- !private ["s9EncodableP", "append"]
+- ["s9EncodableP", "init"]
+- !private ["s9EncodableP", "subscript"]
+- !private ["s9EquatableP", "HybridHeaderButtonParams"]
+- !private ["s9EquatableP", "HybridHeaderParams"]
+- ["s9EquatableP", ""]
+- !private ["s9EquatableP", "append"]
+- !private ["s9EquatableP", "background"]
+- !private ["s9EquatableP", "bigTitle"]
+- !private ["s9EquatableP", "callback"]
+- !private ["s9EquatableP", "color"]
+- !private ["s9EquatableP", "convert"]
+- !private ["s9EquatableP", "icon"]
+- ["s9EquatableP", "init"]
+- !private ["s9EquatableP", "left"]
+- !private ["s9EquatableP", "right"]
+- !private ["s9EquatableP", "show"]
+- !private ["s9EquatableP", "subscript"]
+- !private ["s9EquatableP", "title"]
+- !private ["s25ExpressibleByArrayLiteralP", "append"]
+- !private ["s30ExpressibleByDictionaryLiteralP", "subscript"]
+- ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
+- ["s26ExpressibleByStringLiteralP", "init"]
+- ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
+- !private ["s8HashableP", "HybridHeaderButtonParams"]
+- !private ["s8HashableP", "HybridHeaderParams"]
+- ["s8HashableP", ""]
+- !private ["s8HashableP", "background"]
+- !private ["s8HashableP", "bigTitle"]
+- !private ["s8HashableP", "callback"]
+- !private ["s8HashableP", "color"]
+- !private ["s8HashableP", "convert"]
+- !private ["s8HashableP", "icon"]
+- ["s8HashableP", "init"]
+- !private ["s8HashableP", "left"]
+- !private ["s8HashableP", "right"]
+- !private ["s8HashableP", "show"]
+- !private ["s8HashableP", "title"]
+- ["8JGHybrid18HybridHeaderParamsC0bc6ButtonD0C", "AnyObject"]
+- ["8JGHybrid18HybridHeaderParamsC0bc6ButtonD0C", "HybridHeaderButtonParams"]
+- ["8JGHybrid18HybridHeaderParamsC0bc6ButtonD0C", "String"]
+- ["8JGHybrid18HybridHeaderParamsC0bc6ButtonD0C", "callback"]
+- ["8JGHybrid18HybridHeaderParamsC0bc6ButtonD0C", "color"]
+- ["8JGHybrid18HybridHeaderParamsC0bc6ButtonD0C", "convert"]
+- ["8JGHybrid18HybridHeaderParamsC0bc6ButtonD0C", "deinit"]
+- ["8JGHybrid18HybridHeaderParamsC0bc6ButtonD0C", "icon"]
+- ["8JGHybrid18HybridHeaderParamsC0bc6ButtonD0C", "init"]
+- ["8JGHybrid18HybridHeaderParamsC0bc6ButtonD0C", "title"]
+- ["8JGHybrid18HybridHeaderParamsC", "AnyObject"]
+- ["8JGHybrid18HybridHeaderParamsC", "BaseParams"]
+- ["8JGHybrid18HybridHeaderParamsC", "Bool"]
+- ["8JGHybrid18HybridHeaderParamsC", "HybridHeaderButtonParams"]
+- ["8JGHybrid18HybridHeaderParamsC", "HybridHeaderParams"]
+- ["8JGHybrid18HybridHeaderParamsC", "String"]
+- ["8JGHybrid18HybridHeaderParamsC", "background"]
+- ["8JGHybrid18HybridHeaderParamsC", "bigTitle"]
+- ["8JGHybrid18HybridHeaderParamsC", "color"]
+- ["8JGHybrid18HybridHeaderParamsC", "convert"]
+- ["8JGHybrid18HybridHeaderParamsC", "deinit"]
+- ["8JGHybrid18HybridHeaderParamsC", "init"]
+- ["8JGHybrid18HybridHeaderParamsC", "left"]
+- ["8JGHybrid18HybridHeaderParamsC", "right"]
+- ["8JGHybrid18HybridHeaderParamsC", "show"]
+- ["8JGHybrid18HybridHeaderParamsC", "title"]
+- ["s25LosslessStringConvertibleP", "init"]
+- ["s10MirrorPathP", "init"]
+- !private ["s17MutableCollectionP", "append"]
+- ["So8NSObjectC", "AnyObject"]
+- ["So8NSObjectC", "BaseParams"]
+- ["So8NSObjectC", "Bool"]
+- ["So8NSObjectC", "HybridHeaderButtonParams"]
+- ["So8NSObjectC", "HybridHeaderParams"]
+- ["So8NSObjectC", "String"]
+- ["So8NSObjectC", "background"]
+- ["So8NSObjectC", "bigTitle"]
+- ["So8NSObjectC", "callback"]
+- ["So8NSObjectC", "color"]
+- ["So8NSObjectC", "convert"]
+- ["So8NSObjectC", "icon"]
+- ["So8NSObjectC", "init"]
+- ["So8NSObjectC", "left"]
+- ["So8NSObjectC", "right"]
+- ["So8NSObjectC", "show"]
+- ["So8NSObjectC", "title"]
+- !private ["So16NSObjectProtocolP", "HybridHeaderButtonParams"]
+- !private ["So16NSObjectProtocolP", "HybridHeaderParams"]
+- ["So16NSObjectProtocolP", ""]
+- !private ["So16NSObjectProtocolP", "background"]
+- !private ["So16NSObjectProtocolP", "bigTitle"]
+- !private ["So16NSObjectProtocolP", "callback"]
+- !private ["So16NSObjectProtocolP", "color"]
+- !private ["So16NSObjectProtocolP", "convert"]
+- !private ["So16NSObjectProtocolP", "icon"]
+- !private ["So16NSObjectProtocolP", "init"]
+- !private ["So16NSObjectProtocolP", "left"]
+- !private ["So16NSObjectProtocolP", "right"]
+- !private ["So16NSObjectProtocolP", "show"]
+- !private ["So16NSObjectProtocolP", "title"]
+- !private ["s22RandomAccessCollectionP", "append"]
+- !private ["s26RangeReplaceableCollectionP", "append"]
+- ["s26RangeReplaceableCollectionP", "init"]
+- !private ["s8SequenceP", "append"]
+- ["s8SequenceP", "init"]
+- !private ["s8SequenceP", "subscript"]
+- ["SS", "init"]
+- ["s14StringProtocolP", "init"]
+- ["s16TextOutputStreamP", "init"]
+- ["s20TextOutputStreamableP", "init"]
+- !private ["s14_ArrayProtocolP", "append"]
+- !private ["s24_DestructorSafeContainerP", "append"]
+- ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
+- ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
+- ["s39_ExpressibleByBuiltinUTF16StringLiteralP", "init"]
+- ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "init"]
+- ["s33_ExpressibleByStringInterpolationP", "init"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "HybridHeaderButtonParams"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "HybridHeaderParams"]
+- ["10Foundation27_KeyValueCodingAndObservingP", ""]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "background"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "bigTitle"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "callback"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "color"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "convert"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "icon"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "init"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "left"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "right"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "show"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "title"]
+- !private ["s21_ObjectiveCBridgeableP", "append"]
+- ["s21_ObjectiveCBridgeableP", "init"]
+- !private ["s21_ObjectiveCBridgeableP", "subscript"]
+- ["s16_SwiftStringViewP", "init"]
+depends-nominal:
+- !private "Sa"
+- "8JGHybrid10BaseParamsC"
+- "s23BidirectionalCollectionP"
+- "s7CVarArgP"
+- "s10CollectionP"
+- "s10ComparableP"
+- "s28CustomDebugStringConvertibleP"
+- "s29CustomPlaygroundQuickLookableP"
+- "s17CustomReflectableP"
+- "s23CustomStringConvertibleP"
+- "s9DecodableP"
+- !private "s10DictionaryV"
+- "s9EncodableP"
+- "s9EquatableP"
+- !private "s25ExpressibleByArrayLiteralP"
+- !private "s30ExpressibleByDictionaryLiteralP"
+- "s43ExpressibleByExtendedGraphemeClusterLiteralP"
+- "s26ExpressibleByStringLiteralP"
+- "s33ExpressibleByUnicodeScalarLiteralP"
+- "s8HashableP"
+- "8JGHybrid18HybridHeaderParamsC0bc6ButtonD0C"
+- "8JGHybrid18HybridHeaderParamsC"
+- "s25LosslessStringConvertibleP"
+- "s10MirrorPathP"
+- !private "s17MutableCollectionP"
+- "So8NSObjectC"
+- "So16NSObjectProtocolP"
+- !private "s22RandomAccessCollectionP"
+- "s26RangeReplaceableCollectionP"
+- "s8SequenceP"
+- "SS"
+- "s14StringProtocolP"
+- "s16TextOutputStreamP"
+- "s20TextOutputStreamableP"
+- !private "s14_ArrayProtocolP"
+- !private "s24_DestructorSafeContainerP"
+- "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
+- "s34_ExpressibleByBuiltinStringLiteralP"
+- "s39_ExpressibleByBuiltinUTF16StringLiteralP"
+- "s41_ExpressibleByBuiltinUnicodeScalarLiteralP"
+- "s33_ExpressibleByStringInterpolationP"
+- "10Foundation27_KeyValueCodingAndObservingP"
+- "s21_ObjectiveCBridgeableP"
+- "s16_SwiftStringViewP"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/QuartzCore.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Metal.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreLocation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreFoundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/Pods/Target Support Files/JGHybrid/JGHybrid-umbrella.h"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/Pods/Target Support Files/SSZipArchive/SSZipArchive-umbrella.h"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/Pods/Target Support Files/JGWebKitURLProtocol/JGWebKitURLProtocol-umbrella.h"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/Pods/SSZipArchive/SSZipArchive/ZipArchive.h"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/Pods/SSZipArchive/SSZipArchive/SSZipArchive.h"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/Pods/SSZipArchive/SSZipArchive/SSZipCommon.h"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/Pods/JGWebKitURLProtocol/JGWebKitURLProtocol/Classes/NSURLProtocol+WebKitSupport.h"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/build/Pods.build/Debug-iphonesimulator/JGHybrid.build/unextended-module.modulemap"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/build/Pods.build/Debug-iphonesimulator/SSZipArchive.build/module.modulemap"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/build/Pods.build/Debug-iphonesimulator/JGWebKitURLProtocol.build/module.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/OpenGLES.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CoreImage.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/usr/include/Darwin.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/CoreLocation.framework/Headers/CoreLocation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/WebKit.framework/Headers/WebKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
+interface-hash: "a0e3e0b92aad801f375a478fe65b761a"

@@ -1,0 +1,62 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "MLHybridMethodProtocol"
+- "HybridMethodProtocol"
+provides-nominal:
+- "8JGHybrid20HybridMethodProtocolP"
+provides-member:
+- ["8JGHybrid20HybridMethodProtocolP", ""]
+provides-dynamic-lookup:
+depends-top-level:
+- "HybridMethodProtocol"
+- "MLHybirdCommand"
+- "MLHybridMethodProtocol"
+- "MLHybridViewController"
+depends-member:
+- ["8JGHybrid20HybridMethodProtocolP", "MLHybirdCommand"]
+- ["8JGHybrid20HybridMethodProtocolP", "MLHybridViewController"]
+- ["8JGHybrid20HybridMethodProtocolP", "commandExtension"]
+- ["8JGHybrid20HybridMethodProtocolP", "didFailLoad"]
+- ["8JGHybrid20HybridMethodProtocolP", "startWait"]
+- ["8JGHybrid20HybridMethodProtocolP", "stopWait"]
+depends-nominal:
+- "8JGHybrid20HybridMethodProtocolP"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/QuartzCore.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Metal.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreLocation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreFoundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/Pods/Target Support Files/JGHybrid/JGHybrid-umbrella.h"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/Pods/Target Support Files/SSZipArchive/SSZipArchive-umbrella.h"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/Pods/Target Support Files/JGWebKitURLProtocol/JGWebKitURLProtocol-umbrella.h"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/Pods/SSZipArchive/SSZipArchive/ZipArchive.h"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/Pods/SSZipArchive/SSZipArchive/SSZipArchive.h"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/Pods/SSZipArchive/SSZipArchive/SSZipCommon.h"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/Pods/JGWebKitURLProtocol/JGWebKitURLProtocol/Classes/NSURLProtocol+WebKitSupport.h"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/build/Pods.build/Debug-iphonesimulator/JGHybrid.build/unextended-module.modulemap"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/build/Pods.build/Debug-iphonesimulator/SSZipArchive.build/module.modulemap"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/build/Pods.build/Debug-iphonesimulator/JGWebKitURLProtocol.build/module.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/OpenGLES.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CoreImage.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/usr/include/Darwin.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/CoreLocation.framework/Headers/CoreLocation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/WebKit.framework/Headers/WebKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
+interface-hash: "48d25f4ba58a5c969e044ee46c5a6c08"

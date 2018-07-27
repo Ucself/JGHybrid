@@ -1,0 +1,594 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+provides-nominal:
+provides-member:
+- ["8JGHybrid20HybridViewControllerC", ""]
+- ["8JGHybrid20HybridViewControllerC", "webView"]
+- ["8JGHybrid20HybridViewControllerC", "webView"]
+- ["8JGHybrid20HybridViewControllerC", "webViewWebContentProcessDidTerminate"]
+- ["8JGHybrid20HybridViewControllerC", "webView"]
+- ["8JGHybrid20HybridViewControllerC", "webView"]
+provides-dynamic-lookup:
+- "webView"
+- "webViewWebContentProcessDidTerminate"
+depends-top-level:
+- !private "!="
+- !private "=="
+- "CastingPrecedence"
+- !private "DispatchQueue"
+- "Error"
+- !private "HTTPURLResponse"
+- "HybridViewController"
+- !private "MLHybrid"
+- !private "NSError"
+- !private "NSURL"
+- !private "String"
+- !private "StringLiteralType"
+- !private "UIApplication"
+- !private "URL"
+- "Void"
+- "WKNavigation"
+- "WKNavigationAction"
+- "WKNavigationActionPolicy"
+- "WKNavigationResponse"
+- "WKNavigationResponsePolicy"
+- "WKWebView"
+- !private "print"
+depends-member:
+- !private ["s23BidirectionalCollectionP", "init"]
+- !private ["Sb", "_getBuiltinLogicValue"]
+- !private ["So15CALayerDelegateP", "reload"]
+- !private ["s7CVarArgP", "DispatchQueue"]
+- !private ["s7CVarArgP", "MLHybrid"]
+- !private ["s7CVarArgP", "UIApplication"]
+- !private ["s7CVarArgP", "URL"]
+- !private ["s7CVarArgP", "_getBuiltinLogicValue"]
+- !private ["s7CVarArgP", "async"]
+- !private ["s7CVarArgP", "code"]
+- !private ["s7CVarArgP", "commandExecute"]
+- !private ["s7CVarArgP", "delegate"]
+- !private ["s7CVarArgP", "init"]
+- !private ["s7CVarArgP", "main"]
+- !private ["s7CVarArgP", "openURL"]
+- !private ["s7CVarArgP", "performCommand"]
+- !private ["s7CVarArgP", "print"]
+- !private ["s7CVarArgP", "reload"]
+- !private ["s7CVarArgP", "request"]
+- !private ["s7CVarArgP", "resourceSpecifier"]
+- !private ["s7CVarArgP", "response"]
+- !private ["s7CVarArgP", "scheme"]
+- !private ["s7CVarArgP", "shared"]
+- !private ["s7CVarArgP", "statusCode"]
+- !private ["s10CollectionP", "init"]
+- !private ["s10ComparableP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "DispatchQueue"]
+- !private ["s28CustomDebugStringConvertibleP", "MLHybrid"]
+- !private ["s28CustomDebugStringConvertibleP", "UIApplication"]
+- !private ["s28CustomDebugStringConvertibleP", "URL"]
+- !private ["s28CustomDebugStringConvertibleP", "async"]
+- !private ["s28CustomDebugStringConvertibleP", "code"]
+- !private ["s28CustomDebugStringConvertibleP", "commandExecute"]
+- !private ["s28CustomDebugStringConvertibleP", "delegate"]
+- !private ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "main"]
+- !private ["s28CustomDebugStringConvertibleP", "openURL"]
+- !private ["s28CustomDebugStringConvertibleP", "performCommand"]
+- !private ["s28CustomDebugStringConvertibleP", "print"]
+- !private ["s28CustomDebugStringConvertibleP", "reload"]
+- !private ["s28CustomDebugStringConvertibleP", "request"]
+- !private ["s28CustomDebugStringConvertibleP", "resourceSpecifier"]
+- !private ["s28CustomDebugStringConvertibleP", "response"]
+- !private ["s28CustomDebugStringConvertibleP", "scheme"]
+- !private ["s28CustomDebugStringConvertibleP", "shared"]
+- !private ["s28CustomDebugStringConvertibleP", "statusCode"]
+- !private ["s28CustomDebugStringConvertibleP", "url"]
+- !private ["s29CustomPlaygroundQuickLookableP", "_getBuiltinLogicValue"]
+- !private ["s29CustomPlaygroundQuickLookableP", "init"]
+- !private ["s29CustomPlaygroundQuickLookableP", "resourceSpecifier"]
+- !private ["s29CustomPlaygroundQuickLookableP", "scheme"]
+- !private ["s17CustomReflectableP", "_getBuiltinLogicValue"]
+- !private ["s17CustomReflectableP", "init"]
+- !private ["s17CustomReflectableP", "url"]
+- !private ["s23CustomStringConvertibleP", "DispatchQueue"]
+- !private ["s23CustomStringConvertibleP", "MLHybrid"]
+- !private ["s23CustomStringConvertibleP", "UIApplication"]
+- !private ["s23CustomStringConvertibleP", "URL"]
+- !private ["s23CustomStringConvertibleP", "_getBuiltinLogicValue"]
+- !private ["s23CustomStringConvertibleP", "async"]
+- !private ["s23CustomStringConvertibleP", "code"]
+- !private ["s23CustomStringConvertibleP", "commandExecute"]
+- !private ["s23CustomStringConvertibleP", "delegate"]
+- !private ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "main"]
+- !private ["s23CustomStringConvertibleP", "openURL"]
+- !private ["s23CustomStringConvertibleP", "performCommand"]
+- !private ["s23CustomStringConvertibleP", "print"]
+- !private ["s23CustomStringConvertibleP", "reload"]
+- !private ["s23CustomStringConvertibleP", "request"]
+- !private ["s23CustomStringConvertibleP", "resourceSpecifier"]
+- !private ["s23CustomStringConvertibleP", "response"]
+- !private ["s23CustomStringConvertibleP", "scheme"]
+- !private ["s23CustomStringConvertibleP", "shared"]
+- !private ["s23CustomStringConvertibleP", "statusCode"]
+- !private ["s23CustomStringConvertibleP", "url"]
+- !private ["s9DecodableP", "_getBuiltinLogicValue"]
+- !private ["s9DecodableP", "init"]
+- !private ["So14DispatchObjectC", "async"]
+- !private ["So14DispatchObjectC", "main"]
+- !private ["So13DispatchQueueC", "async"]
+- !private ["So13DispatchQueueC", "main"]
+- !private ["s9EncodableP", "_getBuiltinLogicValue"]
+- !private ["s9EncodableP", "init"]
+- !private ["s9EquatableP", "DispatchQueue"]
+- !private ["s9EquatableP", "MLHybrid"]
+- !private ["s9EquatableP", "UIApplication"]
+- !private ["s9EquatableP", "URL"]
+- !private ["s9EquatableP", "_getBuiltinLogicValue"]
+- !private ["s9EquatableP", "allow"]
+- !private ["s9EquatableP", "async"]
+- !private ["s9EquatableP", "cancel"]
+- !private ["s9EquatableP", "code"]
+- !private ["s9EquatableP", "commandExecute"]
+- !private ["s9EquatableP", "delegate"]
+- !private ["s9EquatableP", "init"]
+- !private ["s9EquatableP", "main"]
+- !private ["s9EquatableP", "openURL"]
+- !private ["s9EquatableP", "performCommand"]
+- !private ["s9EquatableP", "print"]
+- !private ["s9EquatableP", "reload"]
+- !private ["s9EquatableP", "request"]
+- !private ["s9EquatableP", "resourceSpecifier"]
+- !private ["s9EquatableP", "response"]
+- !private ["s9EquatableP", "scheme"]
+- !private ["s9EquatableP", "shared"]
+- !private ["s9EquatableP", "statusCode"]
+- !private ["s9EquatableP", "url"]
+- !private ["s5ErrorP", "code"]
+- !private ["s27ExpressibleByBooleanLiteralP", "_getBuiltinLogicValue"]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s26ExpressibleByStringLiteralP", "init"]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
+- !private ["So15HTTPURLResponseC", "statusCode"]
+- !private ["s8HashableP", "DispatchQueue"]
+- !private ["s8HashableP", "MLHybrid"]
+- !private ["s8HashableP", "UIApplication"]
+- !private ["s8HashableP", "URL"]
+- !private ["s8HashableP", "_getBuiltinLogicValue"]
+- !private ["s8HashableP", "allow"]
+- !private ["s8HashableP", "async"]
+- !private ["s8HashableP", "cancel"]
+- !private ["s8HashableP", "code"]
+- !private ["s8HashableP", "commandExecute"]
+- !private ["s8HashableP", "delegate"]
+- !private ["s8HashableP", "init"]
+- !private ["s8HashableP", "main"]
+- !private ["s8HashableP", "openURL"]
+- !private ["s8HashableP", "performCommand"]
+- !private ["s8HashableP", "print"]
+- !private ["s8HashableP", "reload"]
+- !private ["s8HashableP", "request"]
+- !private ["s8HashableP", "resourceSpecifier"]
+- !private ["s8HashableP", "response"]
+- !private ["s8HashableP", "scheme"]
+- !private ["s8HashableP", "shared"]
+- !private ["s8HashableP", "statusCode"]
+- !private ["s8HashableP", "url"]
+- !private ["8JGHybrid20HybirdCommandExecuteC", "performCommand"]
+- !private ["8JGHybrid6HybridC", "delegate"]
+- !private ["8JGHybrid6HybridC", "shared"]
+- !private ["8JGHybrid20HybridMethodProtocolP", "didFailLoad"]
+- !private ["8JGHybrid20HybridMethodProtocolP", "stopWait"]
+- !private ["8JGHybrid20HybridViewControllerC", "DispatchQueue"]
+- ["8JGHybrid20HybridViewControllerC", "Error"]
+- !private ["8JGHybrid20HybridViewControllerC", "HTTPURLResponse"]
+- !private ["8JGHybrid20HybridViewControllerC", "MLHybrid"]
+- !private ["8JGHybrid20HybridViewControllerC", "NSError"]
+- !private ["8JGHybrid20HybridViewControllerC", "NSURL"]
+- !private ["8JGHybrid20HybridViewControllerC", "String"]
+- !private ["8JGHybrid20HybridViewControllerC", "UIApplication"]
+- !private ["8JGHybrid20HybridViewControllerC", "URL"]
+- ["8JGHybrid20HybridViewControllerC", "Void"]
+- ["8JGHybrid20HybridViewControllerC", "WKNavigation"]
+- ["8JGHybrid20HybridViewControllerC", "WKNavigationAction"]
+- ["8JGHybrid20HybridViewControllerC", "WKNavigationActionPolicy"]
+- ["8JGHybrid20HybridViewControllerC", "WKNavigationResponse"]
+- ["8JGHybrid20HybridViewControllerC", "WKNavigationResponsePolicy"]
+- ["8JGHybrid20HybridViewControllerC", "WKWebView"]
+- !private ["8JGHybrid20HybridViewControllerC", "commandExecute"]
+- !private ["8JGHybrid20HybridViewControllerC", "print"]
+- ["8JGHybrid20HybridViewControllerC", "webView"]
+- ["8JGHybrid20HybridViewControllerC", "webViewWebContentProcessDidTerminate"]
+- !private ["s25LosslessStringConvertibleP", "_getBuiltinLogicValue"]
+- !private ["s25LosslessStringConvertibleP", "init"]
+- !private ["s10MirrorPathP", "init"]
+- !private ["So8NSCodingP", "DispatchQueue"]
+- !private ["So8NSCodingP", "MLHybrid"]
+- !private ["So8NSCodingP", "UIApplication"]
+- !private ["So8NSCodingP", "URL"]
+- !private ["So8NSCodingP", "code"]
+- !private ["So8NSCodingP", "commandExecute"]
+- !private ["So8NSCodingP", "print"]
+- !private ["So8NSCodingP", "reload"]
+- !private ["So8NSCodingP", "resourceSpecifier"]
+- !private ["So8NSCodingP", "scheme"]
+- !private ["So8NSCodingP", "statusCode"]
+- !private ["So9NSCopyingP", "code"]
+- !private ["So9NSCopyingP", "resourceSpecifier"]
+- !private ["So9NSCopyingP", "scheme"]
+- !private ["So9NSCopyingP", "statusCode"]
+- !private ["So7NSErrorC", "code"]
+- !private ["So26NSExtensionRequestHandlingP", "DispatchQueue"]
+- !private ["So26NSExtensionRequestHandlingP", "MLHybrid"]
+- !private ["So26NSExtensionRequestHandlingP", "UIApplication"]
+- !private ["So26NSExtensionRequestHandlingP", "URL"]
+- !private ["So26NSExtensionRequestHandlingP", "commandExecute"]
+- !private ["So26NSExtensionRequestHandlingP", "print"]
+- !private ["So21NSItemProviderReadingP", "resourceSpecifier"]
+- !private ["So21NSItemProviderReadingP", "scheme"]
+- !private ["So21NSItemProviderWritingP", "resourceSpecifier"]
+- !private ["So21NSItemProviderWritingP", "scheme"]
+- !private ["So8NSObjectC", "DispatchQueue"]
+- ["So8NSObjectC", "Error"]
+- !private ["So8NSObjectC", "HTTPURLResponse"]
+- !private ["So8NSObjectC", "MLHybrid"]
+- !private ["So8NSObjectC", "NSError"]
+- !private ["So8NSObjectC", "NSURL"]
+- !private ["So8NSObjectC", "String"]
+- !private ["So8NSObjectC", "UIApplication"]
+- !private ["So8NSObjectC", "URL"]
+- ["So8NSObjectC", "Void"]
+- ["So8NSObjectC", "WKNavigation"]
+- ["So8NSObjectC", "WKNavigationAction"]
+- ["So8NSObjectC", "WKNavigationActionPolicy"]
+- ["So8NSObjectC", "WKNavigationResponse"]
+- ["So8NSObjectC", "WKNavigationResponsePolicy"]
+- ["So8NSObjectC", "WKWebView"]
+- !private ["So8NSObjectC", "async"]
+- !private ["So8NSObjectC", "code"]
+- !private ["So8NSObjectC", "commandExecute"]
+- !private ["So8NSObjectC", "delegate"]
+- !private ["So8NSObjectC", "main"]
+- !private ["So8NSObjectC", "openURL"]
+- !private ["So8NSObjectC", "performCommand"]
+- !private ["So8NSObjectC", "print"]
+- !private ["So8NSObjectC", "reload"]
+- !private ["So8NSObjectC", "request"]
+- !private ["So8NSObjectC", "resourceSpecifier"]
+- !private ["So8NSObjectC", "response"]
+- !private ["So8NSObjectC", "scheme"]
+- !private ["So8NSObjectC", "shared"]
+- !private ["So8NSObjectC", "statusCode"]
+- ["So8NSObjectC", "webView"]
+- ["So8NSObjectC", "webViewWebContentProcessDidTerminate"]
+- !private ["So16NSObjectProtocolP", "DispatchQueue"]
+- !private ["So16NSObjectProtocolP", "MLHybrid"]
+- !private ["So16NSObjectProtocolP", "UIApplication"]
+- !private ["So16NSObjectProtocolP", "URL"]
+- !private ["So16NSObjectProtocolP", "async"]
+- !private ["So16NSObjectProtocolP", "code"]
+- !private ["So16NSObjectProtocolP", "commandExecute"]
+- !private ["So16NSObjectProtocolP", "delegate"]
+- !private ["So16NSObjectProtocolP", "main"]
+- !private ["So16NSObjectProtocolP", "openURL"]
+- !private ["So16NSObjectProtocolP", "performCommand"]
+- !private ["So16NSObjectProtocolP", "print"]
+- !private ["So16NSObjectProtocolP", "reload"]
+- !private ["So16NSObjectProtocolP", "request"]
+- !private ["So16NSObjectProtocolP", "resourceSpecifier"]
+- !private ["So16NSObjectProtocolP", "response"]
+- !private ["So16NSObjectProtocolP", "scheme"]
+- !private ["So16NSObjectProtocolP", "shared"]
+- !private ["So16NSObjectProtocolP", "statusCode"]
+- !private ["So14NSSecureCodingP", "code"]
+- !private ["So14NSSecureCodingP", "resourceSpecifier"]
+- !private ["So14NSSecureCodingP", "scheme"]
+- !private ["So14NSSecureCodingP", "statusCode"]
+- !private ["So5NSURLC", "resourceSpecifier"]
+- !private ["So5NSURLC", "scheme"]
+- !private ["So9OS_objectC", "async"]
+- !private ["So9OS_objectC", "main"]
+- !private ["s26RangeReplaceableCollectionP", "init"]
+- !private ["s16RawRepresentableP", "allow"]
+- !private ["s16RawRepresentableP", "cancel"]
+- !private ["10Foundation20ReferenceConvertibleP", "init"]
+- !private ["10Foundation20ReferenceConvertibleP", "url"]
+- !private ["s8SequenceP", "init"]
+- !private ["SS", "init"]
+- !private ["s14StringProtocolP", "init"]
+- !private ["s16TextOutputStreamP", "init"]
+- !private ["s20TextOutputStreamableP", "init"]
+- !private ["So29UIAccessibilityIdentificationP", "reload"]
+- !private ["So12UIAppearanceP", "reload"]
+- !private ["So21UIAppearanceContainerP", "DispatchQueue"]
+- !private ["So21UIAppearanceContainerP", "MLHybrid"]
+- !private ["So21UIAppearanceContainerP", "UIApplication"]
+- !private ["So21UIAppearanceContainerP", "URL"]
+- !private ["So21UIAppearanceContainerP", "commandExecute"]
+- !private ["So21UIAppearanceContainerP", "print"]
+- !private ["So21UIAppearanceContainerP", "reload"]
+- !private ["So13UIApplicationC", "openURL"]
+- !private ["So13UIApplicationC", "shared"]
+- !private ["So18UIContentContainerP", "DispatchQueue"]
+- !private ["So18UIContentContainerP", "MLHybrid"]
+- !private ["So18UIContentContainerP", "UIApplication"]
+- !private ["So18UIContentContainerP", "URL"]
+- !private ["So18UIContentContainerP", "commandExecute"]
+- !private ["So18UIContentContainerP", "print"]
+- !private ["So17UICoordinateSpaceP", "reload"]
+- !private ["So13UIDynamicItemP", "reload"]
+- !private ["So18UIFocusEnvironmentP", "DispatchQueue"]
+- !private ["So18UIFocusEnvironmentP", "MLHybrid"]
+- !private ["So18UIFocusEnvironmentP", "UIApplication"]
+- !private ["So18UIFocusEnvironmentP", "URL"]
+- !private ["So18UIFocusEnvironmentP", "commandExecute"]
+- !private ["So18UIFocusEnvironmentP", "print"]
+- !private ["So18UIFocusEnvironmentP", "reload"]
+- !private ["So11UIFocusItemP", "reload"]
+- !private ["So30UIPasteConfigurationSupportingP", "DispatchQueue"]
+- !private ["So30UIPasteConfigurationSupportingP", "MLHybrid"]
+- !private ["So30UIPasteConfigurationSupportingP", "UIApplication"]
+- !private ["So30UIPasteConfigurationSupportingP", "URL"]
+- !private ["So30UIPasteConfigurationSupportingP", "commandExecute"]
+- !private ["So30UIPasteConfigurationSupportingP", "openURL"]
+- !private ["So30UIPasteConfigurationSupportingP", "print"]
+- !private ["So30UIPasteConfigurationSupportingP", "reload"]
+- !private ["So30UIPasteConfigurationSupportingP", "shared"]
+- !private ["So11UIResponderC", "DispatchQueue"]
+- ["So11UIResponderC", "Error"]
+- !private ["So11UIResponderC", "HTTPURLResponse"]
+- !private ["So11UIResponderC", "MLHybrid"]
+- !private ["So11UIResponderC", "NSError"]
+- !private ["So11UIResponderC", "NSURL"]
+- !private ["So11UIResponderC", "String"]
+- !private ["So11UIResponderC", "UIApplication"]
+- !private ["So11UIResponderC", "URL"]
+- ["So11UIResponderC", "Void"]
+- ["So11UIResponderC", "WKNavigation"]
+- ["So11UIResponderC", "WKNavigationAction"]
+- ["So11UIResponderC", "WKNavigationActionPolicy"]
+- ["So11UIResponderC", "WKNavigationResponse"]
+- ["So11UIResponderC", "WKNavigationResponsePolicy"]
+- ["So11UIResponderC", "WKWebView"]
+- !private ["So11UIResponderC", "commandExecute"]
+- !private ["So11UIResponderC", "openURL"]
+- !private ["So11UIResponderC", "print"]
+- !private ["So11UIResponderC", "reload"]
+- !private ["So11UIResponderC", "shared"]
+- ["So11UIResponderC", "webView"]
+- ["So11UIResponderC", "webViewWebContentProcessDidTerminate"]
+- !private ["So30UIResponderStandardEditActionsP", "DispatchQueue"]
+- !private ["So30UIResponderStandardEditActionsP", "MLHybrid"]
+- !private ["So30UIResponderStandardEditActionsP", "UIApplication"]
+- !private ["So30UIResponderStandardEditActionsP", "URL"]
+- !private ["So30UIResponderStandardEditActionsP", "commandExecute"]
+- !private ["So30UIResponderStandardEditActionsP", "openURL"]
+- !private ["So30UIResponderStandardEditActionsP", "print"]
+- !private ["So30UIResponderStandardEditActionsP", "reload"]
+- !private ["So30UIResponderStandardEditActionsP", "shared"]
+- !private ["So20UIScrollViewDelegateP", "DispatchQueue"]
+- !private ["So20UIScrollViewDelegateP", "MLHybrid"]
+- !private ["So20UIScrollViewDelegateP", "UIApplication"]
+- !private ["So20UIScrollViewDelegateP", "URL"]
+- !private ["So20UIScrollViewDelegateP", "commandExecute"]
+- !private ["So20UIScrollViewDelegateP", "print"]
+- !private ["So16UIStateRestoringP", "DispatchQueue"]
+- !private ["So16UIStateRestoringP", "MLHybrid"]
+- !private ["So16UIStateRestoringP", "UIApplication"]
+- !private ["So16UIStateRestoringP", "URL"]
+- !private ["So16UIStateRestoringP", "commandExecute"]
+- !private ["So16UIStateRestoringP", "print"]
+- !private ["So18UITraitEnvironmentP", "DispatchQueue"]
+- !private ["So18UITraitEnvironmentP", "MLHybrid"]
+- !private ["So18UITraitEnvironmentP", "UIApplication"]
+- !private ["So18UITraitEnvironmentP", "URL"]
+- !private ["So18UITraitEnvironmentP", "commandExecute"]
+- !private ["So18UITraitEnvironmentP", "print"]
+- !private ["So18UITraitEnvironmentP", "reload"]
+- !private ["So6UIViewC", "reload"]
+- !private ["So16UIViewControllerC", "DispatchQueue"]
+- ["So16UIViewControllerC", "Error"]
+- !private ["So16UIViewControllerC", "HTTPURLResponse"]
+- !private ["So16UIViewControllerC", "MLHybrid"]
+- !private ["So16UIViewControllerC", "NSError"]
+- !private ["So16UIViewControllerC", "NSURL"]
+- !private ["So16UIViewControllerC", "String"]
+- !private ["So16UIViewControllerC", "UIApplication"]
+- !private ["So16UIViewControllerC", "URL"]
+- ["So16UIViewControllerC", "Void"]
+- ["So16UIViewControllerC", "WKNavigation"]
+- ["So16UIViewControllerC", "WKNavigationAction"]
+- ["So16UIViewControllerC", "WKNavigationActionPolicy"]
+- ["So16UIViewControllerC", "WKNavigationResponse"]
+- ["So16UIViewControllerC", "WKNavigationResponsePolicy"]
+- ["So16UIViewControllerC", "WKWebView"]
+- !private ["So16UIViewControllerC", "commandExecute"]
+- !private ["So16UIViewControllerC", "print"]
+- ["So16UIViewControllerC", "webView"]
+- ["So16UIViewControllerC", "webViewWebContentProcessDidTerminate"]
+- !private ["10Foundation3URLV", "init"]
+- !private ["10Foundation10URLRequestV", "url"]
+- !private ["So11URLResponseC", "statusCode"]
+- !private ["So18WKNavigationActionC", "request"]
+- !private ["SC24WKNavigationActionPolicyO", "allow"]
+- !private ["SC24WKNavigationActionPolicyO", "cancel"]
+- !private ["So20WKNavigationDelegateP", "DispatchQueue"]
+- !private ["So20WKNavigationDelegateP", "MLHybrid"]
+- !private ["So20WKNavigationDelegateP", "UIApplication"]
+- !private ["So20WKNavigationDelegateP", "URL"]
+- !private ["So20WKNavigationDelegateP", "commandExecute"]
+- !private ["So20WKNavigationDelegateP", "print"]
+- !private ["So20WKNavigationResponseC", "response"]
+- !private ["SC26WKNavigationResponsePolicyO", "allow"]
+- !private ["So22WKScriptMessageHandlerP", "DispatchQueue"]
+- !private ["So22WKScriptMessageHandlerP", "MLHybrid"]
+- !private ["So22WKScriptMessageHandlerP", "UIApplication"]
+- !private ["So22WKScriptMessageHandlerP", "URL"]
+- !private ["So22WKScriptMessageHandlerP", "commandExecute"]
+- !private ["So22WKScriptMessageHandlerP", "print"]
+- !private ["So12WKUIDelegateP", "DispatchQueue"]
+- !private ["So12WKUIDelegateP", "MLHybrid"]
+- !private ["So12WKUIDelegateP", "UIApplication"]
+- !private ["So12WKUIDelegateP", "URL"]
+- !private ["So12WKUIDelegateP", "commandExecute"]
+- !private ["So12WKUIDelegateP", "print"]
+- !private ["So9WKWebViewC", "reload"]
+- !private ["s37_DefaultCustomPlaygroundQuickLookableP", "reload"]
+- !private ["s35_ExpressibleByBuiltinBooleanLiteralP", "_getBuiltinLogicValue"]
+- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
+- !private ["s39_ExpressibleByBuiltinUTF16StringLiteralP", "init"]
+- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "init"]
+- !private ["s34_ExpressibleByFileReferenceLiteralP", "init"]
+- !private ["s33_ExpressibleByStringInterpolationP", "init"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "resourceSpecifier"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "scheme"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "DispatchQueue"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "MLHybrid"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "UIApplication"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "URL"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "async"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "code"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "commandExecute"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "delegate"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "main"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "openURL"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "performCommand"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "print"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "reload"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "request"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "resourceSpecifier"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "response"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "scheme"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "shared"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "statusCode"]
+- !private ["s21_ObjectiveCBridgeableP", "_getBuiltinLogicValue"]
+- !private ["s21_ObjectiveCBridgeableP", "init"]
+- !private ["s21_ObjectiveCBridgeableP", "url"]
+- !private ["s16_SwiftStringViewP", "init"]
+depends-nominal:
+- !private "s23BidirectionalCollectionP"
+- !private "Sb"
+- !private "So15CALayerDelegateP"
+- !private "s7CVarArgP"
+- !private "s10CollectionP"
+- !private "s10ComparableP"
+- !private "s28CustomDebugStringConvertibleP"
+- !private "s29CustomPlaygroundQuickLookableP"
+- !private "s17CustomReflectableP"
+- !private "s23CustomStringConvertibleP"
+- !private "s9DecodableP"
+- !private "So14DispatchObjectC"
+- !private "So13DispatchQueueC"
+- !private "s9EncodableP"
+- !private "s9EquatableP"
+- !private "s5ErrorP"
+- !private "s27ExpressibleByBooleanLiteralP"
+- !private "s43ExpressibleByExtendedGraphemeClusterLiteralP"
+- !private "s26ExpressibleByStringLiteralP"
+- !private "s33ExpressibleByUnicodeScalarLiteralP"
+- !private "So15HTTPURLResponseC"
+- !private "s8HashableP"
+- !private "8JGHybrid20HybirdCommandExecuteC"
+- !private "8JGHybrid6HybridC"
+- !private "8JGHybrid20HybridMethodProtocolP"
+- "8JGHybrid20HybridViewControllerC"
+- !private "s25LosslessStringConvertibleP"
+- !private "s10MirrorPathP"
+- !private "So8NSCodingP"
+- !private "So9NSCopyingP"
+- !private "So7NSErrorC"
+- !private "So26NSExtensionRequestHandlingP"
+- !private "So21NSItemProviderReadingP"
+- !private "So21NSItemProviderWritingP"
+- "So8NSObjectC"
+- !private "So16NSObjectProtocolP"
+- !private "So14NSSecureCodingP"
+- !private "So5NSURLC"
+- !private "So9OS_objectC"
+- !private "s26RangeReplaceableCollectionP"
+- !private "s16RawRepresentableP"
+- !private "10Foundation20ReferenceConvertibleP"
+- !private "s8SequenceP"
+- !private "SS"
+- !private "s14StringProtocolP"
+- !private "s16TextOutputStreamP"
+- !private "s20TextOutputStreamableP"
+- !private "So29UIAccessibilityIdentificationP"
+- !private "So12UIAppearanceP"
+- !private "So21UIAppearanceContainerP"
+- !private "So13UIApplicationC"
+- !private "So18UIContentContainerP"
+- !private "So17UICoordinateSpaceP"
+- !private "So13UIDynamicItemP"
+- !private "So18UIFocusEnvironmentP"
+- !private "So11UIFocusItemP"
+- !private "So30UIPasteConfigurationSupportingP"
+- "So11UIResponderC"
+- !private "So30UIResponderStandardEditActionsP"
+- !private "So20UIScrollViewDelegateP"
+- !private "So16UIStateRestoringP"
+- !private "So18UITraitEnvironmentP"
+- !private "So6UIViewC"
+- "So16UIViewControllerC"
+- !private "10Foundation3URLV"
+- !private "10Foundation10URLRequestV"
+- !private "So11URLResponseC"
+- !private "So18WKNavigationActionC"
+- !private "SC24WKNavigationActionPolicyO"
+- !private "So20WKNavigationDelegateP"
+- !private "So20WKNavigationResponseC"
+- !private "SC26WKNavigationResponsePolicyO"
+- !private "So22WKScriptMessageHandlerP"
+- !private "So12WKUIDelegateP"
+- !private "So9WKWebViewC"
+- !private "s37_DefaultCustomPlaygroundQuickLookableP"
+- !private "s35_ExpressibleByBuiltinBooleanLiteralP"
+- !private "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
+- !private "s34_ExpressibleByBuiltinStringLiteralP"
+- !private "s39_ExpressibleByBuiltinUTF16StringLiteralP"
+- !private "s41_ExpressibleByBuiltinUnicodeScalarLiteralP"
+- !private "s34_ExpressibleByFileReferenceLiteralP"
+- !private "s33_ExpressibleByStringInterpolationP"
+- !private "s35_HasCustomAnyHashableRepresentationP"
+- !private "10Foundation27_KeyValueCodingAndObservingP"
+- !private "s21_ObjectiveCBridgeableP"
+- !private "s16_SwiftStringViewP"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/QuartzCore.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Metal.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreLocation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreFoundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/Pods/Target Support Files/JGHybrid/JGHybrid-umbrella.h"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/Pods/Target Support Files/SSZipArchive/SSZipArchive-umbrella.h"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/Pods/Target Support Files/JGWebKitURLProtocol/JGWebKitURLProtocol-umbrella.h"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/Pods/SSZipArchive/SSZipArchive/ZipArchive.h"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/Pods/SSZipArchive/SSZipArchive/SSZipArchive.h"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/Pods/SSZipArchive/SSZipArchive/SSZipCommon.h"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/Pods/JGWebKitURLProtocol/JGWebKitURLProtocol/Classes/NSURLProtocol+WebKitSupport.h"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/build/Pods.build/Debug-iphonesimulator/JGHybrid.build/unextended-module.modulemap"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/build/Pods.build/Debug-iphonesimulator/SSZipArchive.build/module.modulemap"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/build/Pods.build/Debug-iphonesimulator/JGWebKitURLProtocol.build/module.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/OpenGLES.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CoreImage.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/usr/include/Darwin.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/CoreLocation.framework/Headers/CoreLocation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/WebKit.framework/Headers/WebKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
+interface-hash: "296593b2df9ee22c01f319243e36b87c"

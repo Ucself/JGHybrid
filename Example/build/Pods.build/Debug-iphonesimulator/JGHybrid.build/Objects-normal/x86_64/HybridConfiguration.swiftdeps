@@ -1,0 +1,221 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "MLHybridConfiguration"
+- "HybridConfiguration"
+provides-nominal:
+- "8JGHybrid19HybridConfigurationC"
+provides-member:
+- ["8JGHybrid19HybridConfigurationC", ""]
+provides-dynamic-lookup:
+depends-top-level:
+- "Bool"
+- "BooleanLiteralType"
+- "HybridConfiguration"
+- "MLHybridConfiguration"
+- "NSObject"
+- "String"
+- "StringLiteralType"
+- "UIColor"
+depends-member:
+- ["s23BidirectionalCollectionP", "init"]
+- ["s7CVarArgP", "MLHybridConfiguration"]
+- ["s7CVarArgP", "UIColor"]
+- ["s7CVarArgP", ""]
+- ["s7CVarArgP", "hybridColorWithHex"]
+- ["s7CVarArgP", "init"]
+- ["s7CVarArgP", "white"]
+- ["s10CollectionP", "init"]
+- ["s10ComparableP", "init"]
+- ["s28CustomDebugStringConvertibleP", "MLHybridConfiguration"]
+- ["s28CustomDebugStringConvertibleP", "UIColor"]
+- ["s28CustomDebugStringConvertibleP", ""]
+- ["s28CustomDebugStringConvertibleP", "hybridColorWithHex"]
+- ["s28CustomDebugStringConvertibleP", "init"]
+- ["s28CustomDebugStringConvertibleP", "white"]
+- ["s29CustomPlaygroundQuickLookableP", "init"]
+- ["s17CustomReflectableP", "init"]
+- ["s23CustomStringConvertibleP", "MLHybridConfiguration"]
+- ["s23CustomStringConvertibleP", "UIColor"]
+- ["s23CustomStringConvertibleP", ""]
+- ["s23CustomStringConvertibleP", "hybridColorWithHex"]
+- ["s23CustomStringConvertibleP", "init"]
+- ["s23CustomStringConvertibleP", "white"]
+- ["s9DecodableP", "init"]
+- ["s9EncodableP", "init"]
+- ["s9EquatableP", "MLHybridConfiguration"]
+- ["s9EquatableP", "UIColor"]
+- ["s9EquatableP", ""]
+- ["s9EquatableP", "hybridColorWithHex"]
+- ["s9EquatableP", "init"]
+- ["s9EquatableP", "white"]
+- ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
+- ["s26ExpressibleByStringLiteralP", "init"]
+- ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
+- ["s8HashableP", "MLHybridConfiguration"]
+- ["s8HashableP", "UIColor"]
+- ["s8HashableP", ""]
+- ["s8HashableP", "hybridColorWithHex"]
+- ["s8HashableP", "init"]
+- ["s8HashableP", "white"]
+- ["8JGHybrid19HybridConfigurationC", "Bool"]
+- ["8JGHybrid19HybridConfigurationC", "MLHybridConfiguration"]
+- ["8JGHybrid19HybridConfigurationC", "String"]
+- ["8JGHybrid19HybridConfigurationC", "UIColor"]
+- ["8JGHybrid19HybridConfigurationC", "backIndicator"]
+- ["8JGHybrid19HybridConfigurationC", "cacheMap"]
+- ["8JGHybrid19HybridConfigurationC", "cacheURLString"]
+- ["8JGHybrid19HybridConfigurationC", "default"]
+- ["8JGHybrid19HybridConfigurationC", "defaultTitleBackgroundTColor"]
+- ["8JGHybrid19HybridConfigurationC", "defaultTitleColor"]
+- ["8JGHybrid19HybridConfigurationC", "deinit"]
+- ["8JGHybrid19HybridConfigurationC", "init"]
+- ["8JGHybrid19HybridConfigurationC", "isCacheHtml"]
+- ["8JGHybrid19HybridConfigurationC", "isRegisterURLProtocol"]
+- ["8JGHybrid19HybridConfigurationC", "naviImagePrefixes"]
+- ["8JGHybrid19HybridConfigurationC", "offlinePackageJsonUrl"]
+- ["8JGHybrid19HybridConfigurationC", "pageShowEvent"]
+- ["8JGHybrid19HybridConfigurationC", "scheme"]
+- ["8JGHybrid19HybridConfigurationC", "userAgent"]
+- ["s25LosslessStringConvertibleP", "init"]
+- ["s10MirrorPathP", "init"]
+- ["So8NSCodingP", "hybridColorWithHex"]
+- ["So8NSCodingP", "white"]
+- ["So9NSCopyingP", "hybridColorWithHex"]
+- ["So9NSCopyingP", "white"]
+- ["So21NSItemProviderReadingP", "hybridColorWithHex"]
+- ["So21NSItemProviderReadingP", "white"]
+- ["So21NSItemProviderWritingP", "hybridColorWithHex"]
+- ["So21NSItemProviderWritingP", "white"]
+- ["So8NSObjectC", "Bool"]
+- ["So8NSObjectC", "MLHybridConfiguration"]
+- ["So8NSObjectC", "String"]
+- ["So8NSObjectC", "UIColor"]
+- ["So8NSObjectC", ""]
+- ["So8NSObjectC", "backIndicator"]
+- ["So8NSObjectC", "cacheMap"]
+- ["So8NSObjectC", "cacheURLString"]
+- ["So8NSObjectC", "default"]
+- ["So8NSObjectC", "defaultTitleBackgroundTColor"]
+- ["So8NSObjectC", "defaultTitleColor"]
+- ["So8NSObjectC", "hybridColorWithHex"]
+- ["So8NSObjectC", "init"]
+- ["So8NSObjectC", "isCacheHtml"]
+- ["So8NSObjectC", "isRegisterURLProtocol"]
+- ["So8NSObjectC", "naviImagePrefixes"]
+- ["So8NSObjectC", "offlinePackageJsonUrl"]
+- ["So8NSObjectC", "pageShowEvent"]
+- ["So8NSObjectC", "scheme"]
+- ["So8NSObjectC", "userAgent"]
+- ["So8NSObjectC", "white"]
+- ["So16NSObjectProtocolP", "MLHybridConfiguration"]
+- ["So16NSObjectProtocolP", "UIColor"]
+- ["So16NSObjectProtocolP", ""]
+- ["So16NSObjectProtocolP", "hybridColorWithHex"]
+- ["So16NSObjectProtocolP", "init"]
+- ["So16NSObjectProtocolP", "white"]
+- ["So14NSSecureCodingP", "hybridColorWithHex"]
+- ["So14NSSecureCodingP", "white"]
+- ["s26RangeReplaceableCollectionP", "init"]
+- ["s8SequenceP", "init"]
+- ["SS", "init"]
+- ["s14StringProtocolP", "init"]
+- ["s16TextOutputStreamP", "init"]
+- ["s20TextOutputStreamableP", "init"]
+- ["So7UIColorC", "hybridColorWithHex"]
+- ["So7UIColorC", "white"]
+- ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
+- ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
+- ["s39_ExpressibleByBuiltinUTF16StringLiteralP", "init"]
+- ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "init"]
+- ["s26_ExpressibleByColorLiteralP", "hybridColorWithHex"]
+- ["s26_ExpressibleByColorLiteralP", "white"]
+- ["s33_ExpressibleByStringInterpolationP", "init"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "MLHybridConfiguration"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "UIColor"]
+- ["10Foundation27_KeyValueCodingAndObservingP", ""]
+- ["10Foundation27_KeyValueCodingAndObservingP", "hybridColorWithHex"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "init"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "white"]
+- ["s21_ObjectiveCBridgeableP", "init"]
+- ["s16_SwiftStringViewP", "init"]
+depends-nominal:
+- "s23BidirectionalCollectionP"
+- "s7CVarArgP"
+- "s10CollectionP"
+- "s10ComparableP"
+- "s28CustomDebugStringConvertibleP"
+- "s29CustomPlaygroundQuickLookableP"
+- "s17CustomReflectableP"
+- "s23CustomStringConvertibleP"
+- "s9DecodableP"
+- "s9EncodableP"
+- "s9EquatableP"
+- "s43ExpressibleByExtendedGraphemeClusterLiteralP"
+- "s26ExpressibleByStringLiteralP"
+- "s33ExpressibleByUnicodeScalarLiteralP"
+- "s8HashableP"
+- "8JGHybrid19HybridConfigurationC"
+- "s25LosslessStringConvertibleP"
+- "s10MirrorPathP"
+- "So8NSCodingP"
+- "So9NSCopyingP"
+- "So21NSItemProviderReadingP"
+- "So21NSItemProviderWritingP"
+- "So8NSObjectC"
+- "So16NSObjectProtocolP"
+- "So14NSSecureCodingP"
+- "s26RangeReplaceableCollectionP"
+- "s8SequenceP"
+- "SS"
+- "s14StringProtocolP"
+- "s16TextOutputStreamP"
+- "s20TextOutputStreamableP"
+- "So7UIColorC"
+- "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
+- "s34_ExpressibleByBuiltinStringLiteralP"
+- "s39_ExpressibleByBuiltinUTF16StringLiteralP"
+- "s41_ExpressibleByBuiltinUnicodeScalarLiteralP"
+- "s26_ExpressibleByColorLiteralP"
+- "s33_ExpressibleByStringInterpolationP"
+- "10Foundation27_KeyValueCodingAndObservingP"
+- "s21_ObjectiveCBridgeableP"
+- "s16_SwiftStringViewP"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/QuartzCore.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Metal.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreLocation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreFoundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/Pods/Target Support Files/JGHybrid/JGHybrid-umbrella.h"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/Pods/Target Support Files/SSZipArchive/SSZipArchive-umbrella.h"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/Pods/Target Support Files/JGWebKitURLProtocol/JGWebKitURLProtocol-umbrella.h"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/Pods/SSZipArchive/SSZipArchive/ZipArchive.h"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/Pods/SSZipArchive/SSZipArchive/SSZipArchive.h"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/Pods/SSZipArchive/SSZipArchive/SSZipCommon.h"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/Pods/JGWebKitURLProtocol/JGWebKitURLProtocol/Classes/NSURLProtocol+WebKitSupport.h"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/build/Pods.build/Debug-iphonesimulator/JGHybrid.build/unextended-module.modulemap"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/build/Pods.build/Debug-iphonesimulator/SSZipArchive.build/module.modulemap"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/build/Pods.build/Debug-iphonesimulator/JGWebKitURLProtocol.build/module.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/OpenGLES.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CoreImage.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/usr/include/Darwin.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/CoreLocation.framework/Headers/CoreLocation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/WebKit.framework/Headers/WebKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
+interface-hash: "080be947591da1fa50f65dd988d10758"

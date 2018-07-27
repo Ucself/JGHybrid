@@ -32,6 +32,7 @@ class HybridOfflinePackageJsonParams: BaseParams {
 class HybridOfflinePackageSourceParams: BaseParams {
     
     var id:String = ""              //频道 id
+    var key:String = ""             //标识
     var name:String = ""            //频道
     var version:String = ""         //频道 版本
     var bundle:String = ""          //频道 资源
@@ -39,6 +40,7 @@ class HybridOfflinePackageSourceParams: BaseParams {
     override class func convert(_ dic: [String: AnyObject]) -> HybridOfflinePackageSourceParams {
         let obj:HybridOfflinePackageSourceParams = HybridOfflinePackageSourceParams.init()
         obj.id = dic["id"] as? String ?? ""
+        obj.key = dic["key"] as? String ?? ""
         obj.name = dic["name"] as? String ?? ""
         obj.version = dic["version"] as? String ?? ""
         obj.bundle = dic["bundle"] as? String ?? ""

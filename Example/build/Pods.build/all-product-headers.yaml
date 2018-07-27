@@ -1,0 +1,107 @@
+{
+  'version': 0,
+  'case-sensitive': 'false',
+  'roots': [
+    {
+      'type': 'directory',
+      'name': "/Users/goingta/Documents/Work/JGHybrid/Example/build/Debug-iphonesimulator/JGHybrid/JGHybrid.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "JGHybrid-Swift.h",
+          'external-contents': "/Users/goingta/Documents/Work/JGHybrid/Example/build/Debug-iphonesimulator/JGHybrid/JGHybrid.framework/Headers/JGHybrid-Swift.h"
+        },
+        {
+          'type': 'file',
+          'name': "JGHybrid-umbrella.h",
+          'external-contents': "/Users/goingta/Documents/Work/JGHybrid/Example/Pods/Target Support Files/JGHybrid/JGHybrid-umbrella.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/goingta/Documents/Work/JGHybrid/Example/build/Debug-iphonesimulator/JGHybrid/JGHybrid.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/goingta/Documents/Work/JGHybrid/Example/build/Pods.build/Debug-iphonesimulator/JGHybrid.build/module.modulemap"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/goingta/Documents/Work/JGHybrid/Example/build/Debug-iphonesimulator/JGWebKitURLProtocol/JGWebKitURLProtocol.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "JGWebKitURLProtocol-Swift.h",
+          'external-contents': "/Users/goingta/Documents/Work/JGHybrid/Example/build/Debug-iphonesimulator/JGWebKitURLProtocol/JGWebKitURLProtocol.framework/Headers/JGWebKitURLProtocol-Swift.h"
+        },
+        {
+          'type': 'file',
+          'name': "JGWebKitURLProtocol-umbrella.h",
+          'external-contents': "/Users/goingta/Documents/Work/JGHybrid/Example/Pods/Target Support Files/JGWebKitURLProtocol/JGWebKitURLProtocol-umbrella.h"
+        },
+        {
+          'type': 'file',
+          'name': "NSURLProtocol+WebKitSupport.h",
+          'external-contents': "/Users/goingta/Documents/Work/JGHybrid/Example/Pods/JGWebKitURLProtocol/JGWebKitURLProtocol/Classes/NSURLProtocol+WebKitSupport.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/goingta/Documents/Work/JGHybrid/Example/build/Debug-iphonesimulator/JGWebKitURLProtocol/JGWebKitURLProtocol.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/goingta/Documents/Work/JGHybrid/Example/build/Pods.build/Debug-iphonesimulator/JGWebKitURLProtocol.build/module.modulemap"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/goingta/Documents/Work/JGHybrid/Example/build/Debug-iphonesimulator/SSZipArchive/SSZipArchive.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "SSZipArchive-Swift.h",
+          'external-contents': "/Users/goingta/Documents/Work/JGHybrid/Example/build/Debug-iphonesimulator/SSZipArchive/SSZipArchive.framework/Headers/SSZipArchive-Swift.h"
+        },
+        {
+          'type': 'file',
+          'name': "SSZipArchive-umbrella.h",
+          'external-contents': "/Users/goingta/Documents/Work/JGHybrid/Example/Pods/Target Support Files/SSZipArchive/SSZipArchive-umbrella.h"
+        },
+        {
+          'type': 'file',
+          'name': "SSZipArchive.h",
+          'external-contents': "/Users/goingta/Documents/Work/JGHybrid/Example/Pods/SSZipArchive/SSZipArchive/SSZipArchive.h"
+        },
+        {
+          'type': 'file',
+          'name': "SSZipCommon.h",
+          'external-contents': "/Users/goingta/Documents/Work/JGHybrid/Example/Pods/SSZipArchive/SSZipArchive/SSZipCommon.h"
+        },
+        {
+          'type': 'file',
+          'name': "ZipArchive.h",
+          'external-contents': "/Users/goingta/Documents/Work/JGHybrid/Example/Pods/SSZipArchive/SSZipArchive/ZipArchive.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/goingta/Documents/Work/JGHybrid/Example/build/Debug-iphonesimulator/SSZipArchive/SSZipArchive.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/goingta/Documents/Work/JGHybrid/Example/build/Pods.build/Debug-iphonesimulator/SSZipArchive.build/module.modulemap"
+        }
+      ]
+    }
+  ]
+}

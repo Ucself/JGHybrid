@@ -33,7 +33,7 @@ open class Hybrid: NSObject {
         UserDefaults.standard.set(true, forKey: HybridConstantModel.userDefaultSwitchCache)
         //解压压缩包
         if HybridConfiguration.default.isCacheHtml {
-            HybirdCommandExecute().HybridUnzipHybiryOfflineZip()
+            HybridCacheManager.default.HybridUnzipHybiryOfflineZip()
         }
     }
     //加载页面

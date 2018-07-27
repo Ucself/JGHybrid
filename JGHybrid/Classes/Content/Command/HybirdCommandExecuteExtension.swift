@@ -352,6 +352,7 @@ extension HybirdCommandExecute {
         }
         UIPasteboard.general.string = params.content
     }
+    
     //MARK: Mainfest 检测
     //离线缓存数据
     func hybridOfflineCacheMainfest(){
@@ -372,7 +373,7 @@ extension HybirdCommandExecute {
         do {
             //旧的ManiFest.json 的 hash
             let oldManifestHash:String? = UserDefaults.standard.string(forKey: HybridConstantModel.userDefaultMainfest)
-//            let oldManifestHash:String? = "\(Date.init().timeIntervalSince1970)"          //测试代码
+            //            let oldManifestHash:String? = "\(Date.init().timeIntervalSince1970)"          //测试代码
             //获取返回的数据
             guard let responseData = data else { return }
             //返回的data 转换为 字典
@@ -416,61 +417,11 @@ extension HybirdCommandExecute {
             guard let url:URL = URL.init(string: MLHybridConfiguration.default.offlinePackageJsonUrl) else { return }
             let task:URLSessionTask = session.dataTask(with: url) { (data, response, error) in
                 //数据文件逻辑判断
-                self.hybridOfflinePackageJson(data: data)
+                HybridCacheManager.default.hybridOfflinePackageJson(data: data)
             }
             task.resume()
         }
     }
     
-    //H5 版本问题
-    func hybridOfflinePackageJson(data:Data?) {
-        do {
-            //旧的版本oldOfflineVersion
-            //let oldOfflineVersion:String? = UserDefaults.standard.string(forKey: HybridConstantModel.userDefaultOfflineVersion)
-            
-            //获取返回的数据
-            guard let responseData = data else { return }
-            //返回的data 转换为 字典
-            let jsonData = try JSONSerialization.jsonObject(with: responseData, options: JSONSerialization.ReadingOptions.allowFragments)
-            guard let offlineDic = jsonData as? [[String:AnyObject]] else { return }
-            //判断数组个数
-            guard offlineDic.count >= 1 else { return }
-            //字典转换为对象
-            let offlinePackageJsonParams:HybridOfflinePackageJsonParams = HybridOfflinePackageJsonParams.convert(offlineDic[0])
-            //下载并解压
-            for itemSource:HybridOfflinePackageSourceParams in offlinePackageJsonParams.source {
-                //版本检测
-                let oldVersion:String? = UserDefaults.standard.string(forKey: HybridConstantModel.userDefaultOfflineVersion + itemSource.name)
-                if oldVersion == itemSource.version {
-                    continue
-                }
-                //下载路径
-                let uZipPath = "/\(HybridConstantModel.offlinePackageFolder)/" + itemSource.name
-                HybridCacheManager.default.downZip(addPath: uZipPath, urlString: itemSource.bundle) { (result, msg) in
-                    if result {
-                        UserDefaults.standard.set(itemSource.version, forKey: HybridConstantModel.userDefaultOfflineVersion + itemSource.name)
-                    }
-                    else {
-                        print( "HybridCacheManager.default.downZip" + msg)
-                    }
-                }
-            }
-            
-        }
-        catch let catchError {
-            print("hybridOfflinePackageJson.catchError -> \(catchError)")
-        }
-    }
-    
-    //解压项目中的文件
-    func HybridUnzipHybiryOfflineZip(){
-        let documentPath = NSHomeDirectory() + "/Documents"
-        guard let zipPath = Bundle.main.path(forResource: "HybridOfflinePackage", ofType: "zip") else { return }
-        if !FileManager.default.fileExists(atPath: documentPath+"/HybridOfflinePackage") {
-            DispatchQueue.global().async {
-                SSZipArchive.unzipFile(atPath: zipPath, toDestination: documentPath)
-            }
-        }
-    }
 }
 

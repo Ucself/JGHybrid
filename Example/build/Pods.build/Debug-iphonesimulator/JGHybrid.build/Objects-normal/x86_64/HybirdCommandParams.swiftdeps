@@ -1,0 +1,445 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "MLHybridMethodType"
+- "HybridMethodType"
+- "MLHybirdCommandParams"
+- "HybirdCommandParams"
+- "BaseParams"
+provides-nominal:
+- "8JGHybrid16HybridMethodTypeO"
+- "8JGHybrid19HybirdCommandParamsC"
+- "8JGHybrid10BaseParamsC"
+provides-member:
+- ["8JGHybrid16HybridMethodTypeO", ""]
+- ["8JGHybrid19HybirdCommandParamsC", ""]
+- ["8JGHybrid10BaseParamsC", ""]
+provides-dynamic-lookup:
+depends-top-level:
+- "=="
+- "AnyObject"
+- !private "Array"
+- "AssignmentPrecedence"
+- "BaseParams"
+- "HybirdCommandParams"
+- !private "HybridBackParams"
+- !private "HybridClipboardParams"
+- !private "HybridDeviceParams"
+- !private "HybridForwardParams"
+- !private "HybridHeaderParams"
+- !private "HybridInitParams"
+- !private "HybridLocationParams"
+- "HybridMethodType"
+- !private "HybridModalParams"
+- !private "HybridPagehideParams"
+- !private "HybridPageshowParams"
+- !private "HybridScrollParams"
+- !private "HybridStorageParams"
+- "MLHybirdCommandParams"
+- "MLHybridMethodType"
+- "NSObject"
+- "String"
+- "StringLiteralType"
+- !private "_findStringSwitchCase"
+- !private "~="
+depends-member:
+- ["8JGHybrid10BaseParamsC", "AnyObject"]
+- ["8JGHybrid10BaseParamsC", "BaseParams"]
+- ["8JGHybrid10BaseParamsC", "String"]
+- ["8JGHybrid10BaseParamsC", "convert"]
+- ["8JGHybrid10BaseParamsC", "deinit"]
+- ["8JGHybrid10BaseParamsC", "init"]
+- ["s23BidirectionalCollectionP", "init"]
+- !private ["Sb", "_getBuiltinLogicValue"]
+- ["s7CVarArgP", "BaseParams"]
+- !private ["s7CVarArgP", "HybridBackParams"]
+- !private ["s7CVarArgP", "HybridClipboardParams"]
+- !private ["s7CVarArgP", "HybridDeviceParams"]
+- !private ["s7CVarArgP", "HybridForwardParams"]
+- !private ["s7CVarArgP", "HybridHeaderParams"]
+- !private ["s7CVarArgP", "HybridInitParams"]
+- !private ["s7CVarArgP", "HybridLocationParams"]
+- !private ["s7CVarArgP", "HybridModalParams"]
+- !private ["s7CVarArgP", "HybridPagehideParams"]
+- !private ["s7CVarArgP", "HybridPageshowParams"]
+- !private ["s7CVarArgP", "HybridScrollParams"]
+- !private ["s7CVarArgP", "HybridStorageParams"]
+- !private ["s7CVarArgP", "MLHybirdCommandParams"]
+- ["s7CVarArgP", ""]
+- !private ["s7CVarArgP", "_getBuiltinLogicValue"]
+- !private ["s7CVarArgP", "commandParams"]
+- !private ["s7CVarArgP", "convert"]
+- !private ["s7CVarArgP", "dic"]
+- ["s7CVarArgP", "init"]
+- ["s10CollectionP", "init"]
+- ["s10ComparableP", "init"]
+- ["s28CustomDebugStringConvertibleP", "BaseParams"]
+- !private ["s28CustomDebugStringConvertibleP", "HybridBackParams"]
+- !private ["s28CustomDebugStringConvertibleP", "HybridClipboardParams"]
+- !private ["s28CustomDebugStringConvertibleP", "HybridDeviceParams"]
+- !private ["s28CustomDebugStringConvertibleP", "HybridForwardParams"]
+- !private ["s28CustomDebugStringConvertibleP", "HybridHeaderParams"]
+- !private ["s28CustomDebugStringConvertibleP", "HybridInitParams"]
+- !private ["s28CustomDebugStringConvertibleP", "HybridLocationParams"]
+- !private ["s28CustomDebugStringConvertibleP", "HybridModalParams"]
+- !private ["s28CustomDebugStringConvertibleP", "HybridPagehideParams"]
+- !private ["s28CustomDebugStringConvertibleP", "HybridPageshowParams"]
+- !private ["s28CustomDebugStringConvertibleP", "HybridScrollParams"]
+- !private ["s28CustomDebugStringConvertibleP", "HybridStorageParams"]
+- !private ["s28CustomDebugStringConvertibleP", "MLHybirdCommandParams"]
+- ["s28CustomDebugStringConvertibleP", ""]
+- !private ["s28CustomDebugStringConvertibleP", "commandParams"]
+- !private ["s28CustomDebugStringConvertibleP", "convert"]
+- !private ["s28CustomDebugStringConvertibleP", "dic"]
+- ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s29CustomPlaygroundQuickLookableP", "_getBuiltinLogicValue"]
+- ["s29CustomPlaygroundQuickLookableP", "init"]
+- !private ["s17CustomReflectableP", "_getBuiltinLogicValue"]
+- ["s17CustomReflectableP", "init"]
+- ["s23CustomStringConvertibleP", "BaseParams"]
+- !private ["s23CustomStringConvertibleP", "HybridBackParams"]
+- !private ["s23CustomStringConvertibleP", "HybridClipboardParams"]
+- !private ["s23CustomStringConvertibleP", "HybridDeviceParams"]
+- !private ["s23CustomStringConvertibleP", "HybridForwardParams"]
+- !private ["s23CustomStringConvertibleP", "HybridHeaderParams"]
+- !private ["s23CustomStringConvertibleP", "HybridInitParams"]
+- !private ["s23CustomStringConvertibleP", "HybridLocationParams"]
+- !private ["s23CustomStringConvertibleP", "HybridModalParams"]
+- !private ["s23CustomStringConvertibleP", "HybridPagehideParams"]
+- !private ["s23CustomStringConvertibleP", "HybridPageshowParams"]
+- !private ["s23CustomStringConvertibleP", "HybridScrollParams"]
+- !private ["s23CustomStringConvertibleP", "HybridStorageParams"]
+- !private ["s23CustomStringConvertibleP", "MLHybirdCommandParams"]
+- ["s23CustomStringConvertibleP", ""]
+- !private ["s23CustomStringConvertibleP", "_getBuiltinLogicValue"]
+- !private ["s23CustomStringConvertibleP", "commandParams"]
+- !private ["s23CustomStringConvertibleP", "convert"]
+- !private ["s23CustomStringConvertibleP", "dic"]
+- ["s23CustomStringConvertibleP", "init"]
+- !private ["s9DecodableP", "_getBuiltinLogicValue"]
+- ["s9DecodableP", "init"]
+- !private ["s9EncodableP", "_getBuiltinLogicValue"]
+- ["s9EncodableP", "init"]
+- ["s9EquatableP", "BaseParams"]
+- !private ["s9EquatableP", "HybridBackParams"]
+- !private ["s9EquatableP", "HybridClipboardParams"]
+- !private ["s9EquatableP", "HybridDeviceParams"]
+- !private ["s9EquatableP", "HybridForwardParams"]
+- !private ["s9EquatableP", "HybridHeaderParams"]
+- !private ["s9EquatableP", "HybridInitParams"]
+- !private ["s9EquatableP", "HybridLocationParams"]
+- !private ["s9EquatableP", "HybridModalParams"]
+- !private ["s9EquatableP", "HybridPagehideParams"]
+- !private ["s9EquatableP", "HybridPageshowParams"]
+- !private ["s9EquatableP", "HybridScrollParams"]
+- !private ["s9EquatableP", "HybridStorageParams"]
+- !private ["s9EquatableP", "MLHybirdCommandParams"]
+- ["s9EquatableP", "RawValue"]
+- ["s9EquatableP", ""]
+- ["s9EquatableP", "_Default_RawValue"]
+- !private ["s9EquatableP", "_findStringSwitchCase"]
+- !private ["s9EquatableP", "_getBuiltinLogicValue"]
+- !private ["s9EquatableP", "commandParams"]
+- !private ["s9EquatableP", "convert"]
+- !private ["s9EquatableP", "dic"]
+- ["s9EquatableP", "hashValue"]
+- ["s9EquatableP", "hybridBack"]
+- ["s9EquatableP", "hybridClipboard"]
+- ["s9EquatableP", "hybridDevice"]
+- ["s9EquatableP", "hybridForward"]
+- ["s9EquatableP", "hybridHeader"]
+- ["s9EquatableP", "hybridInit"]
+- ["s9EquatableP", "hybridLocation"]
+- ["s9EquatableP", "hybridModal"]
+- ["s9EquatableP", "hybridPagehide"]
+- ["s9EquatableP", "hybridPageshow"]
+- ["s9EquatableP", "hybridScroll"]
+- ["s9EquatableP", "hybridStorage"]
+- ["s9EquatableP", "init"]
+- ["s9EquatableP", "rawValue"]
+- !private ["s27ExpressibleByBooleanLiteralP", "_getBuiltinLogicValue"]
+- ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
+- ["s26ExpressibleByStringLiteralP", "init"]
+- ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
+- ["s8HashableP", "BaseParams"]
+- !private ["s8HashableP", "HybridBackParams"]
+- !private ["s8HashableP", "HybridClipboardParams"]
+- !private ["s8HashableP", "HybridDeviceParams"]
+- !private ["s8HashableP", "HybridForwardParams"]
+- !private ["s8HashableP", "HybridHeaderParams"]
+- !private ["s8HashableP", "HybridInitParams"]
+- !private ["s8HashableP", "HybridLocationParams"]
+- !private ["s8HashableP", "HybridModalParams"]
+- !private ["s8HashableP", "HybridPagehideParams"]
+- !private ["s8HashableP", "HybridPageshowParams"]
+- !private ["s8HashableP", "HybridScrollParams"]
+- !private ["s8HashableP", "HybridStorageParams"]
+- !private ["s8HashableP", "MLHybirdCommandParams"]
+- ["s8HashableP", "RawValue"]
+- ["s8HashableP", ""]
+- ["s8HashableP", "_Default_RawValue"]
+- !private ["s8HashableP", "_findStringSwitchCase"]
+- !private ["s8HashableP", "_getBuiltinLogicValue"]
+- !private ["s8HashableP", "commandParams"]
+- !private ["s8HashableP", "convert"]
+- !private ["s8HashableP", "dic"]
+- ["s8HashableP", "hashValue"]
+- ["s8HashableP", "hybridBack"]
+- ["s8HashableP", "hybridClipboard"]
+- ["s8HashableP", "hybridDevice"]
+- ["s8HashableP", "hybridForward"]
+- ["s8HashableP", "hybridHeader"]
+- ["s8HashableP", "hybridInit"]
+- ["s8HashableP", "hybridLocation"]
+- ["s8HashableP", "hybridModal"]
+- ["s8HashableP", "hybridPagehide"]
+- ["s8HashableP", "hybridPageshow"]
+- ["s8HashableP", "hybridScroll"]
+- ["s8HashableP", "hybridStorage"]
+- ["s8HashableP", "init"]
+- ["s8HashableP", "rawValue"]
+- ["8JGHybrid19HybirdCommandParamsC", "AnyObject"]
+- ["8JGHybrid19HybirdCommandParamsC", "BaseParams"]
+- !private ["8JGHybrid19HybirdCommandParamsC", "HybridBackParams"]
+- !private ["8JGHybrid19HybirdCommandParamsC", "HybridClipboardParams"]
+- !private ["8JGHybrid19HybirdCommandParamsC", "HybridDeviceParams"]
+- !private ["8JGHybrid19HybirdCommandParamsC", "HybridForwardParams"]
+- !private ["8JGHybrid19HybirdCommandParamsC", "HybridHeaderParams"]
+- !private ["8JGHybrid19HybirdCommandParamsC", "HybridInitParams"]
+- !private ["8JGHybrid19HybirdCommandParamsC", "HybridLocationParams"]
+- !private ["8JGHybrid19HybirdCommandParamsC", "HybridModalParams"]
+- !private ["8JGHybrid19HybirdCommandParamsC", "HybridPagehideParams"]
+- !private ["8JGHybrid19HybirdCommandParamsC", "HybridPageshowParams"]
+- !private ["8JGHybrid19HybirdCommandParamsC", "HybridScrollParams"]
+- !private ["8JGHybrid19HybirdCommandParamsC", "HybridStorageParams"]
+- ["8JGHybrid19HybirdCommandParamsC", "MLHybirdCommandParams"]
+- ["8JGHybrid19HybirdCommandParamsC", "MLHybridMethodType"]
+- ["8JGHybrid19HybirdCommandParamsC", "String"]
+- ["8JGHybrid19HybirdCommandParamsC", "commandParams"]
+- ["8JGHybrid19HybirdCommandParamsC", "convert"]
+- ["8JGHybrid19HybirdCommandParamsC", "deinit"]
+- ["8JGHybrid19HybirdCommandParamsC", "dic"]
+- ["8JGHybrid19HybirdCommandParamsC", "init"]
+- !private ["8JGHybrid16HybridBackParamsC", "convert"]
+- !private ["8JGHybrid21HybridClipboardParamsC", "convert"]
+- !private ["8JGHybrid18HybridDeviceParamsC", "convert"]
+- !private ["8JGHybrid19HybridForwardParamsC", "convert"]
+- !private ["8JGHybrid18HybridHeaderParamsC", "convert"]
+- !private ["8JGHybrid16HybridInitParamsC", "convert"]
+- !private ["8JGHybrid20HybridLocationParamsC", "convert"]
+- ["8JGHybrid16HybridMethodTypeO", "RawValue"]
+- ["8JGHybrid16HybridMethodTypeO", "UnKonw"]
+- ["8JGHybrid16HybridMethodTypeO", "_Default_RawValue"]
+- !private ["8JGHybrid16HybridMethodTypeO", "_findStringSwitchCase"]
+- ["8JGHybrid16HybridMethodTypeO", "deinit"]
+- ["8JGHybrid16HybridMethodTypeO", "hashValue"]
+- ["8JGHybrid16HybridMethodTypeO", "hybridBack"]
+- ["8JGHybrid16HybridMethodTypeO", "hybridClipboard"]
+- ["8JGHybrid16HybridMethodTypeO", "hybridDevice"]
+- ["8JGHybrid16HybridMethodTypeO", "hybridDismiss"]
+- ["8JGHybrid16HybridMethodTypeO", "hybridForward"]
+- ["8JGHybrid16HybridMethodTypeO", "hybridHeader"]
+- ["8JGHybrid16HybridMethodTypeO", "hybridInit"]
+- ["8JGHybrid16HybridMethodTypeO", "hybridLocation"]
+- ["8JGHybrid16HybridMethodTypeO", "hybridModal"]
+- ["8JGHybrid16HybridMethodTypeO", "hybridPagehide"]
+- ["8JGHybrid16HybridMethodTypeO", "hybridPageshow"]
+- ["8JGHybrid16HybridMethodTypeO", "hybridScroll"]
+- ["8JGHybrid16HybridMethodTypeO", "hybridStorage"]
+- ["8JGHybrid16HybridMethodTypeO", "init"]
+- ["8JGHybrid16HybridMethodTypeO", "rawValue"]
+- !private ["8JGHybrid17HybridModalParamsC", "convert"]
+- !private ["8JGHybrid20HybridPagehideParamsC", "convert"]
+- !private ["8JGHybrid20HybridPageshowParamsC", "convert"]
+- !private ["8JGHybrid18HybridScrollParamsC", "convert"]
+- !private ["8JGHybrid19HybridStorageParamsC", "convert"]
+- !private ["s25LosslessStringConvertibleP", "_getBuiltinLogicValue"]
+- ["s25LosslessStringConvertibleP", "init"]
+- ["s10MirrorPathP", "init"]
+- ["So8NSObjectC", "AnyObject"]
+- ["So8NSObjectC", "BaseParams"]
+- !private ["So8NSObjectC", "HybridBackParams"]
+- !private ["So8NSObjectC", "HybridClipboardParams"]
+- !private ["So8NSObjectC", "HybridDeviceParams"]
+- !private ["So8NSObjectC", "HybridForwardParams"]
+- !private ["So8NSObjectC", "HybridHeaderParams"]
+- !private ["So8NSObjectC", "HybridInitParams"]
+- !private ["So8NSObjectC", "HybridLocationParams"]
+- !private ["So8NSObjectC", "HybridModalParams"]
+- !private ["So8NSObjectC", "HybridPagehideParams"]
+- !private ["So8NSObjectC", "HybridPageshowParams"]
+- !private ["So8NSObjectC", "HybridScrollParams"]
+- !private ["So8NSObjectC", "HybridStorageParams"]
+- ["So8NSObjectC", "MLHybirdCommandParams"]
+- ["So8NSObjectC", "MLHybridMethodType"]
+- ["So8NSObjectC", "String"]
+- ["So8NSObjectC", ""]
+- ["So8NSObjectC", "commandParams"]
+- ["So8NSObjectC", "convert"]
+- ["So8NSObjectC", "dic"]
+- ["So8NSObjectC", "init"]
+- ["So16NSObjectProtocolP", "BaseParams"]
+- !private ["So16NSObjectProtocolP", "HybridBackParams"]
+- !private ["So16NSObjectProtocolP", "HybridClipboardParams"]
+- !private ["So16NSObjectProtocolP", "HybridDeviceParams"]
+- !private ["So16NSObjectProtocolP", "HybridForwardParams"]
+- !private ["So16NSObjectProtocolP", "HybridHeaderParams"]
+- !private ["So16NSObjectProtocolP", "HybridInitParams"]
+- !private ["So16NSObjectProtocolP", "HybridLocationParams"]
+- !private ["So16NSObjectProtocolP", "HybridModalParams"]
+- !private ["So16NSObjectProtocolP", "HybridPagehideParams"]
+- !private ["So16NSObjectProtocolP", "HybridPageshowParams"]
+- !private ["So16NSObjectProtocolP", "HybridScrollParams"]
+- !private ["So16NSObjectProtocolP", "HybridStorageParams"]
+- !private ["So16NSObjectProtocolP", "MLHybirdCommandParams"]
+- ["So16NSObjectProtocolP", ""]
+- !private ["So16NSObjectProtocolP", "commandParams"]
+- !private ["So16NSObjectProtocolP", "convert"]
+- !private ["So16NSObjectProtocolP", "dic"]
+- ["So16NSObjectProtocolP", "init"]
+- ["s26RangeReplaceableCollectionP", "init"]
+- ["s16RawRepresentableP", "RawValue"]
+- ["s16RawRepresentableP", ""]
+- ["s16RawRepresentableP", "_Default_RawValue"]
+- !private ["s16RawRepresentableP", "_findStringSwitchCase"]
+- ["s16RawRepresentableP", "hashValue"]
+- ["s16RawRepresentableP", "hybridBack"]
+- ["s16RawRepresentableP", "hybridClipboard"]
+- ["s16RawRepresentableP", "hybridDevice"]
+- ["s16RawRepresentableP", "hybridForward"]
+- ["s16RawRepresentableP", "hybridHeader"]
+- ["s16RawRepresentableP", "hybridInit"]
+- ["s16RawRepresentableP", "hybridLocation"]
+- ["s16RawRepresentableP", "hybridModal"]
+- ["s16RawRepresentableP", "hybridPagehide"]
+- ["s16RawRepresentableP", "hybridPageshow"]
+- ["s16RawRepresentableP", "hybridScroll"]
+- ["s16RawRepresentableP", "hybridStorage"]
+- ["s16RawRepresentableP", "init"]
+- ["s16RawRepresentableP", "rawValue"]
+- ["s8SequenceP", "init"]
+- !private ["s12StaticStringV", "init"]
+- ["SS", "init"]
+- ["s14StringProtocolP", "init"]
+- ["s16TextOutputStreamP", "init"]
+- ["s20TextOutputStreamableP", "init"]
+- !private ["s35_ExpressibleByBuiltinBooleanLiteralP", "_getBuiltinLogicValue"]
+- ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
+- ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
+- ["s39_ExpressibleByBuiltinUTF16StringLiteralP", "init"]
+- ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "init"]
+- ["s33_ExpressibleByStringInterpolationP", "init"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "BaseParams"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "HybridBackParams"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "HybridClipboardParams"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "HybridDeviceParams"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "HybridForwardParams"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "HybridHeaderParams"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "HybridInitParams"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "HybridLocationParams"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "HybridModalParams"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "HybridPagehideParams"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "HybridPageshowParams"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "HybridScrollParams"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "HybridStorageParams"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "MLHybirdCommandParams"]
+- ["10Foundation27_KeyValueCodingAndObservingP", ""]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "commandParams"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "convert"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "dic"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "init"]
+- !private ["s21_ObjectiveCBridgeableP", "_getBuiltinLogicValue"]
+- ["s21_ObjectiveCBridgeableP", "init"]
+- ["s16_SwiftStringViewP", "init"]
+depends-nominal:
+- "8JGHybrid10BaseParamsC"
+- "s23BidirectionalCollectionP"
+- !private "Sb"
+- "s7CVarArgP"
+- "s10CollectionP"
+- "s10ComparableP"
+- "s28CustomDebugStringConvertibleP"
+- "s29CustomPlaygroundQuickLookableP"
+- "s17CustomReflectableP"
+- "s23CustomStringConvertibleP"
+- "s9DecodableP"
+- "s9EncodableP"
+- "s9EquatableP"
+- !private "s27ExpressibleByBooleanLiteralP"
+- "s43ExpressibleByExtendedGraphemeClusterLiteralP"
+- "s26ExpressibleByStringLiteralP"
+- "s33ExpressibleByUnicodeScalarLiteralP"
+- "s8HashableP"
+- "8JGHybrid19HybirdCommandParamsC"
+- !private "8JGHybrid16HybridBackParamsC"
+- !private "8JGHybrid21HybridClipboardParamsC"
+- !private "8JGHybrid18HybridDeviceParamsC"
+- !private "8JGHybrid19HybridForwardParamsC"
+- !private "8JGHybrid18HybridHeaderParamsC"
+- !private "8JGHybrid16HybridInitParamsC"
+- !private "8JGHybrid20HybridLocationParamsC"
+- "8JGHybrid16HybridMethodTypeO"
+- !private "8JGHybrid17HybridModalParamsC"
+- !private "8JGHybrid20HybridPagehideParamsC"
+- !private "8JGHybrid20HybridPageshowParamsC"
+- !private "8JGHybrid18HybridScrollParamsC"
+- !private "8JGHybrid19HybridStorageParamsC"
+- "s25LosslessStringConvertibleP"
+- "s10MirrorPathP"
+- "So8NSObjectC"
+- "So16NSObjectProtocolP"
+- "s26RangeReplaceableCollectionP"
+- "s16RawRepresentableP"
+- "s8SequenceP"
+- !private "s12StaticStringV"
+- "SS"
+- "s14StringProtocolP"
+- "s16TextOutputStreamP"
+- "s20TextOutputStreamableP"
+- !private "s35_ExpressibleByBuiltinBooleanLiteralP"
+- "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
+- "s34_ExpressibleByBuiltinStringLiteralP"
+- "s39_ExpressibleByBuiltinUTF16StringLiteralP"
+- "s41_ExpressibleByBuiltinUnicodeScalarLiteralP"
+- "s33_ExpressibleByStringInterpolationP"
+- "10Foundation27_KeyValueCodingAndObservingP"
+- "s21_ObjectiveCBridgeableP"
+- "s16_SwiftStringViewP"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/QuartzCore.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Metal.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreLocation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreFoundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/Pods/Target Support Files/JGHybrid/JGHybrid-umbrella.h"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/Pods/Target Support Files/SSZipArchive/SSZipArchive-umbrella.h"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/Pods/Target Support Files/JGWebKitURLProtocol/JGWebKitURLProtocol-umbrella.h"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/Pods/SSZipArchive/SSZipArchive/ZipArchive.h"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/Pods/SSZipArchive/SSZipArchive/SSZipArchive.h"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/Pods/SSZipArchive/SSZipArchive/SSZipCommon.h"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/Pods/JGWebKitURLProtocol/JGWebKitURLProtocol/Classes/NSURLProtocol+WebKitSupport.h"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/build/Pods.build/Debug-iphonesimulator/JGHybrid.build/unextended-module.modulemap"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/build/Pods.build/Debug-iphonesimulator/SSZipArchive.build/module.modulemap"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/build/Pods.build/Debug-iphonesimulator/JGWebKitURLProtocol.build/module.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/OpenGLES.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CoreImage.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/usr/include/Darwin.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/CoreLocation.framework/Headers/CoreLocation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/WebKit.framework/Headers/WebKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
+interface-hash: "072ca6363eb222ceedc11dd3f0b2a843"

@@ -1,0 +1,448 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "MLHybirdCommand"
+- "HybirdCommand"
+provides-nominal:
+- "8JGHybrid13HybirdCommandC"
+provides-member:
+- ["8JGHybrid13HybirdCommandC", ""]
+provides-dynamic-lookup:
+depends-top-level:
+- !private "!="
+- !private "+"
+- !private "??"
+- "AnyObject"
+- "AssignmentPrecedence"
+- "CastingPrecedence"
+- !private "Dictionary"
+- "HybirdCommand"
+- "Int"
+- "MLHybirdCommand"
+- "MLHybirdCommandParams"
+- !private "MLHybridConfiguration"
+- "MLHybridViewController"
+- "String"
+- "StringLiteralType"
+- "URL"
+- "URLRequest"
+- !private "UnicodeScalarType"
+- "Void"
+- "WKWebView"
+depends-member:
+- !private ["s23BidirectionalCollectionP", "hybridDecodeJsonStr"]
+- !private ["s23BidirectionalCollectionP", "hybridDecodeURLString"]
+- ["s23BidirectionalCollectionP", "init"]
+- !private ["Sb", "_getBuiltinLogicValue"]
+- !private ["So15CALayerDelegateP", "evaluateJavaScript"]
+- ["So15CALayerDelegateP", "init"]
+- !private ["s7CVarArgP", "_getBuiltinLogicValue"]
+- !private ["s7CVarArgP", "default"]
+- !private ["s7CVarArgP", "evaluateJavaScript"]
+- !private ["s7CVarArgP", "hybridDecodeJsonStr"]
+- !private ["s7CVarArgP", "hybridDecodeURLString"]
+- !private ["s7CVarArgP", "hybridEvent"]
+- !private ["s7CVarArgP", "hybridJSONString"]
+- ["s7CVarArgP", "init"]
+- !private ["s7CVarArgP", "scheme"]
+- !private ["s7CVarArgP", "subscript"]
+- !private ["s10CollectionP", "hybridDecodeJsonStr"]
+- !private ["s10CollectionP", "hybridDecodeURLString"]
+- !private ["s10CollectionP", "hybridJSONString"]
+- ["s10CollectionP", "init"]
+- !private ["s10CollectionP", "subscript"]
+- !private ["s10ComparableP", "hybridDecodeJsonStr"]
+- !private ["s10ComparableP", "hybridDecodeURLString"]
+- ["s10ComparableP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "default"]
+- !private ["s28CustomDebugStringConvertibleP", "evaluateJavaScript"]
+- !private ["s28CustomDebugStringConvertibleP", "host"]
+- !private ["s28CustomDebugStringConvertibleP", "hybridDecodeJsonStr"]
+- !private ["s28CustomDebugStringConvertibleP", "hybridDecodeURLString"]
+- !private ["s28CustomDebugStringConvertibleP", "hybridEvent"]
+- !private ["s28CustomDebugStringConvertibleP", "hybridJSONString"]
+- !private ["s28CustomDebugStringConvertibleP", "hybridURLParamsDic"]
+- ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "scheme"]
+- !private ["s28CustomDebugStringConvertibleP", "subscript"]
+- !private ["s28CustomDebugStringConvertibleP", "url"]
+- !private ["s29CustomPlaygroundQuickLookableP", "_getBuiltinLogicValue"]
+- !private ["s29CustomPlaygroundQuickLookableP", "host"]
+- !private ["s29CustomPlaygroundQuickLookableP", "hybridDecodeJsonStr"]
+- !private ["s29CustomPlaygroundQuickLookableP", "hybridDecodeURLString"]
+- !private ["s29CustomPlaygroundQuickLookableP", "hybridURLParamsDic"]
+- ["s29CustomPlaygroundQuickLookableP", "init"]
+- !private ["s29CustomPlaygroundQuickLookableP", "scheme"]
+- !private ["s17CustomReflectableP", "_getBuiltinLogicValue"]
+- !private ["s17CustomReflectableP", "hybridDecodeJsonStr"]
+- !private ["s17CustomReflectableP", "hybridDecodeURLString"]
+- !private ["s17CustomReflectableP", "hybridJSONString"]
+- ["s17CustomReflectableP", "init"]
+- !private ["s17CustomReflectableP", "subscript"]
+- !private ["s17CustomReflectableP", "url"]
+- !private ["s23CustomStringConvertibleP", "_getBuiltinLogicValue"]
+- !private ["s23CustomStringConvertibleP", "default"]
+- !private ["s23CustomStringConvertibleP", "evaluateJavaScript"]
+- !private ["s23CustomStringConvertibleP", "host"]
+- !private ["s23CustomStringConvertibleP", "hybridDecodeJsonStr"]
+- !private ["s23CustomStringConvertibleP", "hybridDecodeURLString"]
+- !private ["s23CustomStringConvertibleP", "hybridEvent"]
+- !private ["s23CustomStringConvertibleP", "hybridJSONString"]
+- !private ["s23CustomStringConvertibleP", "hybridURLParamsDic"]
+- ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "scheme"]
+- !private ["s23CustomStringConvertibleP", "subscript"]
+- !private ["s23CustomStringConvertibleP", "url"]
+- !private ["s9DecodableP", "_getBuiltinLogicValue"]
+- !private ["s9DecodableP", "host"]
+- !private ["s9DecodableP", "hybridDecodeJsonStr"]
+- !private ["s9DecodableP", "hybridDecodeURLString"]
+- !private ["s9DecodableP", "hybridJSONString"]
+- !private ["s9DecodableP", "hybridURLParamsDic"]
+- ["s9DecodableP", "init"]
+- !private ["s9DecodableP", "scheme"]
+- !private ["s9DecodableP", "subscript"]
+- !private ["s10DictionaryV", "hybridJSONString"]
+- !private ["s10DictionaryV", "subscript"]
+- !private ["s9EncodableP", "_getBuiltinLogicValue"]
+- !private ["s9EncodableP", "host"]
+- !private ["s9EncodableP", "hybridDecodeJsonStr"]
+- !private ["s9EncodableP", "hybridDecodeURLString"]
+- !private ["s9EncodableP", "hybridJSONString"]
+- !private ["s9EncodableP", "hybridURLParamsDic"]
+- ["s9EncodableP", "init"]
+- !private ["s9EncodableP", "scheme"]
+- !private ["s9EncodableP", "subscript"]
+- !private ["s9EquatableP", "_getBuiltinLogicValue"]
+- !private ["s9EquatableP", "default"]
+- !private ["s9EquatableP", "evaluateJavaScript"]
+- !private ["s9EquatableP", "host"]
+- !private ["s9EquatableP", "hybridDecodeJsonStr"]
+- !private ["s9EquatableP", "hybridDecodeURLString"]
+- !private ["s9EquatableP", "hybridEvent"]
+- !private ["s9EquatableP", "hybridJSONString"]
+- !private ["s9EquatableP", "hybridURLParamsDic"]
+- ["s9EquatableP", "init"]
+- !private ["s9EquatableP", "scheme"]
+- !private ["s9EquatableP", "subscript"]
+- !private ["s9EquatableP", "url"]
+- !private ["s5ErrorP", "localizedDescription"]
+- !private ["s27ExpressibleByBooleanLiteralP", "_getBuiltinLogicValue"]
+- !private ["s30ExpressibleByDictionaryLiteralP", "hybridJSONString"]
+- !private ["s30ExpressibleByDictionaryLiteralP", "subscript"]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "hybridDecodeJsonStr"]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "hybridDecodeURLString"]
+- ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s23ExpressibleByNilLiteralP", "hybridDecodeURLString"]
+- !private ["s26ExpressibleByStringLiteralP", "hybridDecodeJsonStr"]
+- !private ["s26ExpressibleByStringLiteralP", "hybridDecodeURLString"]
+- ["s26ExpressibleByStringLiteralP", "init"]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", "hybridDecodeJsonStr"]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", "hybridDecodeURLString"]
+- ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
+- !private ["s8HashableP", "_getBuiltinLogicValue"]
+- !private ["s8HashableP", "default"]
+- !private ["s8HashableP", "evaluateJavaScript"]
+- !private ["s8HashableP", "host"]
+- !private ["s8HashableP", "hybridDecodeJsonStr"]
+- !private ["s8HashableP", "hybridDecodeURLString"]
+- !private ["s8HashableP", "hybridEvent"]
+- !private ["s8HashableP", "hybridURLParamsDic"]
+- ["s8HashableP", "init"]
+- !private ["s8HashableP", "scheme"]
+- !private ["s8HashableP", "url"]
+- ["8JGHybrid13HybirdCommandC", "AnyObject"]
+- ["8JGHybrid13HybirdCommandC", "Int"]
+- ["8JGHybrid13HybirdCommandC", "MLHybirdCommand"]
+- ["8JGHybrid13HybirdCommandC", "MLHybirdCommandParams"]
+- !private ["8JGHybrid13HybirdCommandC", "MLHybridConfiguration"]
+- ["8JGHybrid13HybirdCommandC", "MLHybridViewController"]
+- ["8JGHybrid13HybirdCommandC", "String"]
+- ["8JGHybrid13HybirdCommandC", "URL"]
+- ["8JGHybrid13HybirdCommandC", "URLRequest"]
+- ["8JGHybrid13HybirdCommandC", "Void"]
+- ["8JGHybrid13HybirdCommandC", "WKWebView"]
+- ["8JGHybrid13HybirdCommandC", "analysis"]
+- ["8JGHybrid13HybirdCommandC", "args"]
+- ["8JGHybrid13HybirdCommandC", "callBack"]
+- ["8JGHybrid13HybirdCommandC", "callbackId"]
+- !private ["8JGHybrid13HybirdCommandC", "contentResolver"]
+- ["8JGHybrid13HybirdCommandC", "deinit"]
+- ["8JGHybrid13HybirdCommandC", "init"]
+- ["8JGHybrid13HybirdCommandC", "name"]
+- ["8JGHybrid13HybirdCommandC", "params"]
+- ["8JGHybrid13HybirdCommandC", "viewController"]
+- ["8JGHybrid13HybirdCommandC", "webView"]
+- ["8JGHybrid19HybirdCommandParamsC", "init"]
+- !private ["8JGHybrid19HybridConfigurationC", "default"]
+- !private ["8JGHybrid19HybridConfigurationC", "scheme"]
+- !private ["8JGHybrid20HybridViewControllerC", "hybridEvent"]
+- !private ["s25LosslessStringConvertibleP", "_getBuiltinLogicValue"]
+- !private ["s25LosslessStringConvertibleP", "hybridDecodeJsonStr"]
+- !private ["s25LosslessStringConvertibleP", "hybridDecodeURLString"]
+- ["s25LosslessStringConvertibleP", "init"]
+- !private ["s10MirrorPathP", "hybridDecodeJsonStr"]
+- !private ["s10MirrorPathP", "hybridDecodeURLString"]
+- ["s10MirrorPathP", "init"]
+- !private ["So8NSCodingP", "evaluateJavaScript"]
+- !private ["So8NSCodingP", "hybridDecodeJsonStr"]
+- !private ["So8NSCodingP", "hybridDecodeURLString"]
+- !private ["So8NSCodingP", "hybridEvent"]
+- ["So8NSCodingP", "init"]
+- !private ["So9NSCopyingP", "hybridDecodeJsonStr"]
+- !private ["So9NSCopyingP", "hybridDecodeURLString"]
+- !private ["So26NSExtensionRequestHandlingP", "hybridEvent"]
+- !private ["So21NSItemProviderReadingP", "hybridDecodeJsonStr"]
+- !private ["So21NSItemProviderReadingP", "hybridDecodeURLString"]
+- !private ["So21NSItemProviderWritingP", "hybridDecodeJsonStr"]
+- !private ["So21NSItemProviderWritingP", "hybridDecodeURLString"]
+- !private ["So16NSMutableCopyingP", "hybridDecodeJsonStr"]
+- !private ["So16NSMutableCopyingP", "hybridDecodeURLString"]
+- !private ["So8NSObjectC", "default"]
+- !private ["So8NSObjectC", "evaluateJavaScript"]
+- !private ["So8NSObjectC", "hybridDecodeJsonStr"]
+- !private ["So8NSObjectC", "hybridDecodeURLString"]
+- !private ["So8NSObjectC", "hybridEvent"]
+- ["So8NSObjectC", "init"]
+- !private ["So8NSObjectC", "scheme"]
+- !private ["So16NSObjectProtocolP", "default"]
+- !private ["So16NSObjectProtocolP", "evaluateJavaScript"]
+- !private ["So16NSObjectProtocolP", "hybridDecodeJsonStr"]
+- !private ["So16NSObjectProtocolP", "hybridDecodeURLString"]
+- !private ["So16NSObjectProtocolP", "hybridEvent"]
+- ["So16NSObjectProtocolP", "init"]
+- !private ["So16NSObjectProtocolP", "scheme"]
+- !private ["So14NSSecureCodingP", "hybridDecodeJsonStr"]
+- !private ["So14NSSecureCodingP", "hybridDecodeURLString"]
+- !private ["So8NSStringC", "hybridDecodeJsonStr"]
+- !private ["So8NSStringC", "hybridDecodeURLString"]
+- !private ["Sq", "hybridDecodeURLString"]
+- !private ["s26RangeReplaceableCollectionP", "hybridDecodeJsonStr"]
+- !private ["s26RangeReplaceableCollectionP", "hybridDecodeURLString"]
+- ["s26RangeReplaceableCollectionP", "init"]
+- !private ["10Foundation20ReferenceConvertibleP", "host"]
+- !private ["10Foundation20ReferenceConvertibleP", "hybridURLParamsDic"]
+- !private ["10Foundation20ReferenceConvertibleP", "scheme"]
+- !private ["10Foundation20ReferenceConvertibleP", "url"]
+- !private ["s8SequenceP", "hybridDecodeJsonStr"]
+- !private ["s8SequenceP", "hybridDecodeURLString"]
+- !private ["s8SequenceP", "hybridJSONString"]
+- ["s8SequenceP", "init"]
+- !private ["s8SequenceP", "subscript"]
+- !private ["SS", "hybridDecodeJsonStr"]
+- !private ["SS", "hybridDecodeURLString"]
+- ["SS", "init"]
+- !private ["s14StringProtocolP", "hybridDecodeJsonStr"]
+- !private ["s14StringProtocolP", "hybridDecodeURLString"]
+- ["s14StringProtocolP", "init"]
+- !private ["s16TextOutputStreamP", "hybridDecodeJsonStr"]
+- !private ["s16TextOutputStreamP", "hybridDecodeURLString"]
+- ["s16TextOutputStreamP", "init"]
+- !private ["s20TextOutputStreamableP", "hybridDecodeJsonStr"]
+- !private ["s20TextOutputStreamableP", "hybridDecodeURLString"]
+- ["s20TextOutputStreamableP", "init"]
+- !private ["So29UIAccessibilityIdentificationP", "evaluateJavaScript"]
+- ["So29UIAccessibilityIdentificationP", "init"]
+- !private ["So12UIAppearanceP", "evaluateJavaScript"]
+- ["So12UIAppearanceP", "init"]
+- !private ["So21UIAppearanceContainerP", "evaluateJavaScript"]
+- !private ["So21UIAppearanceContainerP", "hybridEvent"]
+- ["So21UIAppearanceContainerP", "init"]
+- !private ["So18UIContentContainerP", "hybridEvent"]
+- !private ["So17UICoordinateSpaceP", "evaluateJavaScript"]
+- ["So17UICoordinateSpaceP", "init"]
+- !private ["So13UIDynamicItemP", "evaluateJavaScript"]
+- ["So13UIDynamicItemP", "init"]
+- !private ["So18UIFocusEnvironmentP", "evaluateJavaScript"]
+- !private ["So18UIFocusEnvironmentP", "hybridEvent"]
+- ["So18UIFocusEnvironmentP", "init"]
+- !private ["So11UIFocusItemP", "evaluateJavaScript"]
+- ["So11UIFocusItemP", "init"]
+- !private ["So30UIPasteConfigurationSupportingP", "evaluateJavaScript"]
+- !private ["So30UIPasteConfigurationSupportingP", "hybridEvent"]
+- ["So30UIPasteConfigurationSupportingP", "init"]
+- !private ["So11UIResponderC", "evaluateJavaScript"]
+- !private ["So11UIResponderC", "hybridEvent"]
+- ["So11UIResponderC", "init"]
+- !private ["So30UIResponderStandardEditActionsP", "evaluateJavaScript"]
+- !private ["So30UIResponderStandardEditActionsP", "hybridEvent"]
+- ["So30UIResponderStandardEditActionsP", "init"]
+- !private ["So20UIScrollViewDelegateP", "hybridEvent"]
+- !private ["So16UIStateRestoringP", "hybridEvent"]
+- !private ["So18UITraitEnvironmentP", "evaluateJavaScript"]
+- !private ["So18UITraitEnvironmentP", "hybridEvent"]
+- ["So18UITraitEnvironmentP", "init"]
+- !private ["So6UIViewC", "evaluateJavaScript"]
+- ["So6UIViewC", "init"]
+- !private ["So16UIViewControllerC", "hybridEvent"]
+- !private ["10Foundation3URLV", "host"]
+- !private ["10Foundation3URLV", "hybridURLParamsDic"]
+- !private ["10Foundation3URLV", "scheme"]
+- !private ["10Foundation10URLRequestV", "url"]
+- !private ["So20WKNavigationDelegateP", "hybridEvent"]
+- !private ["So22WKScriptMessageHandlerP", "hybridEvent"]
+- !private ["So12WKUIDelegateP", "hybridEvent"]
+- !private ["So9WKWebViewC", "evaluateJavaScript"]
+- ["So9WKWebViewC", "init"]
+- !private ["s37_DefaultCustomPlaygroundQuickLookableP", "evaluateJavaScript"]
+- ["s37_DefaultCustomPlaygroundQuickLookableP", "init"]
+- !private ["s35_ExpressibleByBuiltinBooleanLiteralP", "_getBuiltinLogicValue"]
+- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "hybridDecodeJsonStr"]
+- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "hybridDecodeURLString"]
+- ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s34_ExpressibleByBuiltinStringLiteralP", "hybridDecodeJsonStr"]
+- !private ["s34_ExpressibleByBuiltinStringLiteralP", "hybridDecodeURLString"]
+- ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
+- !private ["s39_ExpressibleByBuiltinUTF16StringLiteralP", "hybridDecodeJsonStr"]
+- !private ["s39_ExpressibleByBuiltinUTF16StringLiteralP", "hybridDecodeURLString"]
+- ["s39_ExpressibleByBuiltinUTF16StringLiteralP", "init"]
+- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "hybridDecodeJsonStr"]
+- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "hybridDecodeURLString"]
+- ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "init"]
+- !private ["s34_ExpressibleByFileReferenceLiteralP", "host"]
+- !private ["s34_ExpressibleByFileReferenceLiteralP", "hybridURLParamsDic"]
+- !private ["s34_ExpressibleByFileReferenceLiteralP", "scheme"]
+- !private ["s33_ExpressibleByStringInterpolationP", "hybridDecodeJsonStr"]
+- !private ["s33_ExpressibleByStringInterpolationP", "hybridDecodeURLString"]
+- ["s33_ExpressibleByStringInterpolationP", "init"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "hybridDecodeJsonStr"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "hybridDecodeURLString"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "default"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "evaluateJavaScript"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "hybridDecodeJsonStr"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "hybridDecodeURLString"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "hybridEvent"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "init"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "scheme"]
+- !private ["s21_ObjectiveCBridgeableP", "_getBuiltinLogicValue"]
+- !private ["s21_ObjectiveCBridgeableP", "host"]
+- !private ["s21_ObjectiveCBridgeableP", "hybridDecodeJsonStr"]
+- !private ["s21_ObjectiveCBridgeableP", "hybridDecodeURLString"]
+- !private ["s21_ObjectiveCBridgeableP", "hybridJSONString"]
+- !private ["s21_ObjectiveCBridgeableP", "hybridURLParamsDic"]
+- ["s21_ObjectiveCBridgeableP", "init"]
+- !private ["s21_ObjectiveCBridgeableP", "scheme"]
+- !private ["s21_ObjectiveCBridgeableP", "subscript"]
+- !private ["s21_ObjectiveCBridgeableP", "url"]
+- !private ["s16_SwiftStringViewP", "hybridDecodeJsonStr"]
+- !private ["s16_SwiftStringViewP", "hybridDecodeURLString"]
+- ["s16_SwiftStringViewP", "init"]
+depends-nominal:
+- "s23BidirectionalCollectionP"
+- !private "Sb"
+- "So15CALayerDelegateP"
+- "s7CVarArgP"
+- "s10CollectionP"
+- "s10ComparableP"
+- "s28CustomDebugStringConvertibleP"
+- "s29CustomPlaygroundQuickLookableP"
+- "s17CustomReflectableP"
+- "s23CustomStringConvertibleP"
+- "s9DecodableP"
+- !private "s10DictionaryV"
+- "s9EncodableP"
+- "s9EquatableP"
+- !private "s5ErrorP"
+- !private "s27ExpressibleByBooleanLiteralP"
+- !private "s30ExpressibleByDictionaryLiteralP"
+- "s43ExpressibleByExtendedGraphemeClusterLiteralP"
+- !private "s23ExpressibleByNilLiteralP"
+- "s26ExpressibleByStringLiteralP"
+- "s33ExpressibleByUnicodeScalarLiteralP"
+- "s8HashableP"
+- "8JGHybrid13HybirdCommandC"
+- "8JGHybrid19HybirdCommandParamsC"
+- !private "8JGHybrid19HybridConfigurationC"
+- !private "8JGHybrid20HybridViewControllerC"
+- "s25LosslessStringConvertibleP"
+- "s10MirrorPathP"
+- "So8NSCodingP"
+- !private "So9NSCopyingP"
+- !private "So26NSExtensionRequestHandlingP"
+- !private "So21NSItemProviderReadingP"
+- !private "So21NSItemProviderWritingP"
+- !private "So16NSMutableCopyingP"
+- "So8NSObjectC"
+- "So16NSObjectProtocolP"
+- !private "So14NSSecureCodingP"
+- !private "So8NSStringC"
+- !private "Sq"
+- "s26RangeReplaceableCollectionP"
+- !private "10Foundation20ReferenceConvertibleP"
+- "s8SequenceP"
+- "SS"
+- "s14StringProtocolP"
+- "s16TextOutputStreamP"
+- "s20TextOutputStreamableP"
+- "So29UIAccessibilityIdentificationP"
+- "So12UIAppearanceP"
+- "So21UIAppearanceContainerP"
+- !private "So18UIContentContainerP"
+- "So17UICoordinateSpaceP"
+- "So13UIDynamicItemP"
+- "So18UIFocusEnvironmentP"
+- "So11UIFocusItemP"
+- "So30UIPasteConfigurationSupportingP"
+- "So11UIResponderC"
+- "So30UIResponderStandardEditActionsP"
+- !private "So20UIScrollViewDelegateP"
+- !private "So16UIStateRestoringP"
+- "So18UITraitEnvironmentP"
+- "So6UIViewC"
+- !private "So16UIViewControllerC"
+- !private "10Foundation3URLV"
+- !private "10Foundation10URLRequestV"
+- !private "So20WKNavigationDelegateP"
+- !private "So22WKScriptMessageHandlerP"
+- !private "So12WKUIDelegateP"
+- "So9WKWebViewC"
+- "s37_DefaultCustomPlaygroundQuickLookableP"
+- !private "s35_ExpressibleByBuiltinBooleanLiteralP"
+- "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
+- "s34_ExpressibleByBuiltinStringLiteralP"
+- "s39_ExpressibleByBuiltinUTF16StringLiteralP"
+- "s41_ExpressibleByBuiltinUnicodeScalarLiteralP"
+- !private "s34_ExpressibleByFileReferenceLiteralP"
+- "s33_ExpressibleByStringInterpolationP"
+- !private "s35_HasCustomAnyHashableRepresentationP"
+- "10Foundation27_KeyValueCodingAndObservingP"
+- "s21_ObjectiveCBridgeableP"
+- "s16_SwiftStringViewP"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/QuartzCore.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Metal.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreLocation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreFoundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/Pods/Target Support Files/JGHybrid/JGHybrid-umbrella.h"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/Pods/Target Support Files/SSZipArchive/SSZipArchive-umbrella.h"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/Pods/Target Support Files/JGWebKitURLProtocol/JGWebKitURLProtocol-umbrella.h"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/Pods/SSZipArchive/SSZipArchive/ZipArchive.h"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/Pods/SSZipArchive/SSZipArchive/SSZipArchive.h"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/Pods/SSZipArchive/SSZipArchive/SSZipCommon.h"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/Pods/JGWebKitURLProtocol/JGWebKitURLProtocol/Classes/NSURLProtocol+WebKitSupport.h"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/build/Pods.build/Debug-iphonesimulator/JGHybrid.build/unextended-module.modulemap"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/build/Pods.build/Debug-iphonesimulator/SSZipArchive.build/module.modulemap"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/build/Pods.build/Debug-iphonesimulator/JGWebKitURLProtocol.build/module.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/OpenGLES.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CoreImage.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/usr/include/Darwin.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/CoreLocation.framework/Headers/CoreLocation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/WebKit.framework/Headers/WebKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
+interface-hash: "85682f4c550e45c12bd5a157f565bbf9"

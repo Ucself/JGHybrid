@@ -1,0 +1,366 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "HybridOfflinePackageJsonParams"
+- "HybridOfflinePackageSourceParams"
+- "HybridOfflinePackageDataParams"
+- "HybridOfflinePackageResourcesParams"
+provides-nominal:
+- "8JGHybrid30HybridOfflinePackageJsonParamsC"
+- "8JGHybrid32HybridOfflinePackageSourceParamsC"
+- "8JGHybrid30HybridOfflinePackageDataParamsC"
+- "8JGHybrid35HybridOfflinePackageResourcesParamsC"
+provides-member:
+- ["8JGHybrid30HybridOfflinePackageJsonParamsC", ""]
+- ["8JGHybrid32HybridOfflinePackageSourceParamsC", ""]
+- ["8JGHybrid30HybridOfflinePackageDataParamsC", ""]
+- ["8JGHybrid35HybridOfflinePackageResourcesParamsC", ""]
+provides-dynamic-lookup:
+depends-top-level:
+- !private "??"
+- "AnyObject"
+- "AssignmentPrecedence"
+- "BaseParams"
+- "CastingPrecedence"
+- "HybridOfflinePackageDataParams"
+- "HybridOfflinePackageJsonParams"
+- "HybridOfflinePackageResourcesParams"
+- "HybridOfflinePackageSourceParams"
+- "String"
+- "StringLiteralType"
+depends-member:
+- !private ["Sa", "append"]
+- ["8JGHybrid10BaseParamsC", "AnyObject"]
+- ["8JGHybrid10BaseParamsC", "HybridOfflinePackageDataParams"]
+- ["8JGHybrid10BaseParamsC", "HybridOfflinePackageJsonParams"]
+- ["8JGHybrid10BaseParamsC", "HybridOfflinePackageResourcesParams"]
+- ["8JGHybrid10BaseParamsC", "HybridOfflinePackageSourceParams"]
+- ["8JGHybrid10BaseParamsC", "String"]
+- ["8JGHybrid10BaseParamsC", ""]
+- ["8JGHybrid10BaseParamsC", "appName"]
+- ["8JGHybrid10BaseParamsC", "bundle"]
+- ["8JGHybrid10BaseParamsC", "channel"]
+- ["8JGHybrid10BaseParamsC", "convert"]
+- ["8JGHybrid10BaseParamsC", "id"]
+- ["8JGHybrid10BaseParamsC", "init"]
+- ["8JGHybrid10BaseParamsC", "key"]
+- ["8JGHybrid10BaseParamsC", "name"]
+- ["8JGHybrid10BaseParamsC", "resources"]
+- ["8JGHybrid10BaseParamsC", "source"]
+- ["8JGHybrid10BaseParamsC", "src"]
+- ["8JGHybrid10BaseParamsC", "version"]
+- !private ["s23BidirectionalCollectionP", "append"]
+- ["s23BidirectionalCollectionP", "init"]
+- !private ["s7CVarArgP", "HybridOfflinePackageDataParams"]
+- !private ["s7CVarArgP", "HybridOfflinePackageJsonParams"]
+- !private ["s7CVarArgP", "HybridOfflinePackageResourcesParams"]
+- !private ["s7CVarArgP", "HybridOfflinePackageSourceParams"]
+- ["s7CVarArgP", ""]
+- !private ["s7CVarArgP", "appName"]
+- !private ["s7CVarArgP", "append"]
+- !private ["s7CVarArgP", "bundle"]
+- !private ["s7CVarArgP", "channel"]
+- !private ["s7CVarArgP", "convert"]
+- !private ["s7CVarArgP", "id"]
+- ["s7CVarArgP", "init"]
+- !private ["s7CVarArgP", "key"]
+- !private ["s7CVarArgP", "name"]
+- !private ["s7CVarArgP", "resources"]
+- !private ["s7CVarArgP", "source"]
+- !private ["s7CVarArgP", "src"]
+- !private ["s7CVarArgP", "subscript"]
+- !private ["s7CVarArgP", "version"]
+- !private ["s10CollectionP", "append"]
+- ["s10CollectionP", "init"]
+- !private ["s10CollectionP", "subscript"]
+- ["s10ComparableP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "HybridOfflinePackageDataParams"]
+- !private ["s28CustomDebugStringConvertibleP", "HybridOfflinePackageJsonParams"]
+- !private ["s28CustomDebugStringConvertibleP", "HybridOfflinePackageResourcesParams"]
+- !private ["s28CustomDebugStringConvertibleP", "HybridOfflinePackageSourceParams"]
+- ["s28CustomDebugStringConvertibleP", ""]
+- !private ["s28CustomDebugStringConvertibleP", "appName"]
+- !private ["s28CustomDebugStringConvertibleP", "append"]
+- !private ["s28CustomDebugStringConvertibleP", "bundle"]
+- !private ["s28CustomDebugStringConvertibleP", "channel"]
+- !private ["s28CustomDebugStringConvertibleP", "convert"]
+- !private ["s28CustomDebugStringConvertibleP", "id"]
+- ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "key"]
+- !private ["s28CustomDebugStringConvertibleP", "name"]
+- !private ["s28CustomDebugStringConvertibleP", "resources"]
+- !private ["s28CustomDebugStringConvertibleP", "source"]
+- !private ["s28CustomDebugStringConvertibleP", "src"]
+- !private ["s28CustomDebugStringConvertibleP", "subscript"]
+- !private ["s28CustomDebugStringConvertibleP", "version"]
+- ["s29CustomPlaygroundQuickLookableP", "init"]
+- !private ["s17CustomReflectableP", "append"]
+- ["s17CustomReflectableP", "init"]
+- !private ["s17CustomReflectableP", "subscript"]
+- !private ["s23CustomStringConvertibleP", "HybridOfflinePackageDataParams"]
+- !private ["s23CustomStringConvertibleP", "HybridOfflinePackageJsonParams"]
+- !private ["s23CustomStringConvertibleP", "HybridOfflinePackageResourcesParams"]
+- !private ["s23CustomStringConvertibleP", "HybridOfflinePackageSourceParams"]
+- ["s23CustomStringConvertibleP", ""]
+- !private ["s23CustomStringConvertibleP", "appName"]
+- !private ["s23CustomStringConvertibleP", "append"]
+- !private ["s23CustomStringConvertibleP", "bundle"]
+- !private ["s23CustomStringConvertibleP", "channel"]
+- !private ["s23CustomStringConvertibleP", "convert"]
+- !private ["s23CustomStringConvertibleP", "id"]
+- ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "key"]
+- !private ["s23CustomStringConvertibleP", "name"]
+- !private ["s23CustomStringConvertibleP", "resources"]
+- !private ["s23CustomStringConvertibleP", "source"]
+- !private ["s23CustomStringConvertibleP", "src"]
+- !private ["s23CustomStringConvertibleP", "subscript"]
+- !private ["s23CustomStringConvertibleP", "version"]
+- !private ["s9DecodableP", "append"]
+- ["s9DecodableP", "init"]
+- !private ["s9DecodableP", "subscript"]
+- !private ["s10DictionaryV", "subscript"]
+- !private ["s9EncodableP", "append"]
+- ["s9EncodableP", "init"]
+- !private ["s9EncodableP", "subscript"]
+- !private ["s9EquatableP", "HybridOfflinePackageDataParams"]
+- !private ["s9EquatableP", "HybridOfflinePackageJsonParams"]
+- !private ["s9EquatableP", "HybridOfflinePackageResourcesParams"]
+- !private ["s9EquatableP", "HybridOfflinePackageSourceParams"]
+- ["s9EquatableP", ""]
+- !private ["s9EquatableP", "appName"]
+- !private ["s9EquatableP", "append"]
+- !private ["s9EquatableP", "bundle"]
+- !private ["s9EquatableP", "channel"]
+- !private ["s9EquatableP", "convert"]
+- !private ["s9EquatableP", "id"]
+- ["s9EquatableP", "init"]
+- !private ["s9EquatableP", "key"]
+- !private ["s9EquatableP", "name"]
+- !private ["s9EquatableP", "resources"]
+- !private ["s9EquatableP", "source"]
+- !private ["s9EquatableP", "src"]
+- !private ["s9EquatableP", "subscript"]
+- !private ["s9EquatableP", "version"]
+- !private ["s25ExpressibleByArrayLiteralP", "append"]
+- !private ["s30ExpressibleByDictionaryLiteralP", "subscript"]
+- ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
+- ["s26ExpressibleByStringLiteralP", "init"]
+- ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
+- !private ["s8HashableP", "HybridOfflinePackageDataParams"]
+- !private ["s8HashableP", "HybridOfflinePackageJsonParams"]
+- !private ["s8HashableP", "HybridOfflinePackageResourcesParams"]
+- !private ["s8HashableP", "HybridOfflinePackageSourceParams"]
+- ["s8HashableP", ""]
+- !private ["s8HashableP", "appName"]
+- !private ["s8HashableP", "bundle"]
+- !private ["s8HashableP", "channel"]
+- !private ["s8HashableP", "convert"]
+- !private ["s8HashableP", "id"]
+- ["s8HashableP", "init"]
+- !private ["s8HashableP", "key"]
+- !private ["s8HashableP", "name"]
+- !private ["s8HashableP", "resources"]
+- !private ["s8HashableP", "source"]
+- !private ["s8HashableP", "src"]
+- !private ["s8HashableP", "version"]
+- ["8JGHybrid30HybridOfflinePackageDataParamsC", "AnyObject"]
+- ["8JGHybrid30HybridOfflinePackageDataParamsC", "HybridOfflinePackageDataParams"]
+- ["8JGHybrid30HybridOfflinePackageDataParamsC", "HybridOfflinePackageResourcesParams"]
+- ["8JGHybrid30HybridOfflinePackageDataParamsC", "String"]
+- ["8JGHybrid30HybridOfflinePackageDataParamsC", "convert"]
+- ["8JGHybrid30HybridOfflinePackageDataParamsC", "deinit"]
+- ["8JGHybrid30HybridOfflinePackageDataParamsC", "init"]
+- ["8JGHybrid30HybridOfflinePackageDataParamsC", "resources"]
+- ["8JGHybrid30HybridOfflinePackageDataParamsC", "version"]
+- ["8JGHybrid30HybridOfflinePackageJsonParamsC", "AnyObject"]
+- ["8JGHybrid30HybridOfflinePackageJsonParamsC", "HybridOfflinePackageJsonParams"]
+- ["8JGHybrid30HybridOfflinePackageJsonParamsC", "HybridOfflinePackageSourceParams"]
+- ["8JGHybrid30HybridOfflinePackageJsonParamsC", "String"]
+- ["8JGHybrid30HybridOfflinePackageJsonParamsC", "appName"]
+- ["8JGHybrid30HybridOfflinePackageJsonParamsC", "convert"]
+- ["8JGHybrid30HybridOfflinePackageJsonParamsC", "deinit"]
+- ["8JGHybrid30HybridOfflinePackageJsonParamsC", "init"]
+- ["8JGHybrid30HybridOfflinePackageJsonParamsC", "source"]
+- ["8JGHybrid30HybridOfflinePackageJsonParamsC", "version"]
+- ["8JGHybrid35HybridOfflinePackageResourcesParamsC", "AnyObject"]
+- ["8JGHybrid35HybridOfflinePackageResourcesParamsC", "HybridOfflinePackageResourcesParams"]
+- ["8JGHybrid35HybridOfflinePackageResourcesParamsC", "String"]
+- ["8JGHybrid35HybridOfflinePackageResourcesParamsC", "channel"]
+- ["8JGHybrid35HybridOfflinePackageResourcesParamsC", "convert"]
+- ["8JGHybrid35HybridOfflinePackageResourcesParamsC", "deinit"]
+- ["8JGHybrid35HybridOfflinePackageResourcesParamsC", "init"]
+- ["8JGHybrid35HybridOfflinePackageResourcesParamsC", "src"]
+- ["8JGHybrid35HybridOfflinePackageResourcesParamsC", "version"]
+- ["8JGHybrid32HybridOfflinePackageSourceParamsC", "AnyObject"]
+- ["8JGHybrid32HybridOfflinePackageSourceParamsC", "HybridOfflinePackageSourceParams"]
+- ["8JGHybrid32HybridOfflinePackageSourceParamsC", "String"]
+- ["8JGHybrid32HybridOfflinePackageSourceParamsC", "bundle"]
+- ["8JGHybrid32HybridOfflinePackageSourceParamsC", "convert"]
+- ["8JGHybrid32HybridOfflinePackageSourceParamsC", "deinit"]
+- ["8JGHybrid32HybridOfflinePackageSourceParamsC", "id"]
+- ["8JGHybrid32HybridOfflinePackageSourceParamsC", "init"]
+- ["8JGHybrid32HybridOfflinePackageSourceParamsC", "key"]
+- ["8JGHybrid32HybridOfflinePackageSourceParamsC", "name"]
+- ["8JGHybrid32HybridOfflinePackageSourceParamsC", "version"]
+- ["s25LosslessStringConvertibleP", "init"]
+- ["s10MirrorPathP", "init"]
+- !private ["s17MutableCollectionP", "append"]
+- ["So8NSObjectC", "AnyObject"]
+- ["So8NSObjectC", "HybridOfflinePackageDataParams"]
+- ["So8NSObjectC", "HybridOfflinePackageJsonParams"]
+- ["So8NSObjectC", "HybridOfflinePackageResourcesParams"]
+- ["So8NSObjectC", "HybridOfflinePackageSourceParams"]
+- ["So8NSObjectC", "String"]
+- ["So8NSObjectC", "appName"]
+- ["So8NSObjectC", "bundle"]
+- ["So8NSObjectC", "channel"]
+- ["So8NSObjectC", "convert"]
+- ["So8NSObjectC", "id"]
+- ["So8NSObjectC", "init"]
+- ["So8NSObjectC", "key"]
+- ["So8NSObjectC", "name"]
+- ["So8NSObjectC", "resources"]
+- ["So8NSObjectC", "source"]
+- ["So8NSObjectC", "src"]
+- ["So8NSObjectC", "version"]
+- !private ["So16NSObjectProtocolP", "HybridOfflinePackageDataParams"]
+- !private ["So16NSObjectProtocolP", "HybridOfflinePackageJsonParams"]
+- !private ["So16NSObjectProtocolP", "HybridOfflinePackageResourcesParams"]
+- !private ["So16NSObjectProtocolP", "HybridOfflinePackageSourceParams"]
+- ["So16NSObjectProtocolP", ""]
+- !private ["So16NSObjectProtocolP", "appName"]
+- !private ["So16NSObjectProtocolP", "bundle"]
+- !private ["So16NSObjectProtocolP", "channel"]
+- !private ["So16NSObjectProtocolP", "convert"]
+- !private ["So16NSObjectProtocolP", "id"]
+- !private ["So16NSObjectProtocolP", "init"]
+- !private ["So16NSObjectProtocolP", "key"]
+- !private ["So16NSObjectProtocolP", "name"]
+- !private ["So16NSObjectProtocolP", "resources"]
+- !private ["So16NSObjectProtocolP", "source"]
+- !private ["So16NSObjectProtocolP", "src"]
+- !private ["So16NSObjectProtocolP", "version"]
+- !private ["s22RandomAccessCollectionP", "append"]
+- !private ["s26RangeReplaceableCollectionP", "append"]
+- ["s26RangeReplaceableCollectionP", "init"]
+- !private ["s8SequenceP", "append"]
+- ["s8SequenceP", "init"]
+- !private ["s8SequenceP", "subscript"]
+- ["SS", "init"]
+- ["s14StringProtocolP", "init"]
+- ["s16TextOutputStreamP", "init"]
+- ["s20TextOutputStreamableP", "init"]
+- !private ["s14_ArrayProtocolP", "append"]
+- !private ["s24_DestructorSafeContainerP", "append"]
+- ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
+- ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
+- ["s39_ExpressibleByBuiltinUTF16StringLiteralP", "init"]
+- ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "init"]
+- ["s33_ExpressibleByStringInterpolationP", "init"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "HybridOfflinePackageDataParams"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "HybridOfflinePackageJsonParams"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "HybridOfflinePackageResourcesParams"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "HybridOfflinePackageSourceParams"]
+- ["10Foundation27_KeyValueCodingAndObservingP", ""]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "appName"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "bundle"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "channel"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "convert"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "id"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "init"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "key"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "name"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "resources"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "source"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "src"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "version"]
+- !private ["s21_ObjectiveCBridgeableP", "append"]
+- ["s21_ObjectiveCBridgeableP", "init"]
+- !private ["s21_ObjectiveCBridgeableP", "subscript"]
+- ["s16_SwiftStringViewP", "init"]
+depends-nominal:
+- !private "Sa"
+- "8JGHybrid10BaseParamsC"
+- "s23BidirectionalCollectionP"
+- "s7CVarArgP"
+- "s10CollectionP"
+- "s10ComparableP"
+- "s28CustomDebugStringConvertibleP"
+- "s29CustomPlaygroundQuickLookableP"
+- "s17CustomReflectableP"
+- "s23CustomStringConvertibleP"
+- "s9DecodableP"
+- !private "s10DictionaryV"
+- "s9EncodableP"
+- "s9EquatableP"
+- !private "s25ExpressibleByArrayLiteralP"
+- !private "s30ExpressibleByDictionaryLiteralP"
+- "s43ExpressibleByExtendedGraphemeClusterLiteralP"
+- "s26ExpressibleByStringLiteralP"
+- "s33ExpressibleByUnicodeScalarLiteralP"
+- "s8HashableP"
+- "8JGHybrid30HybridOfflinePackageDataParamsC"
+- "8JGHybrid30HybridOfflinePackageJsonParamsC"
+- "8JGHybrid35HybridOfflinePackageResourcesParamsC"
+- "8JGHybrid32HybridOfflinePackageSourceParamsC"
+- "s25LosslessStringConvertibleP"
+- "s10MirrorPathP"
+- !private "s17MutableCollectionP"
+- "So8NSObjectC"
+- "So16NSObjectProtocolP"
+- !private "s22RandomAccessCollectionP"
+- "s26RangeReplaceableCollectionP"
+- "s8SequenceP"
+- "SS"
+- "s14StringProtocolP"
+- "s16TextOutputStreamP"
+- "s20TextOutputStreamableP"
+- !private "s14_ArrayProtocolP"
+- !private "s24_DestructorSafeContainerP"
+- "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
+- "s34_ExpressibleByBuiltinStringLiteralP"
+- "s39_ExpressibleByBuiltinUTF16StringLiteralP"
+- "s41_ExpressibleByBuiltinUnicodeScalarLiteralP"
+- "s33_ExpressibleByStringInterpolationP"
+- "10Foundation27_KeyValueCodingAndObservingP"
+- "s21_ObjectiveCBridgeableP"
+- "s16_SwiftStringViewP"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/QuartzCore.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Metal.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreLocation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreFoundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/Pods/Target Support Files/JGHybrid/JGHybrid-umbrella.h"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/Pods/Target Support Files/SSZipArchive/SSZipArchive-umbrella.h"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/Pods/Target Support Files/JGWebKitURLProtocol/JGWebKitURLProtocol-umbrella.h"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/Pods/SSZipArchive/SSZipArchive/ZipArchive.h"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/Pods/SSZipArchive/SSZipArchive/SSZipArchive.h"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/Pods/SSZipArchive/SSZipArchive/SSZipCommon.h"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/Pods/JGWebKitURLProtocol/JGWebKitURLProtocol/Classes/NSURLProtocol+WebKitSupport.h"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/build/Pods.build/Debug-iphonesimulator/JGHybrid.build/unextended-module.modulemap"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/build/Pods.build/Debug-iphonesimulator/SSZipArchive.build/module.modulemap"
+- "/Users/goingta/Documents/Work/JGHybrid/Example/build/Pods.build/Debug-iphonesimulator/JGWebKitURLProtocol.build/module.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/OpenGLES.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CoreImage.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/usr/include/Darwin.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/CoreLocation.framework/Headers/CoreLocation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/WebKit.framework/Headers/WebKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.4.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
+interface-hash: "16c6c799557564d309ea83c592eef287"

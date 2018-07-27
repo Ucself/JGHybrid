@@ -11,41 +11,42 @@ import SSZipArchive
 class HybridCacheManager: NSObject {
     static let `default` = HybridCacheManager()
     
-    func downZip(addPath:String, urlString:String, complet:((_ success:Bool,_ msg:String)->Void)?=nil) {
+    func downZipAndUnzip(urlString:String, downloadPath: String, savePath: String, unzipPath: String,downLoadComplet:((_ success:Bool,_ msg:String)->Void)?=nil , unzipComplet:((_ success:Bool,_ msg:String)->Void)?=nil) {
         guard let url = URL.init(string: urlString) else { return }
         DispatchQueue.global().async {
             let session:URLSession = URLSession.shared
             let task:URLSessionTask = session.dataTask(with: url) { [weak self] (data, response, error) in
                 if error != nil {
                     DispatchQueue.main.async {
-                        complet?(false,error?.localizedDescription ?? "")
+                        downLoadComplet?(false,error?.localizedDescription ?? "")
                     }
                     return
                 }
                 guard let weakSelf = self, let responseData = data else {
                     DispatchQueue.main.async {
-                        complet?(false,"获取数据失败")
+                        downLoadComplet?(false,"获取数据失败")
                     }
                     return
                 }
-                let filePath = weakSelf.filePath(addPath: addPath)
-                let zipPath = filePath + ".zip"
-                weakSelf.deleteAllFiles(path: filePath)
-                if (try? responseData.write(to: URL(fileURLWithPath: zipPath), options: [.atomic])) != nil {
-                    let tag = SSZipArchive.unzipFile(atPath: zipPath, toDestination: filePath)
+                
+                downLoadComplet?(true,"")
+                weakSelf.deleteAllFiles(path: unzipPath)
+                
+                if (try? responseData.write(to: URL(fileURLWithPath: savePath), options: [.atomic])) != nil {
+                    let tag = weakSelf.unzip(zipPath: savePath, toDestination: unzipPath)
                     if tag == true {
-                        weakSelf.deleteAllFiles(path: zipPath)
+                        weakSelf.deleteAllFiles(path: savePath)
                         DispatchQueue.main.async {
-                            complet?(true, "")
+                            unzipComplet?(true, "")
                         }
                     } else {
                         DispatchQueue.main.async {
-                            complet?(false, "解压失败 \(zipPath)")
+                            unzipComplet?(false, "解压失败 \(savePath)")
                         }
                     }
                 } else {
                     DispatchQueue.main.async {
-                        complet?(false, "写入失败 \(zipPath)")
+                        unzipComplet?(false, "写入失败 \(savePath)")
                     }
                 }
             }
@@ -53,15 +54,9 @@ class HybridCacheManager: NSObject {
         }
     }
     
-    private func filePath(addPath: String) -> String {
-        do {
-            let documentPath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)[0] + addPath
-            let fileManager = FileManager.default
-            try fileManager.createDirectory(atPath: documentPath, withIntermediateDirectories: true, attributes: nil)
-            return documentPath
-        } catch {
-            return ""
-        }
+    private func unzip(zipPath: String, toDestination: String) -> Bool {
+        let tag = SSZipArchive.unzipFile(atPath: zipPath, toDestination: toDestination)
+        return tag
     }
     
     private func deleteAllFiles(path: String) {
@@ -78,6 +73,105 @@ class HybridCacheManager: NSObject {
             }
         } catch {
             print("删除H5缓存文件失败")
+        }
+    }
+    
+    //H5 版本问题
+    func hybridOfflinePackageJson(data:Data?) {
+        //获取返回的数据
+        guard let responseData = data else { return }
+        // 本地配置
+        guard let defaultDic = self.getDefaultConfig() as? [[String:AnyObject]] else { return }
+        //返回的data 转换为 字典
+        let jsonData = dataToDic(data: responseData)
+        
+        guard let offlineDic = jsonData as? [[String:AnyObject]] else { return }
+        //判断数组个数
+        guard offlineDic.count >= 1 else { return }
+        //本地配置转换
+        let defaultParams:HybridOfflinePackageJsonParams = HybridOfflinePackageJsonParams.convert(defaultDic[0])
+        //字典转换为对象
+        let offlinePackageJsonParams:HybridOfflinePackageJsonParams = HybridOfflinePackageJsonParams.convert(offlineDic[0])
+        
+        //版本检测
+        if defaultParams.version < offlinePackageJsonParams.version {
+            //写入新的配置
+            self.writeNewConfig(data: responseData)
+            //下载并解压
+            for itemSource:HybridOfflinePackageSourceParams in offlinePackageJsonParams.source {
+                
+                //下载路径
+                downZipAndUnzip(urlString: itemSource.bundle,
+                                downloadPath: hybridAbsolutePath(),
+                                savePath: hybridAbsolutePath() + "/\(itemSource.key).zip",
+                    unzipPath: hybridAbsolutePath() + "/\(itemSource.name)",
+                    downLoadComplet: { [weak self] (success, errorMsg) in
+                        guard let _self = self else { return }
+                        if success {
+                            
+                        } else {
+                            
+                        }
+                }) {  [weak self] (success, errorMsg) in
+                    guard let _self = self else { return }
+                }
+            }
+        }
+    }
+    
+    private func writeNewConfig(data: Data) {
+        let path = getNewResourcesJsonPath()
+        let fileManager = FileManager.default
+        if !fileManager.fileExists(atPath: path) {
+            fileManager.createFile(atPath: path, contents:nil, attributes:nil)
+        }
+        let file = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).first
+        
+        let handle = FileHandle(forWritingAtPath:path)
+        handle?.write(data)
+    }
+    
+    private func getDefaultConfig() -> Any? {
+        var filePath: String?
+        let fileManager = FileManager.default
+        let path = getNewResourcesJsonPath()
+        if fileManager.fileExists(atPath: path) {
+            filePath = path
+        } else {
+            filePath = Bundle.main.path(forResource: "resources", ofType: "json")
+        }
+        guard let jsonPath = filePath else { return nil }
+        let data = NSData.init(contentsOfFile: jsonPath)
+        return dataToDic(data: data as! Data)
+    }
+    
+    func getNewResourcesJsonPath () -> String {
+        let fileName = "newResources.json"
+        return hybridAbsolutePath() + "/" + fileName
+    }
+    
+    func dataToDic(data: Data) -> Any? {
+        do {
+            let dic = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments)
+            return dic
+        } catch let catchError {
+            print("hybridOfflinePackageJson.catchError -> \(catchError)")
+            return nil
+        }
+    }
+    
+    func hybridAbsolutePath () -> String {
+        return NSHomeDirectory() + "/Documents/" + HybridConstantModel.offlinePackageFolder
+    }
+    
+    //解压项目中的文件
+    func HybridUnzipHybiryOfflineZip(){
+        guard let zipPath = Bundle.main.path(forResource: HybridConstantModel.offlinePackageFolder, ofType: "zip") else { return }
+        if !FileManager.default.fileExists(atPath: hybridAbsolutePath()) {
+            DispatchQueue.global().async {
+                let documentPath = NSHomeDirectory() + "/Documents"
+                self.unzip(zipPath: zipPath, toDestination: documentPath)
+            }
         }
     }
 }

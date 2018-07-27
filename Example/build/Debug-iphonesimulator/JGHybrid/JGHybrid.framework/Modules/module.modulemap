@@ -1,0 +1,11 @@
+framework module JGHybrid {
+  umbrella header "JGHybrid-umbrella.h"
+
+  export *
+  module * { export * }
+}
+
+module JGHybrid.Swift {
+    header "JGHybrid-Swift.h"
+    requires objc
+}
