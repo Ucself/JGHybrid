@@ -1,6 +1,0 @@
-framework module JGWebKitURLProtocol {
-  umbrella header "JGWebKitURLProtocol-umbrella.h"
-
-  export *
-  module * { export * }
-}
