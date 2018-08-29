@@ -47,7 +47,7 @@ extension HybridViewController {
         if self.pageFirstShow {
             self.pageFirstShow = false
         }
-        else {
+        else if self.commandExecute.command.webView != nil {
             self.commandExecute.command.webView.evaluateJavaScript(MLHybridConfiguration.default.pageShowEvent) { (_, _) in }
         }
         
@@ -65,12 +65,12 @@ extension HybridViewController {
         }
         
         //还原上一个控制器  项目中还是有问题 屏蔽
-//        if self.upNavigationBarIsHide != nil {
-//            self.navigationController?.setNavigationBarHidden(upNavigationBarIsHide!, animated: true)
-//        }
-//        if self.upNavigationBarBackgroundColor != nil {
-//            self.navigationController?.navigationBar.hybridSetBackgroundColor(self.upNavigationBarBackgroundColor)
-//        }
+        //        if self.upNavigationBarIsHide != nil {
+        //            self.navigationController?.setNavigationBarHidden(upNavigationBarIsHide!, animated: true)
+        //        }
+        //        if self.upNavigationBarBackgroundColor != nil {
+        //            self.navigationController?.navigationBar.hybridSetBackgroundColor(self.upNavigationBarBackgroundColor)
+        //        }
         
     }
     
