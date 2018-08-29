@@ -13,7 +13,9 @@ extension HybridViewController {
     //MARK: 自定义方法
     func initUI() {
         //加载等待开始
-        MLHybrid.shared.delegate?.startWait()
+        if self.needStartWait {
+            MLHybrid.shared.delegate?.startWait()
+        }
         self.hidesBottomBarWhenPushed = needHidesBottomBar
         self.setUpBackButton()
         //设置布局到顶部self.view

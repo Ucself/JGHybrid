@@ -31,6 +31,9 @@ open class HybridViewController: UIViewController,UIScrollViewDelegate,WKUIDeleg
     /// 是否需要加载进度
     public var needLoadProgress = false
     
+    /// 是否需要业务加载符
+    public var needStartWait = true
+    
     /// 标题颜色
     public var titleColor:UIColor = MLHybridConfiguration.default.defaultTitleColor {               //Title颜色
         didSet {
