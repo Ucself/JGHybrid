@@ -38,8 +38,8 @@ class ViewController: UIViewController {
 //        let vc:MLHybridViewController =  MLHybrid.load(urlString: "http://web-dev.doctorwork.com/app/health/member")!
 //        vc.isFullScreen = true]
 //        let vc:MLHybridViewController =  MLHybrid.load(urlString: "http://web-qa.doctorwork.com/rapp/health/health-package/0?sku=HS2018002")!
-//        let vc:HybridViewController =  Hybrid.load(urlString: "http://web-dev.doctorwork.com/ios/")!
-        let vc:HybridViewController =  Hybrid.load(urlString: "http://web-qa.doctorwork.com/rapp/health/health-package/0?sku=HS2018002")!
+        let vc:HybridViewController =  Hybrid.load(urlString: "http://web-dev.doctorwork.com/ios/")!
+//        let vc:HybridViewController =  Hybrid.load(urlString: "http://web-qa.doctorwork.com/rapp/health/health-package/0?sku=HS2018002")!
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
