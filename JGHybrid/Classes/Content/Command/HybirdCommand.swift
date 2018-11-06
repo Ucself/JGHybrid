@@ -23,6 +23,28 @@ open class HybirdCommand {
     public weak var viewController: MLHybridViewController!
     //webView
     public weak var webView: WKWebView! = WKWebView()
+    
+    //通过Dictionary转换,现在只g提供给RN用，未来做优化和拆分
+    public static func convert(_ dic: [String: AnyObject]) -> HybirdCommand {
+        let command = HybirdCommand()
+        if let name: String = dic["name"] as? String {
+            command.name = name
+        }
+        
+        if let params = dic["params"] as? [String: AnyObject] {
+            command.params = params
+        }
+        
+        if let args = dic["args"] as? [String: AnyObject] {
+            command.args = MLHybirdCommandParams.convert(args, nameType: nil)
+        }
+        
+        if let callbackId = dic["callbackId"] as? String {
+            command.callbackId = callbackId
+        }
+        
+        return command
+    }
 
     /// 执行回调
     ///
