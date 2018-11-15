@@ -72,6 +72,9 @@ open class HybridViewController: UIViewController,UIScrollViewDelegate,WKUIDeleg
     //是否全屏
     public var isFullScreen:Bool = false
     
+    /// 默认全屏的时候不使用返回手势
+    public var needFullScreenBackGestures = false
+    
     //MARK: 视图控件
     public var contentView: MLHybridContentView!
     

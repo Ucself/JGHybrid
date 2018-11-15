@@ -77,7 +77,7 @@ extension HybridViewController {
     override open func viewDidAppear(_ animated: Bool) {
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self as? UIGestureRecognizerDelegate;
         //导航栏全屏透明的话就不要手势回退，有渐变bug
-        if self.isFullScreen {
+        if self.isFullScreen && !self.needFullScreenBackGestures {
             self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         }
         else {

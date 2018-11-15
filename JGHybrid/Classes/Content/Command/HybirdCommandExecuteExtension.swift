@@ -42,6 +42,10 @@ extension HybirdCommandExecute {
             if params.fullscreen {
                 webViewController.isFullScreen = params.fullscreen
             }
+            //是否需要返回手势
+            if params.fullscreenBackGestures {
+                webViewController.needFullScreenBackGestures = params.fullscreenBackGestures
+            }
             
             navi.pushViewController(webViewController, animated: params.animate)
         } else {
