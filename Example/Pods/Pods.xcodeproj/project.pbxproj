@@ -218,7 +218,6 @@
 		8447C04608017B3D3972378F00F37F81 /* brg_endian.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = brg_endian.h; path = SSZipArchive/minizip/aes/brg_endian.h; sourceTree = "<group>"; };
 		89E2654DC5477986F330E6618435A6DA /* hmac.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = hmac.h; path = SSZipArchive/minizip/aes/hmac.h; sourceTree = "<group>"; };
 		9147B46A20D8B60B00AE65F1 /* HybridOfflinePackageJsonParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HybridOfflinePackageJsonParams.swift; sourceTree = "<group>"; };
-		9147B46C20DA5E9100AE65F1 /* offlineJson.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = offlineJson.rtf; sourceTree = "<group>"; };
 		9149FE074AF5E57D6D2E86C17CE2F0AA /* ioapi_buf.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ioapi_buf.h; path = SSZipArchive/minizip/ioapi_buf.h; sourceTree = "<group>"; };
 		91784CDA20E4CC0E00B7299B /* HybridViewController+Override.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HybridViewController+Override.swift"; sourceTree = "<group>"; };
 		919D68C3E0D47C29796EB4BC9A715527 /* SSZipArchive-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SSZipArchive-umbrella.h"; sourceTree = "<group>"; };
@@ -574,7 +573,6 @@
 				5353FD15D8E34DAEA6B73147037C05EA /* HybirdCommandExecute.swift */,
 				1B8BC161FAC1823BD3811A29A746A64E /* HybirdCommandExecuteExtension.swift */,
 				58E32EEA37991F5F28803F2D27A1F228 /* HybirdCommandParams.swift */,
-				9147B46C20DA5E9100AE65F1 /* offlineJson.rtf */,
 			);
 			path = Command;
 			sourceTree = "<group>";

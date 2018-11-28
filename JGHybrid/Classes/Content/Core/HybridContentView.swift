@@ -34,10 +34,6 @@ open class HybridContentView: WKWebView {
         super.init(coder: aDecoder)
     }
     
-    deinit {
-        //self.scrollView.delegate = nil
-    }
-    
     //MARK:自定义方法
     func initUI () {
         self.scrollView.backgroundColor = UIColor.hybridColorWithHex("FAFAFA")

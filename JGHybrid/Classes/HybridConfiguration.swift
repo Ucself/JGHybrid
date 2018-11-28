@@ -13,9 +13,10 @@ public typealias MLHybridConfiguration = HybridConfiguration
 /// Hybrid 配置类
 open class HybridConfiguration: NSObject {
     /// 单例对象
-    open static let `default` = MLHybridConfiguration()
+    public static let `default` = MLHybridConfiguration()
     private override init() {}
     
+    //MARK: -- 离线包相关配置
     /// 是否注册Protocol拦截
     open var isRegisterURLProtocol:Bool = false
     
@@ -28,12 +29,14 @@ open class HybridConfiguration: NSObject {
     /// 离线包html需要解析的地址
     open var cacheMap: [String] = ["/app/health","/rapp/health"]
     
+    //MARK: -- http配置相关
     /// userAgent
     open var userAgent:String = ""
     
     /// scheme
     open var scheme:String = "docheathhybrid"
     
+    //MARK: -- UI配置相关
     /// 返回按钮图片名称
     open var backIndicator:String = "backButton"
     
