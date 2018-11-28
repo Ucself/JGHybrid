@@ -20,23 +20,9 @@ extension HybridViewController {
         self.setUpBackButton()
         //设置布局到顶部self.view
         self.extendedLayoutIncludesOpaqueBars = true
-        
-        //获取上一个控制器的数据
-        self.upNavigationBarIsHide = self.navigationController?.isNavigationBarHidden
-        self.upNavigationBarBackgroundColor = self.navigationController?.navigationBar.backgroundColor
     }
     
     func initContentView() {
-        //设置大标题
-        if !self.needLargeTitle {
-            //设置约束高度
-            self.largeTitleViewHeight = 0
-            self.navigationItem.title = self.titleName
-        }
-        else {
-            self.largeTitleViewHeight = 74.5
-            self.navigationItem.title = ""
-        }
         //容器数据对象
         self.contentView = MLHybridContentView()
         //不需要自动边距
@@ -45,47 +31,21 @@ extension HybridViewController {
         } else {
             self.automaticallyAdjustsScrollViewInsets = false
         }
-        self.largeTitleView = UIView.init()
-        self.largeTitleView?.backgroundColor = self.titleBackgroundColor
         self.view.addSubview(self.contentView)
-        self.view.addSubview(self.largeTitleView!)
-        //Title
-        self.largeTitleLabel = UILabel.init()
-        self.largeTitleLabel!.font = UIFont.init(name: "PingFangSC-Medium", size: 22)
-        self.largeTitleLabel!.textColor = self.titleColor
-        self.largeTitleLabel!.text = self.titleName
-        self.largeTitleView!.addSubview(self.largeTitleLabel!)
-        //约束变量
-        self.largeTitleView!.translatesAutoresizingMaskIntoConstraints = false
         self.contentView.translatesAutoresizingMaskIntoConstraints = false
-        self.largeTitleLabel!.translatesAutoresizingMaskIntoConstraints = false
-        
         let topGuide = self.topLayoutGuide
-        //        let bottomGuide = self.bottomLayoutGuide
-        //大标题Label布局
-        let leftTitleLabelConstraint = NSLayoutConstraint(item: self.largeTitleLabel!, attribute: .left, relatedBy: .equal, toItem: self.largeTitleView, attribute: .left, multiplier: 1.0, constant: 22)
-        let rightTitleLabelConstraint = NSLayoutConstraint(item: self.largeTitleLabel!, attribute: .right, relatedBy: .equal, toItem: self.largeTitleView, attribute: .right, multiplier: 1.0, constant: 0)
-        let topTitleLabelConstraint = NSLayoutConstraint(item: self.largeTitleLabel!, attribute: .top, relatedBy: .equal, toItem: self.largeTitleView, attribute: .top, multiplier: 1.0, constant: 0)
-        let bottomTitleLabelConstraintt = NSLayoutConstraint(item: self.largeTitleLabel!, attribute: .bottom, relatedBy: .equal, toItem: self.largeTitleView, attribute: .bottom, multiplier: 1.0, constant: 0)
         //大标题布局
-        let leftLargeTitleConstraint = NSLayoutConstraint(item: self.largeTitleView!, attribute: .left, relatedBy: .equal, toItem: self.view, attribute: .left, multiplier: 1.0, constant: 0)
-        let rightLargeTitleConstraint = NSLayoutConstraint(item: self.largeTitleView!, attribute: .right, relatedBy: .equal, toItem: self.view, attribute: .right, multiplier: 1.0, constant: 0)
-        var topLargeTitleConstraint:NSLayoutConstraint! = NSLayoutConstraint(item: self.largeTitleView!, attribute: .top, relatedBy: .equal, toItem: topGuide, attribute: .bottom, multiplier: 1.0, constant: 0)
+        var topConstraint:NSLayoutConstraint! = NSLayoutConstraint(item: self.contentView, attribute: .top, relatedBy: .equal, toItem: topGuide, attribute: .bottom, multiplier: 1.0, constant: 0)
         if isFullScreen {
             //全屏的话约束到view
-            topLargeTitleConstraint = NSLayoutConstraint(item: self.largeTitleView!, attribute: .top, relatedBy: .equal, toItem: self.view, attribute: .top, multiplier: 1.0, constant: 0)
+            topConstraint = NSLayoutConstraint(item: self.contentView, attribute: .top, relatedBy: .equal, toItem: self.view, attribute: .top, multiplier: 1.0, constant: 0)
         }
-        self.largeTitleViewTop = topLargeTitleConstraint
-        let heightLargeTitleConstrain = NSLayoutConstraint(item: self.largeTitleView!, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: self.largeTitleViewHeight)
         //容器布局
         let leftConstraint = NSLayoutConstraint(item: self.contentView, attribute: .left, relatedBy: .equal, toItem: self.view, attribute: .left, multiplier: 1.0, constant: 0)
         let rightConstraint = NSLayoutConstraint(item: self.contentView, attribute: .right, relatedBy: .equal, toItem: self.view, attribute: .right, multiplier: 1.0, constant: 0)
-        let topConstraint = NSLayoutConstraint(item: self.contentView, attribute: .top, relatedBy: .equal, toItem: self.largeTitleView, attribute: .bottom, multiplier: 1.0, constant: 0)
         let bottomConstraint = NSLayoutConstraint(item: self.contentView, attribute: .bottom, relatedBy: .equal, toItem: self.view, attribute: .bottom, multiplier: 1.0, constant: 0)
         
-        self.view.addConstraints([leftTitleLabelConstraint,rightTitleLabelConstraint,topTitleLabelConstraint,bottomTitleLabelConstraintt,
-                                  leftLargeTitleConstraint,rightLargeTitleConstraint,topLargeTitleConstraint,heightLargeTitleConstrain,
-                                  leftConstraint,rightConstraint,topConstraint,bottomConstraint])
+        self.view.addConstraints([leftConstraint,rightConstraint,topConstraint,bottomConstraint])
         
         //设置代理
         self.contentView.uiDelegate = self

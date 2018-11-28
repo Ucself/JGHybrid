@@ -17,28 +17,26 @@ TODO: Add long description of the pod here.
   s.dependency 'JGWebKitURLProtocol'
   s.dependency 'SSZipArchive'
 
-  s.subspec 'Command' do |ss|
-    ss.source_files = 'JGHybrid/Classes/Content/Command/*.swift'
+  s.subspec 'Command' do |command|
+    command.source_files = 'JGHybrid/Classes/Content/Command/*.swift'
   end
 
-  s.subspec 'Core' do |ss|
-    ss.source_files = 'JGHybrid/Classes/Content/Core/*.swift'
+  s.subspec 'Core' do |core|
+    core.source_files = 'JGHybrid/Classes/Content/Core/*.swift'
   end
 
-  s.subspec 'Core' do |ss|
-    ss.source_files = 'JGHybrid/Classes/Content/Core/*.swift'
+  s.subspec 'Params' do |params|
+    params.source_files = 'JGHybrid/Classes/Content/Params/*.swift'
   end
-
-  s.subspec 'Model' do |ss|
-    ss.source_files = 'JGHybrid/Classes/Content/Model/*.swift'
-  end
-
-  s.subspec 'Protocol' do |ss|
-    ss.source_files = 'JGHybrid/Classes/Content/Protocol/*.swift'
-  end
-
-  s.subspec 'Tool' do |ss|
-    ss.source_files = 'JGHybrid/Classes/Content/Tool/*.swift'
+  
+  s.subspec 'Common' do |common|
+      common.subspec 'Protocol' do |protocol|
+          protocol.source_files = 'JGHybrid/Classes/Content/Common/Protocol/*.swift'
+      end
+      
+      common.subspec 'Tool' do |tool|
+          tool.source_files = 'JGHybrid/Classes/Content/Common/Tool/*.swift'
+      end
   end
 
 end

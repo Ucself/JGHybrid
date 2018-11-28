@@ -11,22 +11,20 @@ public typealias MLHybridViewController = HybridViewController
 
 open class HybridViewController: UIViewController,UIScrollViewDelegate,WKUIDelegate,WKNavigationDelegate,WKScriptMessageHandler  {
     
-    //MARK: 设置属性
-    /// 是否隐藏 NavigationBar
+    //MARK: --- 参数属性
+    
+    /// 是否隐藏
     public var naviBarHidden = false {
         didSet {
             self.navigationController?.setNavigationBarHidden(self.naviBarHidden, animated: true)
         }
     }
     
-    /// 是否需要返回按钮: false 为系统默认
+    /// 是否需要返回按钮
     public var needBackButton = false
     
     /// 是否需要隐藏 NavigationBottomBar
     public var needHidesBottomBar = true
-    
-    /// 是否需要模拟大标题
-    public var needLargeTitle = false
     
     /// 是否需要加载进度
     public var needLoadProgress = false
@@ -34,10 +32,17 @@ open class HybridViewController: UIViewController,UIScrollViewDelegate,WKUIDeleg
     /// 是否需要业务加载符
     public var needStartWait = true
     
+    //  是否导航栏透明
+    public var isFullScreen:Bool = false
+    
+    /// 是否导航栏透明返回手势
+    public var needFullScreenBackGestures = false
+    
+    //MARK: --- UI属性
+    
     /// 标题颜色
     public var titleColor:UIColor = MLHybridConfiguration.default.defaultTitleColor {               //Title颜色
         didSet {
-            self.largeTitleLabel?.textColor = self.titleColor
             self.navigationController?.navigationBar.hybridSetTitleColor(self.titleColor)
         }
     }
@@ -45,7 +50,6 @@ open class HybridViewController: UIViewController,UIScrollViewDelegate,WKUIDeleg
     /// 标题背景色
     public var titleBackgroundColor:UIColor = MLHybridConfiguration.default.defaultTitleBackgroundTColor{      //Title背景色
         didSet {
-            self.largeTitleView?.backgroundColor = self.titleBackgroundColor
             //全屏的话就不用设置需要的颜色
             if self.isFullScreen {
                 self.navigationController?.navigationBar.hybridSetBackgroundClear()
@@ -60,7 +64,6 @@ open class HybridViewController: UIViewController,UIScrollViewDelegate,WKUIDeleg
     public var titleName:String = "" {
         didSet {
             self.navigationItem.title = titleName
-            self.largeTitleLabel?.text = titleName
         }
     }
     //状态栏
@@ -69,28 +72,21 @@ open class HybridViewController: UIViewController,UIScrollViewDelegate,WKUIDeleg
             setNeedsStatusBarAppearanceUpdate()
         }
     }
-    //是否全屏
-    public var isFullScreen:Bool = false
     
-    /// 默认全屏的时候不使用返回手势
-    public var needFullScreenBackGestures = false
+    //MARK: --- UI视图控件
     
-    //MARK: 视图控件
+    /// WKWebView 容器
     public var contentView: MLHybridContentView!
     
+    /// 加载精度条
     public var progressView:UIProgressView!
     
-    public var largeTitleView:UIView?
+    //MARK: --- 控制器业务属性
     
-    public var largeTitleLabel:UILabel?
-    
-    public var largeTitleViewTop: NSLayoutConstraint!
-    
-    public var largeTitleViewHeight:CGFloat = 74.5
-    //MARK: 控制器数据
-    //回调相关变量
+    /// 控制器显示回调ID
     public var onShowCallBack: String?
     
+    /// 控制器隐藏回调ID
     public var onHideCallBack: String?
     
     //webView 的URL
@@ -107,12 +103,6 @@ open class HybridViewController: UIViewController,UIScrollViewDelegate,WKUIDeleg
     
     /// H5需要不是第一次显示的回调
     var pageFirstShow = true
-    
-    //上一个控制器的NavigationBar的颜色
-    var upNavigationBarBackgroundColor:UIColor?
-    
-    //上一个控制器的NavigationBar是否隐藏
-    var upNavigationBarIsHide:Bool?
     
     //默认的userAgent
     var defaultUserAgent:String = "Mozilla/5.0 (iPhone; CPU iPhone OS 12_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/16A5318d doc_hybrid_heath_1.0.3  Hybrid/1.0.3"

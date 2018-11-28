@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -13,11 +13,11 @@
             buildForProfiling = "YES"
             buildForArchiving = "YES">
             <BuildableReference
-               BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '022DD6A9B1DF6253ECCFE23F0B5B05B8'
-               BlueprintName = 'JGWebKitURLProtocol'
-               ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'JGWebKitURLProtocol.framework'>
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "4D59ED2C4C67A83C3AFF4F3BF8EA30F8"
+               BlueprintName = "JGWebKitURLProtocol"
+               ReferencedContainer = "container:Pods.xcodeproj"
+               BuildableName = "JGWebKitURLProtocol.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

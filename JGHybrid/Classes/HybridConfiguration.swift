@@ -29,6 +29,9 @@ open class HybridConfiguration: NSObject {
     /// 离线包html需要解析的地址
     open var cacheMap: [String] = ["/app/health","/rapp/health"]
     
+    /// 离线包json地址
+    open var offlinePackageJsonUrl:String = "http://web-dev.doctorwork.com/ios/resources.json"
+    
     //MARK: -- http配置相关
     /// userAgent
     open var userAgent:String = ""
@@ -51,8 +54,5 @@ open class HybridConfiguration: NSObject {
     
     /// pageShow 回调字符串，h5临时要求
     open var pageShowEvent:String = "Hybrid.event('pageshow')"
-    
-    /// 离线包json地址
-    open var offlinePackageJsonUrl:String = "http://web-dev.doctorwork.com/ios/resources.json"
     
 }

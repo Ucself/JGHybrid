@@ -1,6 +1,6 @@
 {
   "name": "JGHybrid",
-  "version": "3.6.0",
+  "version": "4.0.9",
   "summary": "A short description of JGHybrid.",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/Ucself/JGHybrid",
@@ -13,12 +13,15 @@
   },
   "source": {
     "git": "https://github.com/Ucself/JGHybrid.git",
-    "tag": "3.6.0"
+    "tag": "4.0.9"
   },
   "platforms": {
     "ios": "8.0"
   },
-  "source_files": "JGHybrid/Classes/**/*",
+  "source_files": [
+    "JGHybrid/Classes/Hybrid.swift",
+    "JGHybrid/Classes/HybridConfiguration.swift"
+  ],
   "frameworks": [
     "UIKit",
     "WebKit"
@@ -30,5 +33,32 @@
     "SSZipArchive": [
 
     ]
-  }
+  },
+  "subspecs": [
+    {
+      "name": "Command",
+      "source_files": "JGHybrid/Classes/Content/Command/*.swift"
+    },
+    {
+      "name": "Core",
+      "source_files": "JGHybrid/Classes/Content/Core/*.swift"
+    },
+    {
+      "name": "Params",
+      "source_files": "JGHybrid/Classes/Content/Params/*.swift"
+    },
+    {
+      "name": "Common",
+      "subspecs": [
+        {
+          "name": "Protocol",
+          "source_files": "JGHybrid/Classes/Content/Common/Protocol/*.swift"
+        },
+        {
+          "name": "Tool",
+          "source_files": "JGHybrid/Classes/Content/Common/Tool/*.swift"
+        }
+      ]
+    }
+  ]
 }

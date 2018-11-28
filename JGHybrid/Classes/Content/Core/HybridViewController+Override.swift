@@ -24,8 +24,6 @@ extension HybridViewController {
         
         //设置导航栏
         self.navigationController?.setNavigationBarHidden(naviBarHidden, animated: true)
-        //js方法注入
-        //self.contentView?.configuration.userContentController.add(self, name: "requestHybrid")
         //添加wkwebview监听
         self.contentView.addObserver(self, forKeyPath: "estimatedProgress", options: NSKeyValueObservingOptions(rawValue: 0), context: nil)
         //回调Hybrid
@@ -36,8 +34,6 @@ extension HybridViewController {
         self.navigationController?.navigationBar.hybridSetTitleColor(self.titleColor)
         self.navigationController?.navigationBar.hybridSetBackgroundColor(self.titleBackgroundColor)
         self.view.backgroundColor = self.titleBackgroundColor
-        self.largeTitleView?.backgroundColor = self.titleBackgroundColor
-        self.largeTitleLabel?.textColor = self.titleColor
         
         //设置透明
         if self.isFullScreen {
@@ -55,23 +51,12 @@ extension HybridViewController {
     
     override open func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        //取消方法注入
-        //self.contentView?.configuration.userContentController.removeScriptMessageHandler(forName: "requestHybrid")
         //移除KVO
         self.contentView.removeObserver(self, forKeyPath: "estimatedProgress")
         //回调Hybrid
         if let callback = self.onHideCallBack {
             let _ =  self.commandExecute.command.callBack(data: "", err_no: 0, msg: "onwebviewshow", callback: callback, completion: {js in })
         }
-        
-        //还原上一个控制器  项目中还是有问题 屏蔽
-        //        if self.upNavigationBarIsHide != nil {
-        //            self.navigationController?.setNavigationBarHidden(upNavigationBarIsHide!, animated: true)
-        //        }
-        //        if self.upNavigationBarBackgroundColor != nil {
-        //            self.navigationController?.navigationBar.hybridSetBackgroundColor(self.upNavigationBarBackgroundColor)
-        //        }
-        
     }
     
     override open func viewDidAppear(_ animated: Bool) {

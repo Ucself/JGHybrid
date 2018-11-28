@@ -44,6 +44,8 @@ open class Hybrid: NSObject {
         return webViewController        
     }
     
+    
+    
     //版本检测并更新
     open class func checkMainfest() {
         MLHybirdCommandExecute().hybridOfflineCacheMainfest()

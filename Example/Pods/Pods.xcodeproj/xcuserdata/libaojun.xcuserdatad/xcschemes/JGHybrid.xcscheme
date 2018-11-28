@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -13,11 +13,11 @@
             buildForProfiling = "YES"
             buildForArchiving = "YES">
             <BuildableReference
-               BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '526B23B0A1892F08C6C3F9D52A9BA8A1'
-               BlueprintName = 'JGHybrid'
-               ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'JGHybrid.framework'>
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "05A64369694275014FE38D16C05A4201"
+               BlueprintName = "JGHybrid"
+               ReferencedContainer = "container:Pods.xcodeproj"
+               BuildableName = "JGHybrid.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

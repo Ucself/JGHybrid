@@ -29,7 +29,6 @@ extension HybirdCommandExecute {
             guard let webViewController = MLHybrid.load(urlString: params.url) else {return}
             guard let navi = self.command.viewController.navigationController else {return}
             webViewController.titleName = params.title
-            webViewController.needLargeTitle = params.bigTitle  //大标题
             //标题颜色
             if UIColor.hybridColorWithHex(params.color) != .clear {
                 webViewController.titleColor = UIColor.hybridColorWithHex(params.color)
