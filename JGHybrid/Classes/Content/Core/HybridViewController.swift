@@ -9,7 +9,7 @@ import WebKit
 //更换类名 兼容老版本
 public typealias MLHybridViewController = HybridViewController
 
-open class HybridViewController: UIViewController,UIScrollViewDelegate,WKUIDelegate,WKNavigationDelegate,WKScriptMessageHandler  {
+open class HybridViewController: UIViewController,WKUIDelegate  {
     
     //MARK: --- 参数属性
     

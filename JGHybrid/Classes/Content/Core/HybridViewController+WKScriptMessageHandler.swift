@@ -9,7 +9,7 @@ import UIKit
 import WebKit
 
 //MARK:WKScriptMessageHandler
-extension HybridViewController {
+extension HybridViewController:WKScriptMessageHandler {
     //MessageHandler 回调
     open func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         

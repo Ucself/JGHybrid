@@ -50,7 +50,6 @@ extension HybridViewController {
         //设置代理
         self.contentView.uiDelegate = self
         self.contentView.navigationDelegate = self
-        self.contentView.scrollView.delegate = self
         if #available(iOS 9.0, *) {
             self.contentView.customUserAgent = defaultUserAgent
         }
