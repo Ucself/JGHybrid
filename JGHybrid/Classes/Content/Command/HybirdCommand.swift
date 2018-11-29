@@ -50,7 +50,39 @@ open class HybirdCommand {
             }
         }
     }
-    //MARK: - private
+    
+    //MARK: - 新版本解析URL为命令
+    //解析命令消息成对象
+    class func parseScriptMessage(message:WKScriptMessage, viewController:HybridViewController) -> MLHybirdCommand?{
+        //判断是否是requestHybrid 命令
+        guard message.name == "requestHybrid"  else { return  nil }
+        //判断是否符合参数
+        guard let commandDic:Dictionary<String,Any> = message.body as? Dictionary<String,Any> else { return nil }
+        
+        //Hybird命令对象
+        let command:MLHybirdCommand = MLHybirdCommand()
+        
+        //判断是否有tagname
+        if let name = commandDic["name"] as? String {
+            command.name = name
+        }
+        if let params = commandDic["params"] as? [String: AnyObject] {
+            command.params = params
+            //转换为内部使用参数
+            //let args = MLHybirdCommandParams.convert(params)   //旧的解析方式
+            let args = MLHybirdCommandParams.convert(params, nameType: MLHybridMethodType(rawValue:command.name))
+            command.args = args
+        }
+        if let callback = commandDic["callback"] as? String {
+            command.callbackId = callback
+        }
+        command.webView = viewController.contentView
+        command.viewController = viewController
+        
+        return command
+    }
+    
+    //MARK: -
     
     /// 解析并执行hybrid指令
     ///

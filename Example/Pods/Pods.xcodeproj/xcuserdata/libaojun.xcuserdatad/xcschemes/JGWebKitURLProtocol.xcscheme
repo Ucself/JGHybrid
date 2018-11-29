@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4D59ED2C4C67A83C3AFF4F3BF8EA30F8"
+               BlueprintIdentifier = "A1312BE3B487CBE57F4349D2BC1FC95A"
                BlueprintName = "JGWebKitURLProtocol"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "JGWebKitURLProtocol.framework">
