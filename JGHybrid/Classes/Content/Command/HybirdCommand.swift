@@ -52,7 +52,13 @@ open class HybirdCommand {
     }
     
     //MARK: - 新版本解析URL为命令
-    //解析命令消息成对象
+    
+    /// 解析命令消息成对象
+    ///
+    /// - Parameters:
+    ///   - message: message回调对象
+    ///   - viewController: 控制器
+    /// - Returns: 返回命令对象
     class func parseScriptMessage(message:WKScriptMessage, viewController:HybridViewController) -> MLHybirdCommand?{
         //判断是否是requestHybrid 命令
         guard message.name == "requestHybrid"  else { return  nil }

@@ -44,7 +44,13 @@ open class Hybrid: NSObject {
         return webViewController        
     }
     
-    
+    //加载RN命令
+    open class func loadRN(_ dictionary: [String: AnyObject],callback:@escaping ((_ response:[Any]) -> Void)) {
+        guard let command = HybridRNCommand.parseDictionary(dictionary, callback: callback ) else { return }
+        /// 执行命令对象
+        let commandExecute: HybridRNCommandExecute = HybridRNCommandExecute()
+        _ = commandExecute.performCommand(command: command)
+    }
     
     //版本检测并更新
     open class func checkMainfest() {

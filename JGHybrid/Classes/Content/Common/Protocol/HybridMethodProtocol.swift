@@ -17,6 +17,11 @@ public protocol HybridMethodProtocol {
     /// - Parameter command: 命令对象
     func commandExtension(command: MLHybirdCommand)
     
+    /// 和业务有关的RN命令扩展
+    ///
+    /// - Parameter command: 命令对象
+    func commandExtension(rnCommand: HybridRNCommand)
+    
     /// 页面加载失败所需操作
     ///
     /// - Parameter command: 命令对象

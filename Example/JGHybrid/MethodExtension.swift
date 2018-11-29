@@ -10,18 +10,14 @@ import Foundation
 import JGHybrid
 
 class MethodExtension: MLHybridMethodProtocol {
-    func didFailLoad(command: MLHybirdCommand) {
-        
-    }
     
+    func commandExtension(rnCommand: HybridRNCommand) { }
     
-    func startWait() {
-        
-    }
+    func didFailLoad(command: MLHybirdCommand) { }
     
-    func stopWait() {
-        
-    }
+    func startWait() { }
+    
+    func stopWait() { }
  
     //页面加载失败所需操作
     func didFailLoad(viewController: MLHybridViewController) {
