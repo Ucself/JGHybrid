@@ -49,6 +49,7 @@
     },
     {
       "name": "Common",
+      "source_files": "JGHybrid/Classes/Content/Common/*.swift",
       "subspecs": [
         {
           "name": "Protocol",

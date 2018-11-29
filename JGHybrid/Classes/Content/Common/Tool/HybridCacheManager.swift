@@ -161,12 +161,12 @@ class HybridCacheManager: NSObject {
     }
     
     func hybridAbsolutePath () -> String {
-        return NSHomeDirectory() + "/Documents/" + HybridConstantModel.offlinePackageFolder
+        return NSHomeDirectory() + "/Documents/" + HybridConstantDefineOfflinePackageFolder
     }
     
     //解压项目中的文件
     func HybridUnzipHybiryOfflineZip(){
-        guard let zipPath = Bundle.main.path(forResource: HybridConstantModel.offlinePackageFolder, ofType: "zip") else { return }
+        guard let zipPath = Bundle.main.path(forResource: HybridConstantDefineOfflinePackageFolder, ofType: "zip") else { return }
         if !FileManager.default.fileExists(atPath: hybridAbsolutePath()) {
             DispatchQueue.global().async {
                 let documentPath = NSHomeDirectory() + "/Documents"

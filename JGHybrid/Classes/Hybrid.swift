@@ -30,7 +30,7 @@ open class Hybrid: NSObject {
             URLProtocol.wk_registerScheme("https")
         }
         //默认开启拦截
-        UserDefaults.standard.set(true, forKey: HybridConstantModel.userDefaultSwitchCache)
+        UserDefaults.standard.set(true, forKey: HybridConstantDefineUserDefaultSwitchCache)
         //解压压缩包
         if HybridConfiguration.default.isCacheHtml {
             HybridCacheManager.default.HybridUnzipHybiryOfflineZip()

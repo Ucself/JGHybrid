@@ -28,11 +28,11 @@ class HybridURLProtocol: URLProtocol {
         print("MLHybridURLProtocol------------------>startLoading")
         //标记请求  防止重复处理
         let mutableReqeust: NSMutableURLRequest = (self.request as NSURLRequest).mutableCopy() as! NSMutableURLRequest
-        URLProtocol.setProperty(true, forKey: HybridConstantModel.urlProtocolHandled, in: mutableReqeust)
+        URLProtocol.setProperty(true, forKey: HybridConstantDefineUrlProtocolHandled, in: mutableReqeust)
         if let cachePath = MLHybridURLProtocol.findCache(self.request), let client: URLProtocolClient = self.client {
             let type = cachePath.pathExtension
             let fileData = try? Data(contentsOf: cachePath)
-            let response = URLResponse(url: cachePath, mimeType: HybridConstantModel.contentTpye[type], expectedContentLength: fileData?.count ?? 0, textEncodingName: "UTF-8")
+            let response = URLResponse(url: cachePath, mimeType: HybridConstantDefineContentTpye[type], expectedContentLength: fileData?.count ?? 0, textEncodingName: "UTF-8")
             client.urlProtocol(self, didReceive: response, cacheStoragePolicy: .allowed)
             client.urlProtocol(self, didLoad: fileData!)
             client.urlProtocolDidFinishLoading(self)
@@ -56,17 +56,17 @@ extension HybridURLProtocol {
             return false
         }
         //查看缓存开关
-        let closeSwitch = UserDefaults.standard.bool(forKey: HybridConstantModel.userDefaultSwitchCache)
+        let closeSwitch = UserDefaults.standard.bool(forKey: HybridConstantDefineUserDefaultSwitchCache)
         if !closeSwitch {
             return false
         }
         //如果被标记为已处理 直接跳过
-        if let hasHandled = URLProtocol.property(forKey: HybridConstantModel.urlProtocolHandled, in: request) as? Bool ,
+        if let hasHandled = URLProtocol.property(forKey: HybridConstantDefineUrlProtocolHandled, in: request) as? Bool ,
             hasHandled == true {
             return false
         }
         //是否在扩展文件后缀里面
-        if !HybridConstantModel.types.contains(requestURL.pathExtension) {
+        if !HybridConstantDefineTypes.contains(requestURL.pathExtension) {
             return false
         }
         //检测是否有该文件
@@ -95,7 +95,7 @@ extension HybridURLProtocol {
     fileprivate class func getUrlFolder() -> URL{
         let documentURL:URL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
         //缓存文件夹路径
-        let urlFolder:URL = documentURL.appendingPathComponent(HybridConstantModel.offlinePackageFolder, isDirectory: true)
+        let urlFolder:URL = documentURL.appendingPathComponent(HybridConstantDefineOfflinePackageFolder, isDirectory: true)
         return urlFolder
     }
 }

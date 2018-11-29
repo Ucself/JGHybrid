@@ -18,7 +18,7 @@ extension HybirdCommandExecute {
             return
         }
         self.command.viewController.hybridEvent = params.callback_name
-        UserDefaults.standard.set(params.cache, forKey: HybridConstantModel.userDefaultSwitchCache)
+        UserDefaults.standard.set(params.cache, forKey: HybridConstantDefineUserDefaultSwitchCache)
     }
     //forward - (push 页面 )
     func hybridForward(){
@@ -375,7 +375,7 @@ extension HybirdCommandExecute {
     func hybridOfflineCacheFile(data:Data?){
         do {
             //旧的ManiFest.json 的 hash
-            let oldManifestHash:String? = UserDefaults.standard.string(forKey: HybridConstantModel.userDefaultMainfest)
+            let oldManifestHash:String? = UserDefaults.standard.string(forKey: HybridConstantDefineUserDefaultMainfest)
             //            let oldManifestHash:String? = "\(Date.init().timeIntervalSince1970)"          //测试代码
             //获取返回的数据
             guard let responseData = data else { return }
@@ -386,7 +386,7 @@ extension HybirdCommandExecute {
             let mainfestParams:HybridMainfestParams = HybridMainfestParams.convert(manifestDic)
             MLHybrid.shared.mainfestParams = mainfestParams     //设置过去方便加载本地使用
             //写入新的数据
-            UserDefaults.standard.set(mainfestParams._hash, forKey: HybridConstantModel.userDefaultMainfest)
+            UserDefaults.standard.set(mainfestParams._hash, forKey: HybridConstantDefineUserDefaultMainfest)
             //如果manifest没有改变就直接返回
             if oldManifestHash == mainfestParams._hash { return }
             //清空WKWebview 磁盘缓存

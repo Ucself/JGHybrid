@@ -30,6 +30,9 @@ TODO: Add long description of the pod here.
   end
   
   s.subspec 'Common' do |common|
+      
+      common.source_files = 'JGHybrid/Classes/Content/Common/*.swift'
+      
       common.subspec 'Protocol' do |protocol|
           protocol.source_files = 'JGHybrid/Classes/Content/Common/Protocol/*.swift'
       end
