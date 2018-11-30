@@ -19,6 +19,7 @@
 		9147B47020DA69A000AE65F1 /* resources.json in Resources */ = {isa = PBXBuildFile; fileRef = 9147B46E20DA69A000AE65F1 /* resources.json */; };
 		9154BEB82004C87900BA5A5E /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9154BEB72004C87900BA5A5E /* BaseNavigationController.swift */; };
 		916A9D2F1FB04B0F003DCF99 /* MethodExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916A9D2E1FB04B0F003DCF99 /* MethodExtension.swift */; };
+		91F02C6021AFE4DB002A7F32 /* READHybrid.md in Resources */ = {isa = PBXBuildFile; fileRef = 91F02C5F21AFE4DA002A7F32 /* READHybrid.md */; };
 		91F1973F2021A0A200C98BEE /* LoadFailedView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91F1973E2021A0A200C98BEE /* LoadFailedView.xib */; };
 		91F197412021A0B900C98BEE /* LoadFailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F197402021A0B900C98BEE /* LoadFailedView.swift */; };
 		D881F79C64C7C6FD65FFC625 /* Pods_JGHybrid_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AA1597A5587CE99A6870EBF /* Pods_JGHybrid_Tests.framework */; };
@@ -53,12 +54,12 @@
 		6DE0838FB418A3BE4C156A84 /* Pods-JGHybrid_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JGHybrid_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JGHybrid_Tests/Pods-JGHybrid_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		7E73287A6217632257D96B86 /* JGHybrid.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = JGHybrid.podspec; path = ../JGHybrid.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		8AA1597A5587CE99A6870EBF /* Pods_JGHybrid_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JGHybrid_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		91123B9D21AE8B52005D72B0 /* READHybrid.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = READHybrid.md; sourceTree = "<group>"; };
 		9140A1DA1FCC08C000F1B131 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		9147B46D20DA69A000AE65F1 /* resources.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = resources.zip; sourceTree = "<group>"; };
 		9147B46E20DA69A000AE65F1 /* resources.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = resources.json; sourceTree = "<group>"; };
 		9154BEB72004C87900BA5A5E /* BaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		916A9D2E1FB04B0F003DCF99 /* MethodExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MethodExtension.swift; sourceTree = "<group>"; };
+		91F02C5F21AFE4DA002A7F32 /* READHybrid.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = READHybrid.md; path = ../READHybrid.md; sourceTree = "<group>"; };
 		91F1973E2021A0A200C98BEE /* LoadFailedView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadFailedView.xib; sourceTree = "<group>"; };
 		91F197402021A0B900C98BEE /* LoadFailedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadFailedView.swift; sourceTree = "<group>"; };
 		99A5034EC38F841271CD5120 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -165,7 +166,7 @@
 			children = (
 				7E73287A6217632257D96B86 /* JGHybrid.podspec */,
 				99A5034EC38F841271CD5120 /* README.md */,
-				91123B9D21AE8B52005D72B0 /* READHybrid.md */,
+				91F02C5F21AFE4DA002A7F32 /* READHybrid.md */,
 				2BCDB0F0F2DF6241BB92C78D /* LICENSE */,
 			);
 			name = "Podspec Metadata";
@@ -281,6 +282,7 @@
 			files = (
 				9147B47020DA69A000AE65F1 /* resources.json in Resources */,
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
+				91F02C6021AFE4DB002A7F32 /* READHybrid.md in Resources */,
 				9140A1DB1FCC08C000F1B131 /* index.html in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,

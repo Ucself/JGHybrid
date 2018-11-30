@@ -1,73 +1,49 @@
 #  企鹅医生Hybrid协议
 
-[init - ( 初始化 )](#init)
-[header - ( 导航栏 )](#header)
-[forward - (push 页面 )](#forward) 
-[modal - (modal 页面 )](#modal) 
-[dismiss - (modal 页面 消失)](#dismiss) 
-[back - ( 返回上一页 )](#back)
-[scroll - ( 页面滚动 ,主要是回弹效果)](#scroll)
-[pageshow - ( 页面显示 )](#pageshow)
-[pagehide - ( 页面隐藏 )](#pagehide)
-[device - ( 获取设备信息 )](#device)
-[location - ( 定位 )](#location)
-[clipboard - ( 剪贴板 )](#clipboard) 
-[storage - ( Storage)](#storage)
+######[init - ( 初始化 )](#init)
+######[forward - (push 页面 )](#forward) 
+######[modal - (modal 页面 )](#modal) 
+######[dismiss - (modal 页面 消失)](#dismiss) 
+######[back - ( 返回上一页 )](#back)
+######[header - ( 导航栏 )](#header)
+######[scroll - ( 页面滚动 ,主要是回弹效果)](#scroll)
+######[pageshow - ( 页面显示 )](#pageshow)
+######[pagehide - ( 页面隐藏 )](#pagehide)
+######[device - ( 获取设备信息 )](#device)
+######[location - ( 定位 )](#location)
+######[clipboard - ( 剪贴板 )](#clipboard) 
+######[storage - ( Storage)](#storage)
 
 <a name="init"></a>
 ### init
+协议H5有实现，RN没有实现的必要；可以不调用，有默认值
 
 ```   请求对象
 {
-"name":"init",
-"params":{
-"cache ":true                                                                //离线缓存，默认开启
-"callback_name ":"window.hybrid_callbacks "                  //回调方法前缀
-}
-}
-```
-<a name="header"></a>
-### header
-```   请求对象
-{
-"name":"header",
-"params":{
-"title":"首页",
-"show ":true,
-"bigTitle":false,//是否支持大标题
-"color":"",//标题颜色
-"background ":"#fff",                                        // header 的颜色
-"left":[{
-"title":"返回",
-"callback":"callback_name_1",
-"icon":"back.jpg",                                    //图片
-"color":"#fff"                                            //按钮字体颜色
-}],
-"right":[{
-"title":"确定",
-"callback":"callback_name_1",
-"icon":"111.jpg",
-"color":"#fff"
-}]
-}
+	"name":"init",
+	"params":{
+		"cache":true                        //离线缓存，默认开启
+		"callback_name":"Hybrid.callback"   //回调方法前缀
+	}
 }
 ```
 <a name="forward"></a>
 ### forward
+协议H5有实现，RN有实现
+
 ```   请求对象
 {
-"name":"forward",
-"params":{
-"type":"h5",                                        // h5 或 native 
-"url":"/h5",                                        // type 为native 时 native时 url 和业务有关的字符串
-"title":"首页",
-"animate":true,                                //默认true
-"bigTitle":false,//是否是大标题
-"color":"",//标题颜色
-"background":"",// header 的背景颜色
-"fullscreen":false//navagationbar 是否为透明
-"fullscreenBackGestures":false //全屏的时候是否需要返回手势
-}
+	"name":"forward",
+	"params":{
+		"type":"h5",                      // h5 或 native 
+		"url":"/h5",                		 // type 为native 时 native时 url 和业务有关的字符串
+		"title":"首页",						 // 页面title
+		"animate":true,                   // 默认true
+		"color":"",							 // 标题颜色
+		"background":"",                  // header的背景颜色
+		"fullscreen":false                // navagationbar是否为透明
+		"fullscreenBackGestures":false    // 全屏的时候是否需要返回手势
+	}
 }
 ```
 <a name="modal"></a>
@@ -101,7 +77,32 @@
 }
 }
 ```
-
+<a name="header"></a>
+### header
+```   请求对象
+{
+"name":"header",
+"params":{
+"title":"首页",
+"show ":true,
+"bigTitle":false,//是否支持大标题
+"color":"",//标题颜色
+"background ":"#fff",                                        // header 的颜色
+"left":[{
+"title":"返回",
+"callback":"callback_name_1",
+"icon":"back.jpg",                                    //图片
+"color":"#fff"                                            //按钮字体颜色
+}],
+"right":[{
+"title":"确定",
+"callback":"callback_name_1",
+"icon":"111.jpg",
+"color":"#fff"
+}]
+}
+}
+```
 <a name="scroll"></a>
 ### scroll
 ```   请求对象

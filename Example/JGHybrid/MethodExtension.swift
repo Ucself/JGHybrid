@@ -11,7 +11,9 @@ import JGHybrid
 
 class MethodExtension: MLHybridMethodProtocol {
     
-    func commandExtension(rnCommand: HybridRNCommand) { }
+    func commandRNExtension(rnCommand: HybridRNCommand) -> Any? {
+        return nil
+    }
     
     func didFailLoad(command: MLHybirdCommand) { }
     

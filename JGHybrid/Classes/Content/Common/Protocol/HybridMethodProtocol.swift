@@ -20,7 +20,7 @@ public protocol HybridMethodProtocol {
     /// 和业务有关的RN命令扩展
     ///
     /// - Parameter command: 命令对象
-    func commandExtension(rnCommand: HybridRNCommand)
+    func commandRNExtension(rnCommand: HybridRNCommand) -> Any?
     
     /// 页面加载失败所需操作
     ///
