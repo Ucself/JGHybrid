@@ -45,11 +45,11 @@ open class Hybrid: NSObject {
     }
     
     //加载RN命令
-    open class func loadRN(_ dictionary: [String: AnyObject],callback:@escaping ((_ response:[Any]) -> Void)) -> Any? {
-        guard let command = HybridRNCommand.parseDictionary(dictionary, callback: callback ) else { return nil }
+    open class func loadRN(_ dictionary: [String: AnyObject],callback:@escaping ((_ response:[Any]) -> Void)) {
+        guard let command = HybridRNCommand.parseDictionary(dictionary, callback: callback ) else { return }
         /// 执行命令对象
         let commandExecute: HybridRNCommandExecute = HybridRNCommandExecute()
-        return commandExecute.performCommand(command: command)
+        commandExecute.performCommand(command: command)
     }
     
     //版本检测并更新

@@ -10,7 +10,6 @@ import UIKit
 class HybridHeaderParams: BaseParams {
     var title:String = ""
     var show:Bool = true
-    var bigTitle:Bool = false
     var color:String = ""
     var background:String = ""
     var left:[HybridHeaderButtonParams] = []
@@ -20,7 +19,6 @@ class HybridHeaderParams: BaseParams {
         let obj:HybridHeaderParams = HybridHeaderParams.init()
         obj.title = dic["title"] as? String ?? ""
         obj.show = dic["show"] as? Bool ?? true
-        obj.bigTitle = dic["bigTitle"] as? Bool ?? false
         obj.color = dic["color"] as? String ?? ""
         obj.background = dic["background"] as? String ?? ""
         //左边Button

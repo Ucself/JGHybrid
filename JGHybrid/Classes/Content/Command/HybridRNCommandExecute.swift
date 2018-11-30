@@ -11,28 +11,34 @@ class HybridRNCommandExecute: NSObject {
 
     var command: HybridRNCommand = HybridRNCommand()
     //通过命令执行
-    func performCommand(command:HybridRNCommand) -> Any? {
+    func performCommand(command:HybridRNCommand) {
         print("---------------command start-----------------")
         print("👇RN METHOD:\nhybrid.loadRN()")
         self.command = command
-        return execute()
+        execute()
     }
     
     /// 根据指令执行对应的方法
-    private func execute() -> Any? {
+    private func execute() {
         //打印指令
         print("👇NAME:\n\(self.command.name)")
         print("👇PARAMS:\n\(self.command.params)")
         print("---------------command end-------------------")
         //和业务相关的协议
         guard let funType = MLHybridMethodType(rawValue: command.name) else {
-            return MLHybrid.shared.delegate?.commandRNExtension(rnCommand: command)
+            if let result = MLHybrid.shared.delegate?.commandRNExtension(rnCommand: command){
+                //回调
+                self.command.callback?([result])
+            }
+            else {
+                self.command.callback?([])
+            }
+            return
         }
-        var executeResult:Any?
         switch funType {
         //新命令
         case .hybridInit:
-            executeResult  = self.hybridInit()
+            self.hybridInit()
         case .hybridForward:
             self.hybridForward()
         case .hybridModal:
@@ -60,7 +66,6 @@ class HybridRNCommandExecute: NSObject {
         default:
             break
         }
-        return executeResult
     }
     
 }

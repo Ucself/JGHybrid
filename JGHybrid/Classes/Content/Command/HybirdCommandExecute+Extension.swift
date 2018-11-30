@@ -68,7 +68,7 @@ extension HybirdCommandExecute {
             self.command.viewController.present(webViewController, animated: params.animate, completion: nil)
         } else {
             //native跳转交给外部处理
-            command.name = "forwardModal"
+            command.name = "modalNative"
             MLHybrid.shared.delegate?.commandExtension(command: command)
         }
     }
