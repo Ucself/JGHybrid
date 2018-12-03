@@ -52,21 +52,39 @@ extension RootViewController:UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell:UITableViewCell = UITableViewCell()
-        cell.accessoryType = .detailDisclosureButton
+        let cellId:String = "cellId"
+        var cell:UITableViewCell!
+        if let tempCell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: cellId) {
+            cell = tempCell
+        }
+        else {
+            cell = UITableViewCell.init(style: UITableViewCellStyle.subtitle, reuseIdentifier: cellId)
+        }
+        cell.accessoryType = .disclosureIndicator
         
         switch indexPath.row {
         case 0:
             cell.textLabel?.text = "Hybrid H5 Demo"
+            cell.detailTextLabel?.text = "混合开发点击进入查看H5如何调用实现的协议"
         case 1:
             cell.textLabel?.text = "Hybrid RN Demo"
+            cell.detailTextLabel?.text = "混合开发点击进入查看RN如何调用实现的协议"
         default:
             break
         }
         
         return cell
     }
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        switch indexPath.row {
+        case 0:
+            let vc:HybridViewController =  Hybrid.load(urlString: "http://web-dev.doctorwork.com/ios/")!
+            self.navigationController?.pushViewController(vc, animated: true)
+        default:
+            break
+        }
+    }
     
 }
 

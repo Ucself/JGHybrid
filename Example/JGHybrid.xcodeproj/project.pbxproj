@@ -19,6 +19,7 @@
 		9147B47020DA69A000AE65F1 /* resources.json in Resources */ = {isa = PBXBuildFile; fileRef = 9147B46E20DA69A000AE65F1 /* resources.json */; };
 		9154BEB82004C87900BA5A5E /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9154BEB72004C87900BA5A5E /* BaseNavigationController.swift */; };
 		916A9D2F1FB04B0F003DCF99 /* MethodExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916A9D2E1FB04B0F003DCF99 /* MethodExtension.swift */; };
+		91DAEEFA21B535B7003869D8 /* RNViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DAEEF921B535B7003869D8 /* RNViewController.swift */; };
 		91F02C6021AFE4DB002A7F32 /* READHybrid.md in Resources */ = {isa = PBXBuildFile; fileRef = 91F02C5F21AFE4DA002A7F32 /* READHybrid.md */; };
 		91F1973F2021A0A200C98BEE /* LoadFailedView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91F1973E2021A0A200C98BEE /* LoadFailedView.xib */; };
 		91F197412021A0B900C98BEE /* LoadFailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F197402021A0B900C98BEE /* LoadFailedView.swift */; };
@@ -59,6 +60,7 @@
 		9147B46E20DA69A000AE65F1 /* resources.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = resources.json; sourceTree = "<group>"; };
 		9154BEB72004C87900BA5A5E /* BaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		916A9D2E1FB04B0F003DCF99 /* MethodExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MethodExtension.swift; sourceTree = "<group>"; };
+		91DAEEF921B535B7003869D8 /* RNViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RNViewController.swift; sourceTree = "<group>"; };
 		91F02C5F21AFE4DA002A7F32 /* READHybrid.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = READHybrid.md; path = ../READHybrid.md; sourceTree = "<group>"; };
 		91F1973E2021A0A200C98BEE /* LoadFailedView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadFailedView.xib; sourceTree = "<group>"; };
 		91F197402021A0B900C98BEE /* LoadFailedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadFailedView.swift; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 			children = (
 				9154BEB72004C87900BA5A5E /* BaseNavigationController.swift */,
 				607FACD71AFB9204008FA782 /* RootViewController.swift */,
+				91DAEEF921B535B7003869D8 /* RNViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -390,6 +393,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91DAEEFA21B535B7003869D8 /* RNViewController.swift in Sources */,
 				9154BEB82004C87900BA5A5E /* BaseNavigationController.swift in Sources */,
 				916A9D2F1FB04B0F003DCF99 /* MethodExtension.swift in Sources */,
 				91F197412021A0B900C98BEE /* LoadFailedView.swift in Sources */,
