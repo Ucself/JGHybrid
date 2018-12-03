@@ -164,39 +164,46 @@
 }
 ```
 <a name="location"></a>
+
 ### location
+协议H5有实现，RN有实现，RN不需要参数
+
 ```   请求对象
 {
 	"name":"location",
 	"params":{
 		"located":"located_callback ",	// 定位成功 回调
 		"failed":"failed_callback  ",    	// 失败回调 失败类型 code : 1 - 定位失败 2 - 无权限
-		"updated":"updated_callback ",  	//位置更新回调,
+		"updated":"updated_callback ",  	// 位置更新回调,
 		"precision":"normal",            // 精度 - normal 普通, high 最高
 		"timeout":5000                   // 默认超时 5秒，超时后执行 failed 回调
 	}
 }
 ```
-<a name="clipboard"></a>
-### clipboard
+<a name="storage"></a>
+### storage
+协议H5有实现，RN有实现
+
 ```   请求对象
 {
-"name":"clipboard",
-"params":{
-"content ":"复制内容 "                                        //复制内容
+	"name":"storage",
+	"params":{
+		"action ":"set"       	 	//只能是：set ，get ，remove ; set代表新增存储，get获取所有的存储，remove移除所有的存储
+		"hash":{"key":"value"}     //需要存储的键值对
+	}
+	"callback":"fsdfa"
 }
+```
+<a name="clipboard"></a>
+### clipboard
+协议H5有实现，RN有实现
+
+```   请求对象
+{
+	"name":"clipboard",
+	"params":{
+		"content ":"复制内容"            //复制内容
+	}
 }
 ```
 
-<a name="storage"></a>
-### storage
-```   请求对象
-{
-"name":"storage",
-"params":{
-"action ":"set"                                        //只能是：set ，get ，remove  。set代表新增存储，get获取所有的存储，remove移除所有的存储
-"hash":{"key":"value"}                            //需要存储的键值对
-}
-"callback":"fsdfa"
-}
-```

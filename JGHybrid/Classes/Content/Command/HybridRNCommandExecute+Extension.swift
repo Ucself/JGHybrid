@@ -133,20 +133,65 @@ extension HybridRNCommandExecute {
         self.command.callback?([deviceInfor])
     }
     //location - ( 定位 )
-    func hybridLocation() -> Any? {
-        return nil
+    func hybridLocation() {
+        let locationModel = MLHybridLocation()
+        locationModel.getLocation { (success, errcode, resultData) in
+            let result:[String:Any] = ["success" : success , "errcode" : errcode, "data": resultData as Any]
+            self.command.callback?([result])
+        }
     }
     //clipboard - ( 存储 )
-    func hybridStorage() -> Any? {
-        return nil
+    func hybridStorage() {
+        guard let params:HybridStorageParams = self.command.args.commandParams as? HybridStorageParams  else {
+            self.command.callback?([])
+            return
+        }
+        //Storage类型
+        let action:String = params.action
+        //userdefault key
+        let userDefaultKey:String = "HybridStorageUserDefaultKey"
+        switch action {
+        case "set":
+            //首先拿出现有的存储
+            var newHashDic:[String:String] = [:]
+            if let hashDic:[String:String] = UserDefaults.standard.object(forKey: userDefaultKey) as? [String:String] {
+                newHashDic = hashDic
+                //累加新值
+                for (key,value) in params.hashDic {
+                    newHashDic[key] = value
+                }
+            }
+            else {
+                newHashDic = params.hashDic
+            }
+            //设置存储
+            if newHashDic.count > 0 {
+                UserDefaults.standard.set(newHashDic, forKey: userDefaultKey)
+            }
+        case "get":
+            //获取存储
+            if let hashDic:[String:String] = UserDefaults.standard.object(forKey: userDefaultKey) as? [String:String] {
+                self.command.callback?([hashDic])
+            }
+            else {
+                self.command.callback?([])
+            }
+            
+        case "remove":
+            UserDefaults.standard.removeObject(forKey: userDefaultKey)
+            self.command.callback?([])
+        default:
+            break
+        }
     }
     //clipboard - ( 剪贴板 )
-    func hybridClipboard() -> Any? {
+    func hybridClipboard() {
         guard let params:HybridClipboardParams = self.command.args.commandParams as? HybridClipboardParams  else {
-            return nil
+            self.command.callback?([])
+            return
         }
         UIPasteboard.general.string = params.content
-        return nil
+        self.command.callback?([])
     }
 
     
