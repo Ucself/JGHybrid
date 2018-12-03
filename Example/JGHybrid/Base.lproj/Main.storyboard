@@ -1,71 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xtO-a5-saG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="0ce-XL-Jek">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--首页-->
-        <scene sceneID="ufC-wZ-h7g">
-            <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="JGHybrid_Example" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
-                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qtt-6m-QoD">
-                                <rect key="frame" x="118.5" y="114" width="138" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="ZuK-uy-4sK"/>
-                                </constraints>
-                                <state key="normal" title="进入Hybrid页面测试"/>
-                                <connections>
-                                    <action selector="buttonClick:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="F24-Ap-nO8"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="qtt-6m-QoD" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="DFa-z4-3zT"/>
-                            <constraint firstItem="qtt-6m-QoD" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="50" id="jfg-Si-6MR"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="首页" id="Ezb-CG-Ndf"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-767" y="28"/>
-        </scene>
         <!--Base Navigation Controller-->
-        <scene sceneID="Som-Jl-3HF">
+        <scene sceneID="bmy-UX-pYP">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xtO-a5-saG" customClass="BaseNavigationController" customModule="JGHybrid_Example" customModuleProvider="target" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wh7-BN-NGR">
+                <navigationController id="0ce-XL-Jek" customClass="BaseNavigationController" customModule="JGHybrid_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xA4-GG-JoL">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="barTintColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </textAttributes>
                     </navigationBar>
-                    <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="yxg-gn-rKw"/>
+                        <segue destination="Fo9-jU-jLM" kind="show" id="Vgw-XR-IUh"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hVy-0x-mPr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IQ9-gJ-gnP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1628" y="29"/>
+            <point key="canvasLocation" x="-1076" y="45"/>
+        </scene>
+        <!--Root View Controller-->
+        <scene sceneID="AWs-1E-WRp">
+            <objects>
+                <viewController id="Fo9-jU-jLM" customClass="RootViewController" customModule="JGHybrid_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mKM-Kr-oxB"/>
+                        <viewControllerLayoutGuide type="bottom" id="Jkt-US-9eP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Nnn-ty-OZI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zda-Wp-KBI">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Fo9-jU-jLM" id="qAe-gl-OjK"/>
+                                    <outlet property="delegate" destination="Fo9-jU-jLM" id="QjT-gi-tQJ"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="zda-Wp-KBI" firstAttribute="leading" secondItem="Nnn-ty-OZI" secondAttribute="leading" id="99H-Xu-9FB"/>
+                            <constraint firstItem="Jkt-US-9eP" firstAttribute="top" secondItem="zda-Wp-KBI" secondAttribute="bottom" id="AB0-6H-qo4"/>
+                            <constraint firstAttribute="trailing" secondItem="zda-Wp-KBI" secondAttribute="trailing" id="Nao-dX-lCd"/>
+                            <constraint firstItem="zda-Wp-KBI" firstAttribute="top" secondItem="mKM-Kr-oxB" secondAttribute="bottom" id="gQ9-Q9-Day"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="olX-8G-zRG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-209" y="45"/>
         </scene>
     </scenes>
 </document>

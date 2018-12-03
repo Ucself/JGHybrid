@@ -9,24 +9,25 @@
 import UIKit
 import JGHybrid
 
-class ViewController: UIViewController {
-
+class RootViewController: UIViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        self.initUI()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         self.navigationController?.navigationBar.hybridSetTitleColor(UIColor.black)
         self.navigationController?.navigationBar.hybridSetBackgroundColor(UIColor.white)
     }
+    
+    func initUI(){
+        self.title = "Hybrid Demo"
+    }
+    
 
 
     @IBAction func buttonClick(_ sender: Any) {
@@ -42,5 +43,30 @@ class ViewController: UIViewController {
 //        let vc:HybridViewController =  Hybrid.load(urlString: "http://web-qa.doctorwork.com/rapp/health/health-package/0?sku=HS2018002")!
         self.navigationController?.pushViewController(vc, animated: true)
     }
+}
+
+extension RootViewController:UITableViewDelegate,UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell:UITableViewCell = UITableViewCell()
+        cell.accessoryType = .detailDisclosureButton
+        
+        switch indexPath.row {
+        case 0:
+            cell.textLabel?.text = "Hybrid H5 Demo"
+        case 1:
+            cell.textLabel?.text = "Hybrid RN Demo"
+        default:
+            break
+        }
+        
+        return cell
+    }
+    
+    
 }
 

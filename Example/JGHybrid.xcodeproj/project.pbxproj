@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		3B25EBE05776C41F175201F3 /* Pods_JGHybrid_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47DAF2446D8B5D330E7C7CF3 /* Pods_JGHybrid_Example.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
-		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
+		607FACD81AFB9204008FA782 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* RootViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
@@ -43,7 +43,7 @@
 		607FACD01AFB9204008FA782 /* JGHybrid_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JGHybrid_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		607FACD71AFB9204008FA782 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		607FACD71AFB9204008FA782 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -121,15 +121,13 @@
 		607FACD21AFB9204008FA782 /* Example for JGHybrid */ = {
 			isa = PBXGroup;
 			children = (
+				91DAEEF721B525D6003869D8 /* ViewController */,
+				91DAEEF621B52555003869D8 /* View */,
+				91DAEEF821B5285A003869D8 /* Protocol */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
-				9154BEB72004C87900BA5A5E /* BaseNavigationController.swift */,
-				607FACD71AFB9204008FA782 /* ViewController.swift */,
-				916A9D2E1FB04B0F003DCF99 /* MethodExtension.swift */,
-				91F197402021A0B900C98BEE /* LoadFailedView.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
-				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
-				91F1973E2021A0A200C98BEE /* LoadFailedView.xib */,
+				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
 			);
 			name = "Example for JGHybrid";
@@ -181,6 +179,32 @@
 			);
 			name = gh;
 			path = ../gh;
+			sourceTree = "<group>";
+		};
+		91DAEEF621B52555003869D8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				91F197402021A0B900C98BEE /* LoadFailedView.swift */,
+				91F1973E2021A0A200C98BEE /* LoadFailedView.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		91DAEEF721B525D6003869D8 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9154BEB72004C87900BA5A5E /* BaseNavigationController.swift */,
+				607FACD71AFB9204008FA782 /* RootViewController.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		91DAEEF821B5285A003869D8 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				916A9D2E1FB04B0F003DCF99 /* MethodExtension.swift */,
+			);
+			name = Protocol;
 			sourceTree = "<group>";
 		};
 		A23004DD67C779CDFA89A3F7 /* Frameworks */ = {
@@ -369,7 +393,7 @@
 				9154BEB82004C87900BA5A5E /* BaseNavigationController.swift in Sources */,
 				916A9D2F1FB04B0F003DCF99 /* MethodExtension.swift in Sources */,
 				91F197412021A0B900C98BEE /* LoadFailedView.swift in Sources */,
-				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				607FACD81AFB9204008FA782 /* RootViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
