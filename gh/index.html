@@ -15,6 +15,39 @@
                 'callback_name':'Hybrid.callback'
                 }
             }
+    var forwardOne = {
+        'name':'forward',
+        'params':{
+            'type':'h5',
+            'url':'http://web-dev.doctorwork.com/ios/',
+            'title':'forward/导航栏透明',
+            'animate':false,
+            'fullscreen':true
+            'fullscreenBackGestures':true
+        }
+    }
+    var forwardTwo = {
+        'name':'forward',
+        'params':{
+            'type':'h5',
+            'url':'http://web-dev.doctorwork.com/ios/',
+            'title':'forward/导航栏不透明',
+            'animate':true,
+            'fullscreen':true
+        }
+    }
+    var forwardThree = {
+        'name':'forward',
+        'params':{
+            'type':'h5',
+            'url':'http://web-dev.doctorwork.com/ios/',
+            'title':'forward/设置标题颜色b，背景色',
+            'color':'00D233',
+            'background':'FF8A5F',
+            'animate':true
+            
+        }
+    }
         var header = {
             'name':'header',
             'params':{
@@ -42,39 +75,7 @@
                     }]
                 }
             }
-        var forward = {
-            'name':'forward',
-            'params':{
-                'type':'h5',
-                'url':'http://web-dev.doctorwork.com/ios/',
-                'title':'forward /h5',
-                'animate':false,
-                'fullscreen':true
-            }
-        }
-        var forwardBaidu = {
-            'name':'forward',
-            'params':{
-                'type':'h5',
-                'url':'http://www.baidu.com',
-                'title':'forward /h5',
-                'animate':true,
-                'fullscreen':true
-            }
-        }
-        var forwardLargeTitle = {
-            'name':'forward',
-            'params':{
-                'type':'h5',
-                'url':'http://web-dev.doctorwork.com/ios/',
-                'title':'forward /h5',
-                'bigTitle':true,
-                'color':'00D233',
-                'background':'FF8A5F',
-                'animate':true
-                
-            }
-        }
+    
         var modal = {
             'name':'modal',
             'params':{
@@ -82,7 +83,7 @@
                 'url':'http://web-dev.doctorwork.com/ios/',
                 'title':'forward /h5',
                 'animate':true,
-                'fullscreen':true
+                'fullscreen':false
             }
         }
         var back = {
@@ -252,13 +253,13 @@
     <br><br>
     <input type="button" value="init" onclick="window.webkit.messageHandlers.requestHybrid.postMessage(init);" />
     <br><br>
+    <input type="button" value="forward/导航栏透明" onclick="window.webkit.messageHandlers.requestHybrid.postMessage(forwardOne);" />
+    <br><br>
+    <input type="button" value="forward/导航栏不透明" onclick="window.webkit.messageHandlers.requestHybrid.postMessage(forwardTwo);" />
+    <br><br>
+    <input type="button" value="forward/设置标题颜色b，背景色" onclick="window.webkit.messageHandlers.requestHybrid.postMessage(forwardThree);" />
+    <br><br>
     <input type="button" value="header" onclick="window.webkit.messageHandlers.requestHybrid.postMessage(header);" />
-    <br><br>
-    <input type="button" value="forward" onclick="window.webkit.messageHandlers.requestHybrid.postMessage(forward);" />
-    <br><br>
-    <input type="button" value="forwardBaidu" onclick="window.webkit.messageHandlers.requestHybrid.postMessage(forwardBaidu);" />
-    <br><br>
-    <input type="button" value="forwardLargeTitle" onclick="window.webkit.messageHandlers.requestHybrid.postMessage(forwardLargeTitle);" />
     <br><br>
     <input type="button" value="modal" onclick="window.webkit.messageHandlers.requestHybrid.postMessage(modal);" />
     <br><br>
