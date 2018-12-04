@@ -79,7 +79,7 @@ extension RootViewController:UITableViewDelegate,UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
         switch indexPath.row {
         case 0:
-            let vc:HybridViewController =  Hybrid.load(urlString: "http://web-dev.doctorwork.com/ios/")!
+            let vc:HybridViewController =  Hybrid.load(urlString: "http://web-dev.doctorwork.com/ios/?" + "id=\(arc4random())")!
             self.navigationController?.pushViewController(vc, animated: true)
         default:
             break
