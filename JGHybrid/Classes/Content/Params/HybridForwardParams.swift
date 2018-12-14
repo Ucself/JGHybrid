@@ -17,6 +17,7 @@ class HybridForwardParams: BaseParams {
     var animate:Bool = true
     var fullscreen:Bool = false
     var fullscreenBackGestures:Bool = false
+    var characterAllowed:Bool = false
     //解析数据对象
     override class func convert(_ dic: [String: AnyObject]) -> HybridForwardParams {
         let obj:HybridForwardParams = HybridForwardParams.init()
@@ -28,6 +29,7 @@ class HybridForwardParams: BaseParams {
         obj.animate = dic["animate"] as? Bool ?? true
         obj.fullscreen = dic["fullscreen"] as? Bool ?? false
         obj.fullscreenBackGestures = dic["fullscreenBackGestures"] as? Bool ?? false
+        obj.characterAllowed = dic["characterAllowed"] as? Bool ?? false
         return obj
     }
 }

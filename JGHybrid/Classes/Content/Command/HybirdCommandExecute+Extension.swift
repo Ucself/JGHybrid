@@ -26,7 +26,7 @@ extension HybirdCommandExecute {
             return
         }
         if params.type == "h5" {
-            guard let webViewController = MLHybrid.load(urlString: params.url) else {return}
+            guard let webViewController = MLHybrid.load(urlString: params.url, taroH5: params.characterAllowed) else {return}
             guard let navi = self.command.viewController.navigationController else {return}
             webViewController.titleName = params.title
             //标题颜色
