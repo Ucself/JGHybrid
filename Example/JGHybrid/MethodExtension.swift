@@ -11,11 +11,11 @@ import JGHybrid
 
 class MethodExtension: MLHybridMethodProtocol {
     
-    func commandRNExtension(rnCommand: HybridRNCommand) -> Any? {
-        return nil
-    }
+//    func commandRNExtension(rnCommand: HybridRNCommand) -> Any? {
+//        return nil
+//    }
     
-    func didFailLoad(command: MLHybirdCommand) { }
+    func didFailLoad(command: MLHybridCommand) { }
     
     func startWait() { }
     
@@ -28,7 +28,7 @@ class MethodExtension: MLHybridMethodProtocol {
         failView.frame = viewController.view.frame
     }
     
-    func commandExtension(command: MLHybirdCommand) {
+    func commandExtension(command: MLHybridCommand) {
         switch command.name {
         case "Business":
             break

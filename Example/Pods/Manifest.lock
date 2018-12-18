@@ -1,29 +1,29 @@
 PODS:
-  - JGHybrid (4.0.9):
-    - JGHybrid/Command (= 4.0.9)
-    - JGHybrid/Common (= 4.0.9)
-    - JGHybrid/Core (= 4.0.9)
-    - JGHybrid/Params (= 4.0.9)
+  - JGHybrid (5.1.0):
+    - JGHybrid/Command (= 5.1.0)
+    - JGHybrid/Common (= 5.1.0)
+    - JGHybrid/Core (= 5.1.0)
+    - JGHybrid/Params (= 5.1.0)
     - JGWebKitURLProtocol
     - SSZipArchive
-  - JGHybrid/Command (4.0.9):
+  - JGHybrid/Command (5.1.0):
     - JGWebKitURLProtocol
     - SSZipArchive
-  - JGHybrid/Common (4.0.9):
-    - JGHybrid/Common/Protocol (= 4.0.9)
-    - JGHybrid/Common/Tool (= 4.0.9)
+  - JGHybrid/Common (5.1.0):
+    - JGHybrid/Common/Protocol (= 5.1.0)
+    - JGHybrid/Common/Tool (= 5.1.0)
     - JGWebKitURLProtocol
     - SSZipArchive
-  - JGHybrid/Common/Protocol (4.0.9):
+  - JGHybrid/Common/Protocol (5.1.0):
     - JGWebKitURLProtocol
     - SSZipArchive
-  - JGHybrid/Common/Tool (4.0.9):
+  - JGHybrid/Common/Tool (5.1.0):
     - JGWebKitURLProtocol
     - SSZipArchive
-  - JGHybrid/Core (4.0.9):
+  - JGHybrid/Core (5.1.0):
     - JGWebKitURLProtocol
     - SSZipArchive
-  - JGHybrid/Params (4.0.9):
+  - JGHybrid/Params (5.1.0):
     - JGWebKitURLProtocol
     - SSZipArchive
   - JGWebKitURLProtocol (1.0.1)
@@ -42,7 +42,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  JGHybrid: 1f9c2eb3e1015e7ad39556aaa879eb874c5e4457
+  JGHybrid: f03b30de672628571b3ea861a679916d6f860eb1
   JGWebKitURLProtocol: 3086024bce4da9e8b9d639a12a9083048b3ca1cd
   SSZipArchive: 51a800ebb77f95a8329b6ced1faaff394b47f509
 

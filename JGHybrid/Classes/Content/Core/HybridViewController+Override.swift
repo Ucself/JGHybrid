@@ -44,7 +44,7 @@ extension HybridViewController {
             self.pageFirstShow = false
         }
         else if self.commandExecute.command.webView != nil {
-            self.commandExecute.command.webView.evaluateJavaScript(MLHybridConfiguration.default.pageShowEvent) { (_, _) in }
+            self.commandExecute.command.webView?.evaluateJavaScript(MLHybridConfiguration.default.pageShowEvent) { (_, _) in }
         }
         
     }

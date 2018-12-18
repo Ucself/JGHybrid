@@ -1,5 +1,5 @@
 //
-//  MLHybirdCommandParams.swift
+//  MLHybridCommandParams.swift
 //  Pods
 //
 
@@ -28,16 +28,16 @@ public enum HybridMethodType: String {
 }
 
 //更换类名 兼容老版本
-public typealias MLHybirdCommandParams = HybirdCommandParams
+public typealias MLHybridCommandParams = HybridCommandParams
 
-public class HybirdCommandParams: NSObject {
+public class HybridCommandParams: NSObject {
     
     var dic: [String: AnyObject] = [:]                  //储存原始数据
     var commandParams:BaseParams = BaseParams.init()    //解析的对象
     
     //新的参数解析方式
-    class func convert(_ dic: [String: AnyObject], nameType:MLHybridMethodType?) -> MLHybirdCommandParams {
-        let args = MLHybirdCommandParams()
+    class func convert(_ dic: [String: AnyObject], nameType:MLHybridMethodType?) -> MLHybridCommandParams {
+        let args = MLHybridCommandParams()
         args.dic = dic
         //如果传输不在范围内的命令，直接返回基类
         guard let name = nameType else {

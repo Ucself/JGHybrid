@@ -1,5 +1,5 @@
 //
-//  MLHybirdCommand.swift
+//  MLHybridCommand.swift
 //  Pods
 //
 
@@ -7,23 +7,23 @@ import Foundation
 import WebKit
 
 //更换类名 兼容老版本
-public typealias MLHybirdCommand = HybirdCommand
+public typealias MLHybridCommand = HybridCommand
 
-open class HybirdCommand {
+open class HybridCommand {
     
     //指令名
     public var name:String = ""
     //外部使用参数
     public var params: [String: AnyObject] = [:]
     //内部使用参数
-    public var args: MLHybirdCommandParams = MLHybirdCommandParams()
+    public var args: MLHybridCommandParams = MLHybridCommandParams()
     //回调Id
     public var callbackId: String = ""
     //发出指令的控制器
     public weak var viewController: MLHybridViewController!
     //webView
-    public weak var webView: WKWebView! = WKWebView()
-
+    public weak var webView: WKWebView?
+    
     /// 执行回调
     ///
     /// - Parameters:
@@ -39,7 +39,7 @@ open class HybirdCommand {
                     "msg": msg] as [String : Any]
         
         let dataString = data.hybridJSONString()
-        webView.evaluateJavaScript(self.viewController.hybridEvent + "(\(dataString));") { (result, error) in
+        webView?.evaluateJavaScript(self.viewController.hybridEvent + "(\(dataString));") { (result, error) in
             if let resultStr = result as? String {
                 completion(resultStr)
             }else  if  let error = error{
@@ -59,14 +59,14 @@ open class HybirdCommand {
     ///   - message: message回调对象
     ///   - viewController: 控制器
     /// - Returns: 返回命令对象
-    public class func parseScriptMessage(message:WKScriptMessage, viewController:HybridViewController) -> MLHybirdCommand?{
+    public class func parseScriptMessage(message:WKScriptMessage, viewController:HybridViewController) -> MLHybridCommand?{
         //判断是否是requestHybrid 命令
         guard message.name == "requestHybrid"  else { return  nil }
         //判断是否符合参数
         guard let commandDic:Dictionary<String,Any> = message.body as? Dictionary<String,Any> else { return nil }
         
         //Hybird命令对象
-        let command:MLHybirdCommand = MLHybirdCommand()
+        let command:MLHybridCommand = MLHybridCommand()
         
         //判断是否有tagname
         if let name = commandDic["name"] as? String {
@@ -75,8 +75,8 @@ open class HybirdCommand {
         if let params = commandDic["params"] as? [String: AnyObject] {
             command.params = params
             //转换为内部使用参数
-            //let args = MLHybirdCommandParams.convert(params)   //旧的解析方式
-            let args = MLHybirdCommandParams.convert(params, nameType: MLHybridMethodType(rawValue:command.name))
+            //let args = MLHybridCommandParams.convert(params)   //旧的解析方式
+            let args = MLHybridCommandParams.convert(params, nameType: MLHybridMethodType(rawValue:command.name))
             command.args = args
         }
         if let callback = commandDic["callback"] as? String {
@@ -96,12 +96,12 @@ open class HybirdCommand {
     ///   - urlString: 原始指令串
     ///   - webView: 触发指令的容器
     ///   - appendParams: 附加到指令串中topage地址的参数 一般情况下不需要
-    class func analysis(request: URLRequest, webView: WKWebView) -> MLHybirdCommand? {
+    class func analysis(request: URLRequest, webView: WKWebView) -> MLHybridCommand? {
         guard let url = request.url else  { return nil }
         if url.scheme != MLHybridConfiguration.default.scheme {
             return nil
         }
-        let command = MLHybirdCommand()
+        let command = MLHybridCommand()
         let result = command.contentResolver(url: url)
         command.name = result.function
         command.params = result.params
@@ -116,11 +116,11 @@ open class HybirdCommand {
     /// - Parameters:
     ///   - urlString: 原始指令串
     /// - Returns: 执行方法名、参数、回调ID
-    private func contentResolver(url: URL) -> (function: String, params:[String: AnyObject], args: MLHybirdCommandParams, callbackId: String) {
+    private func contentResolver(url: URL) -> (function: String, params:[String: AnyObject], args: MLHybridCommandParams, callbackId: String) {
         let functionName = url.host ?? ""
         let paramDic = url.hybridURLParamsDic()
         let argsDic = (paramDic["params"] ?? "").hybridDecodeURLString().hybridDecodeJsonStr()
-        //let args = MLHybirdCommandParams.convert(argsDic)
+        //let args = MLHybridCommandParams.convert(argsDic)
         let callBackId = paramDic["callback"] ?? ""
         return (functionName, argsDic, args, callBackId)
     }

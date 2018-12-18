@@ -51,21 +51,21 @@ open class Hybrid: NSObject {
     }
     
     //加载RN命令
-    open class func loadRN(_ dictionary: [String: AnyObject],callback:@escaping ((_ response:[Any]) -> Void)) {
-        guard let command = HybridRNCommand.parseDictionary(dictionary, callback: callback ) else { return }
-        /// 执行命令对象
-        let commandExecute: HybridRNCommandExecute = HybridRNCommandExecute()
-        commandExecute.performCommand(command: command)
-    }
+//    open class func loadRN(_ dictionary: [String: AnyObject],callback:@escaping ((_ response:[Any]) -> Void)) {
+//        guard let command = HybridRNCommand.parseDictionary(dictionary, callback: callback ) else { return }
+//        /// 执行命令对象
+//        let commandExecute: HybridRNCommandExecute = HybridRNCommandExecute()
+//        commandExecute.performCommand(command: command)
+//    }
     
     //版本检测并更新
     open class func checkMainfest() {
-        MLHybirdCommandExecute().hybridOfflineCacheMainfest()
+        MLHybridCommandExecute().hybridOfflineCacheMainfest()
     }
     
     //新的zip包版本检测
     open class func checkOfflinePackage() {
-        MLHybirdCommandExecute().hybridOfflinePackage()
+        MLHybridCommandExecute().hybridOfflinePackage()
     }
 }
 

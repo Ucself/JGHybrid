@@ -10,7 +10,7 @@ import WebKit
 import SSZipArchive
 
 //新版的Hybrid解析
-extension HybirdCommandExecute {
+extension HybridCommandExecute {
     
     //init - ( 初始化 )
     func hybridInit(){
@@ -247,7 +247,7 @@ extension HybirdCommandExecute {
         var buttonModel:HybridHeaderParams.HybridHeaderButtonParams = HybridHeaderParams.HybridHeaderButtonParams()
     }
     
-    @objc func hybridHeaderButtonClick(sender: MLHybirdCommandExecute.hybridHeaderButton) {
+    @objc func hybridHeaderButtonClick(sender: MLHybridCommandExecute.hybridHeaderButton) {
         self.command.callBack(callback:  sender.buttonModel.callback) { (str) in }
     }
     
@@ -256,10 +256,10 @@ extension HybirdCommandExecute {
         guard let params:HybridScrollParams = self.command.args.commandParams as? HybridScrollParams  else {
             return
         }
-        self.command.webView.scrollView.bounces = params.enable
+        self.command.webView?.scrollView.bounces = params.enable
         let backgroundColor:UIColor = UIColor.hybridColorWithHex(params.background)
         if backgroundColor != .clear {
-            self.command.webView.scrollView.backgroundColor = backgroundColor
+            self.command.webView?.scrollView.backgroundColor = backgroundColor
         }
     }
     //pageshow - ( 页面显示 )

@@ -99,7 +99,7 @@ open class HybridViewController: UIViewController,WKUIDelegate  {
     var locationModel = MLHybridLocation()
     
     /// 执行命令对象
-    var commandExecute: MLHybirdCommandExecute = MLHybirdCommandExecute()
+    var commandExecute: MLHybridCommandExecute = MLHybridCommandExecute()
     
     /// H5需要不是第一次显示的回调
     var pageFirstShow = true
