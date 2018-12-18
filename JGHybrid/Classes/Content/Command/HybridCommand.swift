@@ -9,7 +9,7 @@ import WebKit
 //更换类名 兼容老版本
 public typealias MLHybridCommand = HybridCommand
 
-open class HybridCommand {
+open class HybridCommand: NSObject {
     
     //指令名
     public var name:String = ""
