@@ -36,7 +36,7 @@ class HybridCommandExecute: NSObject {
     }
     
     func apiClassName() -> String {
-        return "HybridAPI"
+        return "HybridBusiness"
     }
     
     private func swiftClassFromString(className: String) -> AnyObject.Type? {
