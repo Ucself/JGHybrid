@@ -67,8 +67,8 @@ extension RootViewController:UITableViewDelegate,UITableViewDataSource {
             cell.textLabel?.text = "Hybrid H5 Demo"
             cell.detailTextLabel?.text = "混合开发点击进入查看H5如何调用实现的协议"
         case 1:
-            cell.textLabel?.text = "Hybrid RN Demo"
-            cell.detailTextLabel?.text = "混合开发点击进入查看RN如何调用实现的协议"
+            cell.textLabel?.text = "Hybrid H5 相对路径 Demo"
+            cell.detailTextLabel?.text = "混合开发点击进入查看H5如何调用实现的协议"
         default:
             break
         }
@@ -80,6 +80,10 @@ extension RootViewController:UITableViewDelegate,UITableViewDataSource {
         switch indexPath.row {
         case 0:
             let vc:HybridViewController =  Hybrid.load(urlString: "http://web-dev.doctorwork.com/ios/?" + "id=\(arc4random())")!
+            self.navigationController?.pushViewController(vc, animated: true)
+        case 1:
+            //let vc:HybridViewController =  Hybrid.load(urlString: "rapp/festival/index.html")!
+            let vc:HybridViewController =  Hybrid.load(urlString: "")!
             self.navigationController?.pushViewController(vc, animated: true)
         default:
             break

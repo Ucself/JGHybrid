@@ -7,7 +7,7 @@ import Foundation
 
 extension String{
     
-    //MARK:获得string内容高度
+    //获得string内容高度
     public func hybridStringHeightWith(_ fontSize:CGFloat,width:CGFloat)->CGFloat {
         let font = UIFont.systemFont(ofSize: fontSize)
         let size = CGSize(width: width,height: CGFloat.greatestFiniteMagnitude)
@@ -21,7 +21,7 @@ extension String{
         return CGFloat(height)
     }
     
-    //MARK:获得string内容宽度
+    //获得string内容宽度
     public func hybridStringWidthWith(_ fontSize:CGFloat,height:CGFloat)->CGFloat {
         let font = UIFont.systemFont(ofSize: fontSize)
         let size = CGSize(width: CGFloat.greatestFiniteMagnitude,height: height)
@@ -55,6 +55,21 @@ extension String{
             }
         }
         return [:]
+    }
+    
+    /// 替换有效的URL
+    ///
+    /// - Returns: 返回有效的URL
+    public func replaceHost() -> String {
+        guard let scheme:String = URL.init(string: self)?.scheme else {
+            return HybridConfiguration.default.baseHostUrl
+        }
+        if (scheme == "http" || scheme == "https") {
+            return self
+        }
+        else {
+            return HybridConfiguration.default.baseHostUrl + self
+        }
     }
 }
 

@@ -55,4 +55,6 @@ open class HybridConfiguration: NSObject {
     /// pageShow 回调字符串，h5临时要求
     open var pageShowEvent:String = "Hybrid.event('pageshow')"
     
+    /// 用于相对路径的BaseUrl
+    open var baseHostUrl:String = "https://web-dev.doctorwork.com/"
 }
