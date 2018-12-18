@@ -10,7 +10,6 @@ import WebKit
 public typealias MLHybridCommand = HybridCommand
 
 open class HybridCommand: NSObject {
-    
     //指令名
     public var name:String = ""
     //外部使用参数
