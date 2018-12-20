@@ -9,7 +9,18 @@ import UIKit
 import WebKit
 
 //MARK: WKUIDelegate WKNavigationDelegate
-extension HybridViewController:WKNavigationDelegate {
+extension HybridViewController:WKNavigationDelegate,WKUIDelegate {
+    
+    func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping () -> Void) {
+        let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+        let title = NSLocalizedString("OK", comment: "OK Button")
+        let ok = UIAlertAction(title: title, style: .default) { (action: UIAlertAction) -> Void in
+            alert.dismiss(animated: true, completion: nil)
+        }
+        alert.addAction(ok)
+        present(alert, animated: true)
+        completionHandler()
+    }
     
     open func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         
