@@ -107,6 +107,9 @@ open class HybridViewController: UIViewController,WKUIDelegate  {
     //默认的userAgent
     var defaultUserAgent:String = "Mozilla/5.0 (iPhone; CPU iPhone OS 12_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/16A5318d doc_hybrid_heath_1.0.3  Hybrid/1.0.3"
     
+    //键盘弹起屏幕偏移量
+    var keyBoardPoint:CGPoint = CGPoint()
+    
     deinit {
         locationModel.stopUpdateLocation()
         if self.contentView != nil {
