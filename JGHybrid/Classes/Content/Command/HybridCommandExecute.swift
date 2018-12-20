@@ -61,7 +61,7 @@ class HybridCommandExecute: NSObject {
         let hybridObj = hybridClass.init()
         let selector = NSSelectorFromString(self.command.name)
         let selectorWithParams = NSSelectorFromString("\(self.command.name):")
-        let selectorWithCommand = NSSelectorFromString("\(self.command.name):command")
+        let selectorWithCommand = NSSelectorFromString("\(self.command.name)WithCommand:")
         if hybridObj.responds(to: selector) {
             hybridObj.perform(selector)
         } else if hybridObj.responds(to: selectorWithParams) {
