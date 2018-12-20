@@ -326,6 +326,16 @@ extension HybirdCommandExecute {
             //设置存储
             if newHashDic.count > 0 {
                 UserDefaults.standard.set(newHashDic, forKey: userDefaultKey)
+                command.callBack(data: ["isSuccess":true],
+                                 err_no: 0,
+                                 msg: "",
+                                 callback: command.callbackId, completion: { (msg) in })
+            }
+            else{
+                command.callBack(data: ["isSuccess":false],
+                                 err_no: 0,
+                                 msg: "",
+                                 callback: command.callbackId, completion: { (msg) in })
             }
         case "get":
             //获取存储
@@ -344,6 +354,10 @@ extension HybirdCommandExecute {
             
         case "remove":
             UserDefaults.standard.removeObject(forKey: userDefaultKey)
+            command.callBack(data: ["isSuccess":true],
+                             err_no: 0,
+                             msg: "",
+                             callback: command.callbackId, completion: { (msg) in })
         default:
             break
         }
@@ -354,6 +368,10 @@ extension HybirdCommandExecute {
             return
         }
         UIPasteboard.general.string = params.content
+        command.callBack(data: ["isSuccess":true],
+                         err_no: 0,
+                         msg: "",
+                         callback: command.callbackId, completion: { (msg) in })
     }
     
     //MARK: Mainfest 检测
