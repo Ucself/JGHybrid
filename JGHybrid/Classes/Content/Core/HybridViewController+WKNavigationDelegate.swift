@@ -9,7 +9,7 @@ import UIKit
 import WebKit
 
 //MARK: WKUIDelegate WKNavigationDelegate
-extension HybridViewController:WKNavigationDelegate,WKUIDelegate {
+extension HybridViewController:WKNavigationDelegate {
     
     func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping () -> Void) {
         let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
