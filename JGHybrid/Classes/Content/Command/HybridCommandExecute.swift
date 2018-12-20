@@ -53,18 +53,21 @@ class HybridCommandExecute: NSObject {
         //打印H5日志到控制台
         command.webView?.evaluateJavaScript("console.log({'name':'\(self.command.name)','params':\(command.params.hybridJSONString()),'callback':'\(self.command.callbackId)'})") { (result, error) in }
         //和业务相关的协议
-        guard let funType = MLHybridMethodType(rawValue: command.name) else {
-            MLHybrid.shared.delegate?.commandExtension(command: command)
-            return
-        }
+//        guard let funType = MLHybridMethodType(rawValue: command.name) else {
+//            MLHybrid.shared.delegate?.commandExtension(command: command)
+//            return
+//        }
         guard let hybridClass:NSObject.Type = self.swiftClassFromString(className: self.apiClassName()) as? NSObject.Type else { return}
         let hybridObj = hybridClass.init()
         let selector = NSSelectorFromString(self.command.name)
         let selectorWithParams = NSSelectorFromString("\(self.command.name):")
+        let selectorWithCommand = NSSelectorFromString("\(self.command.name):command")
         if hybridObj.responds(to: selector) {
             hybridObj.perform(selector)
         } else if hybridObj.responds(to: selectorWithParams) {
             hybridObj.perform(selectorWithParams, with: self.command, afterDelay: 0)
+        } else if hybridObj.responds(to: selectorWithCommand) {
+            hybridObj.perform(selectorWithCommand, with: self.command, afterDelay: 0)
         } else {
             print("ERROR: Method \(String(describing: self.command.name)) not defined")
         }
