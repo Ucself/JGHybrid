@@ -68,7 +68,12 @@ extension HybridViewController {
             self.view.addSubview(self.progressView)
             self.progressView.translatesAutoresizingMaskIntoConstraints = false
             let leftConstraint = NSLayoutConstraint(item: self.progressView, attribute: .left, relatedBy: .equal, toItem: self.contentView, attribute: .left, multiplier: 1.0, constant: 0)
-            let topConstraint = NSLayoutConstraint(item: self.progressView, attribute: .top, relatedBy: .equal, toItem: self.contentView, attribute: .top, multiplier: 1.0, constant: 0)
+            var topConstraint: NSLayoutConstraint
+            if #available(iOS 11.0, *) {
+                topConstraint = NSLayoutConstraint(item: self.progressView, attribute: .top, relatedBy: .equal, toItem: self.contentView.safeAreaLayoutGuide, attribute: .top, multiplier: 1.0, constant: 0)
+            } else {
+                topConstraint = NSLayoutConstraint(item: self.progressView, attribute: .top, relatedBy: .equal, toItem: self.contentView, attribute: .top, multiplier: 1.0, constant: 0)
+            }
             let widthConstraint = NSLayoutConstraint(item: self.progressView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1.0, constant: self.view.frame.size.width)
             let heightConstraint = NSLayoutConstraint(item: self.progressView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1.0, constant: 3)
             self.view.addConstraints([leftConstraint,topConstraint,widthConstraint,heightConstraint])
