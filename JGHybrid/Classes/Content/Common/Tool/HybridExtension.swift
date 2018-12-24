@@ -62,7 +62,7 @@ extension String{
     /// - Returns: 返回有效的URL
     public func replaceHost() -> String {
         guard let scheme:String = URL.init(string: self)?.scheme else {
-            return HybridConfiguration.default.baseHostUrl
+            return HybridConfiguration.default.baseHostUrl + self
         }
         if (scheme == "http" || scheme == "https") {
             return self
