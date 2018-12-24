@@ -56,6 +56,10 @@ extension HybridViewController {
         
         //js 注入 requestHybrid
         self.contentView.configuration.userContentController.add(self, name: "requestHybrid")
+        //监听键盘弹起与隐藏
+        NotificationCenter.default.addObserver(self, selector: #selector(keyBoardShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyBoardHidden), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+
     }
     
     func initProgressView() {
@@ -160,6 +164,16 @@ extension HybridViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+    @objc func keyBoardShow(){
+        let point:CGPoint = self.contentView.scrollView.contentOffset
+        self.keyBoardPoint = point
+    }
+    
+    @objc func keyBoardHidden(){
+        self.contentView.scrollView.contentOffset = self.keyBoardPoint
+    }
+    
+
     //重新加载WKWebview
     public func reloadContentView(){
         guard urlPath != nil else {return}
