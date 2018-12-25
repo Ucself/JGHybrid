@@ -55,11 +55,6 @@ extension HybridURLProtocol {
         if let scheme = requestURL.scheme, scheme != "http", scheme != "https" {
             return false
         }
-        //查看缓存开关
-        let closeSwitch = UserDefaults.standard.bool(forKey: HybridConstantDefineUserDefaultSwitchCache)
-        if !closeSwitch {
-            return false
-        }
         //如果被标记为已处理 直接跳过
         if let hasHandled = URLProtocol.property(forKey: HybridConstantDefineUrlProtocolHandled, in: request) as? Bool ,
             hasHandled == true {

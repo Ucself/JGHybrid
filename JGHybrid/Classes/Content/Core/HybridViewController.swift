@@ -27,10 +27,10 @@ open class HybridViewController: UIViewController,WKUIDelegate  {
     public var needHidesBottomBar = true
     
     /// 是否需要加载进度
-    public var needLoadProgress = false
+    public var needLoadProgress = true
     
     /// 是否需要业务加载符
-    public var needStartWait = true
+    public var needStartWait = false
     
     //  是否导航栏透明
     public var isFullScreen:Bool = false

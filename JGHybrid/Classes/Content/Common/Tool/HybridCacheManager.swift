@@ -170,7 +170,7 @@ class HybridCacheManager: NSObject {
         if !FileManager.default.fileExists(atPath: hybridAbsolutePath()) {
             DispatchQueue.global().async {
                 let documentPath = NSHomeDirectory() + "/Documents"
-                self.unzip(zipPath: zipPath, toDestination: documentPath)
+                _ = self.unzip(zipPath: zipPath, toDestination: documentPath)
             }
         }
     }

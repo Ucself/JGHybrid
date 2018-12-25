@@ -18,7 +18,6 @@ extension HybridCommandExecute {
             return
         }
         self.command.viewController.hybridEvent = params.callback_name
-        UserDefaults.standard.set(params.cache, forKey: HybridConstantDefineUserDefaultSwitchCache)
     }
     //forward - (push 页面 )
     func hybridForward(){
@@ -50,7 +49,7 @@ extension HybridCommandExecute {
         } else {
             //native跳转交给外部处理
             command.name = "forwardNative"
-            MLHybrid.shared.delegate?.commandExtension(command: command)
+            //MLHybrid.shared.delegate?.commandExtension(command: command)
         }
     }
     ////modal - (modal 页面)
@@ -69,7 +68,7 @@ extension HybridCommandExecute {
         } else {
             //native跳转交给外部处理
             command.name = "modalNative"
-            MLHybrid.shared.delegate?.commandExtension(command: command)
+            //MLHybrid.shared.delegate?.commandExtension(command: command)
         }
     }
     
@@ -372,61 +371,6 @@ extension HybridCommandExecute {
                          err_no: 0,
                          msg: "",
                          callback: command.callbackId, completion: { (msg) in })
-    }
-    
-    //MARK: Mainfest 检测
-    //离线缓存数据
-    func hybridOfflineCacheMainfest(){
-        //异步请求
-        DispatchQueue.global().async {
-            //请求会话
-            let session:URLSession = URLSession.shared
-            guard let url:URL = URL.init(string: MLHybridConfiguration.default.cacheURLString) else { return }
-            let task:URLSessionTask = session.dataTask(with: url) { (data, response, error) in
-                //数据文件逻辑判断
-                self.hybridOfflineCacheFile(data: data)
-            }
-            task.resume()
-        }
-    }
-    //离线缓存判断
-    func hybridOfflineCacheFile(data:Data?){
-        do {
-            //旧的ManiFest.json 的 hash
-            let oldManifestHash:String? = UserDefaults.standard.string(forKey: HybridConstantDefineUserDefaultMainfest)
-            //            let oldManifestHash:String? = "\(Date.init().timeIntervalSince1970)"          //测试代码
-            //获取返回的数据
-            guard let responseData = data else { return }
-            //返回的data 转换为 字典
-            let jsonData = try JSONSerialization.jsonObject(with: responseData, options: JSONSerialization.ReadingOptions.allowFragments)
-            guard let manifestDic = jsonData as? [String:AnyObject] else { return }
-            //字典转换为对象
-            let mainfestParams:HybridMainfestParams = HybridMainfestParams.convert(manifestDic)
-            MLHybrid.shared.mainfestParams = mainfestParams     //设置过去方便加载本地使用
-            //写入新的数据
-            UserDefaults.standard.set(mainfestParams._hash, forKey: HybridConstantDefineUserDefaultMainfest)
-            //如果manifest没有改变就直接返回
-            if oldManifestHash == mainfestParams._hash { return }
-            //清空WKWebview 磁盘缓存
-            if oldManifestHash != nil
-                && oldManifestHash != ""
-                && mainfestParams._hash != ""
-                && mainfestParams._hash != oldManifestHash {
-                //主线程清除缓存
-                DispatchQueue.main.sync {
-                    if #available(iOS 9.0, *) {
-                        WKWebsiteDataStore.default().removeData(ofTypes: [WKWebsiteDataTypeDiskCache], modifiedSince: Date.init(timeIntervalSince1970: 0)) { }
-                    } else {
-                        // Fallback on earlier versions
-                        //之前版本直接删文件
-                    }
-                }
-            }
-        }
-        catch let catchError {
-            print("hybridOfflineCacheMainfest.catchError -> \(catchError)")
-        }
-        
     }
     
     //MARK: 离线包
