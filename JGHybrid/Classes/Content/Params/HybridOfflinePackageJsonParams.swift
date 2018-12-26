@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HybridOfflinePackageJsonParams: BaseParams {
+class HybridOfflinePackageJsonParams: HybridBaseParams {
 
     var version:String = ""
     var appName:String = ""
@@ -29,7 +29,7 @@ class HybridOfflinePackageJsonParams: BaseParams {
     }
 }
 //频道资源模型
-class HybridOfflinePackageSourceParams: BaseParams {
+class HybridOfflinePackageSourceParams: HybridBaseParams {
     
     var id:String = ""              //频道 id
     var key:String = ""             //标识
@@ -49,7 +49,7 @@ class HybridOfflinePackageSourceParams: BaseParams {
 }
 
 //MARK : - 丢弃的模型
-class HybridOfflinePackageDataParams: BaseParams {
+class HybridOfflinePackageDataParams: HybridBaseParams {
     
     var version:String = ""
     var resources:[HybridOfflinePackageResourcesParams] = []
@@ -67,7 +67,7 @@ class HybridOfflinePackageDataParams: BaseParams {
     }
 }
 
-class HybridOfflinePackageResourcesParams: BaseParams {
+class HybridOfflinePackageResourcesParams: HybridBaseParams {
     
     var channel:String = ""
     var version:String = ""

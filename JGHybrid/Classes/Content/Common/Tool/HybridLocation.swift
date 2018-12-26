@@ -7,20 +7,20 @@ import UIKit
 import CoreLocation
 
 //更换类名 兼容老版本
-typealias MLHybridLocation = HybridLocation
+public typealias MLHybridLocation = HybridLocation
 
-class HybridLocation: NSObject, CLLocationManagerDelegate {
+public class HybridLocation: NSObject, CLLocationManagerDelegate {
     //定位管理器
-    let locationManager:CLLocationManager = CLLocationManager()
+    public let locationManager:CLLocationManager = CLLocationManager()
     //* errcode错误码：
     //0、无错误；
     //1、“Permission denied” - 用户不允许地理定位；
     //2、“Position unavailable” - 无法获取当前位置、
     //3、“Timeout” - 操作超时、
     //4、“No support” - 不支持
-    var finishBlock: ((_ success: Bool, _ errcode: Int, _ resultData: [String: AnyObject]?) -> ())?
+    public var finishBlock: ((_ success: Bool, _ errcode: Int, _ resultData: [String: AnyObject]?) -> ())?
     //获取当前位置调用
-    func getLocation(_ finishBlock: @escaping ((_ success: Bool, _ errcode: Int, _ resultData: [String: AnyObject]?) -> ())) {
+    public func getLocation(_ finishBlock: @escaping ((_ success: Bool, _ errcode: Int, _ resultData: [String: AnyObject]?) -> ())) {
         self.finishBlock = finishBlock
         //设置定位服务管理器代理
         locationManager.delegate = self
@@ -37,11 +37,11 @@ class HybridLocation: NSObject, CLLocationManagerDelegate {
         self.locationManager.startUpdatingLocation()
     }
     
-    func stopUpdateLocation() {
+    public func stopUpdateLocation() {
         locationManager.stopUpdatingLocation()
     }
     //检测是否支持定位
-    func isLocationPermission () -> Bool {
+    public func isLocationPermission () -> Bool {
         if !CLLocationManager.locationServicesEnabled() { //不支持定位服务
             return false
         }
@@ -54,7 +54,7 @@ class HybridLocation: NSObject, CLLocationManagerDelegate {
     }
     //MARK:CLLocationManagerDelegate
     //定位改变执行，可以得到新位置、旧位置
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         //获取最新的坐标
         if let currLocation:CLLocation = locations.last {
             let data = ["coordate": ["long": "\(currLocation.coordinate.longitude)", "lat": "\(currLocation.coordinate.latitude)"]]
@@ -63,7 +63,7 @@ class HybridLocation: NSObject, CLLocationManagerDelegate {
         }
     }
     
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+    public func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         self.finishBlock?(false, 2, nil)
         self.finishBlock = nil
     }
