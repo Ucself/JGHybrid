@@ -11,7 +11,12 @@ import SSZipArchive
 class HybridCacheManager: NSObject {
     static let `default` = HybridCacheManager()
     
-    func downZipAndUnzip(urlString:String, downloadPath: String, savePath: String, unzipPath: String,downLoadComplet:((_ success:Bool,_ msg:String)->Void)?=nil , unzipComplet:((_ success:Bool,_ msg:String)->Void)?=nil) {
+    func downZipAndUnzip(urlString:String,
+                         downloadPath: String,
+                         savePath: String,
+                         unzipPath: String,
+                         downLoadComplet:((_ success:Bool,_ msg:String)->Void)?=nil ,
+                         unzipComplet:((_ success:Bool,_ msg:String)->Void)?=nil) {
         guard let url = URL.init(string: urlString) else { return }
         DispatchQueue.global().async {
             let session:URLSession = URLSession.shared
@@ -170,7 +175,7 @@ class HybridCacheManager: NSObject {
         if !FileManager.default.fileExists(atPath: hybridAbsolutePath()) {
             DispatchQueue.global().async {
                 let documentPath = NSHomeDirectory() + "/Documents"
-                self.unzip(zipPath: zipPath, toDestination: documentPath)
+                _ = self.unzip(zipPath: zipPath, toDestination: documentPath)
             }
         }
     }

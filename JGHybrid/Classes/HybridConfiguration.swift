@@ -23,9 +23,6 @@ open class HybridConfiguration: NSObject {
     /// 是否拦截换成Html地址
     open var isCacheHtml:Bool = false
     
-    /// 获取的缓存文件地址
-    open var cacheURLString:String = "http://web-dev.doctorwork.com/app/health/manifest.json"
-    
     /// 离线包html需要解析的地址
     open var cacheMap: [String] = ["/app/health","/rapp/health"]
     

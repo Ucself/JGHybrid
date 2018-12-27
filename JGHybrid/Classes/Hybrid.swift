@@ -19,7 +19,6 @@ open class Hybrid: NSObject {
     private override init() {}
     //私有变量
     var delegate: MLHybridMethodProtocol?
-    var mainfestParams:HybridMainfestParams = HybridMainfestParams()
     //初始化注册
     open class func register(_ delegate: MLHybridMethodProtocol) {
         shared.delegate = delegate
@@ -29,8 +28,6 @@ open class Hybrid: NSObject {
             URLProtocol.wk_registerScheme("http")
             URLProtocol.wk_registerScheme("https")
         }
-        //默认开启拦截
-        UserDefaults.standard.set(true, forKey: HybridConstantDefineUserDefaultSwitchCache)
         //解压压缩包
         if HybridConfiguration.default.isCacheHtml {
             HybridCacheManager.default.HybridUnzipHybiryOfflineZip()
@@ -48,19 +45,6 @@ open class Hybrid: NSObject {
         }
         webViewController.urlPath = url
         return webViewController
-    }
-    
-    //加载RN命令
-//    open class func loadRN(_ dictionary: [String: AnyObject],callback:@escaping ((_ response:[Any]) -> Void)) {
-//        guard let command = HybridRNCommand.parseDictionary(dictionary, callback: callback ) else { return }
-//        /// 执行命令对象
-//        let commandExecute: HybridRNCommandExecute = HybridRNCommandExecute()
-//        commandExecute.performCommand(command: command)
-//    }
-    
-    //版本检测并更新
-    open class func checkMainfest() {
-        MLHybridCommandExecute().hybridOfflineCacheMainfest()
     }
     
     //新的zip包版本检测

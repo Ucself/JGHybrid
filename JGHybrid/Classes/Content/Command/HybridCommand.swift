@@ -15,7 +15,7 @@ open class HybridCommand: NSObject {
     //外部使用参数
     public var params: [String: AnyObject] = [:]
     //内部使用参数
-    public var args: MLHybridCommandParams = MLHybridCommandParams()
+    public var args: HybridBaseParams = HybridBaseParams()
     //回调Id
     public var callbackId: String = ""
     //发出指令的控制器
@@ -50,7 +50,7 @@ open class HybridCommand: NSObject {
         }
     }
     
-    //MARK: - 新版本解析URL为命令
+    //MARK: - 新版本解析MessageHa为命令
     
     /// 解析命令消息成对象
     ///
@@ -58,7 +58,7 @@ open class HybridCommand: NSObject {
     ///   - message: message回调对象
     ///   - viewController: 控制器
     /// - Returns: 返回命令对象
-    public class func parseScriptMessage(message:WKScriptMessage, viewController:HybridViewController) -> MLHybridCommand?{
+    public class func parseScriptMessage(message:WKScriptMessage, viewController:HybridViewController) -> MLHybridCommand? {
         //判断是否是requestHybrid 命令
         guard message.name == "requestHybrid"  else { return  nil }
         //判断是否符合参数
@@ -73,10 +73,9 @@ open class HybridCommand: NSObject {
         }
         if let params = commandDic["params"] as? [String: AnyObject] {
             command.params = params
-            //转换为内部使用参数
-            //let args = MLHybridCommandParams.convert(params)   //旧的解析方式
-            let args = MLHybridCommandParams.convert(params, nameType: MLHybridMethodType(rawValue:command.name))
-            command.args = args
+//            //转换为内部使用参数，放到业务去解析
+//            let args = MLHybridCommandParams.convert(params, nameType: MLHybridMethodType(rawValue:command.name))
+//            command.args = args
         }
         if let callback = commandDic["callback"] as? String {
             command.callbackId = callback
@@ -88,7 +87,6 @@ open class HybridCommand: NSObject {
     }
     
     //MARK: -
-    
     /// 解析并执行hybrid指令
     ///
     /// - Parameters:
@@ -115,7 +113,7 @@ open class HybridCommand: NSObject {
     /// - Parameters:
     ///   - urlString: 原始指令串
     /// - Returns: 执行方法名、参数、回调ID
-    private func contentResolver(url: URL) -> (function: String, params:[String: AnyObject], args: MLHybridCommandParams, callbackId: String) {
+    private func contentResolver(url: URL) -> (function: String, params:[String: AnyObject], args: HybridBaseParams, callbackId: String) {
         let functionName = url.host ?? ""
         let paramDic = url.hybridURLParamsDic()
         let argsDic = (paramDic["params"] ?? "").hybridDecodeURLString().hybridDecodeJsonStr()
@@ -123,6 +121,12 @@ open class HybridCommand: NSObject {
         let callBackId = paramDic["callback"] ?? ""
         return (functionName, argsDic, args, callBackId)
     }
-    
-    
+}
+
+
+//MARK: Class Params
+//抽象基类 参数
+open class HybridBaseParams: NSObject {
+    //抽象方法
+    open class func convert(_ dic: [String: AnyObject]) -> HybridBaseParams { return HybridBaseParams.init()}
 }

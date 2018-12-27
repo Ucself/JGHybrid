@@ -1,33 +1,33 @@
 PODS:
-  - JGHybrid (5.1.3):
-    - JGHybrid/Command (= 5.1.3)
-    - JGHybrid/Common (= 5.1.3)
-    - JGHybrid/Core (= 5.1.3)
-    - JGHybrid/Params (= 5.1.3)
+  - JGHybrid (6.0.0):
+    - JGHybrid/Command (= 6.0.0)
+    - JGHybrid/Common (= 6.0.0)
+    - JGHybrid/Core (= 6.0.0)
+    - JGHybrid/Params (= 6.0.0)
     - JGWebKitURLProtocol
     - SSZipArchive
-  - JGHybrid/Command (5.1.3):
+  - JGHybrid/Command (6.0.0):
     - JGWebKitURLProtocol
     - SSZipArchive
-  - JGHybrid/Common (5.1.3):
-    - JGHybrid/Common/Protocol (= 5.1.3)
-    - JGHybrid/Common/Tool (= 5.1.3)
+  - JGHybrid/Common (6.0.0):
+    - JGHybrid/Common/Protocol (= 6.0.0)
+    - JGHybrid/Common/Tool (= 6.0.0)
     - JGWebKitURLProtocol
     - SSZipArchive
-  - JGHybrid/Common/Protocol (5.1.3):
+  - JGHybrid/Common/Protocol (6.0.0):
     - JGWebKitURLProtocol
     - SSZipArchive
-  - JGHybrid/Common/Tool (5.1.3):
+  - JGHybrid/Common/Tool (6.0.0):
     - JGWebKitURLProtocol
     - SSZipArchive
-  - JGHybrid/Core (5.1.3):
+  - JGHybrid/Core (6.0.0):
     - JGWebKitURLProtocol
     - SSZipArchive
-  - JGHybrid/Params (5.1.3):
+  - JGHybrid/Params (6.0.0):
     - JGWebKitURLProtocol
     - SSZipArchive
   - JGWebKitURLProtocol (1.0.1)
-  - SSZipArchive (2.1.3)
+  - SSZipArchive (2.1.4)
 
 DEPENDENCIES:
   - JGHybrid (from `../`)
@@ -42,9 +42,9 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  JGHybrid: b681bb5ddcc4a1fcf7e0ad2168d87e4a2322e00e
+  JGHybrid: 86ca9eb31ace95ffdd260cdcd7c2afd9eac50392
   JGWebKitURLProtocol: 3086024bce4da9e8b9d639a12a9083048b3ca1cd
-  SSZipArchive: 51a800ebb77f95a8329b6ced1faaff394b47f509
+  SSZipArchive: 41455d4b8d2b6ab93990820b50dc697c2554a322
 
 PODFILE CHECKSUM: 8443499083c01df9966868c36f9f98ee26bd8c2d
 

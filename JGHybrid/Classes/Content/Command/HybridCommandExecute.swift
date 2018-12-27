@@ -8,11 +8,11 @@ import CoreLocation
 import WebKit
 
 //更换类名 兼容老版本
-typealias MLHybridCommandExecute = HybridCommandExecute
+public typealias MLHybridCommandExecute = HybridCommandExecute
 
-class HybridCommandExecute: NSObject {
+public class HybridCommandExecute: NSObject {
     
-    var command: MLHybridCommand = MLHybridCommand()
+    public var command: MLHybridCommand = MLHybridCommand()
     
     //MARK: Method
     func performCommand(request: URLRequest, webView: WKWebView) -> Bool {
@@ -52,12 +52,8 @@ class HybridCommandExecute: NSObject {
         print("---------------command end-------------------")
         //打印H5日志到控制台
         command.webView?.evaluateJavaScript("console.log({'name':'\(self.command.name)','params':\(command.params.hybridJSONString()),'callback':'\(self.command.callbackId)'})") { (result, error) in }
-        //和业务相关的协议
-//        guard let funType = MLHybridMethodType(rawValue: command.name) else {
-//            MLHybrid.shared.delegate?.commandExtension(command: command)
-//            return
-//        }
-        guard let hybridClass:NSObject.Type = self.swiftClassFromString(className: self.apiClassName()) as? NSObject.Type else { return}
+        
+        guard let hybridClass:NSObject.Type = self.swiftClassFromString(className: self.apiClassName()) as? NSObject.Type else { return }
         let hybridObj = hybridClass.init()
         let selector = NSSelectorFromString(self.command.name)
         let selectorWithParams = NSSelectorFromString("\(self.command.name):")
@@ -71,38 +67,6 @@ class HybridCommandExecute: NSObject {
         } else {
             print("ERROR: Method \(String(describing: self.command.name)) not defined")
         }
-        
-//        switch funType {
-//        //新命令
-//        case .hybridInit:
-//            self.hybridInit()
-//        case .hybridForward:
-//            self.hybridForward()
-//        case .hybridModal:
-//            self.hybridModal()
-//        case .hybridDismiss:
-//            self.hybridDismiss()
-//        case .hybridBack:
-//            self.hybridBack()
-//        case .hybridHeader:
-//            self.hybridHeader()
-//        case .hybridScroll:
-//            self.hybridScroll()
-//        case .hybridPageshow:
-//            self.hybridPageshow()
-//        case .hybridPagehide:
-//            self.hybridPagehide()
-//        case .hybridDevice:
-//            self.hybridDevice()
-//        case .hybridLocation:
-//            self.hybridLocation()
-//        case .hybridClipboard:
-//            self.hybridClipboard()
-//        case .hybridStorage:
-//            self.hybridStorage()
-//        default:
-//            break
-//        }
     }
 }
 
