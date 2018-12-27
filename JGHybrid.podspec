@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'JGHybrid'
-  s.version          = '6.0.0'
+  s.version          = '6.0.1'
   s.summary          = 'A short description of JGHybrid.'
 
   s.description      = <<-DESC
