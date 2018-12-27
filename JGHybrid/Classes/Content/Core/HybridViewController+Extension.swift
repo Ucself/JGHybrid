@@ -8,6 +8,8 @@
 import UIKit
 import WebKit
 
+private let NAVBAR_COLORCHANGE_POINT:CGFloat = 80
+
 extension HybridViewController {
     
     //MARK: 自定义方法
@@ -46,10 +48,10 @@ extension HybridViewController {
         let bottomConstraint = NSLayoutConstraint(item: self.contentView, attribute: .bottom, relatedBy: .equal, toItem: self.view, attribute: .bottom, multiplier: 1.0, constant: 0)
         
         self.view.addConstraints([leftConstraint,rightConstraint,topConstraint,bottomConstraint])
-        
         //设置代理
         self.contentView.uiDelegate = self
         self.contentView.navigationDelegate = self
+        self.contentView.scrollView.delegate = self
         if #available(iOS 9.0, *) {
             self.contentView.customUserAgent = defaultUserAgent
         }
@@ -182,4 +184,33 @@ extension HybridViewController {
         self.contentView.load(urlRequest)
     }
     
+}
+
+extension HybridViewController: UIScrollViewDelegate {
+    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offsetY = scrollView.contentOffset.y
+        
+        if (offsetY > NAVBAR_COLORCHANGE_POINT) {
+            changeNavBarAnimateWithIsClear(isClear: false)
+        } else {
+            changeNavBarAnimateWithIsClear(isClear: true)
+        }
+    
+    }
+    
+    // private
+    private func changeNavBarAnimateWithIsClear(isClear:Bool)
+    {
+        UIView.animate(withDuration: 0.8, animations: { [weak self] in
+            if let weakSelf = self
+            {
+                if (isClear == true) {
+                    weakSelf.navBarBackgroundAlpha = 0
+                }
+                else {
+                    weakSelf.navBarBackgroundAlpha = 1.0
+                }
+            }
+        })
+    }
 }

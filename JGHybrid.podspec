@@ -12,7 +12,7 @@ TODO: Add long description of the pod here.
   s.author           = { 'lbj147123@163.com' => 'lbj147123@163.com' }
   s.source           = { :git => 'https://github.com/Ucself/JGHybrid.git', :tag => s.version.to_s }
   s.ios.deployment_target = '8.0'
-  s.source_files = 'JGHybrid/Classes/Hybrid.swift', 'JGHybrid/Classes/HybridConfiguration.swift'
+  s.source_files = 'JGHybrid/Classes/Hybrid.swift', 'JGHybrid/Classes/HybridConfiguration.swift', 'JGHybrid/Classes/GTANavigationBar.swift'
   s.frameworks = 'UIKit', 'WebKit'
   s.dependency 'JGWebKitURLProtocol'
   s.dependency 'SSZipArchive'

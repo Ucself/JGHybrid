@@ -17,11 +17,11 @@ extension HybridViewController {
         self.initProgressView()
         self.initData()
         self.initRequest()
+        navBarBackgroundAlpha = 0
     }
     
     override open func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         //设置导航栏
         self.navigationController?.setNavigationBarHidden(naviBarHidden, animated: true)
         //添加wkwebview监听
@@ -31,13 +31,13 @@ extension HybridViewController {
             self.commandExecute.command.callBack(data: "", err_no: 0, msg: "onwebviewshow", callback: callback, completion: {js in })
         }
         //设置颜色
-        self.navigationController?.navigationBar.hybridSetTitleColor(self.titleColor)
-        self.navigationController?.navigationBar.hybridSetBackgroundColor(self.titleBackgroundColor)
+//        self.navigationController?.navigationBar.hybridSetTitleColor(self.titleColor)
+//        self.navigationController?.navigationBar.hybridSetBackgroundColor(self.titleBackgroundColor)
         self.view.backgroundColor = self.titleBackgroundColor
         
         //设置透明
         if self.isFullScreen {
-            self.navigationController?.navigationBar.hybridSetBackgroundClear()
+//            self.navigationController?.navigationBar.hybridSetBackgroundClear()
         }
         //临时要求的回调
         if self.pageFirstShow {
@@ -90,4 +90,6 @@ extension HybridViewController {
     override open var preferredStatusBarStyle: UIStatusBarStyle {
         return statusBarStyle ?? .default
     }
+    
+    
 }

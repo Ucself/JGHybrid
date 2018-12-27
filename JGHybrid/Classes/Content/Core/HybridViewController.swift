@@ -43,7 +43,7 @@ open class HybridViewController: UIViewController,WKUIDelegate  {
     /// 标题颜色
     public var titleColor:UIColor = MLHybridConfiguration.default.defaultTitleColor {               //Title颜色
         didSet {
-            self.navigationController?.navigationBar.hybridSetTitleColor(self.titleColor)
+//            self.navigationController?.navigationBar.hybridSetTitleColor(self.titleColor)
         }
     }
     
@@ -52,10 +52,10 @@ open class HybridViewController: UIViewController,WKUIDelegate  {
         didSet {
             //全屏的话就不用设置需要的颜色
             if self.isFullScreen {
-                self.navigationController?.navigationBar.hybridSetBackgroundClear()
+//                self.navigationController?.navigationBar.hybridSetBackgroundClear()
             }
             else {
-                self.navigationController?.navigationBar.hybridSetBackgroundColor(self.titleBackgroundColor)
+//                self.navigationController?.navigationBar.hybridSetBackgroundColor(self.titleBackgroundColor)
             }
         }
     }
@@ -64,12 +64,6 @@ open class HybridViewController: UIViewController,WKUIDelegate  {
     public var titleName:String = "" {
         didSet {
             self.navigationItem.title = titleName
-        }
-    }
-    //状态栏
-    public var statusBarStyle: UIStatusBarStyle? {
-        didSet {
-            setNeedsStatusBarAppearanceUpdate()
         }
     }
     

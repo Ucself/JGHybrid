@@ -20,8 +20,8 @@ class RootViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.navigationController?.navigationBar.hybridSetTitleColor(UIColor.black)
-        self.navigationController?.navigationBar.hybridSetBackgroundColor(UIColor.white)
+//        self.navigationController?.navigationBar.hybridSetTitleColor(UIColor.black)
+//        self.navigationController?.navigationBar.hybridSetBackgroundColor(UIColor.white)
     }
     
     func initUI(){
@@ -80,6 +80,7 @@ extension RootViewController:UITableViewDelegate,UITableViewDataSource {
         switch indexPath.row {
         case 0:
             let vc:HybridViewController =  Hybrid.load(urlString: "http://web-dev.doctorwork.com/ios/?" + "id=\(arc4random())")!
+            vc.isFullScreen = true
             self.navigationController?.pushViewController(vc, animated: true)
         case 1:
             //let vc:HybridViewController =  Hybrid.load(urlString: "rapp/festival/index.html")!
