@@ -805,7 +805,7 @@ extension DispatchQueue {
 //===========================================================================================
 // MARK: - default navigationBar barTintColor、tintColor and statusBarStyle YOU CAN CHANGE!!!
 //===========================================================================================
-class GTANavigationBar
+open class GTANavigationBar
 {
     fileprivate struct AssociatedKeys
     {   // default is system attributes
