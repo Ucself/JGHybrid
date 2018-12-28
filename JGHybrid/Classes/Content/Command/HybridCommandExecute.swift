@@ -12,6 +12,7 @@ public typealias MLHybridCommandExecute = HybridCommandExecute
 
 public class HybridCommandExecute: NSObject {
     
+    public var hybridObj:NSObject!
     public var command: MLHybridCommand = MLHybridCommand()
     
     //MARK: Method
@@ -54,7 +55,7 @@ public class HybridCommandExecute: NSObject {
         command.webView?.evaluateJavaScript("console.log({'name':'\(self.command.name)','params':\(command.params.hybridJSONString()),'callback':'\(self.command.callbackId)'})") { (result, error) in }
         
         guard let hybridClass:NSObject.Type = self.swiftClassFromString(className: self.apiClassName()) as? NSObject.Type else { return }
-        let hybridObj = hybridClass.init()
+        hybridObj = hybridClass.init()
         let selector = NSSelectorFromString(self.command.name)
         let selectorWithParams = NSSelectorFromString("\(self.command.name):")
         let selectorWithCommand = NSSelectorFromString("\(self.command.name)WithCommand:")
