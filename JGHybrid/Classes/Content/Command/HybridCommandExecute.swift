@@ -12,8 +12,16 @@ public typealias MLHybridCommandExecute = HybridCommandExecute
 
 public class HybridCommandExecute: NSObject {
     
-    public var hybridObj:NSObject!
+    public var apiClassObj:NSObject?
     public var command: MLHybridCommand = MLHybridCommand()
+    
+    public override init() {
+        super.init()
+        guard let apiClass:NSObject.Type = self.swiftClassFromString(className: self.apiClassName()) as? NSObject.Type else {
+            return
+        }
+        apiClassObj = apiClass.init()
+    }
     
     //MARK: Method
     func performCommand(request: URLRequest, webView: WKWebView) -> Bool {
@@ -53,9 +61,7 @@ public class HybridCommandExecute: NSObject {
         print("---------------command end-------------------")
         //打印H5日志到控制台
         command.webView?.evaluateJavaScript("console.log({'name':'\(self.command.name)','params':\(command.params.hybridJSONString()),'callback':'\(self.command.callbackId)'})") { (result, error) in }
-        
-        guard let hybridClass:NSObject.Type = self.swiftClassFromString(className: self.apiClassName()) as? NSObject.Type else { return }
-        hybridObj = hybridClass.init()
+        guard let hybridObj = self.apiClassObj else { return }
         let selector = NSSelectorFromString(self.command.name)
         let selectorWithParams = NSSelectorFromString("\(self.command.name):")
         let selectorWithCommand = NSSelectorFromString("\(self.command.name)WithCommand:")
