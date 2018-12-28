@@ -17,13 +17,12 @@ extension HybridViewController {
         self.initProgressView()
         self.initData()
         self.initRequest()
-        navBarBackgroundAlpha = 0
     }
     
     override open func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         //设置导航栏
-        self.navigationController?.setNavigationBarHidden(naviBarHidden, animated: true)
+//        self.navigationController?.setNavigationBarHidden(naviBarHidden, animated: true)
         //添加wkwebview监听
         self.contentView.addObserver(self, forKeyPath: "estimatedProgress", options: NSKeyValueObservingOptions(rawValue: 0), context: nil)
         //回调Hybrid

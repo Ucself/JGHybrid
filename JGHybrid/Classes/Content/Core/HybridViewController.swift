@@ -14,11 +14,11 @@ open class HybridViewController: UIViewController,WKUIDelegate  {
     //MARK: --- 参数属性
     
     /// 是否隐藏
-    public var naviBarHidden = false {
-        didSet {
-            self.navigationController?.setNavigationBarHidden(self.naviBarHidden, animated: true)
-        }
-    }
+//    public var naviBarHidden = false {
+//        didSet {
+//            self.navigationController?.setNavigationBarHidden(self.naviBarHidden, animated: true)
+//        }
+//    }
     
     /// 是否需要返回按钮
     public var needBackButton = false
@@ -51,12 +51,7 @@ open class HybridViewController: UIViewController,WKUIDelegate  {
     public var titleBackgroundColor:UIColor = MLHybridConfiguration.default.defaultTitleBackgroundTColor{      //Title背景色
         didSet {
             //全屏的话就不用设置需要的颜色
-            if self.isFullScreen {
-//                self.navigationController?.navigationBar.hybridSetBackgroundClear()
-            }
-            else {
-//                self.navigationController?.navigationBar.hybridSetBackgroundColor(self.titleBackgroundColor)
-            }
+            navBarBackgroundAlpha = self.isFullScreen ? 0 : 1
         }
     }
     
