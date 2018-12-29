@@ -19,7 +19,7 @@ open class HybridCommand: NSObject {
     //回调Id
     public var callbackId: String = ""
     //发出指令的控制器
-    public weak var viewController: MLHybridViewController!
+    public weak var viewController: HybridViewController?
     //webView
     public weak var webView: WKWebView?
     
@@ -38,7 +38,11 @@ open class HybridCommand: NSObject {
                     "msg": msg] as [String : Any]
         
         let dataString = data.hybridJSONString()
-        webView?.evaluateJavaScript(self.viewController.hybridEvent + "(\(dataString));") { (result, error) in
+        if self.viewController == nil {
+            completion("无Hybrid执行容器")
+            return
+        }
+        webView?.evaluateJavaScript(self.viewController!.hybridEvent + "(\(dataString));") { (result, error) in
             if let resultStr = result as? String {
                 completion(resultStr)
             }else  if  let error = error{
