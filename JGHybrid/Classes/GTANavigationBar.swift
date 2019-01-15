@@ -52,6 +52,7 @@ extension UINavigationBar:WRAwakeProtocol
             backgroundImageView?.autoresizingMask = .flexibleWidth
             // _UIBarBackground is first subView for navigationBar
             subviews.first?.insertSubview(backgroundImageView ?? UIImageView(), at: 0)
+            subviews.first?.clipsToBounds = true
         }
         backgroundImageView?.image = image
     }
@@ -69,6 +70,7 @@ extension UINavigationBar:WRAwakeProtocol
             backgroundView?.autoresizingMask = .flexibleWidth
             // _UIBarBackground is first subView for navigationBar
             subviews.first?.insertSubview(backgroundView ?? UIView(), at: 0)
+            subviews.first?.clipsToBounds = true
         }
         backgroundView?.backgroundColor = color
     }
@@ -931,7 +933,29 @@ open class GTANavigationBar
 extension GTANavigationBar
 {
     public class func isIphoneX() -> Bool {
-        return UIScreen.main.bounds.equalTo(CGRect(x: 0, y: 0, width: 375, height: 812))
+        //        return UIScreen.main.bounds.equalTo(CGRect(x: 0, y: 0, width: 375, height: 812))
+        guard #available(iOS 11.0, *) else {
+            return false
+        }
+        let windows:[UIWindow] = UIApplication.shared.windows
+        if windows.count <= 0 {
+            return false
+        }
+        return windows[0].safeAreaInsets.bottom > 0
+    }
+    
+    /// 判断刘海儿
+    ///
+    /// - Returns: bool
+    class func isiPhoneXScreen() -> Bool {
+        guard #available(iOS 11.0, *) else {
+            return false
+        }
+        let windows:[UIWindow] = UIApplication.shared.windows
+        if windows.count <= 0 {
+            return false
+        }
+        return windows[0].safeAreaInsets.bottom > 0
     }
     public class func navBarBottom() -> Int {
         return self.isIphoneX() ? 88 : 64;
