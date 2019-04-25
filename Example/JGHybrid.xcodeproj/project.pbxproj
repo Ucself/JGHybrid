@@ -14,6 +14,33 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		9132EE8122704D8B00E51EE8 /* HybridBusiness+Scroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9132EE7422704D8B00E51EE8 /* HybridBusiness+Scroll.swift */; };
+		9132EE8222704D8B00E51EE8 /* HybridBusiness+Clipboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9132EE7522704D8B00E51EE8 /* HybridBusiness+Clipboard.swift */; };
+		9132EE8322704D8B00E51EE8 /* HybridBusiness+Modal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9132EE7622704D8B00E51EE8 /* HybridBusiness+Modal.swift */; };
+		9132EE8422704D8B00E51EE8 /* HybridBusiness+Dismiss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9132EE7722704D8B00E51EE8 /* HybridBusiness+Dismiss.swift */; };
+		9132EE8522704D8B00E51EE8 /* HybridBusiness+Pagehide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9132EE7822704D8B00E51EE8 /* HybridBusiness+Pagehide.swift */; };
+		9132EE8622704D8B00E51EE8 /* HybridBusiness+Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9132EE7922704D8B00E51EE8 /* HybridBusiness+Storage.swift */; };
+		9132EE8722704D8B00E51EE8 /* HybridBusiness+Back.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9132EE7A22704D8B00E51EE8 /* HybridBusiness+Back.swift */; };
+		9132EE8822704D8B00E51EE8 /* HybridBusiness+Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9132EE7B22704D8B00E51EE8 /* HybridBusiness+Location.swift */; };
+		9132EE8922704D8B00E51EE8 /* HybridBusiness+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9132EE7C22704D8B00E51EE8 /* HybridBusiness+Init.swift */; };
+		9132EE8A22704D8B00E51EE8 /* HybridBusiness+Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9132EE7D22704D8B00E51EE8 /* HybridBusiness+Header.swift */; };
+		9132EE8B22704D8B00E51EE8 /* HybridBusiness+Pageshow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9132EE7E22704D8B00E51EE8 /* HybridBusiness+Pageshow.swift */; };
+		9132EE8C22704D8B00E51EE8 /* HybridBusiness+Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9132EE7F22704D8B00E51EE8 /* HybridBusiness+Device.swift */; };
+		9132EE8D22704D8B00E51EE8 /* HybridBusiness+Forward.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9132EE8022704D8B00E51EE8 /* HybridBusiness+Forward.swift */; };
+		9132EE9122704E1F00E51EE8 /* HybridBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9132EE9022704E1F00E51EE8 /* HybridBusiness.swift */; };
+		9132EEA022704E6A00E51EE8 /* HybridScrollParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9132EE9322704E6A00E51EE8 /* HybridScrollParams.swift */; };
+		9132EEA122704E6A00E51EE8 /* HybridHeaderParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9132EE9422704E6A00E51EE8 /* HybridHeaderParams.swift */; };
+		9132EEA222704E6A00E51EE8 /* HybridInitParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9132EE9522704E6A00E51EE8 /* HybridInitParams.swift */; };
+		9132EEA322704E6A00E51EE8 /* HybridModalParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9132EE9622704E6A00E51EE8 /* HybridModalParams.swift */; };
+		9132EEA422704E6A00E51EE8 /* HybridPagehideParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9132EE9722704E6A00E51EE8 /* HybridPagehideParams.swift */; };
+		9132EEA522704E6A00E51EE8 /* HybridLocationParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9132EE9822704E6A00E51EE8 /* HybridLocationParams.swift */; };
+		9132EEA622704E6A00E51EE8 /* HybridBackParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9132EE9922704E6A00E51EE8 /* HybridBackParams.swift */; };
+		9132EEA722704E6A00E51EE8 /* HybridDeviceParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9132EE9A22704E6A00E51EE8 /* HybridDeviceParams.swift */; };
+		9132EEA822704E6A00E51EE8 /* HybridPageshowParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9132EE9B22704E6A00E51EE8 /* HybridPageshowParams.swift */; };
+		9132EEA922704E6A00E51EE8 /* HybridClipboardParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9132EE9C22704E6A00E51EE8 /* HybridClipboardParams.swift */; };
+		9132EEAA22704E6A00E51EE8 /* HybridMainfestParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9132EE9D22704E6A00E51EE8 /* HybridMainfestParams.swift */; };
+		9132EEAB22704E6A00E51EE8 /* HybridStorageParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9132EE9E22704E6A00E51EE8 /* HybridStorageParams.swift */; };
+		9132EEAC22704E6A00E51EE8 /* HybridForwardParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9132EE9F22704E6A00E51EE8 /* HybridForwardParams.swift */; };
 		9140A1DB1FCC08C000F1B131 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 9140A1DA1FCC08C000F1B131 /* index.html */; };
 		9147B46F20DA69A000AE65F1 /* resources.zip in Resources */ = {isa = PBXBuildFile; fileRef = 9147B46D20DA69A000AE65F1 /* resources.zip */; };
 		9147B47020DA69A000AE65F1 /* resources.json in Resources */ = {isa = PBXBuildFile; fileRef = 9147B46E20DA69A000AE65F1 /* resources.json */; };
@@ -55,6 +82,33 @@
 		6DE0838FB418A3BE4C156A84 /* Pods-JGHybrid_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JGHybrid_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JGHybrid_Tests/Pods-JGHybrid_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		7E73287A6217632257D96B86 /* JGHybrid.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = JGHybrid.podspec; path = ../JGHybrid.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		8AA1597A5587CE99A6870EBF /* Pods_JGHybrid_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JGHybrid_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9132EE7422704D8B00E51EE8 /* HybridBusiness+Scroll.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HybridBusiness+Scroll.swift"; sourceTree = "<group>"; };
+		9132EE7522704D8B00E51EE8 /* HybridBusiness+Clipboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HybridBusiness+Clipboard.swift"; sourceTree = "<group>"; };
+		9132EE7622704D8B00E51EE8 /* HybridBusiness+Modal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HybridBusiness+Modal.swift"; sourceTree = "<group>"; };
+		9132EE7722704D8B00E51EE8 /* HybridBusiness+Dismiss.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HybridBusiness+Dismiss.swift"; sourceTree = "<group>"; };
+		9132EE7822704D8B00E51EE8 /* HybridBusiness+Pagehide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HybridBusiness+Pagehide.swift"; sourceTree = "<group>"; };
+		9132EE7922704D8B00E51EE8 /* HybridBusiness+Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HybridBusiness+Storage.swift"; sourceTree = "<group>"; };
+		9132EE7A22704D8B00E51EE8 /* HybridBusiness+Back.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HybridBusiness+Back.swift"; sourceTree = "<group>"; };
+		9132EE7B22704D8B00E51EE8 /* HybridBusiness+Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HybridBusiness+Location.swift"; sourceTree = "<group>"; };
+		9132EE7C22704D8B00E51EE8 /* HybridBusiness+Init.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HybridBusiness+Init.swift"; sourceTree = "<group>"; };
+		9132EE7D22704D8B00E51EE8 /* HybridBusiness+Header.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HybridBusiness+Header.swift"; sourceTree = "<group>"; };
+		9132EE7E22704D8B00E51EE8 /* HybridBusiness+Pageshow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HybridBusiness+Pageshow.swift"; sourceTree = "<group>"; };
+		9132EE7F22704D8B00E51EE8 /* HybridBusiness+Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HybridBusiness+Device.swift"; sourceTree = "<group>"; };
+		9132EE8022704D8B00E51EE8 /* HybridBusiness+Forward.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HybridBusiness+Forward.swift"; sourceTree = "<group>"; };
+		9132EE9022704E1F00E51EE8 /* HybridBusiness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HybridBusiness.swift; sourceTree = "<group>"; };
+		9132EE9322704E6A00E51EE8 /* HybridScrollParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HybridScrollParams.swift; sourceTree = "<group>"; };
+		9132EE9422704E6A00E51EE8 /* HybridHeaderParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HybridHeaderParams.swift; sourceTree = "<group>"; };
+		9132EE9522704E6A00E51EE8 /* HybridInitParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HybridInitParams.swift; sourceTree = "<group>"; };
+		9132EE9622704E6A00E51EE8 /* HybridModalParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HybridModalParams.swift; sourceTree = "<group>"; };
+		9132EE9722704E6A00E51EE8 /* HybridPagehideParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HybridPagehideParams.swift; sourceTree = "<group>"; };
+		9132EE9822704E6A00E51EE8 /* HybridLocationParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HybridLocationParams.swift; sourceTree = "<group>"; };
+		9132EE9922704E6A00E51EE8 /* HybridBackParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HybridBackParams.swift; sourceTree = "<group>"; };
+		9132EE9A22704E6A00E51EE8 /* HybridDeviceParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HybridDeviceParams.swift; sourceTree = "<group>"; };
+		9132EE9B22704E6A00E51EE8 /* HybridPageshowParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HybridPageshowParams.swift; sourceTree = "<group>"; };
+		9132EE9C22704E6A00E51EE8 /* HybridClipboardParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HybridClipboardParams.swift; sourceTree = "<group>"; };
+		9132EE9D22704E6A00E51EE8 /* HybridMainfestParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HybridMainfestParams.swift; sourceTree = "<group>"; };
+		9132EE9E22704E6A00E51EE8 /* HybridStorageParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HybridStorageParams.swift; sourceTree = "<group>"; };
+		9132EE9F22704E6A00E51EE8 /* HybridForwardParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HybridForwardParams.swift; sourceTree = "<group>"; };
 		9140A1DA1FCC08C000F1B131 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		9147B46D20DA69A000AE65F1 /* resources.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = resources.zip; sourceTree = "<group>"; };
 		9147B46E20DA69A000AE65F1 /* resources.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = resources.json; sourceTree = "<group>"; };
@@ -123,6 +177,8 @@
 		607FACD21AFB9204008FA782 /* Example for JGHybrid */ = {
 			isa = PBXGroup;
 			children = (
+				9132EE9222704E6A00E51EE8 /* ParamsModel */,
+				9132EE7322704D8B00E51EE8 /* HybridBusiness */,
 				91DAEEF721B525D6003869D8 /* ViewController */,
 				91DAEEF621B52555003869D8 /* View */,
 				91DAEEF821B5285A003869D8 /* Protocol */,
@@ -170,6 +226,47 @@
 				2BCDB0F0F2DF6241BB92C78D /* LICENSE */,
 			);
 			name = "Podspec Metadata";
+			sourceTree = "<group>";
+		};
+		9132EE7322704D8B00E51EE8 /* HybridBusiness */ = {
+			isa = PBXGroup;
+			children = (
+				9132EE9022704E1F00E51EE8 /* HybridBusiness.swift */,
+				9132EE7422704D8B00E51EE8 /* HybridBusiness+Scroll.swift */,
+				9132EE7522704D8B00E51EE8 /* HybridBusiness+Clipboard.swift */,
+				9132EE7622704D8B00E51EE8 /* HybridBusiness+Modal.swift */,
+				9132EE7722704D8B00E51EE8 /* HybridBusiness+Dismiss.swift */,
+				9132EE7822704D8B00E51EE8 /* HybridBusiness+Pagehide.swift */,
+				9132EE7922704D8B00E51EE8 /* HybridBusiness+Storage.swift */,
+				9132EE7A22704D8B00E51EE8 /* HybridBusiness+Back.swift */,
+				9132EE7B22704D8B00E51EE8 /* HybridBusiness+Location.swift */,
+				9132EE7C22704D8B00E51EE8 /* HybridBusiness+Init.swift */,
+				9132EE7D22704D8B00E51EE8 /* HybridBusiness+Header.swift */,
+				9132EE7E22704D8B00E51EE8 /* HybridBusiness+Pageshow.swift */,
+				9132EE7F22704D8B00E51EE8 /* HybridBusiness+Device.swift */,
+				9132EE8022704D8B00E51EE8 /* HybridBusiness+Forward.swift */,
+			);
+			path = HybridBusiness;
+			sourceTree = "<group>";
+		};
+		9132EE9222704E6A00E51EE8 /* ParamsModel */ = {
+			isa = PBXGroup;
+			children = (
+				9132EE9322704E6A00E51EE8 /* HybridScrollParams.swift */,
+				9132EE9422704E6A00E51EE8 /* HybridHeaderParams.swift */,
+				9132EE9522704E6A00E51EE8 /* HybridInitParams.swift */,
+				9132EE9622704E6A00E51EE8 /* HybridModalParams.swift */,
+				9132EE9722704E6A00E51EE8 /* HybridPagehideParams.swift */,
+				9132EE9822704E6A00E51EE8 /* HybridLocationParams.swift */,
+				9132EE9922704E6A00E51EE8 /* HybridBackParams.swift */,
+				9132EE9A22704E6A00E51EE8 /* HybridDeviceParams.swift */,
+				9132EE9B22704E6A00E51EE8 /* HybridPageshowParams.swift */,
+				9132EE9C22704E6A00E51EE8 /* HybridClipboardParams.swift */,
+				9132EE9D22704E6A00E51EE8 /* HybridMainfestParams.swift */,
+				9132EE9E22704E6A00E51EE8 /* HybridStorageParams.swift */,
+				9132EE9F22704E6A00E51EE8 /* HybridForwardParams.swift */,
+			);
+			path = ParamsModel;
 			sourceTree = "<group>";
 		};
 		9140A1D91FCC08C000F1B131 /* gh */ = {
@@ -274,6 +371,7 @@
 						CreatedOnToolsVersion = 6.3.1;
 						DevelopmentTeam = QLCB8QSMBL;
 						LastSwiftMigration = 0900;
+						ProvisioningStyle = Automatic;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -288,6 +386,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -395,9 +494,36 @@
 			files = (
 				91DAEEFA21B535B7003869D8 /* RNViewController.swift in Sources */,
 				9154BEB82004C87900BA5A5E /* BaseNavigationController.swift in Sources */,
+				9132EEA422704E6A00E51EE8 /* HybridPagehideParams.swift in Sources */,
+				9132EEA122704E6A00E51EE8 /* HybridHeaderParams.swift in Sources */,
+				9132EE8422704D8B00E51EE8 /* HybridBusiness+Dismiss.swift in Sources */,
+				9132EEA722704E6A00E51EE8 /* HybridDeviceParams.swift in Sources */,
+				9132EE8922704D8B00E51EE8 /* HybridBusiness+Init.swift in Sources */,
+				9132EE8322704D8B00E51EE8 /* HybridBusiness+Modal.swift in Sources */,
+				9132EE8C22704D8B00E51EE8 /* HybridBusiness+Device.swift in Sources */,
+				9132EE8522704D8B00E51EE8 /* HybridBusiness+Pagehide.swift in Sources */,
+				9132EE8222704D8B00E51EE8 /* HybridBusiness+Clipboard.swift in Sources */,
+				9132EEAA22704E6A00E51EE8 /* HybridMainfestParams.swift in Sources */,
+				9132EE8122704D8B00E51EE8 /* HybridBusiness+Scroll.swift in Sources */,
+				9132EE8A22704D8B00E51EE8 /* HybridBusiness+Header.swift in Sources */,
 				916A9D2F1FB04B0F003DCF99 /* MethodExtension.swift in Sources */,
+				9132EEAB22704E6A00E51EE8 /* HybridStorageParams.swift in Sources */,
+				9132EEA622704E6A00E51EE8 /* HybridBackParams.swift in Sources */,
+				9132EEA822704E6A00E51EE8 /* HybridPageshowParams.swift in Sources */,
+				9132EEA222704E6A00E51EE8 /* HybridInitParams.swift in Sources */,
+				9132EE8722704D8B00E51EE8 /* HybridBusiness+Back.swift in Sources */,
+				9132EEA022704E6A00E51EE8 /* HybridScrollParams.swift in Sources */,
+				9132EE8D22704D8B00E51EE8 /* HybridBusiness+Forward.swift in Sources */,
+				9132EE8B22704D8B00E51EE8 /* HybridBusiness+Pageshow.swift in Sources */,
+				9132EEA522704E6A00E51EE8 /* HybridLocationParams.swift in Sources */,
+				9132EEAC22704E6A00E51EE8 /* HybridForwardParams.swift in Sources */,
 				91F197412021A0B900C98BEE /* LoadFailedView.swift in Sources */,
+				9132EE8622704D8B00E51EE8 /* HybridBusiness+Storage.swift in Sources */,
 				607FACD81AFB9204008FA782 /* RootViewController.swift in Sources */,
+				9132EE9122704E1F00E51EE8 /* HybridBusiness.swift in Sources */,
+				9132EEA322704E6A00E51EE8 /* HybridModalParams.swift in Sources */,
+				9132EE8822704D8B00E51EE8 /* HybridBusiness+Location.swift in Sources */,
+				9132EEA922704E6A00E51EE8 /* HybridClipboardParams.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -544,12 +670,15 @@
 			baseConfigurationReference = 51EB2C07823B267240D4D7F2 /* Pods-JGHybrid_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QLCB8QSMBL;
 				INFOPLIST_FILE = JGHybrid/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};
@@ -560,12 +689,15 @@
 			baseConfigurationReference = 6A47F7591FAE843EC078F63F /* Pods-JGHybrid_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QLCB8QSMBL;
 				INFOPLIST_FILE = JGHybrid/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};

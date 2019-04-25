@@ -80,7 +80,7 @@ extension RootViewController:UITableViewDelegate,UITableViewDataSource {
         switch indexPath.row {
         case 0:
             let vc:HybridViewController =  Hybrid.load(urlString: "http://web-dev.doctorwork.com/ios/?" + "id=\(arc4random())")!
-            vc.isFullScreen = true
+            vc.navBarBackgroundAlpha = 0
             self.navigationController?.pushViewController(vc, animated: true)
         case 1:
             //let vc:HybridViewController =  Hybrid.load(urlString: "rapp/festival/index.html")!
