@@ -8,11 +8,20 @@ import CoreLocation
 import WebKit
 
 //更换类名 兼容老版本
-typealias MLHybridCommandExecute = HybridCommandExecute
+public typealias MLHybridCommandExecute = HybridCommandExecute
 
-class HybridCommandExecute: NSObject {
+open class HybridCommandExecute: NSObject {
     
-    var command: MLHybridCommand = MLHybridCommand()
+    public var apiClassObj:NSObject?
+    public var command: MLHybridCommand = MLHybridCommand()
+    
+    public override init() {
+        super.init()
+        guard let apiClass:NSObject.Type = self.swiftClassFromString(className: self.apiClassName()) as? NSObject.Type else {
+            return
+        }
+        apiClassObj = apiClass.init()
+    }
     
     //MARK: Method
     func performCommand(request: URLRequest, webView: WKWebView) -> Bool {
@@ -36,7 +45,7 @@ class HybridCommandExecute: NSObject {
     }
     
     func apiClassName() -> String {
-        return "HybridBusiness"
+        return HybridConfiguration.default.apiClassName
     }
     
     private func swiftClassFromString(className: String) -> AnyObject.Type? {
@@ -57,8 +66,9 @@ class HybridCommandExecute: NSObject {
 //            MLHybrid.shared.delegate?.commandExtension(command: command)
 //            return
 //        }
-        guard let hybridClass:NSObject.Type = self.swiftClassFromString(className: self.apiClassName()) as? NSObject.Type else { return}
-        let hybridObj = hybridClass.init()
+//        guard let hybridClass:NSObject.Type = self.swiftClassFromString(className: self.apiClassName()) as? NSObject.Type else { return}
+//        let hybridObj = hybridClass.init()
+        guard let hybridObj = self.apiClassObj else { return }
         let selector = NSSelectorFromString(self.command.name)
         let selectorWithParams = NSSelectorFromString("\(self.command.name):")
         let selectorWithCommand = NSSelectorFromString("\(self.command.name)WithCommand:")
