@@ -38,14 +38,11 @@ open class Hybrid: NSObject {
     }
     //加载页面 taroH5 url中含有‘#’符号，只进行utf-8转码即可
     open class func load(urlString: String, taroH5:Bool=false) -> MLHybridViewController? {
-        let urlString = urlString.replaceHost()
         let webViewController = MLHybridViewController()
-        var url:URL?
-        if taroH5 == true {
-            url = URL(string: urlString.hybridDecodeURLString())
-        } else {
-            url = URL(string: urlString.hybridUrlPathAllowedString())
-        }
+        let charSet = CharacterSet.urlQueryAllowed as NSCharacterSet
+        let mutSet = charSet.mutableCopy() as! NSMutableCharacterSet
+        mutSet.addCharacters(in: "#")
+        let url:URL? = URL.init(string: urlString.addingPercentEncoding(withAllowedCharacters: mutSet as CharacterSet) ?? "")
         webViewController.urlPath = url
         return webViewController
     }
