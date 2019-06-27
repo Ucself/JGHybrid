@@ -16,7 +16,7 @@ class BaseNavigationController: UINavigationController {
         // Do any additional setup after loading the view.
     }
     //状态栏权限移交
-    override var childViewControllerForStatusBarStyle: UIViewController? {
+    override var childForStatusBarStyle: UIViewController? {
         get {
             return self.topViewController
         }

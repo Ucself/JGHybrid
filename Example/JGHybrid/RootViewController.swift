@@ -58,7 +58,7 @@ extension RootViewController:UITableViewDelegate,UITableViewDataSource {
             cell = tempCell
         }
         else {
-            cell = UITableViewCell.init(style: UITableViewCellStyle.subtitle, reuseIdentifier: cellId)
+            cell = UITableViewCell.init(style: UITableViewCell.CellStyle.subtitle, reuseIdentifier: cellId)
         }
         cell.accessoryType = .disclosureIndicator
         

@@ -54,4 +54,7 @@ open class HybridConfiguration: NSObject {
     
     /// 用于相对路径的BaseUrl
     open var baseHostUrl:String = "https://web-dev.doctorwork.com/"
+    
+    ///
+    open var apiClassName:String = "HybridBusiness"
 }

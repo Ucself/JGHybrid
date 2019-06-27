@@ -45,7 +45,7 @@ public class HybridCommandExecute: NSObject {
     }
     
     func apiClassName() -> String {
-        return "HybridBusiness"
+        return HybridConfiguration.default.apiClassName
     }
     
     private func swiftClassFromString(className: String) -> AnyObject.Type? {
@@ -61,6 +61,16 @@ public class HybridCommandExecute: NSObject {
         print("---------------command end-------------------")
         //打印H5日志到控制台
         command.webView?.evaluateJavaScript("console.log({'name':'\(self.command.name)','params':\(command.params.hybridJSONString()),'callback':'\(self.command.callbackId)'})") { (result, error) in }
+<<<<<<< HEAD
+=======
+        //和业务相关的协议
+//        guard let funType = MLHybridMethodType(rawValue: command.name) else {
+//            MLHybrid.shared.delegate?.commandExtension(command: command)
+//            return
+//        }
+//        guard let hybridClass:NSObject.Type = self.swiftClassFromString(className: self.apiClassName()) as? NSObject.Type else { return}
+//        let hybridObj = hybridClass.init()
+>>>>>>> develop5.13-
         guard let hybridObj = self.apiClassObj else { return }
         let selector = NSSelectorFromString(self.command.name)
         let selectorWithParams = NSSelectorFromString("\(self.command.name):")
