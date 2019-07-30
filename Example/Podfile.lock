@@ -4,28 +4,36 @@ PODS:
     - JGHybrid/Common (= 6.0.5)
     - JGHybrid/Core (= 6.0.5)
     - JGHybrid/Params (= 6.0.5)
+    - JGNavigationBarTransition
     - JGWebKitURLProtocol
     - SSZipArchive
   - JGHybrid/Command (6.0.5):
+    - JGNavigationBarTransition
     - JGWebKitURLProtocol
     - SSZipArchive
   - JGHybrid/Common (6.0.5):
     - JGHybrid/Common/Protocol (= 6.0.5)
     - JGHybrid/Common/Tool (= 6.0.5)
+    - JGNavigationBarTransition
     - JGWebKitURLProtocol
     - SSZipArchive
   - JGHybrid/Common/Protocol (6.0.5):
+    - JGNavigationBarTransition
     - JGWebKitURLProtocol
     - SSZipArchive
   - JGHybrid/Common/Tool (6.0.5):
+    - JGNavigationBarTransition
     - JGWebKitURLProtocol
     - SSZipArchive
   - JGHybrid/Core (6.0.5):
+    - JGNavigationBarTransition
     - JGWebKitURLProtocol
     - SSZipArchive
   - JGHybrid/Params (6.0.5):
+    - JGNavigationBarTransition
     - JGWebKitURLProtocol
     - SSZipArchive
+  - JGNavigationBarTransition (1.0.0)
   - JGWebKitURLProtocol (1.0.1)
   - SSZipArchive (2.1.4)
 
@@ -34,6 +42,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - JGNavigationBarTransition
     - JGWebKitURLProtocol
     - SSZipArchive
 
@@ -42,7 +51,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  JGHybrid: de80cafb0956bc0c3e1c72a72ebf494834a45503
+  JGHybrid: 514fa9b2970cbf0065f3041b84531953c2c42345
+  JGNavigationBarTransition: 58952b90ad2f5ae3cd19443198cc2c1e8a300dff
   JGWebKitURLProtocol: 3086024bce4da9e8b9d639a12a9083048b3ca1cd
   SSZipArchive: 41455d4b8d2b6ab93990820b50dc697c2554a322
 

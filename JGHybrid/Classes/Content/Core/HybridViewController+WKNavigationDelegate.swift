@@ -11,7 +11,7 @@ import WebKit
 //MARK: WKUIDelegate WKNavigationDelegate
 extension HybridViewController:WKNavigationDelegate {
     
-    func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping () -> Void) {
+    public func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping () -> Void) {
         let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
         let title = NSLocalizedString("OK", comment: "OK Button")
         let ok = UIAlertAction(title: title, style: .default) { (action: UIAlertAction) -> Void in

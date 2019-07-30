@@ -15,7 +15,7 @@ public typealias MLHybrid = Hybrid
 
 open class Hybrid: NSObject {
     //单例对象
-    public static let shared = MLHybrid()
+    public static let shared = Hybrid()
     private override init() {}
     //私有变量
     var delegate: MLHybridMethodProtocol?

@@ -15,6 +15,7 @@ TODO: Add long description of the pod here.
   s.source_files = 'JGHybrid/Classes/Hybrid.swift', 'JGHybrid/Classes/HybridConfiguration.swift', 'JGHybrid/Classes/GTANavigationBar.swift'
   s.frameworks = 'UIKit', 'WebKit'
   s.dependency 'JGWebKitURLProtocol'
+  s.dependency 'JGNavigationBarTransition'
   s.dependency 'SSZipArchive'
 
   s.subspec 'Command' do |command|

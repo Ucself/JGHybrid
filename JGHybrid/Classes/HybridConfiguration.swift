@@ -1,5 +1,5 @@
 //
-//  MLHybridConfiguration.swift
+//  HybridConfiguration.swift
 //  JGHybrid
 //
 //  Created by 李保君 on 2017/12/5.
@@ -7,13 +7,12 @@
 
 import UIKit
 
-
 //更换类名 兼容老版本
 public typealias MLHybridConfiguration = HybridConfiguration
 /// Hybrid 配置类
 open class HybridConfiguration: NSObject {
     /// 单例对象
-    public static let `default` = MLHybridConfiguration()
+    public static let `default` = HybridConfiguration()
     private override init() {}
     
     //MARK: -- 离线包相关配置
@@ -58,3 +57,4 @@ open class HybridConfiguration: NSObject {
     ///
     open var apiClassName:String = "HybridBusiness"
 }
+

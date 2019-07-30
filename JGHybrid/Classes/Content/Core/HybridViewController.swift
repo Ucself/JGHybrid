@@ -51,7 +51,7 @@ open class HybridViewController: UIViewController,WKUIDelegate  {
     public var titleBackgroundColor:UIColor = MLHybridConfiguration.default.defaultTitleBackgroundTColor{      //Title背景色
         didSet {
             //全屏的话就不用设置需要的颜色
-            navBarBackgroundAlpha = self.isFullScreen ? 0 : 1
+//            navBarBackgroundAlpha = self.isFullScreen ? 0 : 1
         }
     }
     

@@ -86,9 +86,9 @@ extension HybridViewController {
         }
     }
     
-    override open var preferredStatusBarStyle: UIStatusBarStyle {
-        return statusBarStyle ?? .default
-    }
+//    override open var preferredStatusBarStyle: UIStatusBarStyle {
+//        return statusBarStyle ?? .default
+//    }
     
     
 }

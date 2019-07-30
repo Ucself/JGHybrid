@@ -59,9 +59,12 @@ extension HybridViewController {
         //js 注入 requestHybrid
         self.contentView.configuration.userContentController.add(self, name: "requestHybrid")
         //监听键盘弹起与隐藏
-        NotificationCenter.default.addObserver(self, selector: #selector(keyBoardShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyBoardHidden), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
-
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyBoardShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyBoardShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyBoardShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyBoardShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyBoardHidden), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyBoardHidden), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     func initProgressView() {
@@ -205,10 +208,10 @@ extension HybridViewController: UIScrollViewDelegate {
             if let weakSelf = self
             {
                 if (isClear == true) {
-                    weakSelf.navBarBackgroundAlpha = 0
+//                    weakSelf.navBarBackgroundAlpha = 0
                 }
                 else {
-                    weakSelf.navBarBackgroundAlpha = 1.0
+//                    weakSelf.navBarBackgroundAlpha = 1.0
                 }
             }
         })
