@@ -1,29 +1,29 @@
 PODS:
-  - JGHybrid (6.0.0):
-    - JGHybrid/Command (= 6.0.0)
-    - JGHybrid/Common (= 6.0.0)
-    - JGHybrid/Core (= 6.0.0)
-    - JGHybrid/Params (= 6.0.0)
+  - JGHybrid (6.0.5):
+    - JGHybrid/Command (= 6.0.5)
+    - JGHybrid/Common (= 6.0.5)
+    - JGHybrid/Core (= 6.0.5)
+    - JGHybrid/Params (= 6.0.5)
     - JGWebKitURLProtocol
     - SSZipArchive
-  - JGHybrid/Command (6.0.0):
+  - JGHybrid/Command (6.0.5):
     - JGWebKitURLProtocol
     - SSZipArchive
-  - JGHybrid/Common (6.0.0):
-    - JGHybrid/Common/Protocol (= 6.0.0)
-    - JGHybrid/Common/Tool (= 6.0.0)
+  - JGHybrid/Common (6.0.5):
+    - JGHybrid/Common/Protocol (= 6.0.5)
+    - JGHybrid/Common/Tool (= 6.0.5)
     - JGWebKitURLProtocol
     - SSZipArchive
-  - JGHybrid/Common/Protocol (6.0.0):
+  - JGHybrid/Common/Protocol (6.0.5):
     - JGWebKitURLProtocol
     - SSZipArchive
-  - JGHybrid/Common/Tool (6.0.0):
+  - JGHybrid/Common/Tool (6.0.5):
     - JGWebKitURLProtocol
     - SSZipArchive
-  - JGHybrid/Core (6.0.0):
+  - JGHybrid/Core (6.0.5):
     - JGWebKitURLProtocol
     - SSZipArchive
-  - JGHybrid/Params (6.0.0):
+  - JGHybrid/Params (6.0.5):
     - JGWebKitURLProtocol
     - SSZipArchive
   - JGWebKitURLProtocol (1.0.1)
@@ -33,7 +33,7 @@ DEPENDENCIES:
   - JGHybrid (from `../`)
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - JGWebKitURLProtocol
     - SSZipArchive
 
@@ -42,10 +42,10 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  JGHybrid: 86ca9eb31ace95ffdd260cdcd7c2afd9eac50392
+  JGHybrid: de80cafb0956bc0c3e1c72a72ebf494834a45503
   JGWebKitURLProtocol: 3086024bce4da9e8b9d639a12a9083048b3ca1cd
   SSZipArchive: 41455d4b8d2b6ab93990820b50dc697c2554a322
 
 PODFILE CHECKSUM: 8443499083c01df9966868c36f9f98ee26bd8c2d
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.7.4

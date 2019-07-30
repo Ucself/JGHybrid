@@ -451,7 +451,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-JGHybrid_Example/Pods-JGHybrid_Example-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-JGHybrid_Example/Pods-JGHybrid_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/JGHybrid/JGHybrid.framework",
 				"${BUILT_PRODUCTS_DIR}/JGWebKitURLProtocol/JGWebKitURLProtocol.framework",
 				"${BUILT_PRODUCTS_DIR}/SSZipArchive/SSZipArchive.framework",
@@ -464,7 +464,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JGHybrid_Example/Pods-JGHybrid_Example-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JGHybrid_Example/Pods-JGHybrid_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		7B981637F0F64DF9ABCF8A79 /* [CP] Check Pods Manifest.lock */ = {

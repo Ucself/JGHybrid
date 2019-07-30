@@ -1,6 +1,6 @@
 {
   "name": "JGHybrid",
-  "version": "6.0.0",
+  "version": "6.0.5",
   "summary": "A short description of JGHybrid.",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/Ucself/JGHybrid",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/Ucself/JGHybrid.git",
-    "tag": "6.0.0"
+    "tag": "6.0.5"
   },
   "platforms": {
     "ios": "8.0"

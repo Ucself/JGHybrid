@@ -11,30 +11,48 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Requirements
 
+`JGWebKitURLProtocol`
+
+`JGNavigationBarTransition`
+
+`SSZipArchive`
+
 ## Installation
 
 JGHybrid is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
-此类库在caiyang基础上新增js注入功能
-https://github.com/suncry/MLHybrid
-
-```ruby
+```
 pod 'JGHybrid'
 ```
+
 ## How To Use
+
+<a href="./R_GlobalConfiguration.md" target="_blank">iOS 全局配置</a>
+
+<a href="./R_iOSAPI.md" target="_blank">iOS API</a>
+
+<a href="./R_H5API.md" target="_blank">H5 API</a>
 
 ```
 let vc:HybridViewController =  Hybrid.load(urlString: "http://web-qa.doctorwork.com/rapp/health/health-package/0?sku=HS2018002")!
 self.navigationController?.pushViewController(vc, animated: true)
 ```
 
-``` js执行命令
-window.webkit.messageHandlers.requestHybrid.postMessage({'name':'updateheader','param':{"left":[{"tagname":"back","callback":""}],"right":[],"title":{"tagname":"title","title":"哈哈哈"}}})
+```js执行命令
+window.webkit.messageHandlers.requestHybrid.postMessage({
+  name: "updateheader",
+  param: {
+    left: [{ tagname: "back", callback: "" }],
+    right: [],
+    title: { tagname: "title", title: "哈哈哈" }
+  }
+});
 ```
+
 ## Author
 
-lbj147123@163.com, lbj147123@163.com
+ucself ，lbj147123@163.com
 
 ## License
 
