@@ -46,9 +46,9 @@ extension HybridViewController:WKNavigationDelegate {
         
         if  let response = navigationResponse.response as? HTTPURLResponse, response.statusCode == 500 {
             //显示错误页面
-            MLHybrid.shared.delegate?.didFailLoad(viewController: self)
+            Hybrid.shared.delegate?.didFailLoad(viewController: self)
             //加载关闭
-            MLHybrid.shared.delegate?.stopWait()
+            Hybrid.shared.delegate?.stopWait()
         }
         decisionHandler(.allow)
     }
@@ -61,17 +61,17 @@ extension HybridViewController:WKNavigationDelegate {
         print("页面加载失败----\(error)")
         //无法连接服务器显示错误页面    -1002 不支持的URL
         if let ocError:NSError = error as NSError?, ocError.code != -1002 {
-            MLHybrid.shared.delegate?.didFailLoad(viewController: self)
+            Hybrid.shared.delegate?.didFailLoad(viewController: self)
         }
         //加载失败
-        MLHybrid.shared.delegate?.stopWait()
+        Hybrid.shared.delegate?.stopWait()
     }
     
     //页面跳转失败
     open func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
         print("页面跳转失败----\(error)")
         //加载失败
-        MLHybrid.shared.delegate?.stopWait()
+        Hybrid.shared.delegate?.stopWait()
     }
     
     

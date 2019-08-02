@@ -20,7 +20,7 @@ extension HybridBusiness {
         let params:HybridClipboardParams = HybridClipboardParams.convert(command.params)
         command.args = params
         UIPasteboard.general.string = params.content
-        self.handleCallback(command)
+//        self.handleCallback(command)
     }
     
 }

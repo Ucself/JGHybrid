@@ -42,7 +42,7 @@ open class HybridCommand: NSObject {
             completion("无Hybrid执行容器")
             return
         }
-        webView?.evaluateJavaScript(self.viewController!.hybridEvent + "(\(dataString));") { (result, error) in
+        webView?.evaluateJavaScript(HybridConfiguration.default.hybridEvent + "(\(dataString));") { (result, error) in
             if let resultStr = result as? String {
                 completion(resultStr)
             }else  if  let error = error{
@@ -69,7 +69,7 @@ open class HybridCommand: NSObject {
         guard let commandDic:Dictionary<String,Any> = message.body as? Dictionary<String,Any> else { return nil }
         
         //Hybird命令对象
-        let command:MLHybridCommand = MLHybridCommand()
+        let command:HybridCommand = HybridCommand()
         
         //判断是否有tagname
         if let name = commandDic["name"] as? String {

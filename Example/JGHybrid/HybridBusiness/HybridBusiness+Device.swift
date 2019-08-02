@@ -21,6 +21,6 @@ extension HybridBusiness {
                                            "os":UIDevice.current.systemName,
                                            "dist":"app store",
                                            "uuid":UUID.init().uuidString]
-        self.handleCallback(command, deviceInfor)
+//        self.handleCallback(command, deviceInfor)
     }
 }

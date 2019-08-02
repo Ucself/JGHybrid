@@ -18,7 +18,7 @@ extension HybridBusiness {
     @objc func hybridInit(command: HybridCommand) {
         let args:HybridInitParams = HybridInitParams.convert(command.params)
         command.args = args
-        command.viewController?.hybridEvent = args.callback_name
-        self.handleCallback(command)
+        //command.viewController?.hybridEvent = args.callback_name
+//        self.handleCallback(command)
     }
 }

@@ -11,4 +11,4 @@
 | userAgent                      |      String      |         注入 H5 带有的字符串 |                 JGHybrid |
 | backIndicator                  |      String      | 默认返回按钮使用的图片字符串 |     JGHybridImageNavBack |
 | imagePrefixes                  |      String      |               使用图片的前缀 |            JGHybridImage |
-| apiClassName                   |      String      |                     业务类名 |         JGHybridBusiness |
+| hybridEvent                    |      String      |  hybrid 默认回调 js 函数名称 |          Hybrid.callback |

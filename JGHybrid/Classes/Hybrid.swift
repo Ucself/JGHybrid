@@ -18,13 +18,13 @@ open class Hybrid: NSObject {
     public static let shared = Hybrid()
     private override init() {}
     //私有变量
-    var delegate: MLHybridMethodProtocol?
+    var delegate: HybridMethodProtocol?
     //初始化注册
-    open class func register(_ delegate: MLHybridMethodProtocol) {
+    open class func register(_ delegate: HybridMethodProtocol) {
         shared.delegate = delegate
         //设置拦截
         if HybridConfiguration.default.isRegisterURLProtocol {
-            URLProtocol.registerClass(MLHybridURLProtocol.self)
+            URLProtocol.registerClass(HybridURLProtocol.self)
             URLProtocol.wk_registerScheme("http")
             URLProtocol.wk_registerScheme("https")
         }
@@ -33,9 +33,9 @@ open class Hybrid: NSObject {
             HybridCacheManager.default.HybridUnzipHybiryOfflineZip()
         }
     }
-    //加载页面 taroH5 url中含有‘#’符号，只进行utf-8转码即可
-    open class func load(urlString: String, taroH5:Bool=false) -> MLHybridViewController? {
-        let webViewController = MLHybridViewController()
+    //加载页面
+    open class func load(urlString: String) -> HybridViewController? {
+        let webViewController = HybridViewController()
         let charSet = CharacterSet.urlQueryAllowed as NSCharacterSet
         let mutSet = charSet.mutableCopy() as! NSMutableCharacterSet
         mutSet.addCharacters(in: "#")
@@ -46,7 +46,7 @@ open class Hybrid: NSObject {
     
     //新的zip包版本检测
     open class func checkOfflinePackage() {
-        MLHybridCommandExecute().hybridOfflinePackage()
+        HybridCommandExecute().hybridOfflinePackage()
     }
 }
 

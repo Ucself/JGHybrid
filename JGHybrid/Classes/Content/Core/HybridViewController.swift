@@ -5,6 +5,7 @@
 
 import UIKit
 import WebKit
+import JGNavigationBarTransition
 
 //更换类名 兼容老版本
 public typealias MLHybridViewController = HybridViewController
@@ -13,17 +14,10 @@ open class HybridViewController: UIViewController,WKUIDelegate  {
     
     //MARK: --- 参数属性
     
-    /// 是否隐藏
-//    public var naviBarHidden = false {
-//        didSet {
-//            self.navigationController?.setNavigationBarHidden(self.naviBarHidden, animated: true)
-//        }
-//    }
-    
-    /// 是否需要返回按钮
+    /// 是否需要返回按钮，默认false 系统会添加一个
     public var needBackButton = false
     
-    /// 是否需要隐藏 NavigationBottomBar
+    /// 是否需要隐藏 NavigationBottomBar，项目结构不同
     public var needHidesBottomBar = true
     
     /// 是否需要加载进度
@@ -33,29 +27,28 @@ open class HybridViewController: UIViewController,WKUIDelegate  {
     public var needStartWait = false
     
     //  是否导航栏透明
-    public var isFullScreen:Bool = false
-    
-    /// 是否导航栏透明返回手势
-    public var needFullScreenBackGestures = false
+    public var needFullScreen:Bool = false
     
     //MARK: --- UI属性
     
     /// 标题颜色
-    public var titleColor:UIColor = MLHybridConfiguration.default.defaultTitleColor {               //Title颜色
+    public var titleColor:UIColor = HybridConfiguration.default.navigationBarTitleColor {       //Title颜色
         didSet {
-//            self.navigationController?.navigationBar.hybridSetTitleColor(self.titleColor)
+            self.jg_navBarTitleColor = self.titleColor
         }
     }
     
     /// 标题背景色
-    public var titleBackgroundColor:UIColor = MLHybridConfiguration.default.defaultTitleBackgroundTColor{      //Title背景色
+    public var barTintColor:UIColor = HybridConfiguration.default.navigationBarBarTintColor {      //Title背景色
         didSet {
             //全屏的话就不用设置需要的颜色
-//            navBarBackgroundAlpha = self.isFullScreen ? 0 : 1
+            if !needFullScreen {
+                self.jg_navBarBarTintColor = self.barTintColor
+            }
         }
     }
     
-    /// 标题
+    /// 标题名称
     public var titleName:String = "" {
         didSet {
             self.navigationItem.title = titleName
@@ -65,9 +58,9 @@ open class HybridViewController: UIViewController,WKUIDelegate  {
     //MARK: --- UI视图控件
     
     /// WKWebView 容器
-    public var contentView: MLHybridContentView!
+    public var contentView: HybridContentView!
     
-    /// 加载精度条
+    /// 加载进度条
     public var progressView:UIProgressView!
     
     //MARK: --- 控制器业务属性
@@ -81,20 +74,14 @@ open class HybridViewController: UIViewController,WKUIDelegate  {
     //webView 的URL
     public var urlPath: URL?
     
-    /// Hybrid js默认回调函数
-    public var hybridEvent = "Hybrid.callback"
-    
     /// 定位对象
-    var locationModel = MLHybridLocation()
+    var locationModel = HybridLocation()
     
     /// 执行命令对象
-    var commandExecute: MLHybridCommandExecute = MLHybridCommandExecute()
-    
-    /// H5需要不是第一次显示的回调
-    var pageFirstShow = true
+    var commandExecute: HybridCommandExecute = HybridCommandExecute.init()
     
     //默认的userAgent
-    var defaultUserAgent:String = "Mozilla/5.0 (iPhone; CPU iPhone OS 12_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/16A5318d doc_hybrid_heath_1.0.3  Hybrid/1.0.3"
+    var defaultUserAgent:String = "Mozilla/5.0 (iPhone; CPU iPhone OS 12_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/16A5318d JGHybrid/1.0.3"
     
     //键盘弹起屏幕偏移量
     var keyBoardPoint:CGPoint = CGPoint()

@@ -18,7 +18,7 @@ extension HybridBusiness {
     @objc func pageshow(command: HybridCommand) {
         command.viewController?.onShowCallBack = command.callbackId
         //回调
-        self.handleCallback(command)
+//        self.handleCallback(command)
     }
 
 }

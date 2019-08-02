@@ -13,7 +13,7 @@ extension HybridViewController:WKScriptMessageHandler {
     //MessageHandler 回调
     open func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         
-        if let command:MLHybridCommand = HybridCommand.parseScriptMessage(message: message, viewController: self) {
+        if let command:HybridCommand = HybridCommand.parseScriptMessage(message: message, viewController: self) {
             self.commandExecute.command = command
             _ = commandExecute.performCommand(command: command)
         }

@@ -17,7 +17,7 @@ extension HybridBusiness {
     /// - Parameter command: command
     @objc func dismiss(command: HybridCommand) {
         command.viewController?.dismiss(animated: true, completion: nil)
-        self.handleCallback(command)
+//        self.handleCallback(command)
     }
     
 }

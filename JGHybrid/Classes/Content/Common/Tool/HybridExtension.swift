@@ -62,17 +62,17 @@ extension String{
     /// 替换有效的URL
     ///
     /// - Returns: 返回有效的URL
-    public func replaceHost() -> String {
-        guard let scheme:String = URL.init(string: self)?.scheme else {
-            return HybridConfiguration.default.baseHostUrl + self
-        }
-        if (scheme == "http" || scheme == "https") {
-            return self
-        }
-        else {
-            return HybridConfiguration.default.baseHostUrl + self
-        }
-    }
+//    public func replaceHost() -> String {
+//        guard let scheme:String = URL.init(string: self)?.scheme else {
+//            return HybridConfiguration.default.baseHostUrl + self
+//        }
+//        if (scheme == "http" || scheme == "https") {
+//            return self
+//        }
+//        else {
+//            return HybridConfiguration.default.baseHostUrl + self
+//        }
+//    }
 }
 
 extension URL {

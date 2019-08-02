@@ -21,31 +21,12 @@ extension HybridViewController {
     
     override open func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        //设置导航栏
-//        self.navigationController?.setNavigationBarHidden(naviBarHidden, animated: true)
         //添加wkwebview监听
         self.contentView.addObserver(self, forKeyPath: "estimatedProgress", options: NSKeyValueObservingOptions(rawValue: 0), context: nil)
         //回调Hybrid
         if let callback = self.onShowCallBack {
             self.commandExecute.command.callBack(data: "", err_no: 0, msg: "onwebviewshow", callback: callback, completion: {js in })
         }
-        //设置颜色
-//        self.navigationController?.navigationBar.hybridSetTitleColor(self.titleColor)
-//        self.navigationController?.navigationBar.hybridSetBackgroundColor(self.titleBackgroundColor)
-        self.view.backgroundColor = self.titleBackgroundColor
-        
-        //设置透明
-        if self.isFullScreen {
-//            self.navigationController?.navigationBar.hybridSetBackgroundClear()
-        }
-        //临时要求的回调
-        if self.pageFirstShow {
-            self.pageFirstShow = false
-        }
-        else if self.commandExecute.command.webView != nil {
-            self.commandExecute.command.webView?.evaluateJavaScript(MLHybridConfiguration.default.pageShowEvent) { (_, _) in }
-        }
-        
     }
     
     override open func viewWillDisappear(_ animated: Bool) {
@@ -59,18 +40,13 @@ extension HybridViewController {
     }
     
     override open func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self as? UIGestureRecognizerDelegate;
-        //导航栏全屏透明的话就不要手势回退，有渐变bug
-        if self.isFullScreen && !self.needFullScreenBackGestures {
-            self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
-        }
-        else {
-            self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
-        }
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
     }
     
     override open func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        if let observeObject:MLHybridContentView = object as? MLHybridContentView {
+        if let observeObject:HybridContentView = object as? HybridContentView {
             guard keyPath == "estimatedProgress" && observeObject == self.contentView else { return }
             //设置显示
             self.progressView.alpha = 1.0
@@ -85,10 +61,4 @@ extension HybridViewController {
             }
         }
     }
-    
-//    override open var preferredStatusBarStyle: UIStatusBarStyle {
-//        return statusBarStyle ?? .default
-//    }
-    
-    
 }

@@ -3,6 +3,7 @@ PODS:
     - JGHybrid/Command (= 6.0.5)
     - JGHybrid/Common (= 6.0.5)
     - JGHybrid/Core (= 6.0.5)
+    - JGHybrid/HybridBusiness (= 6.0.5)
     - JGHybrid/Params (= 6.0.5)
     - JGNavigationBarTransition
     - JGWebKitURLProtocol
@@ -29,21 +30,28 @@ PODS:
     - JGNavigationBarTransition
     - JGWebKitURLProtocol
     - SSZipArchive
+  - JGHybrid/HybridBusiness (6.0.5):
+    - JGNavigationBarTransition
+    - JGWebKitURLProtocol
+    - SSZipArchive
   - JGHybrid/Params (6.0.5):
     - JGNavigationBarTransition
     - JGWebKitURLProtocol
     - SSZipArchive
   - JGNavigationBarTransition (1.0.0)
   - JGWebKitURLProtocol (1.0.1)
+  - Reveal-SDK (4)
   - SSZipArchive (2.1.4)
 
 DEPENDENCIES:
   - JGHybrid (from `../`)
+  - Reveal-SDK (= 4)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - JGNavigationBarTransition
     - JGWebKitURLProtocol
+    - Reveal-SDK
     - SSZipArchive
 
 EXTERNAL SOURCES:
@@ -51,11 +59,12 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  JGHybrid: 514fa9b2970cbf0065f3041b84531953c2c42345
+  JGHybrid: b7a4cf37dea3d3a9780ddc43d3144f2c69bdd15f
   JGNavigationBarTransition: 58952b90ad2f5ae3cd19443198cc2c1e8a300dff
   JGWebKitURLProtocol: 3086024bce4da9e8b9d639a12a9083048b3ca1cd
+  Reveal-SDK: 178c927f1a3230648d3a92b96f6e730a35b2750a
   SSZipArchive: 41455d4b8d2b6ab93990820b50dc697c2554a322
 
-PODFILE CHECKSUM: 8443499083c01df9966868c36f9f98ee26bd8c2d
+PODFILE CHECKSUM: c5d4e5881b6a952510ef0923a62b33a0f6adfd2e
 
 COCOAPODS: 1.7.4

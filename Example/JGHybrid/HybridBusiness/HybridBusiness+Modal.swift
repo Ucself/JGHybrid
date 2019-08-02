@@ -23,7 +23,7 @@ extension HybridBusiness {
             webViewController.title = params.title
             //是否全屏
             if params.fullscreen {
-                webViewController.isFullScreen = params.fullscreen
+                webViewController.needFullScreen = params.fullscreen
             }
             command.viewController?.present(webViewController, animated: params.animate, completion: nil)
             //回调

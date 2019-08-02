@@ -19,7 +19,7 @@ extension HybridBusiness {
         let params:HybridForwardParams = HybridForwardParams.convert(command.params)
         command.args = params
         if params.type == "h5" {
-            guard let webViewController = Hybrid.load(urlString: params.url, taroH5: params.characterAllowed) else {return}
+            guard let webViewController = Hybrid.load(urlString: params.url) else {return}
             guard let navi = command.viewController?.navigationController else {return}
             webViewController.titleName = params.title
             //标题颜色
@@ -32,12 +32,12 @@ extension HybridBusiness {
             }
             //如果是全屏，则为透明色
             if params.fullscreen {
-                webViewController.isFullScreen = params.fullscreen
+                webViewController.needFullScreen = params.fullscreen
             }
-            //是否需要返回手势
-            if params.fullscreenBackGestures {
-                webViewController.needFullScreenBackGestures = params.fullscreenBackGestures
-            }
+//            //是否需要返回手势
+//            if params.fullscreenBackGestures {
+//                webViewController.needFullScreenBackGestures = params.fullscreenBackGestures
+//            }
             navi.pushViewController(webViewController, animated: params.animate)
             //回调
             self.handleCallback(command)

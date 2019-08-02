@@ -43,26 +43,26 @@ extension HybridBusiness {
             if newHashDic.count > 0 {
                 UserDefaults.standard.set(newHashDic, forKey: userDefaultKey)
                 //回调
-                self.handleCallback(command, ["isSuccess":true])
+//                self.handleCallback(command, ["isSuccess":true])
             }
             else{
                 //回调
-                self.handleCallback(command, ["isSuccess":false])
+//                self.handleCallback(command, ["isSuccess":false])
             }
         case "get":
             //获取存储
             if let hashDic:[String:String] = UserDefaults.standard.object(forKey: userDefaultKey) as? [String:String] {
                 //回调
-                self.handleCallback(command, hashDic)
+//                self.handleCallback(command, hashDic)
             }
             else {
                 //回调
-                self.handleCallback(command, [], err_no: -1, msg: "No data stored")
+//                self.handleCallback(command, [], err_no: -1, msg: "No data stored")
             }
             
         case "remove":
             UserDefaults.standard.removeObject(forKey: userDefaultKey)
-            self.handleCallback(command)
+//            self.handleCallback(command)
         default:
             break
         }

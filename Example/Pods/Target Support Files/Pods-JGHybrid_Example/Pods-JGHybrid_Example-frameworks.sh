@@ -164,6 +164,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/JGHybrid/JGHybrid.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/JGNavigationBarTransition/JGNavigationBarTransition.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/JGWebKitURLProtocol/JGWebKitURLProtocol.framework"
+  install_framework "${PODS_ROOT}/Reveal-SDK/RevealServer-4/iOS/RevealServer.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SSZipArchive/SSZipArchive.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then

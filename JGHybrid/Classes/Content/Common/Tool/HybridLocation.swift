@@ -1,5 +1,5 @@
 //
-//  MLHybridLocation.swift
+//  HybridLocation.swift
 //  Pods
 //
 

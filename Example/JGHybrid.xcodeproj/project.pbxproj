@@ -16,7 +16,6 @@
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		9132EE8122704D8B00E51EE8 /* HybridBusiness+Scroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9132EE7422704D8B00E51EE8 /* HybridBusiness+Scroll.swift */; };
 		9132EE8222704D8B00E51EE8 /* HybridBusiness+Clipboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9132EE7522704D8B00E51EE8 /* HybridBusiness+Clipboard.swift */; };
-		9132EE8322704D8B00E51EE8 /* HybridBusiness+Modal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9132EE7622704D8B00E51EE8 /* HybridBusiness+Modal.swift */; };
 		9132EE8422704D8B00E51EE8 /* HybridBusiness+Dismiss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9132EE7722704D8B00E51EE8 /* HybridBusiness+Dismiss.swift */; };
 		9132EE8522704D8B00E51EE8 /* HybridBusiness+Pagehide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9132EE7822704D8B00E51EE8 /* HybridBusiness+Pagehide.swift */; };
 		9132EE8622704D8B00E51EE8 /* HybridBusiness+Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9132EE7922704D8B00E51EE8 /* HybridBusiness+Storage.swift */; };
@@ -26,7 +25,6 @@
 		9132EE8A22704D8B00E51EE8 /* HybridBusiness+Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9132EE7D22704D8B00E51EE8 /* HybridBusiness+Header.swift */; };
 		9132EE8B22704D8B00E51EE8 /* HybridBusiness+Pageshow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9132EE7E22704D8B00E51EE8 /* HybridBusiness+Pageshow.swift */; };
 		9132EE8C22704D8B00E51EE8 /* HybridBusiness+Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9132EE7F22704D8B00E51EE8 /* HybridBusiness+Device.swift */; };
-		9132EE8D22704D8B00E51EE8 /* HybridBusiness+Forward.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9132EE8022704D8B00E51EE8 /* HybridBusiness+Forward.swift */; };
 		9132EE9122704E1F00E51EE8 /* HybridBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9132EE9022704E1F00E51EE8 /* HybridBusiness.swift */; };
 		9132EEA022704E6A00E51EE8 /* HybridScrollParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9132EE9322704E6A00E51EE8 /* HybridScrollParams.swift */; };
 		9132EEA122704E6A00E51EE8 /* HybridHeaderParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9132EE9422704E6A00E51EE8 /* HybridHeaderParams.swift */; };
@@ -40,7 +38,6 @@
 		9132EEA922704E6A00E51EE8 /* HybridClipboardParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9132EE9C22704E6A00E51EE8 /* HybridClipboardParams.swift */; };
 		9132EEAA22704E6A00E51EE8 /* HybridMainfestParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9132EE9D22704E6A00E51EE8 /* HybridMainfestParams.swift */; };
 		9132EEAB22704E6A00E51EE8 /* HybridStorageParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9132EE9E22704E6A00E51EE8 /* HybridStorageParams.swift */; };
-		9132EEAC22704E6A00E51EE8 /* HybridForwardParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9132EE9F22704E6A00E51EE8 /* HybridForwardParams.swift */; };
 		9140A1DB1FCC08C000F1B131 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 9140A1DA1FCC08C000F1B131 /* index.html */; };
 		9147B46F20DA69A000AE65F1 /* resources.zip in Resources */ = {isa = PBXBuildFile; fileRef = 9147B46D20DA69A000AE65F1 /* resources.zip */; };
 		9147B47020DA69A000AE65F1 /* resources.json in Resources */ = {isa = PBXBuildFile; fileRef = 9147B46E20DA69A000AE65F1 /* resources.json */; };
@@ -83,7 +80,6 @@
 		8AA1597A5587CE99A6870EBF /* Pods_JGHybrid_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JGHybrid_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9132EE7422704D8B00E51EE8 /* HybridBusiness+Scroll.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HybridBusiness+Scroll.swift"; sourceTree = "<group>"; };
 		9132EE7522704D8B00E51EE8 /* HybridBusiness+Clipboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HybridBusiness+Clipboard.swift"; sourceTree = "<group>"; };
-		9132EE7622704D8B00E51EE8 /* HybridBusiness+Modal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HybridBusiness+Modal.swift"; sourceTree = "<group>"; };
 		9132EE7722704D8B00E51EE8 /* HybridBusiness+Dismiss.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HybridBusiness+Dismiss.swift"; sourceTree = "<group>"; };
 		9132EE7822704D8B00E51EE8 /* HybridBusiness+Pagehide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HybridBusiness+Pagehide.swift"; sourceTree = "<group>"; };
 		9132EE7922704D8B00E51EE8 /* HybridBusiness+Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HybridBusiness+Storage.swift"; sourceTree = "<group>"; };
@@ -93,7 +89,6 @@
 		9132EE7D22704D8B00E51EE8 /* HybridBusiness+Header.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HybridBusiness+Header.swift"; sourceTree = "<group>"; };
 		9132EE7E22704D8B00E51EE8 /* HybridBusiness+Pageshow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HybridBusiness+Pageshow.swift"; sourceTree = "<group>"; };
 		9132EE7F22704D8B00E51EE8 /* HybridBusiness+Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HybridBusiness+Device.swift"; sourceTree = "<group>"; };
-		9132EE8022704D8B00E51EE8 /* HybridBusiness+Forward.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HybridBusiness+Forward.swift"; sourceTree = "<group>"; };
 		9132EE9022704E1F00E51EE8 /* HybridBusiness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HybridBusiness.swift; sourceTree = "<group>"; };
 		9132EE9322704E6A00E51EE8 /* HybridScrollParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HybridScrollParams.swift; sourceTree = "<group>"; };
 		9132EE9422704E6A00E51EE8 /* HybridHeaderParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HybridHeaderParams.swift; sourceTree = "<group>"; };
@@ -107,7 +102,6 @@
 		9132EE9C22704E6A00E51EE8 /* HybridClipboardParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HybridClipboardParams.swift; sourceTree = "<group>"; };
 		9132EE9D22704E6A00E51EE8 /* HybridMainfestParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HybridMainfestParams.swift; sourceTree = "<group>"; };
 		9132EE9E22704E6A00E51EE8 /* HybridStorageParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HybridStorageParams.swift; sourceTree = "<group>"; };
-		9132EE9F22704E6A00E51EE8 /* HybridForwardParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HybridForwardParams.swift; sourceTree = "<group>"; };
 		9140A1DA1FCC08C000F1B131 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		9147B46D20DA69A000AE65F1 /* resources.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = resources.zip; sourceTree = "<group>"; };
 		9147B46E20DA69A000AE65F1 /* resources.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = resources.json; sourceTree = "<group>"; };
@@ -231,7 +225,6 @@
 				9132EE9022704E1F00E51EE8 /* HybridBusiness.swift */,
 				9132EE7422704D8B00E51EE8 /* HybridBusiness+Scroll.swift */,
 				9132EE7522704D8B00E51EE8 /* HybridBusiness+Clipboard.swift */,
-				9132EE7622704D8B00E51EE8 /* HybridBusiness+Modal.swift */,
 				9132EE7722704D8B00E51EE8 /* HybridBusiness+Dismiss.swift */,
 				9132EE7822704D8B00E51EE8 /* HybridBusiness+Pagehide.swift */,
 				9132EE7922704D8B00E51EE8 /* HybridBusiness+Storage.swift */,
@@ -241,7 +234,6 @@
 				9132EE7D22704D8B00E51EE8 /* HybridBusiness+Header.swift */,
 				9132EE7E22704D8B00E51EE8 /* HybridBusiness+Pageshow.swift */,
 				9132EE7F22704D8B00E51EE8 /* HybridBusiness+Device.swift */,
-				9132EE8022704D8B00E51EE8 /* HybridBusiness+Forward.swift */,
 			);
 			path = HybridBusiness;
 			sourceTree = "<group>";
@@ -261,7 +253,6 @@
 				9132EE9C22704E6A00E51EE8 /* HybridClipboardParams.swift */,
 				9132EE9D22704E6A00E51EE8 /* HybridMainfestParams.swift */,
 				9132EE9E22704E6A00E51EE8 /* HybridStorageParams.swift */,
-				9132EE9F22704E6A00E51EE8 /* HybridForwardParams.swift */,
 			);
 			path = ParamsModel;
 			sourceTree = "<group>";
@@ -451,6 +442,7 @@
 				"${BUILT_PRODUCTS_DIR}/JGHybrid/JGHybrid.framework",
 				"${BUILT_PRODUCTS_DIR}/JGNavigationBarTransition/JGNavigationBarTransition.framework",
 				"${BUILT_PRODUCTS_DIR}/JGWebKitURLProtocol/JGWebKitURLProtocol.framework",
+				"${PODS_ROOT}/Reveal-SDK/RevealServer-4/iOS/RevealServer.framework",
 				"${BUILT_PRODUCTS_DIR}/SSZipArchive/SSZipArchive.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -458,6 +450,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JGHybrid.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JGNavigationBarTransition.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JGWebKitURLProtocol.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RevealServer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SSZipArchive.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -497,7 +490,6 @@
 				9132EE8422704D8B00E51EE8 /* HybridBusiness+Dismiss.swift in Sources */,
 				9132EEA722704E6A00E51EE8 /* HybridDeviceParams.swift in Sources */,
 				9132EE8922704D8B00E51EE8 /* HybridBusiness+Init.swift in Sources */,
-				9132EE8322704D8B00E51EE8 /* HybridBusiness+Modal.swift in Sources */,
 				9132EE8C22704D8B00E51EE8 /* HybridBusiness+Device.swift in Sources */,
 				9132EE8522704D8B00E51EE8 /* HybridBusiness+Pagehide.swift in Sources */,
 				9132EE8222704D8B00E51EE8 /* HybridBusiness+Clipboard.swift in Sources */,
@@ -511,10 +503,8 @@
 				9132EEA222704E6A00E51EE8 /* HybridInitParams.swift in Sources */,
 				9132EE8722704D8B00E51EE8 /* HybridBusiness+Back.swift in Sources */,
 				9132EEA022704E6A00E51EE8 /* HybridScrollParams.swift in Sources */,
-				9132EE8D22704D8B00E51EE8 /* HybridBusiness+Forward.swift in Sources */,
 				9132EE8B22704D8B00E51EE8 /* HybridBusiness+Pageshow.swift in Sources */,
 				9132EEA522704E6A00E51EE8 /* HybridLocationParams.swift in Sources */,
-				9132EEAC22704E6A00E51EE8 /* HybridForwardParams.swift in Sources */,
 				91F197412021A0B900C98BEE /* LoadFailedView.swift in Sources */,
 				9132EE8622704D8B00E51EE8 /* HybridBusiness+Storage.swift in Sources */,
 				607FACD81AFB9204008FA782 /* RootViewController.swift in Sources */,

@@ -26,7 +26,7 @@ extension HybridBusiness {
         //标题颜色
         if UIColor.hybridColorWithHex(params.color) != .clear {
 //            command.viewController.titleColor = UIColor.hybridColorWithHex(params.color)
-            command.viewController?.navBarTitleColor = UIColor.hybridColorWithHex(params.color)
+            command.viewController?.titleColor = UIColor.hybridColorWithHex(params.color)
         }
         //设置背景色
         if UIColor.hybridColorWithHex(params.background) != .clear {
@@ -45,7 +45,7 @@ extension HybridBusiness {
             command.viewController?.navigationItem.setRightBarButtonItems(rightButtonItems, animated: true)
         }
         //回调
-        self.handleCallback(command)
+//        self.handleCallback(command)
     }
     
     /// 设置左边按钮
@@ -78,7 +78,7 @@ extension HybridBusiness {
                 button.setTitle(model.title, for: .normal)
             }
             //设置图片
-            if model.icon != "" ,let buttonIcon:UIImage = UIImage.init(named: MLHybridConfiguration.default.naviImagePrefixes + model.icon){
+            if model.icon != "" ,let buttonIcon:UIImage = UIImage.init(named: MLHybridConfiguration.default.imagePrefixes + model.icon){
                 button.setImage(buttonIcon, for: .normal)
                 coverView.frame = CGRect.init(x: 0, y: 0, width: 44, height: 44)
                 button.setTitle("", for: .normal)
@@ -94,7 +94,7 @@ extension HybridBusiness {
             button.backgroundColor = UIColor.clear
             button.contentHorizontalAlignment = .left
             button.contentVerticalAlignment = .center
-            button.imageEdgeInsets = UIEdgeInsetsMake(0, 6, 0, 0)
+            button.imageEdgeInsets = UIEdgeInsets(top: 0, left: 6, bottom: 0, right: 0)
             coverView.addSubview(button)
             //设置View
             barButtonItem.customView = coverView
@@ -137,7 +137,7 @@ extension HybridBusiness {
                 button.setTitle(model.title, for: .normal)
             }
             //设置图片
-            if model.icon != "" ,let buttonIcon:UIImage = UIImage.init(named: MLHybridConfiguration.default.naviImagePrefixes + model.icon){
+            if model.icon != "" ,let buttonIcon:UIImage = UIImage.init(named: MLHybridConfiguration.default.imagePrefixes + model.icon){
                 button.setImage(buttonIcon, for: .normal)
                 coverView.frame = CGRect.init(x: 0, y: 0, width: 44, height: 44)
                 button.setTitle("", for: .normal)
@@ -155,7 +155,7 @@ extension HybridBusiness {
             button.backgroundColor = UIColor.clear
             button.contentHorizontalAlignment = .right
             button.contentVerticalAlignment = .center
-            button.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 6)
+            button.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 6)
             coverView.addSubview(button)
             barButtons.append(barButtonItem)
         }

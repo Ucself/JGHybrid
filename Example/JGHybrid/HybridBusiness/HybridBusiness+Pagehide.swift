@@ -19,7 +19,7 @@ extension HybridBusiness {
     @objc func pagehide(command: HybridCommand) {
         command.viewController?.onHideCallBack = command.callbackId
         //回调
-        self.handleCallback(command)
+//        self.handleCallback(command)
     }
 
 }

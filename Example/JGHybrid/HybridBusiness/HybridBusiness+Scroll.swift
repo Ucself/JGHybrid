@@ -24,6 +24,6 @@ extension HybridBusiness {
             command.webView?.scrollView.backgroundColor = backgroundColor
         }
         //回调
-        self.handleCallback(command)
+//        self.handleCallback(command)
     }
 }

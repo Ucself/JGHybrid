@@ -1,5 +1,5 @@
 //
-//  MLHybridCommandExecute.swift
+//  HybridCommandExecute.swift
 //  Pods
 //
 
@@ -13,7 +13,7 @@ public typealias MLHybridCommandExecute = HybridCommandExecute
 public class HybridCommandExecute: NSObject {
     
     public var apiClassObj:NSObject?
-    public var command: MLHybridCommand = MLHybridCommand()
+    public var command: HybridCommand = HybridCommand()
     
     public override init() {
         super.init()
@@ -25,7 +25,7 @@ public class HybridCommandExecute: NSObject {
     
     //MARK: Method
     func performCommand(request: URLRequest, webView: WKWebView) -> Bool {
-        if let hybridCommand = MLHybridCommand.analysis(request: request, webView: webView) {
+        if let hybridCommand = HybridCommand.analysis(request: request, webView: webView) {
             print("---------------command start-----------------")
             print("👇URL:\n\((request.url?.absoluteString ?? "")!)")
             command = hybridCommand
@@ -36,7 +36,7 @@ public class HybridCommandExecute: NSObject {
         }
     }
     //通过命令执行
-    func performCommand(command:MLHybridCommand) -> Bool {
+    func performCommand(command:HybridCommand) -> Bool {
         print("---------------command start-----------------")
         print("👇JS METHOD:\nhybrid.requestHybrid()")
         self.command = command
@@ -49,7 +49,8 @@ public class HybridCommandExecute: NSObject {
     }
     
     private func swiftClassFromString(className: String) -> AnyObject.Type? {
-        let clsName = Bundle.main.infoDictionary!["CFBundleName"] as! String + "." + className
+//        let clsName = Bundle.main.infoDictionary!["CFBundleName"] as! String + "." + className
+        let clsName = "JGHybrid." + className
         return NSClassFromString(clsName)
     }
     
@@ -61,13 +62,6 @@ public class HybridCommandExecute: NSObject {
         print("---------------command end-------------------")
         //打印H5日志到控制台
         command.webView?.evaluateJavaScript("console.log({'name':'\(self.command.name)','params':\(command.params.hybridJSONString()),'callback':'\(self.command.callbackId)'})") { (result, error) in }
-        //和业务相关的协议
-//        guard let funType = MLHybridMethodType(rawValue: command.name) else {
-//            MLHybrid.shared.delegate?.commandExtension(command: command)
-//            return
-//        }
-//        guard let hybridClass:NSObject.Type = self.swiftClassFromString(className: self.apiClassName()) as? NSObject.Type else { return}
-//        let hybridObj = hybridClass.init()
 
         guard let hybridObj = self.apiClassObj else { return }
         let selector = NSSelectorFromString(self.command.name)

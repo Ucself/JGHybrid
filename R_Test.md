@@ -1,24 +1,14 @@
-#  企鹅医生Hybrid协议
+# 企鹅医生 Hybrid 协议
 
-######[init - ( 初始化 )](#init)
-######[forward - (push 页面 )](#forward) 
-######[modal - (modal 页面 )](#modal) 
-######[dismiss - (modal 页面 消失)](#dismiss) 
-######[back - ( 返回上一页 )](#back)
-######[header - ( 导航栏 )](#header)
-######[scroll - ( native回弹效果)](#scroll)
-######[pageshow - ( 页面显示 )](#pageshow)
-######[pagehide - ( 页面隐藏 )](#pagehide)
-######[device - ( 获取设备信息 )](#device)
-######[location - ( 定位 )](#location)
-######[clipboard - ( 剪贴板 )](#clipboard) 
-######[storage - ( Storage)](#storage)
+######[init - ( 初始化 )](#init) ######[forward - (push 页面 )](#forward) ######[modal - (modal 页面 )](#modal) ######[dismiss - (modal 页面 消失)](#dismiss) ######[back - ( 返回上一页 )](#back) ######[header - ( 导航栏 )](#header) ######[scroll - ( native 回弹效果)](#scroll) ######[pageshow - ( 页面显示 )](#pageshow) ######[pagehide - ( 页面隐藏 )](#pagehide) ######[device - ( 获取设备信息 )](#device) ######[location - ( 定位 )](#location) ######[clipboard - ( 剪贴板 )](#clipboard) ######[storage - ( Storage)](#storage)
 
 <a name="init"></a>
-### init
-协议H5有实现，RN没有实现的必要；可以不调用，有默认值
 
-```   请求对象
+### init
+
+协议 H5 有实现，RN 没有实现的必要；可以不调用，有默认值
+
+```请求对象
 {
 	"name":"init",
 	"params":{
@@ -27,34 +17,39 @@
 	}
 }
 ```
-<a name="forward"></a>
-### forward
-协议H5有实现，RN有实现回调Hybrid一个控制器
 
-```   请求对象
+<a name="forward"></a>
+
+### forward
+
+协议 H5 有实现，RN 有实现回调 Hybrid 一个控制器
+
+```请求对象
 {
 	"name":"forward",
 	"params":{
-		"type":"h5",                      // h5 或 native 
+		"type":"h5",                      // h5 或 native
 		"url":"/h5",                		 // type 为native 时 native时 url 和业务有关的字符串
 		"title":"首页",						 // 页面title
 		"animate":true,                   // 默认true
 		"color":"",							 // 标题颜色
 		"background":"",                  // header的背景颜色
 		"fullscreen":false                // navagationbar是否为透明
-		"fullscreenBackGestures":false    // 全屏的时候是否需要返回手势
 	}
 }
 ```
-<a name="modal"></a>
-### modal
-协议H5有实现，RN有实现回调Hybrid一个控制器
 
-```   请求对象
+<a name="modal"></a>
+
+### modal
+
+协议 H5 有实现，RN 有实现回调 Hybrid 一个控制器
+
+```请求对象
 {
 	"name":"modal",
 	"params":{
-		"type":"h5",          // h5 或 native 
+		"type":"h5",          // h5 或 native
 		"url":"/h5",          // type 为native 时 native时 url 和业务有关的字符串
 		"title":"首页",
 		"animate":true,       //默认true
@@ -62,21 +57,26 @@
 	}
 }
 ```
+
 <a name="dismiss"></a>
 
 ### dismiss
-协议H5有实现，RN没有实现的必要
 
-```   请求对象
+协议 H5 有实现，RN 没有实现的必要
+
+```请求对象
 {
 	"name":"dismiss"
 }
 ```
-<a name="back"></a>
-### back
-协议H5有实现，RN没有实现的必要
 
-```   请求对象
+<a name="back"></a>
+
+### back
+
+协议 H5 有实现，RN 没有实现的必要
+
+```请求对象
 {
 	"name":"back",
 	"params":{
@@ -84,11 +84,14 @@
 	}
 }
 ```
-<a name="header"></a>
-### header
-协议H5有实现，RN没有实现的必要
 
-```   请求对象
+<a name="header"></a>
+
+### header
+
+协议 H5 有实现，RN 没有实现的必要
+
+```请求对象
 {
 	"name":"header",
 	"params":{
@@ -111,11 +114,14 @@
 	}
 }
 ```
-<a name="scroll"></a>
-### scroll
-协议H5有实现，RN没有实现的必要
 
-```   请求对象
+<a name="scroll"></a>
+
+### scroll
+
+协议 H5 有实现，RN 没有实现的必要
+
+```请求对象
 {
 	"name":"scroll",
 		"params":{
@@ -126,35 +132,44 @@
 ```
 
 <a name="pageshow"></a>
-### pageshow
-协议H5有实现，RN没有实现的必要
 
-```   请求对象
+### pageshow
+
+协议 H5 有实现，RN 没有实现的必要
+
+```请求对象
 {
 	"name":"pageshow",
-	"callback":"callback_name" 
+	"callback":"callback_name"
 }
 ```
-<a name="pagehide"></a>
-### pagehide
-协议H5有实现，RN没有实现的必要
 
-```   请求对象
+<a name="pagehide"></a>
+
+### pagehide
+
+协议 H5 有实现，RN 没有实现的必要
+
+```请求对象
 {
 	"name":"pagehide",
-	"callback":"callback_name" 
+	"callback":"callback_name"
 }
 ```
-<a name="device"></a>
-### device
-协议H5有实现（未使用过），RN有实现
 
-```   请求对象
+<a name="device"></a>
+
+### device
+
+协议 H5 有实现（未使用过），RN 有实现
+
+```请求对象
 {
 	"name":"device",
 	"callback":"callback_name" 	//回调ID，RN不需要
 }
 ```
+
 ```
 {
 	"version ":"1.0.0"                 // 容器版本
@@ -163,12 +178,14 @@
 	"uuid ":"app store"                // 设备 uuid
 }
 ```
+
 <a name="location"></a>
 
 ### location
-协议H5有实现，RN有实现，RN不需要参数
 
-```   请求对象
+协议 H5 有实现，RN 有实现，RN 不需要参数
+
+```请求对象
 {
 	"name":"location",
 	"params":{
@@ -180,11 +197,14 @@
 	}
 }
 ```
-<a name="storage"></a>
-### storage
-协议H5有实现，RN有实现
 
-```   请求对象
+<a name="storage"></a>
+
+### storage
+
+协议 H5 有实现，RN 有实现
+
+```请求对象
 {
 	"name":"storage",
 	"params":{
@@ -194,11 +214,14 @@
 	"callback":"fsdfa"
 }
 ```
-<a name="clipboard"></a>
-### clipboard
-协议H5有实现，RN有实现
 
-```   请求对象
+<a name="clipboard"></a>
+
+### clipboard
+
+协议 H5 有实现，RN 有实现
+
+```请求对象
 {
 	"name":"clipboard",
 	"params":{
@@ -206,4 +229,3 @@
 	}
 }
 ```
-

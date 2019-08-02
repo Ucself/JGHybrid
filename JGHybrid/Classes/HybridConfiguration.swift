@@ -17,44 +17,55 @@ open class HybridConfiguration: NSObject {
     
     //MARK: -- 离线包相关配置
     /// 是否注册Protocol拦截
-    open var isRegisterURLProtocol:Bool = false
+    var isRegisterURLProtocol:Bool = false
     
     /// 是否拦截换成Html地址
-    open var isCacheHtml:Bool = false
+    var isCacheHtml:Bool = false
     
     /// 离线包html需要解析的地址
-    open var cacheMap: [String] = ["/app/health","/rapp/health"]
+    var cacheMap: [String] = ["/app/health","/rapp/health"]
     
     /// 离线包json地址
-    open var offlinePackageJsonUrl:String = "http://web-dev.doctorwork.com/ios/resources.json"
+    var offlinePackageJsonUrl:String = "http://web-dev.doctorwork.com/ios/resources.json"
     
     //MARK: -- http配置相关
-    /// userAgent
-    open var userAgent:String = ""
     
     /// scheme
-    open var scheme:String = "docheathhybrid"
+    var scheme:String = "docheathhybrid"
     
-    //MARK: -- UI配置相关
-    /// 返回按钮图片名称
-    open var backIndicator:String = "backButton"
+    /// 业务类名
+    var apiClassName:String = "HybridBusiness"
     
-    /// 导航栏图片前缀
-    open var naviImagePrefixes:String = "hybrid_navi_"
+    //MARK: - 全局配置
     
-    /// 默认标题颜色
-    open var defaultTitleColor:UIColor = UIColor.hybridColorWithHex("2F2929")
+    /// 导航栏背景颜色
+    open var navigationBarBarTintColor:UIColor = UIColor.white
     
-    /// 默认标题背景颜色
-    open var defaultTitleBackgroundTColor:UIColor = UIColor.white
+    /// 导航栏标题颜色
+    open var navigationBarTitleColor:UIColor = UIColor.black
     
-    /// pageShow 回调字符串，h5临时要求
-    open var pageShowEvent:String = "Hybrid.event('pageshow')"
+    /// 导航栏主题颜色
+    open var navigationBarTintColor:UIColor = UIColor.blue
     
-    /// 用于相对路径的BaseUrl
-    open var baseHostUrl:String = "https://web-dev.doctorwork.com/"
+    /// 导航栏透明度
+    open var navigationBarBackgroundAlpha:CGFloat = 1.0
     
-    ///
-    open var apiClassName:String = "HybridBusiness"
+    /// 状态栏样式
+    open var navigationBarStyle:UIStatusBarStyle = .default
+    
+    /// 阴影分割线隐藏
+    open var navigationBarShadowImageHidden:Bool = false
+    
+    /// 注入 H5 带有的字符串 - userAgent
+    open var userAgent:String = ""
+    
+    /// 默认返回按钮使用的图片名称
+    open var backIndicator:String = "JGHybridImageNavBack"
+    
+    /// 使用图片的前缀
+    open var imagePrefixes:String = "JGHybridImage"
+    
+    /// hybrid 默认回调js函数名称
+    open var hybridEvent:String = "Hybrid.callback"
 }
 

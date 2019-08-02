@@ -15,7 +15,7 @@ public protocol HybridMethodProtocol {
     /// 页面加载失败所需操作
     ///
     /// - Parameter command: 命令对象
-    func didFailLoad(viewController: MLHybridViewController)
+    func didFailLoad(viewController: HybridViewController)
     
     /// 加载等待开始  业务需要重写
     func startWait()

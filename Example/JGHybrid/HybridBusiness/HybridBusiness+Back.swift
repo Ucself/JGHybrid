@@ -21,14 +21,14 @@ extension HybridBusiness {
         guard let navigationVC = command.viewController?.navigationController else {
             command.viewController?.dismiss(animated: true, completion: nil)
             //回调
-            self.handleCallback(command, ["isSuccess" : false])
+//            self.handleCallback(command, ["isSuccess" : false])
             return
         }
         //-1代表跳入根目录
         if params.step == -1 {
             navigationVC.popToRootViewController(animated: true)
             //回调
-            self.handleCallback(command)
+//            self.handleCallback(command)
             return
         }
         //返回指定步骤
@@ -37,7 +37,7 @@ extension HybridBusiness {
                 let vc = vcs[vcs.count - params.step - 1]
                 let _ = command.viewController?.navigationController?.popToViewController(vc, animated: true)
                 //回调
-                self.handleCallback(command)
+//                self.handleCallback(command)
                 return
             }
         }

@@ -26,6 +26,9 @@ class RootViewController: UIViewController {
     
     func initUI(){
         self.title = "Hybrid Demo"
+        self.jg_navBarBarTintColor = UIColor.white
+        self.jg_navBarTitleColor = UIColor.black
+        self.jg_navBarBackgroundAlpha = 1.0
     }
     
 
@@ -79,8 +82,8 @@ extension RootViewController:UITableViewDelegate,UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
         switch indexPath.row {
         case 0:
-            let vc:HybridViewController =  Hybrid.load(urlString: "http://web-dev.doctorwork.com/ios/?" + "id=\(arc4random())")!
-            vc.navBarBackgroundAlpha = 0
+            let vc:HybridViewController =  Hybrid.load(urlString: "http://ucself.cn/JGHybrid/gh/")!
+            vc.titleName = "Demo首页"
             self.navigationController?.pushViewController(vc, animated: true)
         case 1:
             //let vc:HybridViewController =  Hybrid.load(urlString: "rapp/festival/index.html")!

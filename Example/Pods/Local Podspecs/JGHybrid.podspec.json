@@ -18,12 +18,10 @@
   "platforms": {
     "ios": "8.0"
   },
+  "frameworks": "UIKit",
   "source_files": [
     "JGHybrid/Classes/Hybrid.swift",
     "JGHybrid/Classes/HybridConfiguration.swift",
-    "JGHybrid/Classes/GTANavigationBar.swift"
-  ],
-  "frameworks": [
     "UIKit",
     "WebKit"
   ],
@@ -64,6 +62,10 @@
           "source_files": "JGHybrid/Classes/Content/Common/Tool/*.swift"
         }
       ]
+    },
+    {
+      "name": "HybridBusiness",
+      "source_files": "JGHybrid/Classes/Content/HybridBusiness/*.swift"
     }
   ]
 }

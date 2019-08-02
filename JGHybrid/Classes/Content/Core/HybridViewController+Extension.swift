@@ -16,17 +16,26 @@ extension HybridViewController {
     func initUI() {
         //加载等待开始
         if self.needStartWait {
-            MLHybrid.shared.delegate?.startWait()
+            Hybrid.shared.delegate?.startWait()
         }
         self.hidesBottomBarWhenPushed = needHidesBottomBar
         self.setUpBackButton()
         //设置布局到顶部self.view
         self.extendedLayoutIncludesOpaqueBars = true
+        //设置样式
+        self.jg_navBarBarTintColor = self.barTintColor
+        self.jg_navBarTitleColor = self.titleColor
+        if self.needFullScreen {
+            self.jg_navBarBackgroundAlpha = 0.0
+        }
+        else {
+            self.jg_navBarBackgroundAlpha = HybridConfiguration.default.navigationBarBackgroundAlpha
+        }
     }
     
     func initContentView() {
         //容器数据对象
-        self.contentView = MLHybridContentView()
+        self.contentView = HybridContentView()
         //不需要自动边距
         if #available(iOS 11.0, *) {
             self.contentView.scrollView.contentInsetAdjustmentBehavior = .never
@@ -35,17 +44,22 @@ extension HybridViewController {
         }
         self.view.addSubview(self.contentView)
         self.contentView.translatesAutoresizingMaskIntoConstraints = false
-        let topGuide = self.topLayoutGuide
-        //大标题布局
-        var topConstraint:NSLayoutConstraint! = NSLayoutConstraint(item: self.contentView, attribute: .top, relatedBy: .equal, toItem: topGuide, attribute: .bottom, multiplier: 1.0, constant: 0)
-        if isFullScreen {
-            //全屏的话约束到view
-            topConstraint = NSLayoutConstraint(item: self.contentView, attribute: .top, relatedBy: .equal, toItem: self.view, attribute: .top, multiplier: 1.0, constant: 0)
-        }
         //容器布局
-        let leftConstraint = NSLayoutConstraint(item: self.contentView, attribute: .left, relatedBy: .equal, toItem: self.view, attribute: .left, multiplier: 1.0, constant: 0)
-        let rightConstraint = NSLayoutConstraint(item: self.contentView, attribute: .right, relatedBy: .equal, toItem: self.view, attribute: .right, multiplier: 1.0, constant: 0)
-        let bottomConstraint = NSLayoutConstraint(item: self.contentView, attribute: .bottom, relatedBy: .equal, toItem: self.view, attribute: .bottom, multiplier: 1.0, constant: 0)
+        var topConstraint:NSLayoutConstraint!
+        if #available(iOS 11.0, *) {
+            topConstraint = NSLayoutConstraint(item: self.contentView!, attribute: .top, relatedBy: .equal, toItem: self.view.safeAreaLayoutGuide, attribute: .top, multiplier: 1.0, constant: 0)
+        }
+        else {
+            topConstraint = NSLayoutConstraint(item: self.contentView!, attribute: .top, relatedBy: .equal, toItem: self.topLayoutGuide, attribute: .bottom, multiplier: 1.0, constant: 0)
+        }
+//        topConstraint = NSLayoutConstraint(item: self.contentView!, attribute: .top, relatedBy: .equal, toItem: self.topLayoutGuide, attribute: .bottom, multiplier: 1.0, constant: 0)
+        if self.needFullScreen {
+            //全屏的话约束到view
+            topConstraint = NSLayoutConstraint(item: self.contentView!, attribute: .top, relatedBy: .equal, toItem: self.view, attribute: .top, multiplier: 1.0, constant: 0)
+        }
+        let leftConstraint = NSLayoutConstraint(item: self.contentView!, attribute: .left, relatedBy: .equal, toItem: self.view, attribute: .left, multiplier: 1.0, constant: 0)
+        let rightConstraint = NSLayoutConstraint(item: self.contentView!, attribute: .right, relatedBy: .equal, toItem: self.view, attribute: .right, multiplier: 1.0, constant: 0)
+        let bottomConstraint = NSLayoutConstraint(item: self.contentView!, attribute: .bottom, relatedBy: .equal, toItem: self.view, attribute: .bottom, multiplier: 1.0, constant: 0)
         
         self.view.addConstraints([leftConstraint,rightConstraint,topConstraint,bottomConstraint])
         //设置代理
@@ -59,11 +73,8 @@ extension HybridViewController {
         //js 注入 requestHybrid
         self.contentView.configuration.userContentController.add(self, name: "requestHybrid")
         //监听键盘弹起与隐藏
-//        NotificationCenter.default.addObserver(self, selector: #selector(keyBoardShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyBoardShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-//        NotificationCenter.default.addObserver(self, selector: #selector(keyBoardShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyBoardShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-//        NotificationCenter.default.addObserver(self, selector: #selector(keyBoardHidden), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyBoardHidden), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
@@ -76,15 +87,15 @@ extension HybridViewController {
         if self.needLoadProgress {
             self.view.addSubview(self.progressView)
             self.progressView.translatesAutoresizingMaskIntoConstraints = false
-            let leftConstraint = NSLayoutConstraint(item: self.progressView, attribute: .left, relatedBy: .equal, toItem: self.contentView, attribute: .left, multiplier: 1.0, constant: 0)
+            let leftConstraint = NSLayoutConstraint(item: self.progressView!, attribute: .left, relatedBy: .equal, toItem: self.contentView, attribute: .left, multiplier: 1.0, constant: 0)
             var topConstraint: NSLayoutConstraint
             if #available(iOS 11.0, *) {
-                topConstraint = NSLayoutConstraint(item: self.progressView, attribute: .top, relatedBy: .equal, toItem: self.contentView.safeAreaLayoutGuide, attribute: .top, multiplier: 1.0, constant: 0)
+                topConstraint = NSLayoutConstraint(item: self.progressView!, attribute: .top, relatedBy: .equal, toItem: self.contentView.safeAreaLayoutGuide, attribute: .top, multiplier: 1.0, constant: 0)
             } else {
-                topConstraint = NSLayoutConstraint(item: self.progressView, attribute: .top, relatedBy: .equal, toItem: self.contentView, attribute: .top, multiplier: 1.0, constant: 0)
+                topConstraint = NSLayoutConstraint(item: self.progressView!, attribute: .top, relatedBy: .equal, toItem: self.contentView, attribute: .top, multiplier: 1.0, constant: 0)
             }
-            let widthConstraint = NSLayoutConstraint(item: self.progressView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1.0, constant: self.view.frame.size.width)
-            let heightConstraint = NSLayoutConstraint(item: self.progressView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1.0, constant: 3)
+            let widthConstraint = NSLayoutConstraint(item: self.progressView!, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1.0, constant: self.view.frame.size.width)
+            let heightConstraint = NSLayoutConstraint(item: self.progressView!, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1.0, constant: 3)
             self.view.addConstraints([leftConstraint,topConstraint,widthConstraint,heightConstraint])
         }
     }
@@ -92,7 +103,7 @@ extension HybridViewController {
     //初始化控件数据
     func initData(){
         //设置userAgent
-        if MLHybridConfiguration.default.userAgent == defaultUserAgent {
+        if HybridConfiguration.default.userAgent == defaultUserAgent {
             return
         }
         let webView = WKWebView.init(frame: CGRect.zero)
@@ -107,9 +118,8 @@ extension HybridViewController {
             }
             //未获取到版本
             guard let versionStr = Bundle.main.infoDictionary?["CFBundleShortVersionString"] else {return}
-            userAgentStr.append(" doc_hybrid_heath_\(versionStr) ")
-            userAgentStr.append(" Hybrid/\(versionStr) ")
-            MLHybridConfiguration.default.userAgent = userAgentStr
+            userAgentStr.append(" JGHybrid/\(versionStr) ")
+            HybridConfiguration.default.userAgent = userAgentStr
             if #available(iOS 9.0, *) {
                 weakSelf.contentView.customUserAgent = userAgentStr
             } else {
@@ -125,12 +135,11 @@ extension HybridViewController {
         guard let loadUrl = urlPath else { return }
         //urlRequest.setValue(MLHybridConfiguration.default.cookieString, forHTTPHeaderField: MLHybridConfiguration.default.cookieName)
         let urlString = loadUrl.absoluteString
-        
+        //加载本地
         if HybridConfiguration.default.cacheMap.count > 0 && HybridConfiguration.default.isCacheHtml{
             for url in HybridConfiguration.default.cacheMap {
                 if urlString.contains(url) {
                     let path = NSHomeDirectory() + "/Documents/HybridOfflinePackage\(url)/index.html"
-                    
                     do {
                         let htmlData = try NSData(contentsOfFile: path, options: NSData.ReadingOptions.uncached)
                         if let htmlString = String(data: htmlData as Data, encoding: .utf8) {
@@ -158,7 +167,7 @@ extension HybridViewController {
         let button = UIButton()
         button.frame = CGRect(x: 0, y: 0, width: 42, height: 44)
         button.addTarget(self, action: #selector(self.backButtonClick), for: .touchUpInside)
-        let image = UIImage(named: MLHybridConfiguration.default.backIndicator)
+        let image = UIImage(named: HybridConfiguration.default.backIndicator)
         button.setImage(image, for: .normal)
         button.contentHorizontalAlignment = .left
         let item = UIBarButtonItem(customView: button)

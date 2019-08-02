@@ -17,9 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        MLHybrid.register(MethodExtension())
-        // 如果需要设置导航栏底部分割线隐藏，可以在这里统一设置
-//        GTANavigationBar.defaultShadowImageHidden = true
+        HybridConfiguration.default.navigationBarBarTintColor = UIColor.red
+        Hybrid.register(MethodExtension())
 
         return true
     }
@@ -41,7 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
         //离线包检测
-        Hybrid.checkOfflinePackage()
+        //Hybrid.checkOfflinePackage()
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
