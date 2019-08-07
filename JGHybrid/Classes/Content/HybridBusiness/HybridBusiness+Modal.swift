@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import JGHybrid
 
 extension HybridBusiness {
     //MARK: -`modal跳转协议`-
@@ -15,7 +14,7 @@ extension HybridBusiness {
     /// forward跳转
     ///
     /// - Parameter command: command命令
-    @objc func modal(command: HybridCommand) {
+    @objc open func modal(command: HybridCommand) {
         let params:HybridForwardParams = HybridForwardParams.convert(command.params)
         command.args = params
         if params.type == "h5" {
@@ -27,7 +26,7 @@ extension HybridBusiness {
             }
             command.viewController?.present(webViewController, animated: params.animate, completion: nil)
             //回调
-            self.handleCallback(command)
+            //self.handleCallback(command)
         } else {
             //native跳转交给外部处理
             command.name = "modalNative"
@@ -40,6 +39,6 @@ extension HybridBusiness {
     /// - Parameter command: command
     @objc private func modalNative(command: MLHybridCommand){
         //回调
-        self.handleCallback(command)
+        //self.handleCallback(command)
     }
 }

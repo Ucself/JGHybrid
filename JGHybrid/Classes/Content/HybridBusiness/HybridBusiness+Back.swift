@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import JGHybrid
 
 extension HybridBusiness {
     //MARK: -`back协议`-
@@ -15,7 +14,7 @@ extension HybridBusiness {
     /// back
     ///
     /// - Parameter command: command
-    @objc func back(command: HybridCommand) {
+    @objc open func back(command: HybridCommand) {
         let params:HybridBackParams = HybridBackParams.convert(command.params)
         command.args = params
         guard let navigationVC = command.viewController?.navigationController else {

@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import JGHybrid
 
 class HybridHeaderParams: HybridBaseParams {
     var title:String = ""

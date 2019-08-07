@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import JGHybrid
 
 class HybridModalParams: HybridBaseParams {
     var type:String = "h5"

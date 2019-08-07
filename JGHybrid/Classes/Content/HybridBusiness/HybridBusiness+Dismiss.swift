@@ -1,5 +1,5 @@
 //
-//  InitBusiness.swift
+//  DismissBusiness.swift
 //  DoctorHealth
 //
 //  Created by 李保君 on 2018/12/26.
@@ -7,18 +7,16 @@
 //
 
 import Foundation
-import JGHybrid
 
 extension HybridBusiness {
-    //MARK: -`Pageshow callbackId协议`-
+    //MARK: -`dismiss协议`-
     
-    /// 设置页面显示回调callbackId
+    /// dismiss
     ///
     /// - Parameter command: command
-    @objc func pageshow(command: HybridCommand) {
-        command.viewController?.onShowCallBack = command.callbackId
-        //回调
+    @objc open func dismiss(command: HybridCommand) {
+        command.viewController?.dismiss(animated: true, completion: nil)
 //        self.handleCallback(command)
     }
-
+    
 }

@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import JGHybrid
 
 class HybridPagehideParams: HybridBaseParams {
     //解析数据对象

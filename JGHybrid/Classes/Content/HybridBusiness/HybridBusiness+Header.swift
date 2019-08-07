@@ -1,5 +1,5 @@
 //
-//  InitBusiness.swift
+//  HeaderBusiness.swift
 //  DoctorHealth
 //
 //  Created by 李保君 on 2018/12/26.
@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import JGHybrid
 
 extension HybridBusiness {
     //MARK: -`header协议`-
@@ -15,34 +14,32 @@ extension HybridBusiness {
     /// header
     ///
     /// - Parameter command: command
-    @objc func header(command: HybridCommand) {
+    @objc open func header(command: HybridCommand) {
         let params:HybridHeaderParams = HybridHeaderParams.convert(command.params)
         command.args = params
         guard let vc:HybridViewController = command.viewController else {
             return
         }
-        command.viewController?.titleName = params.title
+        vc.titleName = params.title
         //设置导航栏是否显示
         //标题颜色
         if UIColor.hybridColorWithHex(params.color) != .clear {
-//            command.viewController.titleColor = UIColor.hybridColorWithHex(params.color)
-            command.viewController?.titleColor = UIColor.hybridColorWithHex(params.color)
+            vc.titleColor = UIColor.hybridColorWithHex(params.color)
         }
         //设置背景色
         if UIColor.hybridColorWithHex(params.background) != .clear {
             //根据16进制获取颜色值
-//            command.viewController.titleBackgroundColor = UIColor.hybridColorWithHex(params.background)
-            
+            vc.barTintColor = UIColor.hybridColorWithHex(params.background)
         }
         //设置左边按钮
         if params.left.count != 0 {
             let leftButtonItems:[UIBarButtonItem] = self.hybridHeaderLeftBarButtonItems(params.left, command)
-            command.viewController?.navigationItem.setLeftBarButtonItems(leftButtonItems, animated: false)
+            vc.navigationItem.setLeftBarButtonItems(leftButtonItems, animated: false)
         }
         //设置右边按钮
         if params.right.count != 0 {
             let rightButtonItems:[UIBarButtonItem] = self.hybridHeaderRightBarButtonItems(params.right, command)
-            command.viewController?.navigationItem.setRightBarButtonItems(rightButtonItems, animated: true)
+            vc.navigationItem.setRightBarButtonItems(rightButtonItems, animated: true)
         }
         //回调
 //        self.handleCallback(command)

@@ -1,5 +1,5 @@
 //
-//  InitBusiness.swift
+//  PagehideBusiness.swift
 //  DoctorHealth
 //
 //  Created by 李保君 on 2018/12/26.
@@ -7,17 +7,18 @@
 //
 
 import Foundation
-import JGHybrid
 
 extension HybridBusiness {
-    //MARK: -`dismiss协议`-
+    //MARK: -`Pagehide callbackId协议`-
     
-    /// dismiss
+    
+    /// 设置页面隐藏回调callbackId
     ///
     /// - Parameter command: command
-    @objc func dismiss(command: HybridCommand) {
-        command.viewController?.dismiss(animated: true, completion: nil)
+    @objc open func pagehide(command: HybridCommand) {
+        command.viewController?.onHideCallBack = command.callbackId
+        //回调
 //        self.handleCallback(command)
     }
-    
+
 }

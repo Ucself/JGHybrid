@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import JGHybrid
 
 class HybridBackParams: HybridBaseParams {
     var step:Int = 1

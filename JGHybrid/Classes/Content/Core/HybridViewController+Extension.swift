@@ -18,6 +18,7 @@ extension HybridViewController {
         if self.needStartWait {
             Hybrid.shared.delegate?.startWait()
         }
+        self.view.backgroundColor = UIColor.white
         self.hidesBottomBarWhenPushed = needHidesBottomBar
         self.setUpBackButton()
         //设置布局到顶部self.view
