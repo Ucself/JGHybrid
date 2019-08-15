@@ -107,6 +107,7 @@ module.exports = function (webpackEnv) {
               mediaQuery: false,
               minPixelValue: 0
             }),
+            //https://github.com/cuth/postcss-pxtorem
             /*****************************************/
             // Adds PostCSS Normalize as the reset css with default options,
             // so that it honors browserslist config in package.json
