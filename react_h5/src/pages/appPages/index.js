@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import './index.css'
+// import './index.css'
+import './style.styl'
 
 export class App extends Component {
 
