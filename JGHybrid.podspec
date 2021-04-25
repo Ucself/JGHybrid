@@ -4,7 +4,7 @@ Pod::Spec.new do |s|
   s.summary          = 'A short description of JGHybrid.'
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+  TODO: Add long description of the pod here.
                        DESC
 
   s.homepage         = 'https://github.com/Ucself/JGHybrid'

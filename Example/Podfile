@@ -3,7 +3,8 @@ use_frameworks!
 target 'JGHybrid_Example' do
   pod 'JGHybrid', :path => '../'
   pod "Reveal-SDK","4", :configurations => ["Debug"]
-  pod "JGNavigationBarTransition", :path => "../../JGNavigationBarTransition"
+#  pod "JGNavigationBarTransition", :path => "../../JGNavigationBarTransition"
+  pod "JGNavigationBarTransition"
 
   target 'JGHybrid_Tests' do
     inherit! :search_paths

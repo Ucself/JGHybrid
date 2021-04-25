@@ -88,7 +88,7 @@ extension UIViewController : MethodExchangeProtocol{
     //        }
     //    }
     
-    /// 设置状态栏颜色
+    /// 设置装填栏颜色
     public var jg_statusBarStyle:UIStatusBarStyle? {
         get {
             return objc_getAssociatedObject(self, &AssociatedKeys.statusBarStyle) as? UIStatusBarStyle
